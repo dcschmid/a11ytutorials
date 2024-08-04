@@ -1,0 +1,70 @@
+---
+title: Single-Page-Apps
+---
+
+Viele Websites sind heutzutage Single-Page-Apps. Das bedeutet, dass nach dem Klicken auf einen Link oder eine Schaltfläche
+nicht eine komplett neue Webseite geladen wird, sondern nur ein Teil der Webseite.
+
+Du könntest z. B. eine Suchfunktion haben, die eine Anfrage stellt und den Inhalt in der Mitte der Seite lädt. Diese Art von
+Ansatz spart Bandbreite und beschleunigt die Leistung für den Endnutzer.
+
+## Was ist bei der Barrierefreiheit von Single-Page-Apps zu beachten?
+
+Die wichtigste Überlegung ist wahrscheinlich, dass du die Nutzer von Bildschirmlesegeräten darüber informieren musst, dass
+neue Inhalte geladen wurden. Andernfalls bleibt der Fokus des Schlüsselworts auf dem Link oder der Schaltfläche, und der
+Screenreader sagt nichts.
+
+Wenn du es auf die altmodische Art und Weise machen und eine komplett neue Seite laden würdest, würde der Browser den
+Screenreader darüber informieren, dass eine neue Seite geladen wurde und der Screenreader weiß, was zu tun ist. Er liest
+den Seitentitel und beginnt dann mit dem Lesen vom oberen Rand der Seite nach unten.
+
+Wenn aber keine Seite geladen wird, gibt es auch keinen Auslöser für den Bildschirmleser, etwas zu sagen. Du hast zwei
+Möglichkeiten: Erstens kannst du den Fokus auf den Anfang des neuen Inhalts verschieben, z. B. auf die Überschrift am Anfang
+des neuen Inhalts, oder zweitens kannst du einen Text in einen Aria-Live-Bereich einfügen, um den neuen Inhalt anzukündigen.
+
+Jeder dieser Ansätze kann sinnvoll sein. Es kommt nur auf den Kontext an. Den Fokus auf den neuen Inhalt lenken. Wenn du
+möchtest, dass der Screenreader-Nutzer dieses Ereignis im Wesentlichen als neue Seite oder zumindest als neuen Inhalt wahrnimmt,
+den er sofort lesen kann, ist es angebracht, den Fokus an den Anfang des neuen Inhalts zu setzen.
+
+Denke daran, dass, wenn du den Fokus mit JavaScript sendest, das Ziel ab index=„-1“ haben muss, wenn das Element nicht natürlich
+fokussierbar ist.
+
+## Die Bedeutung des Einfügens einer Verzögerung
+
+Und hier ist noch etwas Wichtiges. Immer wenn du neue Inhalte in eine Webseite einfügst, kannst du dich nicht darauf verlassen,
+dass Screenreader sie sofort auswerten. Wenn du den Inhalt einfügst und dann sofort den Fokus dorthin schickst, ist die
+Wahrscheinlichkeit groß, dass der Fokus ankommt, bevor der Screenreader merkt, dass es überhaupt einen Inhalt gibt. Der
+Screenreader wird nichts sagen und der Nutzer wird verwirrt sein. Er wird denken,
+
+„Ich habe gerade auf einen Link geklickt, aber ich habe nichts gehört. Ist etwas passiert? Ist meine Internetverbindung gestört?“
+
+Das kann eine schlechte Erfahrung für sie sein.
+
+Die Lösung ist, nach dem Einfügen des neuen Inhalts ein oder zwei Sekunden zu warten, bevor der Fokus auf den neuen Inhalt gelenkt
+wird. Je mehr Inhalte du einfügst, desto länger muss deine Wartezeit sein.
+
+Und um diese Unannehmlichkeiten für Webentwickler noch zu verschlimmern, weißt du nicht, wann der Screenreader mit der Registrierung
+des neuen Inhalts fertig ist. Das bedeutet, dass du eine willkürliche Verzögerungszeit wählen musst, und es ist wahr, dass
+verschiedene Nutzer/innen auf verschiedenen Systemen längere oder kürzere Verzögerungen erleben werden. Ich sage das nur ungern,
+aber so ist es nun mal.
+
+Die gute Nachricht ist, dass eine Verzögerung von ein oder zwei Sekunden für die meisten Anwendungsfälle ausreichen sollte, aber
+du solltest das auf deinen Seiten testen.
+
+Außerdem solltest du den Fokus nicht absichtlich an einen leeren Container senden. Du musst einen Inhalt haben, den der
+Screenreader lesen kann, sonst sagt er nichts, auch wenn du eine angemessene Verzögerung einbaust.
+
+## Ankündigung des neuen Inhalts mit aria-live
+
+Es kann sinnvoller sein, den Fokus dort zu belassen, wo er ist, und nur etwas über den Inhalt anzukündigen. Wenn das der Fall
+ist, ist aria-live besser geeignet. Denke daran, dass aria-live-Ankündigungen viel besser sind, wenn sie kurz sind. Füge zum
+Beispiel nicht den gesamten Hauptinhalt in eine aria-live ein. Das wäre furchtbar. Ein paar Worte oder ein Satz sind alles,
+was du willst.
+
+In einigen wenigen Fällen kann es sinnvoll sein, den Nutzer NICHT darüber zu informieren, dass neue Inhalte geladen wurden. Das
+ist dann der Fall, wenn der neue Inhalt nicht unmittelbar relevant ist oder wenn es eine Störung wäre, aber sei sehr vorsichtig
+mit der Entscheidung, dies als stilles Ereignis zu belassen. In den allermeisten Fällen wäre das der falsche Ansatz.
+
+Es gibt noch ein paar andere Dinge, die du tun kannst, um Single-Page-Apps benutzerfreundlicher zu machen, z. B. sicherstellen,
+dass die URL aktualisiert wird, wenn sich der Hauptinhalt ändert, und die Browser-Buttons „Zurück“ und „Vorwärts“ so funktionieren,
+als ob die Seiten jedes Mal geladen worden wären. Das sind nette Kleinigkeiten, die Verwirrung vermeiden helfen.

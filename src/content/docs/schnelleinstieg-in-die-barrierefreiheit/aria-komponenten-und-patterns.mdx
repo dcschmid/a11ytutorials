@@ -1,0 +1,29 @@
+---
+title: ARIA-Komponenten und -Patterns
+---
+
+import ExternalLink from "../../../components/ExternalLink.astro";
+
+ARIA erweitert die Auswahl der Komponenten, die du auf Webseiten erstellen kannst. Wenn wir uns ausschließlich auf
+HTML, JavaScript und CSS beschränken, können wir Formularelemente, Schaltflächen und Links erstellen, aber keine
+modalen Dialoge, Fortschrittsanzeigen, Tooltips, Baumansichten, Kombinationsfelder oder Warnmeldungen, zumindest
+nicht in einer Weise, die die Rollen und Eigenschaften dieser Komponenten kommuniziert. ARIA ermöglicht es uns,
+zusätzliche Rollen mit zusätzlichen Eigenschaften und Werten zu erstellen, sowie einen standardisierten Rahmen für
+Interaktionsmodelle, insbesondere wenn es um die Tastatur geht.
+
+Die Web Accessibility Initiative des W3C veröffentlichte einen ARIA Authoring Practices Guide sowie Design Patterns und
+Beispiele unter <ExternalLink href="https://www.w3.org/WAI/ARIA/apg/" text="ARIA Authoring Practices Guide" />.
+
+Wenn du dir ein Muster durchliest und denkst, dass es gut ist, aber ich habe eine bessere Vorstellung davon, wie es
+funktioniert. Dann beginnst du mit der Entwicklung eines eigenen Musters für die Barrierefreiheit mit der Tastatur. Dies
+ist technisch möglich und möglicherweise barrierefrei, aber wahrscheinlich ist deine Methode nicht besser. Auch wenn
+sie sich in einigen Bereichen verbessert, wird sie sich von dem etablierten Muster unterscheiden, sodass die Nutzerinnen
+und Nutzer wahrscheinlich verwirrt sein werden. Obwohl es technisch barrierefrei ist, denken sie möglicherweise, dass es
+nicht barrierefrei ist.
+
+Was ist, wenn du einige der ARIA-Muster implementierst und andere nicht? Ist das genug? Nein. Es könnte sogar noch
+schlimmer werden.
+
+Partielle ARIA-Implementierungen sind häufig nur unvollständige Versionen des Originals. Mach keine halben Sachen bei ARIA.
+Mach nicht nur die Teile, die du kennst oder auf die du Lust hast. Mach alles oder lass es ganz bleiben. Das ist eine
+Vereinbarung, die du treffen musst, wenn du ARIA einsetzt.

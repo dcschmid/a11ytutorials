@@ -1,0 +1,34 @@
+---
+title: Accessibility-Tree
+---
+
+Der Accessibility-Tree stellt bestimmte Knoten im DOM (Document Object Model) dar, die für die Barrierefreiheit von Bedeutung
+sind. Du hast die Möglichkeit, den Accessibility-Tree über die Entwicklerwerkzeuge des Browsers aufzurufen. Wenn du mit der
+Maus arbeitest, ist es dir möglich, mit der rechten Maustaste auf das Element zu klicken und die Inspektion auszuwählen, um die
+Entwicklertools zu öffnen. Wenn du die Tastatur verwendest, kannst du Option plus Befehl plus I auf dem Mac oder STRG plus
+Shift plus I unter Windows verwenden.
+
+Jeder Browser unterscheidet sich in der Art und Weise, wie er die Barrierefreiheit einfügt.
+
+- In Firefox befindet sie sich auf einer der obersten Registerkarten, aber du musst möglicherweise die Liste der Registerkarten
+  erweitern, um sie zu sehen.
+
+- In Chrome findest du die Barrierefreiheit in der Seitenleiste. Du musst die Liste der seitlichen Tabs erweitern, um sie zu
+  finden.
+
+- In Safari musst du zum Seitenpanel gehen, dort Knoten auswählen und anschließend zum Bereich Barrierefreiheit scrollen.
+  Auch in Safari musst du möglicherweise zuerst die Entwicklerwerkzeuge aktivieren, indem man Einstellungen für Webentwickler
+  aktiviert.
+
+Wenn du den Accessibility-Tree öffnest, kannst du jedes Element auf der Seite auswählen und herausfinden, welche Rolle, welchen
+Namen oder welches Label es hat. Chrome zeigt den berechneten Wert von Elementen an, der Aufschluss darüber gibt, welche Methode
+die Website verwendet, um z. B. einen alternativen Text zuzuweisen. Nicht alles ist für die Barrierefreiheit relevant, also wird
+auch nicht jedes Accessibility-Tree angezeigt.
+
+Wenn du einen div- oder span-Tag hast, werden beide im Accessibility-Tree komplett ignoriert, da sie keinen semantischen Wert
+haben und nur Container sind. Häufig werden diese Elemente in dem Accessibility-Tree mit einer sogenannten generischen Rolle
+dargestellt. Die semantische Funktion umfasst unter anderem Bilder, Überschriften, Orientierungspunkte, Links, Listen, Tabellen
+und Formularelemente.
+
+Der Accessibility-Tree zeigt dynamische Veränderungen an, wenn ein Menü geöffnet oder geschlossen wird. Screenreader und andere
+Technologien lesen den Accessibility-Tree. Sie geben die wichtigen Informationen an die Nutzer weiter.

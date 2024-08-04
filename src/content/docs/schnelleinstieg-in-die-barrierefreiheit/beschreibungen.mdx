@@ -1,0 +1,22 @@
+---
+title: Beschreibungen
+---
+
+Beschreibungen stellen zusätzliche Informationen über ein Element dar, das über seine Rolle und seinen Namen hinausgeht. Bei
+einem Formularelement kannst du zum Beispiel aria-describedby verwenden, um zusätzliche Anweisungen zu geben, z. B. dass
+Groß- und Kleinschreibung beachtet werden oder eine Mischung aus Buchstaben und Ziffern und mindestens ein Sonderzeichen
+enthalten muss.
+
+Es sollte beachtet werden, dass aria-describedby sich auf die ID eines anderen Elements bezieht. In diesem Sinne verhält es
+sich ähnlich wie aria-labelledby. Es ist nicht möglich, die Beschreibung direkt in das Attribut aria-describedby zu integrieren.
+Stattdessen gibst du die eigentliche Beschreibung als sichtbaren Text an.
+
+Häufig kann aria-describedby auch dazu verwendet werden, Fehlermeldungen programmatisch mit Formularelementen zu verknüpfen.
+Wenn du die Fehlermeldung nicht zuordnest, können Screenreader Nutzer die Fehlermeldung nicht hören, wenn sie nur mit der
+Tabulatortaste durch die Formularelemente navigieren, weil nur der Text gelesen wird, der programmatisch mit dem Formularelement
+verknüpft ist, wenn du mit der Tabulatortaste darauf zugreifst.
+
+Screenreader können auch Text hören, der nicht mit dem Formularelement verknüpft ist, wenn sie den Formularmodus verlassen und
+nur den Pfeil nach oben und unten verwenden, um das Dokument zu durchlaufen. Aber wenn sie ein Formular benutzen, werden sie
+höchstwahrscheinlich die Tabulatortaste benutzen, und wenn es in einem Formular Text gibt, der nicht mit den Formularelementen
+verbunden ist, während du mit der Tabulatortaste durchblätterst, besteht das Risiko, dass sie ihn einfach nicht hören.

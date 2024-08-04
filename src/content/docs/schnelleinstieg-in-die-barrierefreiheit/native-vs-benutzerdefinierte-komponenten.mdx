@@ -1,0 +1,25 @@
+---
+title: Native vs. benutzerdefinierte Komponenten
+---
+
+Du wirst feststellen, dass es ARIA-Muster für native HTML-Elemente wie Bilder, Schaltflächen, Links, Überschriften,
+Kontrollkästchen und viele andere Dinge gibt. Ist es ratsam, auf ARIA-Versionen dieser Dinge umzusteigen? Ist ein
+ARIA-Link effektiver als ein HTML-Link? Nein. Er ist nicht besser.
+
+Ein HTML-Link ist genau dasselbe wie ein ARIA-Link. In Bezug auf die Barrierefreiheit besteht kein Vorteil. Es wurde
+festgestellt, dass die Erstellung eines ARIA-Links sogar einige Nachteile mit sich bringt. Bei ARIA musst du ihm die
+richtige Rolle zuweisen, in diesem Fall role=„link“, und du musst die Tastaturfunktionalität erstellen, indem du
+tabindex="0" hinzufügst, um die Tabulatortaste mit der Tastatur bedienen zu können, und indem du JavaScript-Funktionen
+und Logik hinzufügst, damit der Link auch wirklich das tut, was er tun soll, nämlich dass er, wenn der Nutzer auf den
+Link klickt, auch tatsächlich zum Ziel führt.
+
+Das ist alles, was HTML-Links schon automatisch tun. In der Regel ist es reine Zeit- und Arbeitsverschwendung, die Funktionen
+zu modifizieren, die HTML bereits bereitstellt.
+
+Wenn du die Wahl zwischen einer nativen und einer benutzerdefinierten Komponente hast, solltest du dich immer für die nativen
+Komponenten entscheiden, es sei denn, du hast einen wirklich zwingenden Grund, eine benutzerdefinierte Komponente zu verwenden.
+
+Laut ARIA Authoring Practices Guide ist kein ARIA besser als ein schlechtes ARIA. Dennoch ist ARIA weiterhin der beste Weg, um
+bestimmte Dinge zu erreichen, wie  die vordefinierten ARIA-Komponenten im ARIA Authoring Practices Guide. Der Rest dieses Buches
+besteht darin, dir beizubringen, wie du kein schlechtes ARIA erstellen kannst.
+xs

@@ -1,0 +1,40 @@
+---
+title: Semantische Struktur
+---
+
+Die semantische Struktur bezieht sich auf die Fähigkeit von Screenreadern und anderen Hilfsmitteln, eine Sache zu
+erkennen. Ich habe den Accessibility-Tree bereits erwähnt. Elemente, die eine semantische Bedeutung besitzen, werden
+im Accessibility-Tree aufgenommen.
+
+Zu den Dingen, die nicht im Accessibility-Tree landen, gehören:
+
+- `<div>`
+
+- `<span>`
+
+- `<p>`
+
+- CSS-Hintergrundbilder
+
+- Farben
+
+- und Stile
+
+Es gibt drei Hauptkomponenten für semantische Elemente:
+
+- Name
+
+- Rolle
+
+- Wert
+
+Der Name ist der Text, der mit dem Element verbunden ist, z. B. der Text in einer Überschrift oder der alternative Text
+zu einem Bild.
+
+Die Rolle ist die Art des Elements, z. B. Links, Tabellen, Überschriften usw.
+
+Der Wert kann eine Eigenschaft oder ein Zustand sein. Auf diesen Aspekt werden wir noch genauer eingehen, wenn wir über
+ARIA und benutzerdefinierte Komponenten sprechen. Wichtig ist jetzt, dass die semantische Struktur programmatisch an
+unterstützende Technologien wie Screenreader weitergegeben wird. Wenn etwas wie eine Überschrift aussieht, es aber nicht
+ist, oder wenn etwas wie eine Tabelle aussieht, es jedoch nicht ist, ist das eine Fälschung. Sie haben keine semantische
+Struktur und die Benutzer von Bildschirmlesegeräten wissen nicht, was sie sind.

@@ -1,0 +1,46 @@
+---
+title: Navigation und Links
+---
+
+## Navigation
+
+Es gibt eine Navigation zwischen Seiten und die Navigation in einer Seite.
+
+Wenn es um Navigation zwischen Seiten geht, ist es am besten, die Navigationslinks in einem `<nav>`-Zeichen zu platzieren.
+Es ist eine Sache, die zu tun ist.
+
+Wenn es mehrere Links hintereinander gibt, ist normalerweise am besten, sie im Listenformat anzuordnen. Es sollte so gestaltet
+werden, dass es nicht wie eine Liste aussieht, aber es wäre eine Liste, die Screenreader-Benutzer hören können, wenn es
+„Liste mit fünf Einträgen“ heißt und sie können jeden, der fünf Einträge durchgehen.
+
+Wenn du Menüs mit Untermenüs hast, kannst du eine Liste mit einer oder mehreren Unter-Listen machen.
+
+Es ist wichtig, dass jeder der Navigationslinks einen aussagekräftigen Text enthält und der Linktext von Seite zu Seite
+einheitlich ist. Wenn du auf einer Seite „Kontakt“ sagst, solltest du auf der anderen Seite nicht „Schick uns eine E-Mail“
+sagen. Verwende einfach eine einheitliche Formulierung.
+
+Wenn es um die Navigation auf den Seiten geht, solltest du darauf achten, dass das Ziel des Links einen Text enthält. Der
+Screenreader hat nichts Sinnvolles zu sagen, wenn du ihn nur zu einem leeren Container schickst.
+
+## Links
+
+Es gibt einige Dinge, die du bei allen Links beachten musst. Unter anderem Links zu anderen Orten auf deiner Webseite. Oder
+Links, die deine Seite verlassen.
+
+- Es ist erforderlich, dass Links mit der Tastatur fokussiert werden können, d. h. du musst die Tabulatortaste benutzen
+  können, um auf einen Link zu gelangen.
+
+- Wenn du mit der Tabulatortaste auf den Link klickst, solltest du einen visuellen Fokusindikator haben.
+
+- Sie müssen visuell von nicht verlinktem Text unterscheiden können. Du kannst ihn mit Unterstreichungen erreichen. Oder,
+  wenn er im Navigationsmenü ist, mit einer Umrandung.
+
+- Der Linktext muss aussagekräftig sein, da Bildschirmleser häufig nur den Linktext anzeigen. Wenn du auf deinem Link
+  „Hier klicken“, „Weiter“ oder „Mehr“ sagst, bedeutet das alles. Aber nur in dem Kontext, wo sie gebraucht werden. Wenn du
+  sie aus dem Kontext herausnimmst, ergibt es nicht mehr so viel Sinn. Es ist gut, Text zu verwenden, der in eine Liste von
+  Links umgewandelt werden kann.
+
+- Der Link muss ein echter Link sein, um von Hilfstechnologien erkannt zu werden. Es ist erforderlich, dass das `<a>`-Tag mit
+  einem gültigen href-Attribut versehen wird. In manchen Fällen kann das ARIA-Muster auch für Links verwendet werden, was
+  zusätzliche Markups und Skripte erfordert. Normalerweise wird das nicht empfohlen, denn ein Link ist ein Link und es ist
+  immer besser, den einfachen Weg zu gehen, weil er weniger fehleranfällig ist, wenn man ihn entwickelt.

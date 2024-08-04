@@ -1,0 +1,39 @@
+---
+title: Formularvalidierung und Feedback
+---
+
+Das Ziel der Formularvalidierung und des Feedbacks ist es, Fehler zu vermeiden, zu erkennen und zu beheben.
+
+- Jedes Formularfeld ein Label mit Barrierefreiheit hat. Das ist der erste Schritt, um Fehler zu vermeiden, denn wenn es kein
+  Label gibt, könnten die Nutzer verwirrt sein oder die falschen Informationen eingeben.
+
+- Zweitens sind die Pflichtfelder mit einem Sternchen gekennzeichnet, damit die Nutzer wissen, dass sie die Felder nicht leer
+  lassen sollen. Wir können sogar noch mehr tun als nur das Sternchen, indem wir etwas auszeichnen, das ich dir gleich zeigen werde.
+
+- Und drittens ist der Submit-Button zu Beginn deaktiviert. Sie wird erst aktiviert, wenn alle erforderlichen Felder mit Daten
+  gefüllt sind. Die Deaktivierung des Submit-Buttons ist eine weitere einfache Möglichkeit, Fehler zu vermeiden, bevor sie an den
+  Server gesendet oder gespeichert werden. Eine andere Methode wäre, das Formular die Daten übermitteln zu lassen und dem Benutzer
+  anschließend eine Rückmeldung zu geben. Beide Methoden sind in Ordnung. Wenn du verhinderst, dass das Formular abgeschickt wird,
+  kannst du die Fehler vermeiden, bevor sie überhaupt auftreten.
+
+Alle Erfolgskriterien unter 3.3 sind für die Formularvalidierung relevant. Jedes Mal, wenn ein Nutzer Daten eingibt, die
+gespeichert werden sollen, muss nach Erfolgskriterium 3.3.4 mindestens eine der folgenden Bedingungen erfüllt sein. Die Aktion
+ist umkehrbar, d. h. die Nutzer/innen können die Daten nach dem Absenden bearbeiten, oder die Informationen werden durch
+Algorithmen überprüft, die häufige Fehler abfangen sollen, oder die Eingabe wird vom/von der Nutzer/in überprüft und genehmigt,
+bevor sie gespeichert wird.
+
+Unser Formular verwendet die zweite und dritte Technik, d. h. die Überprüfung durch Algorithmen und die Bestätigung der Daten
+durch den Nutzer. Wenn wir außerdem eine Schaltfläche zum Bearbeiten hinzufügen, nachdem die Eingabe abgeschlossen ist, würde
+das auch den ersten Punkt erfüllen. Es ist nicht notwendig, alle drei Techniken anzuwenden, obwohl das in manchen Fällen eine
+gute Idee wäre.
+
+Das Erfolgskriterium 3.3.3 verlangt, dass die Seite Vorschläge zur Fehlerbehebung macht, wenn Algorithmen ein Problem erkennen
+und es bekannte Lösungen gibt. In unserem Fall wissen wir, dass ein leeres Namens- oder Nachrichtenfeld ungültig ist, also sagen
+wir dem Nutzer, dass diese Felder nicht leer sein dürfen. Andere Formulare können den Benutzer auffordern, eine gültige
+E-Mail-Adresse einzugeben oder Zahlen statt Buchstaben für eine Telefonnummer einzugeben usw.
+
+Es gibt noch weitere Überlegungen zu Formularen, vor allem, wenn sie interaktiver werden oder mehr benutzerdefinierte
+JavaScript-Komponenten wie Kombinationsfelder, Textvorhersagen oder simulierte Dropdowns enthalten. Je mehr du in Richtung
+benutzerdefinierte Komponenten, JavaScript und Interaktivität gehst, desto mehr solltest du dich mit ARIA beschäftigen, der
+Spezifikation für Barrierefreiheit von Rich Internet Applications. Denk aber daran, dass du nicht alles kompliziert machen
+musst. Die in diesem Video vorgestellten Techniken sind eine solide Grundlage für jede barrierefreie Form.

@@ -1,0 +1,140 @@
+---
+title: Farbenblind
+---
+
+import { Picture } from 'astro:assets';
+
+import RotUndGruen from "../../../../assets/personen/Rot und Grün.png";
+import RotUndGruenBlindheit from "../../../../assets/personen/Rot-Grün-Blindheit.png";
+import AllColors from "../../../../assets/personen/Alle Farben.png";
+import RedandBlack from "../../../../assets/personen/Rot und Schwarz.png";
+import RedandBlackSimulation from "../../../../assets/personen/Rot-Schwarz-Simulation.png";
+import CourseTable from "../../../../assets/personen/course-table.png";
+import CourseTableWrong from "../../../../assets/personen/course-table-wrong.png";
+import ExternalLink from '../../../../components/ExternalLink.astro';
+
+## UX-Persona: Triff Randal
+
+Randal ist 78 Jahre alt und pensionierter Gärtner. Er chattet gerne mit seinen Enkelkindern per Videochat. Seine Tochter hat
+ihm dafür einen neuen Computer gekauft. Randal fühlt sich aber nicht besonders wohl mit Computern.
+
+### Randals Szenario
+
+Randal weiß oft nicht, ob seine Enkelkinder online sind, weil der grüne Punkt, der anzeigt, ob sie online sind, dem roten Punkt,
+der anzeigt, wenn sie offline sind, sehr ähnlich sieht. Das macht ihn wütend, weil er nicht weiß, ob sie antworten, bis er sie anruft.
+
+Randal liest gerne Gartenblogs. Manchmal stehen dort Anweisungen zum Pflanzen mit Farbcodes für die besten Pflanzzeiten. Aber die
+Farbcodierung kann er nicht lesen. Manchmal muss er anderswo nach diesen Informationen suchen. Er mag eine bestimmte Garten-Website,
+findet aber manchmal den Weg nicht, weil die Registerkarten grün markiert sind.
+
+## Überblick
+
+Farbsehschwäche bedeutet nicht, dass man gar keine Farben sieht. Farbsehschwäche bedeutet, dass man bestimmte Farben nicht
+unterscheiden kann. Besonders betrifft das Farben, die gleich hell oder leuchtend sind. Für Menschen ohne Farbsehschwäche sehen
+diese Farben aber unterschiedlich aus.
+
+## Arten von Farbenblindheit
+
+Es gibt verschiedene Arten von Farbenblindheit. Deshalb ist es schwierig zu sagen, welche Farbkombinationen für Menschen mit
+Farbenblindheit am schlimmsten sind. Die häufigste Form der Farbenblindheit ist die Rot-Grün-Farbenblindheit. Deuteranopie und
+Protanopie sind zwei Arten von Rot-Grün-Farbenblindheit. Manche Menschen können auch die Farben Blau und Gelb nicht unterscheiden.
+Es gibt auch Menschen, die können alle Farben nicht sehen. Menschen mit Achromatopsie sehen Farben wie Grautöne.
+
+Es ist schwer zu verstehen, wie Menschen Farbenblindheit erleben. Die folgenden Bilder zeigen aber, wie eine Person mit
+Rot-Grün-Sehschwäche und Schwarz-Weiß-Sehen Farben sieht.
+
+Wenn Sie die Zahlen in einem der Bilder nicht erkennen, finden Sie hier eine Erklärung: Die Zahl sechs ist im ersten Kreis zu
+sehen. In der zweiten steht die Zahl Acht. Die Zahl 45 erscheint im dritten Kreis. Im vierten Bild steht die Zahl 56 (roter Text
+auf grünem Hintergrund).
+
+### Rot-Grün-Blindheit und Achromasie
+
+#### Rot und Grün
+
+<Picture src={RotUndGruen} formats={['avif', 'webp']} alt="Vier Kreise mit Zahlen darin" />
+
+Die meisten Menschen können keine Farben wie Rot, Orange oder Grün unterscheiden. Sie sind dann rot-grün-blind. Hier siehst du
+Beispiele für Farben, die man leicht verwechseln kann. Kannst du die Zahlen in den Kreisen erkennen?
+
+#### Rot-Grün-Blindheit
+
+<Picture src={RotUndGruenBlindheit} formats={['avif', 'webp']} alt="Die gleichen vier Kreise, wie sie von jemandem mit Rot-Grün-Blindheit gesehen werden" />
+
+Menschen mit Rot-Grün-Sehschwäche sehen die Bilder so, wie sie hier angepasst wurden. So kann man die Zahlen nicht gut unterscheiden.
+
+#### Rot-Grün-Blindheit
+
+<Picture src={RotUndGruenBlindheit} formats={['avif', 'webp']} alt="Die gleichen vier Kreise, wie sie von jemandem mit Rot-Grün-Blindheit gesehen werden" />
+
+Menschen mit Rot-Grün-Sehschwäche sehen die Bilder so, wie sie hier angepasst wurden. So kann man die Zahlen nicht gut unterscheiden.
+
+#### Alle Farben
+
+<Picture src={AllColors} formats={['avif', 'webp']} alt="So sehen die Kreise in den beiden Bildern aus, wenn man sie in Grautönen betrachtet." />
+
+In sehr seltenen Fällen kann eine Person alle Farben nicht unterscheiden. Die Welt erscheint dann grau. Hier sind Bilder aus den
+vorherigen Beispielen, die so verändert wurden, dass sie grau erscheinen.
+
+### Schwierigkeiten, Rot und Schwarz zu unterscheiden.
+
+Manche Menschen können die Farben Rot und Schwarz nicht gut unterscheiden. Die Beispiele unten zeigen, wie ähnlich die Farben für
+Menschen mit Farbenblindheit sein können.
+
+#### Rot und Schwarz
+
+<Picture src={RedandBlack} formats={['avif', 'webp']} alt="Roter Text auf schwarzem Hintergrund: Rückkehr des Roten Barons" />
+
+Für manche Menschen ist es schwierig, Rot und Schwarz zu unterscheiden. Hier siehst du, wie Rot und Schwarz für Menschen
+aussehen können, die nicht farbenblind sind.
+
+#### Rot-Schwarz-Simulation
+
+<Picture src={RedandBlackSimulation} formats={['avif', 'webp']} alt="Das Bild davor, aber mit rotem Text, der nicht so hell ist." />
+
+Hier ist ein Bild, das für Menschen, die Rot und Schwarz nicht gut sehen können, anders aussieht. Der rote Text und das
+rote Bild gehen fast im schwarzen Hintergrund auf.
+
+### Verwenden Sie Farbe nicht allein, um Informationen zu vermitteln
+
+Farben können ähnlich aussehen. Deshalb sollte man Farbe nicht als einzige Möglichkeit zur Kommunikation oder Unterscheidung
+von Informationen verwenden.
+
+Das folgende Beispiel zeigt, dass eine farbenblinde Person Informationen übersehen kann, die nur durch Farbe vermittelt werden.
+
+<Picture src={CourseTable} formats={['avif', 'webp']} alt="" />
+
+Die Farben in der Tabelle zeigen an, wie schwer die Aufgaben sind. Menschen mit Rot-Grün-Sehschwäche können die Farben
+vielleicht nicht gut unterscheiden.
+
+<Picture src={CourseTableWrong} formats={['avif', 'webp']} alt="" />
+
+Hier ist dieselbe Tabelle wie für Menschen mit Rot-Grün-Sehschwäche. Es ist schwierig, den Schwierigkeitsgrad zu erkennen,
+da die Farben für Anfänger und Fortgeschrittene gleich sind.
+
+### Assistive Technologien für Menschen mit Farbenblindheit
+
+Es gibt nicht viele Hilfsmittel für Menschen, die Farben nicht unterscheiden können. Die meisten Menschen müssen damit leben.
+Ein Unternehmen namens <ExternalLink href="https://enchroma.com/" text="EnChroma" /> kann helfen. EnChroma sagt, dass ihre
+Brille helfen kann, wenn man bestimmte Arten von Farbenblindheit hat. Vielleicht ist das ja was für Sie, wenn Sie Farbenblind sind.
+
+## Barrierefreiheit im Internet für Menschen mit Farbenblindheit
+
+Die meisten Menschen, die farbenblind sind, können Farben sehen. Sie können aber bestimmte Farben und Farbkombinationen schwer
+unterscheiden. Man sollte nicht nur auf die Farbe von Informationen achten. Hier finden Sie mehr Informationen über Farbenblindheit.
+
+### Weiterführende Links: Farbenblindheit
+
+- Artikel: <ExternalLink href="http://www.archimedes-lab.org/colorblindnesstest.html" text="Farbenblindheit oder Farbsehschwäche (Farbenblindheit-Tests und -Fakten)" />
+  von Gianni A. Sarcone (Archimedes Laboratory Project)
+
+- Artikel: <ExternalLink href="http://en.wikipedia.org/wiki/Color_blindness" text="Farbenblindheit" /> (Wikipedia)
+
+- Simulator: <ExternalLink href="https://addons.mozilla.org/en-US/firefox/addon/nocoffee/" text="NoCoffee-Vision-Simulator" /> (nur für Firefox)
+
+- Simulator: <ExternalLink href="http://www.colororacle.org/" text="Color Oracle: Design für Farbbeeinträchtigte" /> (kostenloser Download für Windows, Mac und Linux)
+
+## Designaspekte für Farbenblindheit
+
+| Designüberlegungen                                                                                                                                               | Warum?                                                                                                                                                                                                                                                           |
+| -----------------------------------------------------------------------------------------------------------------------------------------------------------------| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Alle Informationen müssen klar und deutlich sein. Man muss keine Farben unterscheiden. Wenn nur Rot und Grün zur Info verwendet werden, ist das ein Problem.     | Wenn Farben die einzige Möglichkeit sind, um Informationen auf einer Webseite zu zeigen, können Menschen, die bestimmte Farben nicht erkennen können, diese Informationen nicht sehen. Verwenden Sie auch Text und Symbole, um Informationen zu vermitteln.      |

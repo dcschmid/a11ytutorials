@@ -1,0 +1,71 @@
+---
+title: WAI-ARIA (Accessible Rich Internet Applications) 1.0
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import ExternalLink from '../../../../components/ExternalLink.astro';
+
+WAI-ARIA ist eine neue Technik, die dabei helfen soll, dass Webseiten für alle Nutzer zugänglich sind. ARIA hilft Entwicklern,
+die Eigenschaften von HTML-Elementen anzugeben, egal ob die Inhalte statisch oder dynamisch sind. ARIA ist keine neue Sprache.
+Es ist ein Zusatz für HTML. Sie können einem HTML-Element einfach die Rolle "Navigation" hinzufügen, indem Sie es als Attribut
+eingeben.
+
+<Aside title="Beispiel">
+    So weisen Sie die navigation Rolle mit ARIA zu:
+
+    ```html
+    <div role="navigation">
+    ```
+
+    So fügen Sie die aria-haspopup Eigenschaft mit ARIA hinzu:
+
+    ```html
+    <div aria-haspopup="true">
+    ```
+
+    Andere ARIA-Attribute folgen einer ähnlichen Syntax.
+</Aside>
+
+## ARIA Funktionen
+
+ARIA ist für Menschen gedacht, die einen Screenreader benutzen. Sie können damit besser verstehen, was auf dem Bildschirm passiert.
+ARIA hilft Screenreader-Benutzern, zu verstehen, was auf dem Bildschirm passiert.
+
+- Ein Link kann ein Pop-up öffnen.
+
+- Ein Objekt kann sich erweitern oder verkleinern.
+
+- Eine Seite kann sich ändern oder aktualisieren.
+
+- Es kommt darauf an, um was für ein Objekt oder Widget es sich handelt. Zum Beispiel:
+
+    - Registerkarten
+
+    - Reiter
+
+    - Schieberegler
+
+    - Warndialog
+
+    - Tooltip
+
+    - Menü
+
+    - Menüpunkt
+
+    - Baumansicht
+
+Dieser Text erklärt nur ein bisschen, was ARIA kann. ARIA ist für Webentwickler und Programmierer gedacht, da man JavaScript
+kennen muss, um ARIA zu nutzen. Es kann viel Zeit kosten, ARIA zu lernen. Die Programmierlogik ist komplex und es gibt viele
+Nuancen zu beachten, damit ARIA-Widgets in verschiedenen Browsern und Screenreadern gut funktionieren.
+
+- <ExternalLink href="http://www.w3.org/WAI/intro/aria.php" text="WAI-ARIA Übersicht" />
+
+- <ExternalLink href="http://www.w3.org/TR/wai-aria/" text="WAI-ARIA 1.2" />
+
+- <ExternalLink href="https://www.w3.org/WAI/ARIA/apg/" text="WAI-ARIA Autorenpraktiken" />
+
+## WAI-ARIA Autorenpraktiken
+
+Die <ExternalLink href="https://www.w3.org/WAI/ARIA/apg/" text="WAI-ARIA Authoring Practices Guide" /> ist eine gute Anleitung, um zu lernen,
+wie man ARIA implementiert. Dieser Leitfaden erklärt, wie ARIA-Widgets aufgebaut sind und wie man sie benutzt.

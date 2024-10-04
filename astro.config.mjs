@@ -11,6 +11,7 @@ export default defineConfig({
       defaultLocale: "de",
       plugins: [starlightLinksValidator(), starlightImageZoom(), starlightThemeRapide()],
       title: "A11Y-Tutorials",
+      customCss: ["./src/styles/custom.scss"],
       social: {
         github: "https://github.com/withastro/starlight",
       },
@@ -174,6 +175,148 @@ export default defineConfig({
             {
               label: "Single-Page-Apps",
               slug: "schnelleinstieg-in-die-barrierefreiheit/single-page-apps",
+            },
+          ],
+        },
+        {
+          label: "Grundlagen der Barrierefreiheit – Behinderungen und Richtlinien",
+          items: [
+            // Each item here is one entry in the navigation menu.
+            {
+              label: "Einleitung",
+              slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/einleitung",
+            },
+            {
+              label: "Arten von Behinderungen: Personen",
+              items: [
+                {
+                  label: "Einleitung",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/einleitung",
+                },
+                {
+                  label: "Blind",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/blind",
+                },
+                {
+                  label: "Geringes Sehvermögen",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/geringes-sehvermoegen",
+                },
+                {
+                  label: "Farbenblind",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/farbenblind",
+                },
+                {
+                  label: "Gehörlos",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/gehoerlos",
+                },
+                {
+                  label: "Taubblinde",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/taubblinde",
+                },
+                {
+                  label: "Motorische Behinderungen",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/motorische-behinderungen",
+                },
+                {
+                  label: "Sprachbehinderungen",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/sprachbehinderungen",
+                },
+                {
+                  label: "Kognitive Behinderungen",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/kognitive-behinderungen",
+                },
+                {
+                  label: "Lesebehinderungen",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/lesebehinderungen",
+                },
+                {
+                  label: "Anfälle",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/anfaelle",
+                },
+                {
+                  label: "Mehrfachbehinderungen",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/mehrfachbehinderungen",
+                },
+              ],
+            },
+            {
+              label: "Leitlinien",
+              items: [
+                {
+                  label: "Einleitung",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/leitlinien/einleitung",
+                },
+                {
+                  label: "Richtlinien für die Barrierefreiheit von Webinhalten (WCAG)",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/leitlinien/wcag",
+                },
+                {
+                  label: "Richtlinien für die Barrierefreiheit des Autorentools (ATAG) 2.0",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/leitlinien/atag",
+                },
+                {
+                  label: "WAI-ARIA (Accessible Rich Internet Applications) 1.0",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/leitlinien/wai-aria",
+                },
+              ],
+            },
+            {
+              label: "Gesetze",
+              items: [
+                {
+                  label: "Einleitung",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/gesetze/einleitung",
+                },
+                {
+                  label: "Vereinigte Staaten",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/gesetze/usa",
+                },
+                {
+                  label: "Kanada",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/gesetze/kanada",
+                },
+                {
+                  label: "Europa",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/gesetze/europa",
+                },
+                {
+                  label: "Andere Regionen",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/gesetze/andere-regionen",
+                },
+              ],
+            },
+            {
+              label: "Mythen und Missverständnisse über Barrierefreiheit",
+              items: [
+                {
+                  label: "Einleitung",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/mythen-und-missverstaendnisse/einleitung",
+                },
+                {
+                  label: "Mythos - Barrierefreiheit kommt nur einer kleinen Minderheit zugute",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/mythen-und-missverstaendnisse/mythos-barrierefreiheit-kommt-nur-einer-kleine-minderheit-zugute",
+                },
+                {
+                  label: "Mythos - Barrierefreiheit ist ein kurzfristiges Projekt",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/mythen-und-missverstaendnisse/mythos-barrierefreiheit-ist-ein-kurzfristiges-projekt",
+                },
+                {
+                  label: "Mythos - Barrierefreiheit sollte der letzte Schritt sein",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/mythen-und-missverstaendnisse/mythos-barrierefreiheit-sollte-der-letzte-schritt-sein",
+                },
+                {
+                  label: "Mythos - Barrierefreiheit ist schwierig und teuer",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/mythen-und-missverstaendnisse/mythos-barrierefreiheit-ist-schwierig-und-teuer",
+                },
+                {
+                  label: "Mythos - Barrierefreiheit ist hässlich",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/mythen-und-missverstaendnisse/mythos-barrierefreiheit-ist-haesslich",
+                },
+                {
+                  label: "Zusammenfassung",
+                  slug: "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/mythen-und-missverstaendnisse/zusammenfassung",
+                },
+              ],
             },
           ],
         },

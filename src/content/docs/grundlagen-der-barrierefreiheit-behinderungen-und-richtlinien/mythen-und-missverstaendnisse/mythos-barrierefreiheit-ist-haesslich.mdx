@@ -1,0 +1,114 @@
+---
+title: Mythos - Barrierefreiheit ist hässlich
+---
+
+## Die Wahrheit: Barrierefreie Websites können atemberaubend schön sein... oder auch nicht
+
+Entlarven wir zunächst die Angst vor dem Hässlichen. Sie ist ein Mythos oder sollte es zumindest sein. Sicherlich gibt es
+hässliche Produktdesigns für Menschen mit Behinderungen. Aber das ist eher ein Versagen der Vorstellungskraft als eine
+notwendige Bedingung. Wenn Sie hässliche Designs entwerfen wollen, können Sie das tun, aber benutzen Sie Zugänglichkeit nicht als
+Ausrede. Designs für Menschen mit Behinderungen können genauso schön (oder hässlich) sein wie Designs für alle anderen. Das ist
+Ihre Entscheidung.
+
+### Ein Vergleich: Kreativität und Schönheit bei Beinprothesen
+
+Aimee Mullins ist eine beidseitig amputierte Frau, die sich nicht mit einfachen Beinprothesen zufrieden gab. Sie hat ihre Behinderung
+in ein Ventil für kreativen Ausdruck verwandelt. Zusätzlich zu ihren normalen funktionellen Beinprothesen hat sie Sportprothesen im
+"Klingen"-Stil zum Laufen, einen separaten Satz Beinprothesen, die mehrere Zentimeter größer sind als ihre normale biologische Größe,
+und sie hat sogar einen Künstler damit beauftragt, ihr kunstvolle Beinprothesen aus Holz mit komplizierten Mustern und Verzierungen
+zu schnitzen. All diese Beinprothesen sind funktionell. Sie können auch schön sein.
+
+Lassen Sie sich von niemandem Grenzen setzen, wenn es um barrierefreies Design geht. Barrierefreiheit kann schön sein, wenn man sie
+schön macht. Es liegt an Ihnen.
+
+## Die meisten Barrierefreiheitsfunktionen im Internet sind unsichtbar
+
+Es hat sich gezeigt, dass das Hinzufügen von Zugänglichkeitsfunktionen zu Websites in den meisten Fällen wenig oder gar keinen Einfluss
+auf das visuelle Erscheinungsbild hat. Das Ziel des universellen Designs ist es, ein Design zu schaffen, das den Bedürfnissen einer
+großen Anzahl von Menschen gerecht wird. Das Schöne am Web ist, dass dies in der Regel recht einfach ist, da die meisten Verbesserungen
+der Zugänglichkeit unsichtbar sind. Sie können ein einziges Design erstellen, das gut aussieht und gleichzeitig barrierefrei ist.
+
+Lassen Sie uns eine kurze (und unvollständige) Liste von Zugänglichkeitsfunktionen durchgehen, um zu zeigen, wie viele davon das
+Design überhaupt nicht verändern:
+
+**Alt-Text für Bilder:**
+
+Nicht sichtbar. Nur für Screenreader und andere assistierende Technologien verfügbar.
+
+**Beschriftungen für Formularelemente:**
+
+Unsichtbar (zumindest das `<label>`-Tag selbst ist unsichtbar).
+
+**Überschriften:**
+
+Die Überschriften-Tags (`<h1>`, `<h2>` usw.) sind unsichtbar. Der Text selbst ist sichtbar.
+
+**Tabellenüberschriften:**
+
+Der Code zur Definition einer Kopfzelle in einer Tabelle (`<th>`) ist unsichtbar. Wenn Sie eine Zelle als Überschrift markieren, wird
+der Text fett und zentriert dargestellt und ändert somit das Erscheinungsbild der Zelle. Wenn Ihnen das nicht gefällt, können Sie
+die Zelle mit Hilfe von CSS wieder auf nicht fett und linksbündig (oder einen anderen gewünschten Stil) setzen.
+
+**Listen:**
+
+Listen ändern die Formatierung, indem sie Elemente nach Aufzählungszeichen oder Zahlen gruppieren, aber wenn Sie diese visuellen
+Effekte nicht wünschen, können Sie sie mit CSS ändern. Es ist üblich, ein Hauptnavigationsmenü für eine Website mit einer ungeordneten
+Liste (Aufzählungsliste) zu erstellen und es dann so zu formatieren, dass es wie Registerkarten oder Schaltflächen und nicht wie eine
+Aufzählungsliste aussieht.
+
+**Sprache:**
+
+Unsichtbar. Die Standardsprache des Dokuments wird im zugrundeliegenden Markup (`<html lang="en">`) festgelegt. Änderungen der
+Sprache werden ebenfalls im Markup angezeigt (`<span lang="es">Hola. Me llamo Pablo</span>`).
+
+**Tastaturzugänglichkeit:**
+
+Um sicherzustellen, dass alle Elemente mit Aktionen auf einer Webseite über die Tastatur zugänglich sind, muss das Erscheinungsbild
+der Webseite nicht geändert werden. Es ist lediglich eine Änderung in der Art und Weise erforderlich, wie das Markup und die
+skriptgesteuerten Interaktionen strukturiert sind.
+
+**Lesereihenfolge:**
+
+Unsichtbar. Die zugrunde liegende Lesereihenfolge hängt in erster Linie von der Reihenfolge ab, in der die Elemente im Quellcode
+erscheinen, und nicht von der Reihenfolge, in der sie in der visuellen Darstellung des Inhalts erscheinen. Sie können die visuellen
+Aspekte des Designs mit CSS-Positionierung nach Belieben neu anordnen, ohne die Lesereihenfolge im Markup zu ändern.
+
+**Beschriftungen:**
+
+Wenn du Untertitel verwendest, werden die Untertitel im Video nicht für die Personen angezeigt, die die Untertitel nicht
+aktiviert haben.
+
+**Audiodeskriptionen:**
+
+Wenn Audiodeskriptionen verwendet werden, können sie nicht gehört werden, es sei denn, sie sind aktiviert.
+
+**ARIA:**
+
+ARIA-Markup macht JavaScript-Widgets für unterstützende Technologien zugänglicher, ohne das Aussehen zu verändern. Das
+Markup erfolgt im Code.
+
+Einige Änderungen machen die Seite zugänglicher. Hier sind ein paar wichtige Punkte:
+
+**Farbkontrast:**
+
+Manche Webdesigns haben ähnliche Farben oder zu wenig Kontrast zwischen Text und Hintergrund. Dann müssen Designer die Farben ändern.
+
+**Links zum Überspringen der Navigation:**
+
+Man sollte einen Link ganz oben auf der Webseite einfügen, damit die Benutzer direkt zum Hauptinhalt gelangen können. So können
+auch blinde Nutzer die Seite nutzen. Wenn sie die einzige Zielgruppe wären, könnte der Link unsichtbar sein. Aber sie sind nicht
+die einzige Zielgruppe. Auch sehende Tastaturbenutzer müssen auf den Link zugreifen können. Designer machen oft keine zusätzlichen
+Links in ihre Designs, wenn sie wissen, dass sie für Menschen mit Behinderungen sind und nicht für die meisten Besucher ihrer Website.
+Designer können den Link auch unsichtbar machen, bis man ihn mit der Tabulatortaste auswählen kann. Dann verschwindet er, wenn man
+weiter tabbt. So können auch sehende Nutzer den Link nutzen, ohne dass das Design unübersichtlich wird.
+
+**Kognitive Behinderungen:**
+
+Hier muss das Design ganz anders aussehen. Wenn Sie auf die Bedürfnisse von Menschen mit kognitiven Behinderungen achten, müssen
+Sie den Inhalt stark vereinfachen. Je nachdem, welche Art von Behinderung Sie berücksichtigen, müssen Sie den Text eventuell stark
+vereinfachen oder sogar ganz weglassen. Stattdessen können Sie Bilder, Videos, Audio und interaktive Elemente nutzen. Dieser Kurs
+ist nicht ideal für Menschen mit kognitiven Behinderungen. Manche Inhalte hier sind nicht für Menschen mit starken kognitiven
+Behinderungen geeignet. Es wäre schwierig, sie für Menschen zugänglich zu machen, die nicht genug über Webdesign verstehen. Dieser
+Kurs ist für Fachleute gedacht, die mehr über Barrierefreiheit im Internet erfahren und die vorgestellten Sprachen und Konzepte
+verstehen möchten. Das ist meine ehrliche Einschätzung, wie gut dieser Kurs für Menschen mit schweren kognitiven Behinderungen
+zugänglich ist. Es gibt einige Vorschläge, die man umsetzen kann, ohne das Design zu verändern.

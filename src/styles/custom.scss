@@ -1,0 +1,14 @@
+body .accordion__item {
+    button {
+        background-color: rgb(87, 72, 166);
+
+        &:hover
+        &:focus {
+            background-color: rgb(148, 146, 160);
+        }
+    }
+
+    &.is-active button {
+        background-color: rgb(112, 108, 108);
+    }
+}

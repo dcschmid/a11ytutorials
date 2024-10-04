@@ -1,0 +1,118 @@
+---
+
+---
+
+<style lang="scss">
+  #dyslexia-text {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+
+    @keyframes move {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    span {
+      display: inline-block;
+      animation: move 0.5s ease-in-out infinite;
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  button.paused {
+    background-color: #28a745; /* Grün für "Fortsetzen" */
+  }
+</style>
+
+<div>
+  <p id="dyslexia-text">
+    Einige Menschen haben ihre Erfahrungen beim Lesen mit Legasthenie als Buchstaben beschrieben, die sich zu bewegen
+    scheinen und die Plätze zu tauschen. Unten sehen Sie ein animiertes Bild des ersten Absatzes auf dieser Seite, in
+    dem sich die Buchstaben der einzelnen Wörter im Absatz bewegen. So kann der Absatz für jemanden mit Legasthenie
+    erscheinen.
+  </p>
+  <button id="toggle-btn">Pause</button>
+</div>
+
+<script>
+  let isPaused = false;
+  let intervalId: string | number | NodeJS.Timeout | undefined;
+  const button = document.getElementById("toggle-btn") as HTMLButtonElement;
+
+  // Funktion, die Buchstaben vertauscht
+  function scrambleWord(word: any) {
+    if (word.length < 3) return word; // Vermeide sehr kurze Wörter
+    const middle = word.slice(1, -1).split("");
+    for (let i = middle.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [middle[i], middle[j]] = [middle[j], middle[i]];
+    }
+    return word[0] + middle.join("") + word[word.length - 1];
+  }
+
+  // Text animieren
+  function scrambleText() {
+    const paragraph = document.getElementById("dyslexia-text");
+    if (paragraph) {
+      const words = paragraph.innerText.split(" ");
+      const scrambledWords = words.map(scrambleWord);
+      paragraph.innerText = scrambledWords.join(" ");
+    } else {
+      console.error("Element with id 'dyslexia-text' not found");
+    }
+  }
+
+  // Starte die Buchstabenanimation
+  function startScrambling() {
+    intervalId = setInterval(scrambleText, 1000); // Alle 1 Sekunde Buchstaben vertauschen
+  }
+
+  // Stoppe die Buchstabenanimation
+  function stopScrambling() {
+    clearInterval(intervalId);
+  }
+
+  // Umschalten zwischen Pause und Fortsetzen
+  function toggleAnimation() {
+    if (isPaused) {
+      startScrambling();
+      button.textContent = "Pause";
+      button.classList.remove("paused");
+    } else {
+      stopScrambling();
+      button.textContent = "Fortsetzen";
+      button.classList.add("paused");
+    }
+    isPaused = !isPaused;
+  }
+
+  // Event Listener für den Button
+  if (button) {
+    button.addEventListener("click", toggleAnimation);
+  } else {
+    console.error("Das Element mit der ID 'toggle-btn' wurde nicht gefunden.");
+  }
+  // Animation direkt starten, wenn die Seite geladen wird
+  startScrambling();
+</script>

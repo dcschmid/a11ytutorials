@@ -1,0 +1,53 @@
+---
+title: Blind
+---
+import { Aside } from '@astrojs/starlight/components';
+import {YouTube} from 'astro-lazy-youtube-embed'
+
+## UX-Persönlichkeit: Treffen wir Janice
+
+Janice berät seit über 15 Jahren Menschen. Sie hört ihren Kunden zu, um sie besser zu verstehen. Dann zeigt sie ihnen, wie
+sie ihre Probleme selbst lösen können. So sieht sie, dass ihre Kunden mit der Zeit besser werden.
+
+### Janices Szenario
+
+Janice bereitet sich auf Sitzungen mit Kunden vor, indem sie ihre Notizen am Computer anhört. Das dauert nur 10 Minuten.
+
+Die Kunden buchen Termine online. Sie stellt Zeiten als "verfügbar" ein, und Kunden können diese Zeiten dann buchen. Zwischen
+den Terminen macht sie sich immer 45 Minuten lang Notizen und bereitet sich auf die nächste Person vor.
+
+Sie liest auch Online-Zeitschriften von Psychologiemagazinen, um sich über neue Forschung und Richtlinien in ihrem Bereich zu
+informieren. Wenn sie eine neue Website öffnet, startet ihr Screenreader automatisch. Sie benutzt einen Bildschirmleser, um im
+Internet nach Forschungsergebnissen zu suchen. Der Screenreader sagt zuerst, welcher Browser verwendet wird und wie die Seite
+heißt. Das ist der Name, den man in der Titelleiste des Browsers oder in den Registerkarten sieht, wenn man die Seite als
+Lesezeichen speichert. Der Screenreader liest dann von links nach rechts auf der Seite. Dabei werden Inhalte wie ein Logo und
+ein Slogan, ein Suchfeld, ein Menü und dann der Inhalt der Seite vorgelesen. Sie hört sich das an, wenn sie eine neue Website
+öffnet. Auf anderen Seiten will sie das nicht hören. Sie benutzt Tastenkombinationen, damit sie direkt zum Inhalt der Seite
+kommt. Manchmal klickt sie sich mit Überschriften, Orientierungspunkten und Links durch eine Seite.
+
+## Screenreader
+
+Ein Screenreader sagt den Text auf einer Webseite vor. Blinde Menschen hören sich Webseiten an. Im folgenden Video erklärt Rakesh
+Babu, wie es ist, einen Screenreader zu verwenden. Er zeigt auch, welche Probleme es bei Websites geben kann, die nicht barrierefrei
+sind.
+
+<Aside title="Hinweis">
+Erfahrene Screenreader-Benutzer erhöhen oft die Geschwindigkeit ihres Screenreaders. Wenn Sie also Schwierigkeiten haben,
+den Screenreader zu verstehen, könnte das der Grund sein. Die Standardgeschwindigkeit von Screenreadern ist langsamer und
+klingt gesprächig.
+</Aside>
+
+<YouTube videoId="qL4shFJHOvc" title="Helping the blind navigate the online world" />
+
+## Gestaltungshinweise für Blinde
+
+| Designüberlegungen                                                                                                                                    | Warum?                                                                                                                                                                                                                                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Alle Inhalte müssen in Textform oder als Textäquivalent** (z. B. Alt-Text für Bilder) dargestellt werden.                                           | Screenreader können Bilder nicht direkt lesen, aber sie können die Texte dazu lesen, die Sie ihnen zur Verfügung stellen.                                                                                                                                                                                                    |
+| **Informationen dürfen nicht nur durch Bilder vermittelt werden.**                                                                                    | Screenreader können nicht alle Bilder anzeigen. Auch wenn einige Screenreader einige visuelle Informationen anzeigen, werden diese in der Regel nicht angesagt.                                                                                                                                                              |
+| **Alle Funktionen müssen über die Tastatur verfügbar sein.** Achten Sie darauf, den Test mit eingeschaltetem Screenreader durchzuführen.              | Blinde Benutzer können eine Maus oder ein Trackpad zwar nutzen, aber sie wissen nicht, wo sich der Mauszeiger befindet. Sie navigieren besser über die Tastatur.                                                                                                                                                             |
+| Der Text muss **gut strukturiert und verständlich** sein. Dazu gehören Überschriften, Aufzählungen, Tabellen und Listen.                              | Viele Nutzer von Bildschirmleseprogrammen öffnen Listen, um zu verstehen, was auf einer Seite steht. Sie können auch zu bestimmten Stellen auf der Seite springen, zum Beispiel zum Hauptinhaltspunkt oder zu einer Überschrift.                                                                                             |
+| **Alle benutzerdefinierten Steuerelemente müssen richtig benannt und bezeichnet werden.** Wenn nötig, müssen sie ihren Wert ändern.                   | Benutzerdefinierte Steuerelemente haben keine semantischen Teile. Deshalb können Screenreader den Nutzern nicht mitteilen, was das Widget ist. Auch können Nutzer nicht über die Eigenschaften des Widgets informieren. Das geht nur, wenn man die Informationen über ARIA-Namen, Rollen, Zustände und Eigenschaften angibt. |
+| Benutzer müssen sofort eine Rückmeldung bekommen, wenn sie etwas machen. Wenn eine Funktion aktiviert wird, darf es keine Stille geben!               | Beispiele für Feedback sind: Region erweitert/eingeklappt, Wert geändert (z. B. für einen Schieberegler), Formularübermittlung erfolgreich/nicht erfolgreich, Benachrichtigung über neue Seite in Single-Page-Anwendungen.                                                                                                   |
+| Blinde Menschen brauchen zu Videos auch Beschreibungen, damit sie alles verstehen.                                                                    | Blinde Benutzer können den Dialog, die Erzählung und andere Töne in Videos hören, aber sie können die visuellen Teile eines Videos nicht sehen. Wenn die visuellen Teile also wichtige Informationen enthalten, müssen diese Teile für blinde Benutzer laut beschrieben werden, damit sie sie verstehen können.              |
+| Auf Handys und Tablets: Man muss auf alles klicken. Mit aktiviertem Screenreader funktionieren keine benutzerdefinierten Wischaktionen auf Webseiten. | Wenn man blind ist und ein mobiles Gerät benutzt, werden Wischaktionen von der Software verwendet. Damit Funktionen und Steuerelemente auf einer mobilen Webseite funktionieren, müssen sie angeklickt werden.                                                                                                               |

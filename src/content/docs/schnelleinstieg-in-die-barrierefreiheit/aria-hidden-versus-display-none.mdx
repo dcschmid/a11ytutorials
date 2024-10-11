@@ -2,13 +2,11 @@
 title: aria-hidden versus display:none
 ---
 
-Die visuelle Ausblendung von Elementen ist eine gängige Technik, um Menüs, Untermenüs in einer Baumansicht, nicht aktive
-Modals und so weiter auszublenden.
+Man kann Elemente ausblenden, damit man sie nicht sieht. Das macht man, wenn man ein Menü hat, das man erweitern kann. Oder wenn man
+ein Menü hat, das in einer Baumansicht ist. Oder wenn man ein Menü hat, das nicht aktiv ist.
 
-Manchmal wird dies mit der CSS-Eigenschaft display:none erreicht. Was mit display:none gekennzeichnet ist, ist sowohl für
-Screenreader als auch für sehende Nutzer/innen nicht verfügbar.
+Das wird meistens mit der CSS-Eigenschaft "display: none" erreicht. Alles, was mit "display: none" markiert ist, ist nicht verfügbar.
 
-Eine weitere Eigenschaft namens aria-hidden hat eine andere Wirkung. Sie verbirgt das Element nur für Benutzer von
-Hilfstechnologien, indem sie es aus dem Accessibility-Tree herausnimmt, es aber auf der Seite belässt, damit sehende
-Benutzer es weiterhin sehen können. Normalerweise ist das eine schwierige Idee. Vereinzelt gibt es ein paar legitime
-Anwendungsfälle, in denen du aria-hidden verwenden kannst, aber ich würde sagen, dass du damit sehr vorsichtig sein solltest.
+Es gibt eine andere Eigenschaft namens "aria-hidden". Das Element wird nur für Benutzer von Hilfstechnologien ausgeblendet. Es bleibt
+aber auf der Seite, damit sehende Benutzer es weiterhin sehen können. Das ist keine gute Idee. Manchmal ist aria-hidden eine gute
+Lösung. Aber seien Sie vorsichtig!

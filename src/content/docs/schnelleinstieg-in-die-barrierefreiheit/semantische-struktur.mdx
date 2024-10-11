@@ -2,11 +2,10 @@
 title: Semantische Struktur
 ---
 
-Die semantische Struktur bezieht sich auf die Fähigkeit von Screenreadern und anderen Hilfsmitteln, eine Sache zu
-erkennen. Ich habe den Accessibility-Tree bereits erwähnt. Elemente, die eine semantische Bedeutung besitzen, werden
-im Accessibility-Tree aufgenommen.
+Die semantische Struktur hilft Nutzern von Screenreadern und anderen Assistenztechnologien, zu erkennen, was ein Ding ist. Den
+Zugänglichkeitsbaum habe ich bereits früher in diesem Kurs erwähnt. Elemente mit Bedeutung kommen in den Zugänglichkeitsbaum.
 
-Zu den Dingen, die nicht im Accessibility-Tree landen, gehören:
+Dinge, die nicht im Zugänglichkeitsbaum sind, sind zum Beispiel:
 
 - `<div>`
 
@@ -18,9 +17,9 @@ Zu den Dingen, die nicht im Accessibility-Tree landen, gehören:
 
 - Farben
 
-- und Stile
+- Und Stile
 
-Es gibt drei Hauptkomponenten für semantische Elemente:
+Semantische Elemente bestehen aus drei Teilen.
 
 - Name
 
@@ -28,13 +27,11 @@ Es gibt drei Hauptkomponenten für semantische Elemente:
 
 - Wert
 
-Der Name ist der Text, der mit dem Element verbunden ist, z. B. der Text in einer Überschrift oder der alternative Text
-zu einem Bild.
+Ein Element hat einen Namen. Dieser Name steht in Verbindung mit Text. Beispiele sind Überschriften oder Bildunterschriften.
 
-Die Rolle ist die Art des Elements, z. B. Links, Tabellen, Überschriften usw.
+Die Rolle ist eine Art Element, z. B. Link, Tabelle, Überschrift.
 
-Der Wert kann eine Eigenschaft oder ein Zustand sein. Auf diesen Aspekt werden wir noch genauer eingehen, wenn wir über
-ARIA und benutzerdefinierte Komponenten sprechen. Wichtig ist jetzt, dass die semantische Struktur programmatisch an
-unterstützende Technologien wie Screenreader weitergegeben wird. Wenn etwas wie eine Überschrift aussieht, es aber nicht
-ist, oder wenn etwas wie eine Tabelle aussieht, es jedoch nicht ist, ist das eine Fälschung. Sie haben keine semantische
-Struktur und die Benutzer von Bildschirmlesegeräten wissen nicht, was sie sind.
+Der Wert kann eine Eigenschaft oder ein Zustand sein. Wir erklären ARIA und benutzerdefinierte Komponenten später genauer. Es
+ist wichtig, dass die Struktur von Programmen auch für Screenreader verständlich ist. Wenn etwas wie eine Überschrift aussieht,
+aber keine ist, oder wie eine Tabelle, aber keine ist, sind es Fälschungen. Sie haben keine Bedeutung und Screenreader-Benutzer
+wissen nicht, was sie sind.

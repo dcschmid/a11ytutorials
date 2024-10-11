@@ -1,62 +1,61 @@
 ---
-title: Daten-Tabellen
+title: Datentabellen
 ---
 
-Die Barrierefreiheit von Daten-Tabellen hängt vorwiegend davon ab, ob die Beziehung zwischen den Tabellenköpfen und den
-Datenzellen verständlich ist. Sobald die Nutzer die Beziehung verstehen, ist die Struktur der Tabelle zugänglich.
+import { Aside } from '@astrojs/starlight/components';
 
-## Beziehung zwischen den Kopfzeilen und Daten
+Bei barrierefreien Datentabellen ist es wichtig, dass man die Zusammenhänge versteht. Die Überschriften und Daten gehören zusammen.
+Wenn die Benutzer verstehen, wie die Tabelle aufgebaut ist, können sie sie gut nutzen.
 
-Sehenden Nutzern fällt es leicht, die strukturelle Beziehung zwischen Kopfzeilen und Datenzellen zu verstehen, weil sie
-die Kopfzeilen oben in den Spalten oder Zeilen sehen können.
+## Beziehungen zwischen Überschriften und Daten
 
-Es ist für blinde Benutzer nicht möglich, die visuelle Gitterstruktur zu erkennen, deshalb ist es notwendig, die Verbindung
-zwischen den Kopfzeilen und den Datenzellen explizit im zugrunde liegenden Markup zu erwähnen. Wenn das Markup korrekt ist,
-werden die Überschriften der einzelnen Datenzellen zugeordnet.
+Für sehende Benutzer ist es einfach, den Zusammenhang zwischen Kopfzeilen und Datenzellen zu vermitteln, weil sie die Überschriften
+sehen können. Sie wissen auch, dass die Überschriften zu den Datenzellen in den entsprechenden Spalten oder Zeilen gehören.
 
-## Regeln für die Barrierefreiheit von Tabellen
+Blinde Menschen können die Gitterstruktur nicht sehen. Deshalb muss man im Markup angeben, welche Kopfzeile zu welcher Datenzelle
+gehört. Wenn das Markup stimmt, lesen Screenreader die Header-Assoziationen für jede Datenzelle.
 
-### Regel 1: Alle Datentabellen müssen eine korrekte Kopfstruktur im Markup haben
+## Barrierefreiheitsregeln für Tabellen
 
-Die einfachste Methode ist, eine Tabelle mit Überschriften nur für die Spalten oder für die Zeilen zu erstellen. Die Zellen
-können als Kopfzellen gekennzeichnet werden, indem du für den Tabellenkopf im Markup `<th>` verwendest. Um die Kopfzeilen
-zu gruppieren, müssen die gruppierenden Kopfzeilen entweder als „colgroup“ für Spaltengruppe oder als „rowgroup“ bezeichnet
-werden. Ein Ergebnis für Bildschirmleser ist, dass beide Ebenen von Kopfzeilen gelesen werden können, wenn sie zu den Datenzellen
-navigieren.
+### Regel 1: Alle Datentabellen müssen eine korrekte Header-Struktur haben Im Markup
 
-### Regel 2: Tabellen, die nur für das visuelle Layout verwendet werden, dürfen keine Überschriften haben
+Eine Tabelle mit Überschriften ist einfach. Man kann sie für die Spalten oder für die Zeilen machen. Du kannst einfach die Zellen
+als Kopfzellen festlegen. Dafür verwendest du das Tag `<th>` für die Tabellenüberschrift im Markup. Wenn es mehrere Schichten von
+Kopfzeilen gibt, werden damit andere Überschriften gruppiert, wie in dieser Tabelle. Die Gruppierungsköpfe müssen bezeichnet werden,
+entweder als "colgroup" für die Spaltengruppe oder als "rowgroup". Für Screenreader werden beide Schichten von Kopfzeilen gelesen,
+wenn man zu Datenzellen navigiert.
 
-Die Überschrift, die die Tabelle hat, würde keine nützlichen Informationen vermitteln und wäre sogar irreführend.
+### Regel 2: Auf der anderen Seite, alle Tabellen, die nur für das visuelle Layout verwendet werden Darf keine Kopfzeilen haben
 
-Die Verwendung von Tabellen für das Layout verstößt nicht gegen die Barrierefreiheit, solange sie keine Kopfzeilen enthalten.
+Die Kopfzeilen der Tabelle enthalten keine nützlichen Informationen und sind deshalb irreführend.
 
-## Bewährte Praktiken für die Barrierefreiheit von Tabellen
+<Aside title="Hinweis">
+    Tabellen mit Kopfzeilen sind nicht barrierefrei. Tabellen ohne Kopfzeilen sind barrierefrei. So werden Tabellen barrierefrei. Das
+    sind keine Vorschriften, aber es ist besser für Menschen mit Behinderung. Wenn Sie diesen Tipps folgen, ist es vollständiger.
+</Aside>
 
-Es handelt sich hierbei zwar nicht um Vorschriften, jedoch kann die Barrierefreiheit durch sie erheblich verbessert und
-verbessert werden.
+### Beste Lösung 1: Geben Sie der Tabelle mithilfe eines caption-Elements einen Namen. Oder aria-label oder aria-labelledby.
 
-### Beste Lösung 1: Gib der Tabelle einen Namen, indem du eine Bildunterschrift oder ein aria-label oder aria-labelled by verwendest
+Wenn Text über oder unter einer Tabelle angezeigt wird, sollte man ihn als Tabellenbeschriftung markieren. Das hilft auch
+Screenreader-Benutzern. Wenn die Tabelle einen Namen hat, können Screenreader-Nutzer den Namen vorlesen, wenn sie auf der Tabelle
+landen. So verstehen sie besser, was die Tabelle macht.
 
-Wenn du einen Text über oder unter einer Tabelle siehst, der so aussieht, als würde er einen Namen für die Tabelle liefern,
-empfehle ich dir, ihn als Bildunterschrift zu markieren. Wenn eine Tabelle eine Bildunterschrift hat, sagen Screenreader den
-Namen der Tabelle, was es erleichtert, den Zweck einer Tabelle zu verstehen.
+### Beste Lösung 2: Vermeiden Sie Überschriften in der Mitte einer Tabelle.
 
-### Beste Lösung 2: Vermeide Kopfzeilen in der Mitte einer Tabelle
+Wenn man Überschriften in der Mitte einer Tabelle platziert, wird das Markup komplizierter und anfälliger für Fehler. Das Ergebnis
+kann verwirrend sein, weil es unerwartet ist. Benutzer wissen nicht immer, ob es eine Datenzelle oder eine Kopfzelle ist.
 
-Die Platzierung von Kopfzeilen in der Mitte einer Tabelle erfordert komplexes Markup, das anfälliger für menschliche Fehler ist
-und das Endergebnis kann dennoch verwirrend sein, da es unerwartet ist. Die Benutzer können nicht immer sofort erkennen, ob es
-sich um eine Datenzelle oder eine Kopfzeile handelt.
+### Beste Lösung 3: Vermeiden Sie übergreifende oder verbundene Datenzellen
 
-### Beste Lösung 3: Vermeide übergreifende oder verschmolzene Datenzellen
-
-Die Kopfzeilenstruktur entspricht den Richtlinien, aber sie sind dennoch verwirrend für Menschen, die sie nicht sehen können, da
-das visuelle Layout wie ein Puzzle wirkt, das sich erst schrittweise enthüllt, wenn sie durch die Tabelle navigieren.
+Wenn die Kopfstruktur korrekt vermittelt wird, sind diese Tabellen verständlich. Aber sie sind immer noch verwirrend für Personen,
+die sie nicht sehen können. Das visuelle Layout ähnelt einem Puzzle, das sich nur allmählich offenbart. Während sie durch die
+Tabelle navigieren, nutzen sie eine Sprachausgabe. Wenn der NVDA-Screenreader eingeschaltet ist, drücken Sie einfach T, um in einer
+Tabelle zu navigieren. Wenn die Seite mehrere Tabellen enthält, gelangen Sie mit der T-Taste zu jeder Tabelle. Mit Umschalttaste
+plus T kann man in Tabellen auf einer Seite rückwärts navigieren. Die Beschriftung der Tabelle wird vorgelesen, während Sie auf der
+Tabelle landen.
 
 ## Navigieren in Tabellen mit einem Bildschirmlesegerät.
 
-Sobald der NVDA-Bildschirmleser aktiviert ist, klicke auf die T-Taste, um zu jeder einzelnen Tabelle zu gelangen. Wenn du die
-Umschalttaste + T drückst, kannst du rückwärts durch Tabellen navigieren.
-
-Wenn du auf der Tabelle bist, benutze die Pfeiltaste nach unten, um in die Tabelle zu gelangen, und benutze dann die Tasten
-Strg plus Alt plus Pfeil nach oben, unten, links und rechts, um durch die Zellen zu navigieren. Du kannst dich in jede Richtung
-navigieren. Wenn du das tust, sollten die Überschriften für jede Zelle im Screenreader angezeigt werden.
+In der Tabelle können Sie mit der Pfeiltaste nach unten und oben navigieren. Drücken Sie gleichzeitig Strg + Alt + Pfeiltaste, um
+nach links und rechts zu navigieren. Sie können in alle Richtungen navigieren. Sie sollten die Sprachausgabe hören. Die Sprachausgabe
+sagt Ihnen, welche Zelle welche Überschrift hat.

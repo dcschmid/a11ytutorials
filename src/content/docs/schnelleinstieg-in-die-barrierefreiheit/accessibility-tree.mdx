@@ -1,34 +1,33 @@
 ---
-title: Accessibility-Tree
+title: Zugänglichkeitsbaum
 ---
 
-Der Accessibility-Tree stellt bestimmte Knoten im DOM (Document Object Model) dar, die für die Barrierefreiheit von Bedeutung
-sind. Du hast die Möglichkeit, den Accessibility-Tree über die Entwicklerwerkzeuge des Browsers aufzurufen. Wenn du mit der
-Maus arbeitest, ist es dir möglich, mit der rechten Maustaste auf das Element zu klicken und die Inspektion auszuwählen, um die
-Entwicklertools zu öffnen. Wenn du die Tastatur verwendest, kannst du Option plus Befehl plus I auf dem Mac oder STRG plus
-Shift plus I unter Windows verwenden.
+Der Zugänglichkeitsbaum zeigt, welche Stellen in einem Dokument für die Barrierefreiheit wichtig sind. Sie können über die
+Entwicklertools im Browser auf die Struktur zugreifen. Klicken Sie mit der rechten Maustaste auf das Element und wählen Sie
+"Inspektieren" aus, um die Entwicklertools zu öffnen. Auf dem Mac drücken Sie dazu die Tastenkombination "Option + Befehl + I",
+auf Windows "Strg + Umschalt + I".
 
-Jeder Browser unterscheidet sich in der Art und Weise, wie er die Barrierefreiheit einfügt.
+In jedem Browser werden die Barrierefreiheitsoptionen etwas anders platziert.
 
-- In Firefox befindet sie sich auf einer der obersten Registerkarten, aber du musst möglicherweise die Liste der Registerkarten
-  erweitern, um sie zu sehen.
 
-- In Chrome findest du die Barrierefreiheit in der Seitenleiste. Du musst die Liste der seitlichen Tabs erweitern, um sie zu
-  finden.
+- In Firefox ist es eine Registerkarte der obersten Ebene. Manchmal muss man die Liste der Registerkarten erweitern, um sie zu sehen.
 
-- In Safari musst du zum Seitenpanel gehen, dort Knoten auswählen und anschließend zum Bereich Barrierefreiheit scrollen.
-  Auch in Safari musst du möglicherweise zuerst die Entwicklerwerkzeuge aktivieren, indem man Einstellungen für Webentwickler
-  aktiviert.
+- In Chrome ist es in der Seitenleiste. Auch hier müssen Sie eventuell die Liste der Seitenregisterkarten erweitern, um die
+  Registerkarte für die Barrierefreiheit zu finden.
 
-Wenn du den Accessibility-Tree öffnest, kannst du jedes Element auf der Seite auswählen und herausfinden, welche Rolle, welchen
-Namen oder welches Label es hat. Chrome zeigt den berechneten Wert von Elementen an, der Aufschluss darüber gibt, welche Methode
-die Website verwendet, um z. B. einen alternativen Text zuzuweisen. Nicht alles ist für die Barrierefreiheit relevant, also wird
-auch nicht jedes Accessibility-Tree angezeigt.
+- In Safari gehen Sie zur Seitenleiste, wählen den Knoten aus und scrollen nach unten zum Bereich für Barrierefreiheit. Dieser ist
+  möglicherweise eingeklappt, sodass Sie ihn möglicherweise erweitern müssen. In Safari müssen Sie eventuell zuerst die Entwicklertools
+  öffnen. Gehen Sie dazu zu Einstellungen, Erweitert und dann zu Webentwickler-Funktionen anzeigen.
 
-Wenn du einen div- oder span-Tag hast, werden beide im Accessibility-Tree komplett ignoriert, da sie keinen semantischen Wert
-haben und nur Container sind. Häufig werden diese Elemente in dem Accessibility-Tree mit einer sogenannten generischen Rolle
-dargestellt. Die semantische Funktion umfasst unter anderem Bilder, Überschriften, Orientierungspunkte, Links, Listen, Tabellen
-und Formularelemente.
+Wenn die Barrierefreiheitsstruktur geöffnet ist, können Sie ein Element auf der Seite auswählen, um zu sehen, welche Rolle, welchen
+Namen oder welche Bezeichnung und welche Eigenschaften es hat. Chrome zeigt auch den berechneten Wert von Elementen an. So sieht man,
+welche Methode von mehreren möglichen Methoden die Website verwendet hat, um beispielsweise einem Bild alternativen Text zuzuweisen.
+Manche Dinge sind für die Barrierefreiheit nicht wichtig. Deshalb werden sie nicht in der Barrierefreiheitsstruktur angezeigt.
 
-Der Accessibility-Tree zeigt dynamische Veränderungen an, wenn ein Menü geöffnet oder geschlossen wird. Screenreader und andere
-Technologien lesen den Accessibility-Tree. Sie geben die wichtigen Informationen an die Nutzer weiter.
+Wenn Sie ein Div- oder Span-Tag haben, wird es in der Barrierefreiheitsstruktur nicht angezeigt, da es keinen semantischen Wert hat.
+Die Barrierefreiheitsstruktur zeigt diese Elemente oft mit einer sogenannten generischen Rolle an. Bilder, Überschriften,
+Orientierungspunkte, Links, Listen, Tabellen und Formularelemente haben eine semantische Rolle.
+
+Die Barrierefreiheitsstruktur zeigt auch an, wenn sich Eigenschaften oder Werte ändern. Das kann zum Beispiel passieren, wenn ein
+Menü erweitert oder eingeklappt wird. Screenreader und andere Hilfsprogramme lesen die Barrierefreiheitsstruktur und sagen den Nutzern,
+was sie wissen müssen.

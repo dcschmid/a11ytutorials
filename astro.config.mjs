@@ -2,14 +2,13 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import starlightLinksValidator from "starlight-links-validator";
 import starlightImageZoom from "starlight-image-zoom";
-import starlightThemeRapide from "starlight-theme-rapide";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
     starlight({
       defaultLocale: "de",
-      plugins: [starlightLinksValidator(), starlightImageZoom(), starlightThemeRapide()],
+      plugins: [starlightLinksValidator(), starlightImageZoom()],
       title: "A11Y-Tutorials",
       customCss: ["./src/styles/custom.scss"],
       social: {
@@ -33,11 +32,11 @@ export default defineConfig({
               slug: "schnelleinstieg-in-die-barrierefreiheit/fuer-wen-ist-barrierefreiheit-im-internet-von-zentraler-bedeutung",
             },
             {
-              label: "Automatisierte Hilfsmittel für Barrierefreiheit",
+              label: "Automatisierte Barrierefreiheitstools",
               slug: "schnelleinstieg-in-die-barrierefreiheit/automatisierte-hilfsmittel-fuer-barrierefreiheit",
             },
             {
-              label: "Barrierefreiheit mit der Tastatur",
+              label: "Tastaturzugänglichkeit",
               slug: "schnelleinstieg-in-die-barrierefreiheit/barrierefreiheit-mit-der-tastatur",
             },
             {
@@ -61,7 +60,7 @@ export default defineConfig({
               slug: "schnelleinstieg-in-die-barrierefreiheit/semantische-struktur",
             },
             {
-              label: "Seiten-Titel",
+              label: "Seitentitel",
               slug: "schnelleinstieg-in-die-barrierefreiheit/seiten-titel",
             },
             {
@@ -85,7 +84,7 @@ export default defineConfig({
               slug: "schnelleinstieg-in-die-barrierefreiheit/bilder",
             },
             {
-              label: "Daten-Tabellen",
+              label: "Datentabellen",
               slug: "schnelleinstieg-in-die-barrierefreiheit/daten-tabellen",
             },
             {
@@ -93,7 +92,7 @@ export default defineConfig({
               slug: "schnelleinstieg-in-die-barrierefreiheit/iframes",
             },
             {
-              label: "Analyse der Barrierefreiheit des Farbkontrasts",
+              label: "Testen der Barrierefreiheit des Farbkontrasts",
               slug: "schnelleinstieg-in-die-barrierefreiheit/analyse-der-barrierefreiheit-des-farbkontrasts",
             },
             {
@@ -105,7 +104,7 @@ export default defineConfig({
               slug: "schnelleinstieg-in-die-barrierefreiheit/visuelle-blinkeffekte",
             },
             {
-              label: "Formular Labels und Instruktionen",
+              label: "Formular-Etiketten und Anweisungen",
               slug: "schnelleinstieg-in-die-barrierefreiheit/formular-labels-und-instruktionen",
             },
             {
@@ -113,7 +112,7 @@ export default defineConfig({
               slug: "schnelleinstieg-in-die-barrierefreiheit/testen-mit-mobilen-geraeten",
             },
             {
-              label: "Accessibility-Tree",
+              label: "Zugänglichkeitsbaum",
               slug: "schnelleinstieg-in-die-barrierefreiheit/accessibility-tree",
             },
             {
@@ -121,7 +120,7 @@ export default defineConfig({
               slug: "schnelleinstieg-in-die-barrierefreiheit/der-zweck-von-aria",
             },
             {
-              label: "ARIA-Komponenten und -Patterns",
+              label: "ARIA-Komponenten und -Muster",
               slug: "schnelleinstieg-in-die-barrierefreiheit/aria-komponenten-und-patterns",
             },
             {
@@ -145,11 +144,11 @@ export default defineConfig({
               slug: "schnelleinstieg-in-die-barrierefreiheit/beschreibungen",
             },
             {
-              label: "Werte – statische Eigenschaften",
+              label: "Werte - Statische Eigenschaften",
               slug: "schnelleinstieg-in-die-barrierefreiheit/werte-statische-eigenschaften",
             },
             {
-              label: "Werte – dynamische Eigenschaften und Zustände",
+              label: "Attribute – Dynamische Eigenschaften und Zustände",
               slug: "schnelleinstieg-in-die-barrierefreiheit/werte-dynamische-eigenschaften-und-zustaende",
             },
             {

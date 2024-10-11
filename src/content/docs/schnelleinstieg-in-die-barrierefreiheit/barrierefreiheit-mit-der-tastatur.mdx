@@ -1,86 +1,81 @@
 ---
-title: Barrierefreiheit mit der Tastatur
+title: Tastaturzugänglichkeit
 ---
 
-Denke nicht daran, dass alle Menschen ständig eine Maus benutzen. Alle Bewegungen, die von der Maus abhängen, wie
-Drag-and-drop oder Doppelklick, sowie Berührungen, wie Touch-Gesten und Wischbewegungen, müssen auch mit der Tastatur
-möglich sein.
+Manche Leute benutzen nicht die Maus, sondern andere Interaktionsmethoden. Diese müssen auch mit der Tastatur funktionieren.
 
-Die Barrierefreiheit der Tastatur stellt eine der grundlegendsten Anforderungen dar. Etwa Nutzer, die keine Kraft oder
-Geschicklichkeit besitzen, um eine Maus zu bedienen oder blinde Menschen, die nicht in der Lage sind, eine Maus mit
-ihren Händen zu bedienen und daher die Tastatur bevorzugen.
+Eine zugängliche Tastatur ist wichtig für alle, die nicht so gut mit der Maus zurechtkommen. Das sind zum Beispiel Menschen, die
+nicht so geschickt mit den Händen sind oder blind sind.
 
-Die drei wichtigsten Kriterien für die Barrierefreiheit von Tastaturen sind Fokus, Funktionalität und Benutzerkontrolle.
+Drei Dinge sind beim Testen der Tastaturzugänglichkeit wichtig: Fokus, Funktionalität und Benutzersteuerung.
 
-Beginnen wir mit der ersten Regel, dass UI-Steuerelemente und Eingaben fokussierbar sein müssen.
+UI-Steuerelemente und -Eingaben müssen fokussierbar sein.
 
-Zu den UI-Steuerelementen gehören Links, Schaltflächen, benutzerdefinierte Steuerelemente und alles, was der Benutzer tun
-kann. Eingaben werden auf Formularelemente wie Texteingaben, Auswahllisten, Kontrollkästchen und Optionsfelder bezogen. Ein
-UI-Steuerelement oder eine Eingabe sind fokussierbar, wenn die Benutzer mit der Tabulatortaste darauf zugreifen können. Ein
-UI-Element, das nicht fokussierbar ist, ist ein Fehler in der Barrierefreiheit.
+Zu den UI-Steuerelementen gehören Links, Schaltflächen und benutzerdefinierte Steuerelemente. Auch alles, mit dem der Benutzer
+interagieren kann, gehört dazu. Mit einem Formular können Benutzer Texte eingeben, auswählen oder Kontrollkästchen und Optionsfelder
+anklicken. Ein Formular kann mit der Tabulatortaste nacheinander durchgegangen werden. Wenn ein UI-Element nicht fokussiert werden
+kann, ist das ein Fehler.
 
-Es ist von Bedeutung, den Mauszeiger über alle aktiven Elemente zu bewegen, um zu überprüfen, ob Funktionen wie Menüs,
-Pop-up-Fenster oder Tooltips beim Hovern aktiviert sind. Wenn du Elemente entdeckst, die Hover-Aktionen auslösen, kontrolliere
-sie mit der Tastatur.
+Um zu testen, ob Funktionen beim Überfahren mit dem Mauszeiger aktiviert sind, z. B. Menüs, Pop-ups oder Quick-Infos, bewegt man
+den Mauszeiger über alle aktiven Elemente. Wenn Sie Elemente finden, die beim Überfahren mit dem Mauszeiger etwas machen, stellen Sie
+sicher, dass Sie diese auch mit der Tastatur ansteuern können.
 
-Außerdem müssen UI-Steuerelemente und Eingaben nicht fokussiert sein, d. h. du musst mit der Tabulatortaste von ihnen
-wegkommen können. Wenn du nicht mit der Tabulatortaste von etwas weggehen kannst, ist das ein Problem in der Barrierefreiheit.
+UI-Steuerelemente und -Eingaben sollten nicht den Fokus behalten. Du musst mit der Tab-Taste von ihnen wegschalten können. Wenn du
+nicht mit der Tab-Taste von etwas wegschalten kannst, ist das ein Fehler.
 
-Die nächste Regel fordert, dass fokussierte Elemente einen visuellen Fokusindikator haben. Du solltest einen visuellen
-Indikator sehen, wenn ein Element fokussiert ist, z. B. durch einen Umriss oder eine Änderung des Hintergrundes. Wenn du
-nicht weißt, wo sich das Element befindet, ist dies ein Fehler in der Barrierefreiheit.
+Die nächste Regel ist, dass Sie über eine Anzeige verfügen müssen, die Ihnen sagt, welches Element Sie gerade bearbeiten. Sie sollten
+ein Zeichen haben, das zeigt, welches Element gerade wichtig ist. Das kann zum Beispiel eine Linie oder eine andere Farbe sein. Wenn
+Sie nicht sehen können, wo der Fokus liegt, ist das ein Fehler.
 
-Die nächste Regel fordert, dass fokussierte Elemente auf dem Bildschirm sichtbar sein müssen. Wenn der Fokus auf einem
-unsichtbaren oder außerhalb des Bildschirms liegenden Element fällt, kann der Benutzer nicht erkennen, wo sich das Element
-befindet.
+Die nächste Regel ist: Elemente, die man fokussiert, müssen auf dem Bildschirm sichtbar sein. Wenn der Fokus auf einem unsichtbaren
+Element außerhalb des Bildschirms liegt, ist das ein Fehler. Sehende Benutzer können das Element nicht erkennen.
 
-Die Fokussierung von Elementen darf nicht durch andere Elemente verdeckt werden. Wenn du auf den Inhalt tippst, Dropdown-Menüs,
-Dialoge, Pop-ups und andere dynamische Funktionen aktivierst, ist dies ein Fehler in der Barrierefreiheit, wenn du zu einem
-Element tippen kannst, das unter einem dieser dynamischen Elemente verborgen ist. Die dynamischen Elemente und Ebenen müssen
-sich schließen oder verschwinden, wenn die Elemente darunter im Fokus sind.
+Auch andere Elemente dürfen die fokussierten Elemente nicht verdecken. Wenn Sie durch den Inhalt tippen, werden Dropdown-Menüs, Dialoge,
+Popups und andere Funktionen aktiviert. Wenn Sie zu einem Element navigieren möchten, das verdeckt ist, und Sie tippen die
+Tabulatortaste, ist das ein Fehler bei der Barrierefreiheit. Diese Teile müssen geschlossen oder unsichtbar sein, wenn die darunter
+liegenden Teile aktiv sind.
 
-Andererseits sollten inaktive Elemente nicht fokussiert werden können. Trotz der Notwendigkeit, aktive UI-Elemente zu fokussieren,
-sollten inaktive Elemente wie Überschriften, Absätze, Listen, Tabellen, Bilder usw. nicht fokussiert werden können. Die nächste
-Regel besagt, dass die Reihenfolge des Fokuses logisch sein muss.
+Inaktive Elemente sollten nicht fokussierbar sein. Auch aktive UI-Elemente müssen fokussierbar sein. Inaktive Elemente wie Überschriften,
+Absätze, Listen, Tabellen, Bilder usw. sollten nicht fokussierbar sein, wenn man mit der Tabulatortaste auf der Seite herumblättert. Die
+nächste Regel lautet: Die Reihenfolge, in der Elemente fokussiert werden, muss logisch sein.
 
-Wenn du den Inhalt durchblätterst, solltest du darauf achten, dass die Tabulatorreihenfolge korrekt ist. Die Tabulatorreihenfolge
-sollte der logischen visuellen Lesereihenfolge folgen, es kann jedoch Ausnahmen geben.
+Achten Sie darauf, dass Sie beim Navigieren durch den Inhalt mit der Tab-Taste die richtigen Schritte ausführen. Normalerweise sollte
+die Tabulatorreihenfolge der Lesereihenfolge folgen. Es gibt aber Ausnahmen.
 
-Prüfe unbedingt, ob du mit der Tabulatortaste vorwärts und rückwärts zum Inhalt gelangen kannst, indem du die Umschalttaste +
-Tabulator drückst. Die Reihenfolge sollte in beiden Richtungen korrekt sein.
+Testen Sie vorwärts und rückwärts Tabben zum Inhalt. Die Reihenfolge sollte sinnvoll sein.
 
-Als Nächstes muss die Reihenfolge des statischen Fokus logisch sein. Wenn sich der Fokus bewegt und auf Benutzeraktionen wie das
-Öffnen eines modalen Dialogs reagiert, muss die Fokusreihenfolge für diese dynamischen Komponenten logisch sein.
+Die Reihenfolge, in der die Elemente fokussiert werden, muss sinnvoll sein. Wenn sich der Fokus bewegt und auf Aktionen reagiert, muss
+die Fokusreihenfolge logisch sein. Das gilt auch für diese dynamischen Komponenten.
 
-Bei modalen Dialogen muss der Fokus, auf dem Dialog liegen, sobald er geöffnet wird. Wenn der Nutzer sich in einem Dialog
-befindet, darf er ihn nicht mit der Tabulatortaste verlassen, aber er muss ihn schließen können. Wenn er geschlossen wird, muss
-der Fokus auf eine logische Position gerichtet werden, in der Regel auf der Schaltfläche, die den Dialog ursprünglich aktiviert hat.
+Im modalen Dialog muss der Fokus auf den Dialog gesetzt werden, wenn dieser geöffnet wird. Innerhalb des Dialogfelds darf man nicht
+mit der Tabulatortaste navigieren. Aber man muss es schließen können. Wenn der Dialog geschlossen wird, muss der Fokus an einer
+logischen Stelle platziert werden, nämlich an der Stelle, an der der Dialog ursprünglich aktiviert wurde.
 
-Andere Formen von dynamischen UI-Kontrollen haben eigene Interaktionsmodelle. Bitte, stelle sicher, dass alle logisch sind.
+Andere Arten von Steuerelementen für die Benutzeroberfläche haben eigene Interaktionsmodelle. Diese müssen logisch sein.
 
-Das Kriterium für die Barrierefreiheit der Tastatur stellt die Funktionalität dar.
+Die nächste große Kategorie ist die Zugänglichkeit der Tastatur.
 
-Alle UI-Steuerelemente müssen mit der Tastatur bedient werden können. Ein Steuerelement, das nicht mit der Tastatur, sondern mit
-der Maus bedient werden kann, verstößt gegen die Barrierefreiheit.
+Alle UI-Steuerelemente müssen mit der Tastatur bedienbar sein. Wenn ein UI-Steuerelement nicht mit der Tastatur bedient werden kann,
+ist das ein Fehler. Das ist einfach.
 
-Alle Funktionen müssen über die Tastatur ausgeführt werden.
+Alle Funktionen müssen mit der Tastatur bedienbar sein.
 
-Zum anderen sollten die UI-Steuerelemente den erwarteten UI-Mustern folgen. Obwohl es sich um eine technische Barrierefreiheit
-handelt, sollten die Nutzer/innen nicht raten, wie sie die Bedienelemente verwenden sollen. Unerwartete oder unklare
-Tastaturfunktionen können ebenso schlimm sein wie Tastaturfunktionen, die von den Nutzern nicht gefunden werden können.
+Zweitens sollten die Steuerelemente so aussehen, wie man es von ihnen erwartet. Auch wenn dies keine technische Anforderung ist,
+sollten UI-Elemente selbsterklärend sein. Wenn man nicht weiß, was die Tastatur macht, ist das genauso schlimm, wie wenn es keine
+Tastatur gibt.
 
-Die letzte wichtige Kategorie der Barrierefreiheit, die über die Tastatur erreichbar ist, ist die Benutzerkontrolle.
+Die letzte große Kategorie ist die Steuerung durch den Benutzer.
 
-Die Funktionalität darf nicht von dem Timing der Tastenanschläge abhängen. Es handelt sich bei jeder Funktion, die eine
-bestimmte Geschwindigkeit oder ein bestimmtes Timing für die Betätigung erfordert, um einen Fehler in der Barrierefreiheit.
+Erstens darf die Funktion nicht davon abhängen, wie schnell die Tasten gedrückt werden. Funktionen, die schnell sein müssen oder
+bei denen man bestimmte Tasten schnell hintereinander drücken muss, sind ein Fehler bei der Barrierefreiheit. Es sei denn, das
+schnelle Drücken der Tasten ist für die Funktion absolut notwendig.
 
-Die letzte Regel, die wir hier behandeln, lautet, dass der Fokus keinen Kontextwechsel auslösen darf. Tastaturbenutzer,
-insbesondere blinde Tastaturnutzer, müssen in der Lage sein, den Inhalt einer Webseite durch Antippen zu erkunden, ohne
-dass eine Funktion in der Benutzeroberfläche aktiviert werden könnte.
+Die letzte Regel ist, dass der Fokus keinen Kontextwechsel auslösen darf. Blinde Tastaturbenutzer sollten eine Webseite durchklicken
+können, ohne dass sie aus Versehen eine Funktion aktivieren.
 
-Es ist ein Fehler der Barrierefreiheit, den Kontext zu verändern, z. B. den Fokus zu verschieben, ein neues Browserfenster
-zu öffnen oder eine andere Anwendung zu öffnen, nur weil ein Nutzer mit der Tabulatortaste auf ein Element tippt.
+Es ist ein Fehler, wenn sich der Kontext ändert, zum Beispiel wenn sich der Fokus verschiebt oder ein neues Browserfenster geöffnet
+wird. Auch wenn eine andere Anwendung geöffnet wird, wenn man nur mit der Tabulatortaste wechselt, ist das verwirrend.
 
-Die drei wichtigsten Aspekte der Barrierefreiheit sind die Fokussierung, die Funktionalität und die Kontrolle durch den Nutzer.
-Je interaktiver oder dynamischer der Inhalt ist, desto genauer musst du die Regeln zur Barrierefreiheit befolgen und desto
-schwieriger kann es sein, alle potenziellen Fehler zu identifizieren.
+Es gibt drei wichtige Punkte, die man bei der Tastaturzugänglichkeit beachten muss: Fokus, Funktionalität und Benutzersteuerung. Je
+aktiver ein Inhalt ist, desto genauer müssen Sie auf die Regeln der Tastaturzugänglichkeit achten. Es ist schwieriger, alle
+potenziellen Fehler zu erfassen. Aber man kann das mit Übung lernen.

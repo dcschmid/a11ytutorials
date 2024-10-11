@@ -1,91 +1,82 @@
 ---
-title: Analyse der Barrierefreiheit des Farbkontrasts
+title: Testen der Barrierefreiheit des Farbkontrasts
 ---
 
-Die Richtlinien zur Barrierefreiheit von Web-Inhalten schreiben ein Mindestmaß an Kontrast vor, um Nutzer/innen mit
-Sehbehinderung oder Farbblindheit zu unterstützen. Die ursprünglichen Anforderungen an den Farbkontrast galten nur
-für Text und Bilder von Text. Diese Anforderungen an den Kontrast gelten ab Version 2.2 für die Komponenten der
-Benutzeroberfläche, einschließlich der standardmäßigen Hover- und Fokuszustände, sowie für grafische Objekte wie
-Bilder oder Symbole.
+Die Regeln für barrierefreie Internetseiten schreiben vor, dass Texte und Bilder so gestaltet werden müssen, dass sie auch von
+Menschen mit Sehbehinderungen gut gesehen werden können. Die Anforderungen an den Farbkontrast galten nur für Text und Bilder von
+Text. In den neuen Richtlinien, Version 2.1, gelten die Kontrastanforderungen auch für Teile der Benutzeroberfläche. Dazu gehören
+auch die Zustände, in denen ein Element gerade aktiv ist. Außerdem gelten die Anforderungen für Bilder und Symbole.
 
 ## Werkzeuge zur Überprüfung des Farbkontrasts
 
-Die beiden wichtigsten Tools zur Überprüfung des Farbkontrasts, die ich vorstelle, sind der automatisierte Test der
-Deque-Browsererweiterung und der Deque Online Color Contrast Analyzer für den manuellen Vergleich zweier Farbwerte.
-Die Deque-Browsererweiterungen integrieren den Farbkontrastalgorithmus, was dies zu einem logischen Ausgangspunkt macht.
-Falls Probleme mit dem Farbkontrast auftreten, ist es möglich, die Problembeschreibung aus der Browsererweiterung selbst
-zu kopieren und in ein Bug-Tracking-Ticket zu integrieren. Nicht jedes Farbkontrast-Problem, das bei der automatischen
-Überprüfung entdeckt wird, ist ein garantierter Verstoß.
+Ich zeige Ihnen zwei wichtige Tools zur Überprüfung des Farbkontrasts. Das sind der automatisierte Test der Deque-Browsererweiterung
+und der Deque Online-Farbkontrastanalysator für den manuellen Vergleich zweier Farbwerte. Ich zeige Ihnen auch, wie Sie die
+Chrome-Pipette nutzen können. Der Farbkontrastalgorithmus ist in die Deque-Browsererweiterungen integriert. Wenn das Tool
+Probleme mit dem Farbkontrast findet, können Sie die Beschreibung selbst kopieren und in ein Bug-Tracking-Ticket einfügen.
+Nicht jedes Farbkontrastproblem, das bei der automatischen Überprüfung festgestellt wird, ist ein Verstoß.
 
-Das liegt an der Komplexität von Dingen wie Farbverläufen, Hintergrundbildern und sich überlappenden CSS-Ebenen. Die
-CSS-Ebene stellt einen deaktivierten Zustand dar, der nach den Richtlinien für den Farbkontrast eine Ausnahme darstellt.
-Allerdings kann das Tool dies nicht wissen, weshalb du manuell prüfen musst. Wenn du das Flaggensymbol neben dem Problem
-siehst, bedeutet dies, dass einige der Probleme dieses Typs manuell überprüft werden müssen. Filtere Verstöße in der
-Browsererweiterung, um die Farbkontrast-Probleme anzuzeigen, welche unbedingt behoben werden müssen. Melde auch diese.
+Diese CSS-Schicht ist deaktiviert. Das ist eine Ausnahme, die nach den Richtlinien für den Farbkontrast zulässig ist. Das Tool kann
+das aber nicht wissen. Sie müssen es deshalb manuell testen. Wenn Sie das Flaggensymbol sehen, müssen Sie die Probleme manuell
+überprüfen. Die Browsererweiterung zeigt an, welche Verstöße es gibt. Sie müssen die Probleme mit dem Farbkontrast dann beheben.
+Bitte melden Sie das. Als Nächstes filtern Sie nach "Überprüfung erforderlich", um den Rest der Probleme anzuzeigen.
 
-Im Anschluss filterst du nach „Muss überprüft werden“, um die verbleibenden Probleme zu visualisieren. Wir müssen diese
-manuell überprüfen. Du klickst zuerst auf die Markierung in der Browsererweiterung, um das Element visuell zu überprüfen.
-Du kannst die beiden Farben im Online-Farbkontrastanalysator von Deque analysieren, indem du auf die Schaltfläche „Mehr
-erfahren“ in der Browsererweiterung klickst. Verwende die Informationen aus der Problembeschreibung in der Browsererweiterung
-und füge sie in den Online Color Contrast Analyzer ein. Dieses Tool stellt das Ergebnis für kleine und große Texte dar. Großer
-Text kann mit 24 CSS-Pixeln oder größer definiert werden, oder wenn der Text fett ist, als 19 CSS-Pixel oder größer. Das
-Tool stellt den Status „bestanden/nicht bestanden“ sowohl für die Stufe AA als auch für die Stufe AAA dar.
+Das muss manuell überprüft werden. Klicken Sie auf den Button in der Erweiterung, um das Element anzusehen. Wenn Sie nur einen
+einfachen Fall haben, können Sie diesen im Online-Farbkontrast-Analysator von Deque analysieren. Klicken Sie dazu in der
+Browsererweiterung auf "Mehr erfahren". Kopieren Sie die Werte aus der Browsererweiterung in den Online-Farbkontrastanalysator.
 
-Die Stufe AA ist der Standard, der in den meisten Organisationen verwendet wird. AAA ist ein höherer Standard, der einen
-stärkeren Kontrast erfordert. Wenn du möchtest, kannst du mit den Schiebereglern im Color Contrast Analyzer spielen, um
-eine passende Kombination zu wählen, und du kannst diese Farbwerte als Vorschlag in deinen Bericht eintragen.
+Dieses Tool zeigt an, ob der Text passt oder nicht. Großer Text ist definiert als 24 Pixel oder mehr, oder wenn der Text fett
+ist, als 19 Pixel oder mehr. Das Tool zeigt an, ob die Richtlinien erfüllt sind oder nicht. Level AA ist der Standard, den die
+meisten Organisationen verwenden. Level AAA ist ein höherer Standard mit mehr Farbkontrast. Sie können mit den Schiebereglern
+spielen, um eine bessere Kombination auszuwählen. Sie können diese Farbwerte dann in Ihren Bericht aufnehmen.
 
 ## Komplexe Hintergrundfarben
 
-In komplexen Situationen, wie Hintergrundbilder und Farbverläufe, ist es erforderlich, eine Pipette zu verwenden, um
-einige unterschiedliche Farbkombinationen zu testen und zu analysieren.
+In komplizierteren Fällen, wie z. B. bei Hintergrundbildern und Farbverläufen, müssen Sie eine Pipette verwenden, um verschiedene
+Farbkombinationen zu erfassen und zu analysieren. In Chrome gibt es ein Pipetten-Werkzeug im CSS-Panel. Um es zu nutzen, öffnen Sie
+die Registerkarte "Elemente" in den Entwicklertools. Wählen Sie ein Element aus, dessen Farbe im CSS angegeben ist. Klicken Sie dann
+auf das Farbfeld im CSS-Panel. So wird der Mauszeiger zu einer Pipette. Klicken Sie mit der Maus auf die Farbe, die Sie analysieren
+möchten. Kopieren Sie den Hex-Code und fügen Sie ihn in den Online-Farbkontrastanalysator ein. Analysieren Sie auch einige
+Hintergrundfarben.
 
-Chrome verfügt über ein Pipetten-Werkzeug im CSS-Bedienfeld. Öffne die Registerkarte Elemente in den Entwicklertools
-und wähle ein beliebiges Element aus, für das eine Farbe im CSS festgelegt wurde, und klicke anschließend auf das
-Farbfeld im CSS-Bedienfeld. Dadurch wird dein Mauszeiger zu einer Pipette. Bitte fahre mit der Maus über die Vordergrundfarbe,
-die du analysieren möchtest. Bitte füge den Hex-Code in den Online Color Contrast Analyzer ein.
-
-Mache dasselbe für einige Hintergrundfarben. Analysiere strategisch die verdächtigsten Farbkombinationen – die, die den
-geringsten Kontrast haben scheinen – und falls einer von ihnen versagt, benötigst du keine der anderen Farbkombinationen
-für dieses Element zu testen, da der Definition nach das gesamte Element versagt. Eine weitere Anwendung für die
-Pipetten-Methode ist das Testen des Farbkontrasts von Bildern oder Texten. Es könnte etwas schwierig sein, eine exakte
-Farbe für den Vergleich zu finden. Versuche, die Farben aus den einfarbigen Bereichen auszuwählen.
+Analysieren Sie die kritischsten Farbkombinationen. Wenn eine Kombination nicht funktioniert, müssen Sie die anderen nicht
+testen, da das gesamte Element dann nicht funktioniert. Man kann die Pipettenmethode auch für Textbilder verwenden, um zu testen,
+wie gut der Farbkontrast ist. Es ist nicht einfach, eine genaue Farbe zu finden. Wählen Sie die Farbe aus den einfarbigen Bereichen
+und nicht aus den Übergangsfarben.
 
 ## Testen des Farbkontrasts von Komponenten der Benutzeroberfläche
 
-Seit Version 2.1 der Richtlinien müssen die Komponenten der Benutzeroberfläche drei zu eins sein, was auch für große Texte
-gilt. Die Benutzerschnittstellen müssen sich optisch von den angrenzenden Benutzerschnittstellen-Komponenten abheben, damit
-die Benutzer erkennen können, wo die Komponenten sind und wo sie sich befinden. Die Deque-Browsererweiterung testet derzeit
-keine UI-Komponenten, daher musst du dies manuell erledigen. Vergleiche die Hintergrundfarbe der UI-Komponente mit der
-Hintergrundfarbe der Komponente, falls sie einen Umriss oder Rahmen aufweist.
+Ab Version 2.1 müssen Komponenten der Benutzeroberfläche ein Kontrastverhältnis von drei zu eins erfüllen. Das entspricht dem
+gleichen Verhältnis, das für größeren Text erforderlich ist. Die UI-Komponenten müssen so gestaltet werden, dass sie sich vom
+Hintergrund und den angrenzenden Elementen der Benutzeroberfläche abheben. Dadurch können die Benutzer die Komponenten einfacher
+erkennen. Die Deque-Browsererweiterung testet derzeit keine UI-Komponenten. Sie müssen sie manuell testen. Vergleichen Sie die
+Farbe des Hintergrunds mit der Farbe der Komponente. Wenn die Komponente einen Rahmen hat, vergleichen Sie die Farbe des Rahmens
+mit dem Hintergrund.
 
-## Testen der Hover- und Fokus-Zustände von Komponenten der Benutzeroberfläche
+## Testen der Hover- und Fokuszustände von Komponenten der Benutzeroberfläche
 
-Ab Version 2.1 der Richtlinien müssen auch die visuellen Fokus- und Hover-Zustände von Benutzeroberflächen-Komponenten den
-Anforderungen an den Farbkontrast im Verhältnis drei zu eins entsprechen. Es bedeutet nicht, dass jede Situation mit jedem
-anderen Zustand kontrastiert werden muss. Der Standardzustand muss nicht in einem Verhältnis von drei zu eins zu den Farben
-des Hover-Zustands stehen. Stattdessen muss jeder Zustand die Kontrastrichtlinien für den Bildschirm erfüllen, wenn er aktiv
-ist. Das bedeutet: Du musst jeden Teil der UI dreimal testen. Einmal im normalen Zustand, einmal im Fokus-Zustand und einmal
-im Hover-Zustand. Bitte wähle in den Entwicklertools des Browsers die Option Hover aus, die mit :hov dargestellt wird, und
-wähle dann einen Zustand aus, den du testen möchtest. Hover und Fokus sind die beiden Zustände, die in den Richtlinien
-gefordert werden. Teste jeden Zustand separat. Wenn du hier die Hover- oder Fokus-Option auswählst, friert der Browser die
-UI-Komponente in dem jeweiligen Zustand ein, ohne selbst den Hover- oder Fokus-Zustand einnehmen zu müssen. Du kannst den
-Hover-Zustand für ein oder mehrere Elemente gleichzeitig aktivieren, dann die automatisierten Tests der Browsererweiterung
-wiederholen und schließlich das Gleiche für die verschiedenen Fokus-Bereiche auf der Seite tun.
+Ab Version 2.1 der Richtlinien müssen auch die Farben von UI-Komponenten zueinander kontrastieren. Das heißt aber nicht, dass
+jeder Zustand mit jedem anderen kontrastieren muss. Die Farben des Standardzustandes müssen nicht mit den Farben des aktiven
+Zustandes kontrastieren. Das heißt, dass jeder Zustand die Kontrastrichtlinien für die Farben auf dem Bildschirm erfüllen muss,
+solange er aktiv ist. Sie müssen dreimal testen: einmal im Standardzustand, einmal im Fokus und einmal imhover. Gehen Sie in den
+Entwicklertools des Browsers zur Registerkarte "Elemente". Wählen Sie im Bereich "Styles" den Hover-Zustand aus, der mit ":hov"
+beginnt. Wählen Sie dann einen Zustand aus, den Sie testen möchten. Es gibt zwei Zustände: "Hover" und "Fokus". Testen Sie jeden
+einzeln. Wenn Sie hier "Hover" oder "Fokus" auswählen, zeigt der Browser die UI-Komponente in diesem Zustand an. So können Sie
+die Farben testen, ohne die Maus bewegen zu müssen. Sie können den Mauszeiger-Zustand für ein oder mehrere Elemente gleichzeitig
+aktivieren. Dann können Sie die automatisierten Browsererweiterungstests erneut ausführen. Tun Sie dasselbe für die verschiedenen
+Fokus-Zustände auf der Seite. Oder Sie kopieren die Werte und fügen sie ein oder verwenden die Pipette.
 
-## Teste den Kontrast von grafischen Objekten
+## Testen Sie den Kontrast von grafischen Objekten
 
-Ab Version 2.1 müssen grafische Objekte, die eine Bedeutung vermitteln, wie Diagramme oder Menüsymbole, den Farbkontrast in
-einem Verhältnis von drei zu eins erfüllen. Grafische Objekte, die keine Bedeutung vermitteln, sind entweder rein dekorativ
-oder weil sie im Vergleich zum umgebenden Text überflüssig. Wie bereits erwähnt, kannst du die CSS-Werte manuell einfügen
-oder die Pipette verwenden, um den Farbkontrast zu bestimmen.
+In den Richtlinien für grafische Objekte, die eine Bedeutung vermitteln, wie z. B. Grafiken oder Menüsymbole, steht, dass sie im
+Verhältnis drei zu eins sein müssen. Dekorative oder redundante Grafiken müssen die Farbkontrastrichtlinien nicht erfüllen. Wie schon
+gesagt, fügen Sie die CSS-Werte entweder selbst ein oder nutzen Sie die Funktion, um den Farbkontrast zu bestimmen.
 
-## Ausnahmen, die nicht getestet werden müssen
+## Ausnahmen, für die keine Tests erforderlich sind
 
-Die Richtlinien lassen bestimmte Ausnahmen von den Farbkontrast-Regeln zu, nämlich rein dekorative oder überflüssige Bilder,
-deaktivierte Formularelemente, die vom Browser selbst ausgegraut werden, Logos und Schriftzüge sowie grafische Objekte, bei
-denen der niedrige Kontrast entscheidend ist. Zusammenfassend kann gesagt werden, dass der Farbkontrast eine Voraussetzung ist.
-Du kannst ihn mit der Deque-Browsererweiterung für automatische Prüfungen und dem Deque Online Color Contrast Analyzer für
-manuelle Prüfungen testen. Du kannst auch das Chrome-Eyedropper-Tool in den Dev Tools verwenden, um die Farben zu finden. Zu
-den zu prüfenden Elementen gehören Text, UI-Komponenten, einschließlich des Standardstatus, des Hover-Status und des Fokus-Status,
-sowie grafische Elemente.
+Es gibt bestimmte Ausnahmen von den Farbkontrastregeln. Dazu gehören Bilder, die nur zur Dekoration da sind, oder Bilder, die mit
+dem Text übereinstimmen. Auch deaktivierte Formularelemente, die vom Browser selbst ausgegraut werden, Logos und Logos sowie grafische
+Objekte, bei denen der geringe Kontrast für die vermittelten Informationen wichtig ist, sind davon betroffen. Zusammenfassend lässt
+sich sagen, dass der Farbkontrast eine Voraussetzung ist. Sie können ihn mit der Deque-Browsererweiterung testen. Sie können auch die
+Chrome-Pipette in den Entwicklertools verwenden, um die Farben zu finden. Getestet werden müssen Text und UI-Komponenten, also
+Elemente, die auf einer Webseite verwendet werden. Dazu gehören auch der Standardzustand, der Hover-Zustand und der Fokus-Zustand.
+Außerdem werden grafische Objekte getestet.

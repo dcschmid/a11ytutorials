@@ -2,36 +2,37 @@
 title: Ausblenden oder Überschreiben von Rollen
 ---
 
-Zunächst betrachten wir, was passiert, wenn du eine Rolle außer Kraft setzt. Wenn du einer Sache eine neue ARIA-Rolle
-zuweist, ist sie nicht mehr das, was sie vorher war, unabhängig davon, ob es sich um einen Absatz, eine Tabelle, eine
-Tabelle, eine Schaltfläche oder etwas anderes handelt. Die ARIA-Rolle ersetzt die Rolle, die sie zuvor innehatte, zumindest
-in Bezug auf die Barrierefreiheit. Wenn du eine Reihe von Elementen hast, denen die Rolle „img“ oder „image“ zugewiesen wurde,
-werden alle diese Elemente in Bezug auf die Barrierefreiheit zu Bildern. Änderungen an den Rollen ändern nichts am Aussehen.
-Zum Beispiel wirkt eine Tabelle immer noch wie eine Tabelle, wenn du ihr role=„img“ zuweist, doch ein Screenreader erkennt
-sie als Grafik. Es wäre schlecht, wenn du die Rollen einfach so spontan neu zuweisen würdest. Die Möglichkeit, Rollen neu
-zuzuweisen, ist eine Technik, die unter den richtigen Umständen eingesetzt werden kann und sollte.
+Schauen wir uns an, was passiert, wenn Sie eine Rolle überschreiben. Wenn Sie einer Rolle eine neue ARIA-Rolle zuweisen, ist es
+nicht mehr das Gleiche. Die ARIA-Rolle ersetzt die alte Rolle im Accessibility-Baum. Wenn Sie mehreren Elementen die Rolle "img" oder
+"image" zugewiesen haben, werden diese zu Bildern. Das Aussehen ändert sich aber nicht wirklich. Eine Tabelle sieht immer noch wie
+eine Tabelle aus, wenn man ihr die Rolle "img" zuweist. Für eine Sprachausgabe wird sie aber als Grafik angesagt. Wenn Sie die Rollen
+einfach neu zuweisen, ist das schlecht. Manchmal ist es gut, Rollen neu zuzuweisen.
 
-Ein nützliches Beispiel wäre die Verwendung einer ungeordneten Liste, um eine Registerkarte zu erstellen. Die Liste kann als
-Hülle für die Registerkarten-Liste dienen und die Listenelemente können zu den Registerkarten werden. Mit CSS kannst du die
-Registerkarten optisch gestalten, wie du willst. Die Bildschirmbenutzer werden nur die Registerliste und die Registerkarten
-sehen.
+Ein Beispiel ist eine ungeordnete Liste, die man als Registerkartenbereich nutzen kann. Die Liste kann als Umhüllung für die
+Registerkartenliste dienen. Listenelemente können zu Registerkarten werden. Sie können CSS verwenden, um die Registerkarten zu
+gestalten. Die Registerkartenliste und die Registerkarten werden von Bildschirmlesegerät-Benutzern nicht angezeigt.
 
-Vielleicht fragst du dich, warum du mit einer ungeordneten Liste beginnen solltest, vor allem, wenn sie überschrieben werden.
-Gute Frage. Die Antwort lautet, dass du nicht auf diese Weise anfangen musst. Die gleiche Struktur kann auch mit Divs oder
-Absätzen erstellt werden. Sobald du role="tablist" und role="tab" zugewiesen hast, sind es keine divs oder Absätze mehr,
-also funktioniert es.
+Es gibt noch mehr, was Sie tun müssten, um eine funktionale Registerkartenkomponente zu erstellen. Ich zeige hier nur, wer welche
+Rolle hat.
 
-Einige Leute bevorzugen Listen für Tab-Komponenten, da diese eine natürliche hierarchische Struktur aufweisen. Divs sind
-jedoch in Ordnung. Es ist ebenfalls möglich, mit ihnen Hierarchien zu erstellen.
+Sie fragen sich vielleicht, warum Sie mit einer ungeordneten Liste anfangen sollten, vor allem, weil sie überschrieben wird. Gute
+Frage. Sie müssen nicht auf diese Weise anfangen. Sie können die gleiche Struktur auch mit Divs oder Absätzen erstellen. Wenn Sie
+role="tablist" und role="tab" zuweisen, sind sie keine Divs oder Absätze mehr, also funktioniert es.
 
-Eine andere Möglichkeit, wie du eine Registerkarte strukturieren kannst, ist eine Listenstruktur für die Registerkarten
-und Schaltflächen oder Links innerhalb der Registerkarten. Die Links werden automatisch mit der Tabulatortaste aktiviert.
-Wenn du dich für diese Art der Struktur entscheidest, musst du die Rolle der Listenelemente mit role="presentation"
-unterdrücken. Wenn du dem HTML-Element role="presentation" hinzufügst, wird es aus der Barrierefreiheit entfernt. Das ist
-so, als würdest du das Element in ein div- oder span-Tag verwandeln. Der Inhalt des Elements ist immer noch zugänglich,
-aber die semantische Struktur ist ausgeschaltet.
+Listen haben eine natürliche hierarchische Struktur. Deshalb verwenden einige Leute gerne Listen für Registerkartenkomponenten.
+Div-Elemente sind aber auch in Ordnung. Sie können auch mit diesen Hierarchien erstellen.
 
-Eine weitere zulässige Verwendung von role="presentation" ist die Zuweisung an ein rein dekoratives Bild, das keinen
-alternativen Text benötigt. Dies ist nicht die einzige Möglichkeit, ein Bild als dekorativ zu kennzeichnen. Du könntest
-das Bild auch mit CSS in den Hintergrund stellen oder alt="" zum Bild hinzufügen. Aber role="presentation" ist eine gültige
-Technik.
+## Unterbindung der Rolle eines Elements
+
+Eine andere Möglichkeit ist eine Listenstruktur für tablist und Schaltflächen oder Links innerhalb der Registerkarten. Die
+Verknüpfungen werden automatisch mit der Tabulatortaste aktiviert. Sie müssen also keine Tabulatorsteuerung hinzufügen. Sie können
+aber weiterhin alle anderen Tastaturfunktionen programmieren. Wenn Sie diese Art von Struktur wählen, müssen Sie die Rolle der
+Listenelemente unterdrücken. Dazu setzen Sie den Wert "role" auf "presentation". Wenn Sie dem HTML-Element die Rolle "presentation"
+geben, wird es aus dem Accessibility-Tree entfernt. Das ist so, als würde man dieses Element in ein div- oder span-Tag umwandeln.
+Man kann immer noch auf den Inhalt zugreifen, aber die Struktur ist nicht mehr wichtig.
+
+Man kann role="presentation" auch für ein Bild verwenden, das keinen Alternativtext braucht. Es gibt noch andere Möglichkeiten, ein
+Bild als dekorativ zu markieren. Sie können das Bild auch mit CSS in den Hintergrund stellen oder role="presentation" dem Bild etwas
+hinzufügen. role="presentation" ist eine gültige Technik. Achtung: Zu nicht fokussierbaren Elementen wie Schaltflächen oder Links
+sollte role="presentation" nicht zugewiesen werden. role="presentation" ist eine gültige Technik, aber man muss darauf achten, wie
+man sie verwendet.

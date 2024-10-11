@@ -4,43 +4,43 @@ title: Navigation und Links
 
 ## Navigation
 
-Es gibt eine Navigation zwischen Seiten und die Navigation in einer Seite.
+Man kann zwischen Seiten navigieren. Man kann auch innerhalb einer Seite navigieren.
 
-Wenn es um Navigation zwischen Seiten geht, ist es am besten, die Navigationslinks in einem `<nav>`-Zeichen zu platzieren.
-Es ist eine Sache, die zu tun ist.
+Die Navigationslinks sollten im Inneren eines Landmarks gesetzt werden. Das ist ein Punkt.
 
-Wenn es mehrere Links hintereinander gibt, ist normalerweise am besten, sie im Listenformat anzuordnen. Es sollte so gestaltet
-werden, dass es nicht wie eine Liste aussieht, aber es wäre eine Liste, die Screenreader-Benutzer hören können, wenn es
-„Liste mit fünf Einträgen“ heißt und sie können jeden, der fünf Einträge durchgehen.
+Wenn es mehrere Links hintereinander gibt, sollten sie im Listenformat aufgelistet werden. Sie können es auch so machen, dass es nicht
+wie eine Liste aussieht. Aber es ist trotzdem eine Liste. Die Benutzer von Screenreadern können sagen, dass es eine Liste mit fünf
+Elementen gibt. Sie können jedes Element einzeln durchgehen.
 
-Wenn du Menüs mit Untermenüs hast, kannst du eine Liste mit einer oder mehreren Unter-Listen machen.
+Wenn Sie Menüs mit Untermenüs haben, machen Sie eine Liste mit den wichtigsten Punkten und darunter eine Liste mit den Unterpunkten.
 
-Es ist wichtig, dass jeder der Navigationslinks einen aussagekräftigen Text enthält und der Linktext von Seite zu Seite
-einheitlich ist. Wenn du auf einer Seite „Kontakt“ sagst, solltest du auf der anderen Seite nicht „Schick uns eine E-Mail“
-sagen. Verwende einfach eine einheitliche Formulierung.
+Jeder Navigationslink muss vorhanden sein. Der Linktext muss aussagekräftig sein. Er muss auf jeder Seite gleich sein. Wenn Sie auf
+einer Seite "Kontaktieren Sie uns" schreiben, schreiben Sie auf einer anderen Seite nicht "Senden Sie uns eine E-Mail". Verwenden Sie
+immer die gleiche Formulierung.
 
-Wenn es um die Navigation auf den Seiten geht, solltest du darauf achten, dass das Ziel des Links einen Text enthält. Der
-Screenreader hat nichts Sinnvolles zu sagen, wenn du ihn nur zu einem leeren Container schickst.
+Wenn ein Link weiter nach unten oder über den aktuellen Standort hinausführt, sollte das Linkziel Text enthalten. Wenn Sie nur einen
+leeren Behälter schicken, kann der Screenreader nichts sagen.
 
 ## Links
 
-Es gibt einige Dinge, die du bei allen Links beachten musst. Unter anderem Links zu anderen Orten auf deiner Webseite. Oder
-Links, die deine Seite verlassen.
+Hier sind ein paar Dinge, die Sie bei allen Links beachten sollten. Zum Beispiel, ob es sich um einen Navigationslink handelt, um auf
+Ihrer Website zu navigieren, oder um Ihre Website zu verlassen.
 
-- Es ist erforderlich, dass Links mit der Tastatur fokussiert werden können, d. h. du musst die Tabulatortaste benutzen
-  können, um auf einen Link zu gelangen.
+1. Nummer eins, Links müssen mit der Tastatur fokussierbar sein, Das bedeutet, dass Sie in der Lage sein müssen, die Tabulatortaste zu
+   verwenden , um auf einem Link zu landen.
 
-- Wenn du mit der Tabulatortaste auf den Link klickst, solltest du einen visuellen Fokusindikator haben.
+2. Nummer zwei, sie müssen über eine visuelle Fokusanzeige verfügen Wenn Sie mit der Tabulatortaste zum Link navigieren.
 
-- Sie müssen visuell von nicht verlinktem Text unterscheiden können. Du kannst ihn mit Unterstreichungen erreichen. Oder,
-  wenn er im Navigationsmenü ist, mit einer Umrandung.
+3. Nummer 3, Links müssen visuell unterscheidbar sein Von Text, der kein Link ist. Und Sie können dies mit Unterstreichungen tun, Oder,
+   wenn es sich in einem Navigationsmenü befindet, Es könnte einen Umriss drumherum haben, Oder etwas in dieser Richtung, Aber Links
+   müssen anders aussehen als normaler Text.
 
-- Der Linktext muss aussagekräftig sein, da Bildschirmleser häufig nur den Linktext anzeigen. Wenn du auf deinem Link
-  „Hier klicken“, „Weiter“ oder „Mehr“ sagst, bedeutet das alles. Aber nur in dem Kontext, wo sie gebraucht werden. Wenn du
-  sie aus dem Kontext herausnimmst, ergibt es nicht mehr so viel Sinn. Es ist gut, Text zu verwenden, der in eine Liste von
-  Links umgewandelt werden kann.
+4. Der Linktext muss aussagekräftig sein, Denn eines der Dinge, die Screenreader-Benutzer oft tun werden ziehen oft eine Liste von
+   Links auf, Wo nur der Linktext angezeigt wird. Wenn also Ihr Link "hier klicken" oder "weiter" sagt, oder "mehr", oder "lies mehr",
+   Das sind alles Phrasen, die etwas bedeuten, Aber nur im Kontext, wo sie vorkommen. Wenn Sie sie aus diesem Kontext extrahieren, sie
+   ergeben nicht so viel Sinn, Es empfiehlt sich also, Text zu verwenden Die in eine Liste von Links extrahiert werden können.
 
-- Der Link muss ein echter Link sein, um von Hilfstechnologien erkannt zu werden. Es ist erforderlich, dass das `<a>`-Tag mit
-  einem gültigen href-Attribut versehen wird. In manchen Fällen kann das ARIA-Muster auch für Links verwendet werden, was
-  zusätzliche Markups und Skripte erfordert. Normalerweise wird das nicht empfohlen, denn ein Link ist ein Link und es ist
-  immer besser, den einfachen Weg zu gehen, weil er weniger fehleranfällig ist, wenn man ihn entwickelt.
+5. Und der Link muss ein echter Link sein, So kann er von assistiven Technologien als solches erkannt werden. Das bedeutet, dass das
+   `<a>` Tag mit einem gültigen href-Attribut verwendet wird, Oder, in selteneren Fällen, kann es auch bedeuten Verwendung des
+   ARIA-Musters für Links, Dies erfordert zusätzliches Markup und Skripting. Normalerweise wird das nicht empfohlen, Weil ein Link ein
+   Link ist, Und es ist immer besser, den einfachen Weg zu gehen, Weil es weniger anfällig für Fehler ist, während der Entwicklung.

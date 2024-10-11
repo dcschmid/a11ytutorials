@@ -2,21 +2,19 @@
 title: Beschreibungen
 ---
 
-Beschreibungen stellen zusätzliche Informationen über ein Element dar, das über seine Rolle und seinen Namen hinausgeht. Bei
-einem Formularelement kannst du zum Beispiel aria-describedby verwenden, um zusätzliche Anweisungen zu geben, z. B. dass
-Groß- und Kleinschreibung beachtet werden oder eine Mischung aus Buchstaben und Ziffern und mindestens ein Sonderzeichen
-enthalten muss.
+Beschreibungen sind zusätzliche Informationen über ein Element. Sie erklären, welche Rolle es hat und wie es heißt. In einem
+Formularelement können Sie zusätzliche Anweisungen geben, zum Beispiel zur Groß- und Kleinschreibung oder zum Inhalt.
 
-Es sollte beachtet werden, dass aria-describedby sich auf die ID eines anderen Elements bezieht. In diesem Sinne verhält es
-sich ähnlich wie aria-labelledby. Es ist nicht möglich, die Beschreibung direkt in das Attribut aria-describedby zu integrieren.
-Stattdessen gibst du die eigentliche Beschreibung als sichtbaren Text an.
+Die Beispiele enthalten keine Namen der Formularelemente. Benutzername oder Passwort werden nicht beschrieben, weil diese
+Informationen schon im Label stehen. Sie müssen es nicht noch einmal sagen.
 
-Häufig kann aria-describedby auch dazu verwendet werden, Fehlermeldungen programmatisch mit Formularelementen zu verknüpfen.
-Wenn du die Fehlermeldung nicht zuordnest, können Screenreader Nutzer die Fehlermeldung nicht hören, wenn sie nur mit der
-Tabulatortaste durch die Formularelemente navigieren, weil nur der Text gelesen wird, der programmatisch mit dem Formularelement
-verknüpft ist, wenn du mit der Tabulatortaste darauf zugreifst.
+aria-describedby verweist auf die ID eines anderen Elements. Das ist ähnlich wie bei "aria-labelledby". Sie setzen die
+Beschreibung nicht in das "aria-describedby"-Attribut ein. Fügen Sie die Beschreibung stattdessen in sichtbarem Text in ein
+anderes Element ein.
 
-Screenreader können auch Text hören, der nicht mit dem Formularelement verknüpft ist, wenn sie den Formularmodus verlassen und
-nur den Pfeil nach oben und unten verwenden, um das Dokument zu durchlaufen. Aber wenn sie ein Formular benutzen, werden sie
-höchstwahrscheinlich die Tabulatortaste benutzen, und wenn es in einem Formular Text gibt, der nicht mit den Formularelementen
-verbunden ist, während du mit der Tabulatortaste durchblätterst, besteht das Risiko, dass sie ihn einfach nicht hören.
+So können Fehlermeldungen mit Formularelementen verknüpft werden. Die Fehlermeldung wird dann nur angezeigt, wenn sie mit der
+Tabulatortaste ausgewählt wird.
+
+Screenreader können Text hören, der nicht mit dem Formularelement verknüpft ist, wenn sie den Formularmodus verlassen und den
+Pfeil nach oben und unten verwenden. Wenn Sie ein Formular ausfüllen, nutzen Sie vermutlich die Tabulatortaste. Wenn Text auf
+einem Formular nicht mit den Elementen verknüpft ist, können Sie ihn möglicherweise nicht hören.

@@ -1,38 +1,42 @@
 ---
-title: Automatisierte Hilfsmittel für Barrierefreiheit
+title: Automatisierte Barrierefreiheitstools
 ---
 
-Es ist wichtig, die Vorteile automatischer Barrierefreiheitswerkzeuge zu nutzen. Wenn du die Axe-Browsererweiterung bisher
-nicht installiert hast, hol sie jetzt nach. Installiere die Software und führe sie auf deiner eigenen Website aus. Im Ernst,
-der Rest dieses Kurses wird effektiver sein, wenn du es machst. Die Axe-Browsererweiterung ist für Google Chrome, Firefox
-und Edge verfügbar.
+import ExternalLink from "../../../components/ExternalLink.astro";
 
-Ich möchte dich bitten, eine Pause von diesem Kurs zu machen und die Axe-Browsererweiterung herunterzuladen, bevor du zurückkommst.
+Nutzen Sie automatisierte Barrierefreiheitstools. Wenn Sie die Browsererweiterung nicht installiert haben, pausieren Sie das Video
+und installieren Sie sie jetzt. Installieren und ausführen Sie das Tool auf einer Ihrer eigenen Websites. Der Rest des Kurses hängt
+davon ab, ob Sie das tun. Die Browser-Erweiterung gibt es für Chrome, Firefox und Edge. Die Download-Links findest du auf
+<ExternalLink href="htps://deque.com/axe/browser-extensions" text="deque.com/axe/browser-extensions" />
 
-Hast du etwas entdeckt? Wenn du keine Fehler bei der Barrierefreiheit gefunden hast, ist das großartig. Danke. Wenn es so ist,
-ist das wahrscheinlich kein Zufall. Möglicherweise wusste jemand, vielleicht du, was er tat.
+Nur zum Spaß: Mach eine Pause von dem Kurs. Hol dir die Axe-Browser-Erweiterung. Nutze sie, bevor du zurückkommst.
 
-Solltest du hingegen eine Liste mit Barrierefreiheitsfehlern gefunden haben, könnte das Trost spenden, dass du nicht allein bist.
-Fehlerfreie Websites sind nicht annähernd so häufig, wie es eigentlich sein sollte.
+Was haben Sie herausgefunden? Wenn Sie keine Fehler gefunden haben, super! Wenn ja, dann war das kein Zufall. Jemand wusste, was
+sie tat.
 
-Es gibt einige Dinge, die ich über diese Browsererweiterung erläutern muss. Ich möchte nur sagen, dass sich die Software immer
-ändert. Sie wird verbessert, neue Funktionen eingeführt und die Benutzeroberfläche verändert.
+Andererseits: Wenn Sie eine Liste von Problemen mit der Barrierefreiheit gesehen haben, ist das nicht gut. Aber Sie sind nicht
+allein. Es gibt noch nicht viele fehlerfreie Websites.
 
-Auf der linken Seite findest du die Anzahl der Barrierefreiheitsprobleme und im Hauptbereich die eigentlichen Probleme. Du
-kannst jedes Problem aufklappen und weitere Details sehen. Wenn es mehrere Instanzen desselben Problems gibt, kannst du mit
-den Schaltflächen „Zurück“ und „Vor“ zu jedem Einzelnen navigieren. Für Menschen, die gut sehen können, kann man die Schaltfläche
-Hervorheben benutzen. So kannst du sehen, wo der Fehler auf der Seite ist.
+Ich muss euch ein paar Dinge über diese Browsererweiterung erklären. Software verändert sich ständig. Die Software entwickelt sich
+weiter, führt neue Funktionen ein und ändert die Benutzeroberfläche. Wenn Ihre Benutzeroberfläche anders aussieht, heißt das nur,
+dass neue Funktionen hinzugefügt wurden. Die grundlegenden Konzepte sind aber gleich geblieben.
 
-Und noch ein wichtiger Punkt bei dieser Erweiterung, den du unbedingt beachten musst. Du kannst die Seite nicht nur einmal laden,
-auswerten und glauben, dass du damit fertig bist. So funktioniert die Browsererweiterung nicht und auch die Barrierefreiheit ist
-nicht gewährleistet. Moderne Webseiten haben oft mehrere Zustände wie ein Navigationsmenü. Oder wir haben einen Dialog, der
-geschlossen und anschließend wieder geöffnet ist, oder ein Formular, das sich in einem normalen Zustand befindet oder
-Fehlermeldungen enthält. Bei jedem dieser Zustände unterscheidet sich der Code und das Markup in einer Weise, die die
-Barrierefreiheit beeinflussen kann. Folglich ist es notwendig, jeden einzelnen dieser Zustände zu überprüfen, um ein genaues
-Bild der Barrierefreiheit der Website zu erhalten.
+Hier sehen Sie, welche Probleme es mit der Barrierefreiheit gibt. Die Probleme werden im Hauptbereich der Benutzeroberfläche angezeigt.
+Sie können ein Problem öffnen, um mehr zu sehen. Sie können einige Code-Snippets sehen. Wenn es mehrere Probleme gibt, können Sie zu
+jedem von ihnen navigieren. Sie können mit den Tasten "Zurück" und "Vorwärts" navigieren. Für sehende Benutzer ist es hilfreich, die
+Schaltfläche "Hervorheben" zu wählen, um zu sehen, wo sich der Fehler auf der Seite befindet.
 
-Dies bedeutet, dass du die Seite öffnest und den Zustand änderst, bevor du sie erneut testest. Anschließend änderst du den
-Zustand erneut und kontrollierst ihn erneut. Ich bin mir bewusst, dass es auf komplexen Webseiten eine Vielzahl von
-Zustandsänderungen gibt und du nicht jede davon testen kannst. Du kannst dir die Muster ansehen und wenn es wiederkehrende Muster
-gibt, kannst du ein paar Instanzen oder Muster einer bestimmten Art von Mustern testen, einige Instanzen einer anderen und so
-weiter. Wenn du das Muster behebst, löse es in der Regel auch alle Zugänglichkeitsprobleme mit dieser Komponente.
+Und noch ein wichtiger Punkt: Achten Sie auf diesen, weil es einen großen Unterschied macht. Sie können die Seite mehrmals laden und
+bewerten. So funktioniert die Browsererweiterung nicht.
+
+So funktioniert Barrierefreiheit nicht. Auf modernen Webseiten gibt es oft verschiedene Zustände. Ein Beispiel ist ein Navigationsmenü,
+das geschlossen oder eingeklappt ist und sich erweitern lässt. Oder wir haben ein Dialogfenster, das geschlossen und dann offen ist,
+oder ein Formular, das sich im normalen Zustand befindet oder mit Fehlermeldungen. Jeder dieser Zustände hat einen anderen Code und
+ein anderes Markup. Das kann die Zugänglichkeit beeinträchtigen. Man muss also jeden einzelnen Zustand testen, um die Zugänglichkeit
+der Seite als Ganzes zu verstehen.
+
+Laden Sie die Seite, testen Sie sie, ändern Sie den Status, testen Sie ihn erneut, ändern Sie den Status erneut und testen Sie ihn
+erneut. Sie müssen alle wichtigen Statusänderungen auf der Seite testen. Manche Webseiten sind sehr komplex. Es gibt viele verschiedene
+Statusänderungen. Man kann nicht alle testen. Man kann sich die Muster anschauen. Wenn es sich wiederholt, kann man ein paar Beispiele
+testen. Wenn Sie das Muster ändern, ändern Sie es für alle Instanzen. Dann gibt es keine Barrierefreiheitsprobleme mehr mit dieser
+Komponente.

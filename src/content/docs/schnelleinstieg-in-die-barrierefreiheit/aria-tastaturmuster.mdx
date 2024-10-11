@@ -2,136 +2,115 @@
 title: ARIA-Tastaturmuster
 ---
 
-ARIA schafft keine Barrierefreiheit für die Tastatur und auch keine Tastaturfunktionalität für dich. Das musst du alles
-selbst erstellen. ARIA gibt dir aber einige Muster und Konventionen vor, die du befolgen kannst. Man könnte sagen, dass
-eines der Ziele darin besteht, dass sich Webkomponenten und Webanwendungen mehr wie native Betriebssystemkomponenten
-und -anwendungen verhalten, einschließlich ausgereifter Modelle für die Barrierefreiheit von Tastaturen.
+Mit ARIA können Sie nichts über die Tastatur steuern. Du musst alles selbst machen. ARIA zeigt Ihnen aber einige Möglichkeiten, wie
+Sie vorgehen können. Webkomponenten und Web-Apps sollen sich wie native Betriebssystemkomponenten und -anwendungen verhalten. Dazu
+gehören auch Modelle für die Barrierefreiheit auf der Tastatur.
 
-Die ARIA-Tastaturmuster sind eine Mischung aus Ideen, die von Windows, Mac OS und anderen Einflüssen übernommen wurden.
-Das Ergebnis soll ein plattformübergreifendes Modell sein, auf das sich die Nutzer/innen verlassen können. Hier sind
-einige der Grundlagen.
+Die ARIA-Tastaturmuster sind eine Mischung aus Ideen von Windows, Mac OS und anderen. Das Ziel ist ein Modell, auf das sich alle
+verlassen können. Hier sind ein paar Grundlagen.
 
-## Tabindex verwenden
+## Verwendung von tabindex
 
-Um etwas zur natürlichen Tabulator-Reihenfolge hinzuzufügen, wenn es nicht bereits fokussierbar ist, füge tabindex="0“
-hinzu. Das gilt für alles, was einer Schaltfläche, einem Link oder einem Steuerelement ähnelt, wie Schieberegler, ein- und
-ausklappbare Steuerelemente und so weiter. Sei aber vorsichtig, damit du nicht Dinge fokussieren kannst, die nicht
-fokussierbar sein sollten. Überschriften, Absätze oder Textabschnitte oder alles, was keine wirkliche Interaktion hat,
-sollte nicht fokussierbar sein.
+Fügen Sie "tabindex" hinzu, um eine zusätzliche Aktivierreihenfolge zu erstellen. Das gilt für alle Schaltflächen, Links und
+Steuerelemente. Sie finden diese in Schiebereglern, Steuerelementen zum Erweitern und Reduzieren usw. Aber fokussieren Sie nichts,
+was nicht fokussiert werden soll. Überschriften, Absätze oder Textabschnitte sollten nicht fokussierbar sein.
 
-Trotzdem ist es manchmal sinnvoll, den Fokus auf etwas zu setzen, auch wenn du es nicht in die natürliche
-Tabulator-Reihenfolge bringen willst.
+Manchmal ist es trotzdem gut, den Fokus auf etwas zu legen, auch wenn es nicht in der natürlichen Reihenfolge steht.
 
-Um etwas per JavaScript fokussierbar zu machen, füge dem Element tabindex="-1" hinzu.
+Um ein Element über JavaScript fokussierbar zu machen, fügen Sie "tabindex="-1"" hinzu. Wenn Sie den Fokus auf einen modalen Dialog
+legen möchten, geben Sie dem Element tabindex="-1" hinzu. Sie können den Fokus auf die Überschrift oben im Dialogfeld verschieben,
+solange diese den Wert "0" hat. Sie wollen, dass der Fokus beim Öffnen des Dialogs auf der Überschrift liegt. Wenn ein Benutzer mit
+der Tabulatortaste navigiert, landet der Fokus nie auf der Überschrift.
 
-Das ist z. B. wichtig, wenn du den Fokus auf einen modalen Dialog sendest. Du kannst den Fokus an die Überschrift am Anfang
-des Dialogs senden, solange die Überschrift tabindex="-1" hat. Du würdest in diesem Fall nicht tabindex="0" verwenden,
-weil du nicht willst, dass die Leute zur Überschrift wechseln. Du willst nur, dass der Fokus auf der Überschrift landet,
-sobald der Dialog geöffnet wird. Wenn ein Benutzer dann innerhalb des Dialogs mit der Tabulatortaste navigiert, wird der
-Fokus nie auf der Überschrift landen.
+Man kann den Tab-Index auch als positive Zahl verwenden, um die Tabulatorreihenfolge zu ändern. Das ist aber nicht empfehlenswert. Das
+führt zu mehr Problemen.
 
-Nebenbei bemerkt: Es ist auch möglich, den Tabulator-Index gleich einer positiven ganzen Zahl zu verwenden, um die
-Tabulator-Reihenfolge willkürlich zu manipulieren, aber tu das nicht. Das bringt mehr Probleme mit sich, als es behebt.
+## Logische Tab-Reihenfolge
 
-## Logische Tabulator-Reihenfolge
+Die Standard-Tab-Reihenfolge ist übrigens die Reihenfolge, in der Elemente im DOM angezeigt werden. Die Tabulatorreihenfolge ignoriert
+alle ausgefallenen Dinge, die Sie möglicherweise mit CSS gemacht haben, um die visuelle Platzierung auf dem Bildschirm zu manipulieren.
+Stellen Sie sicher, dass Ihre Komponente über eine logische Tab-Reihenfolge verfügt, die sowohl vorwärts mit der Tabulatortaste als
+auch rückwärts mit Umschalttaste und Tabulator erfolgt.
 
-Die Standard-Tabulatorreihenfolge ist übrigens die Reihenfolge, in der die Elemente im DOM erscheinen. Die Tabulator-Reihenfolge
-ignoriert alle ausgefallenen Dinge, die du vielleicht mit CSS gemacht hast, um die visuelle Platzierung auf dem Bildschirm zu
-verändern. Achte darauf, dass deine Komponente eine logische Tabulator-Reihenfolge hat, sowohl vorwärts mit der Tabulatortaste
-als auch rückwärts mit Umschalttaste plus Tabulator.
+## Tastatur-Fallen
 
-## Tastaturfallen
+Erstellen Sie keine Tastaturfalle. Wenn man mit der Tabulatortaste nicht mehr weiterkommt, egal ob man vorwärts oder rückwärts
+navigiert. Das ist eine Tastaturfalle. Modale Dialoge sind eigentlich das Gegenteil von dem, was ich gerade gesagt habe. Ein Dialog
+ist dafür da, alles andere zu unterdrücken und den Benutzer in eine bestimmte Situation zu bringen. Aber wenn Sie es richtig machen,
+ist das keine echte Tastaturfalle. Der Benutzer sollte immer die Möglichkeit haben, den Dialog zu beenden.
 
-Schaffe keine Tastaturfallen. Wenn Nutzer nicht über einen bestimmten Punkt hinaus tabulieren können, egal ob vorwärts oder
-rückwärts. Das ist eine Tastaturfalle. Modale Dialoge scheinen ein Widerspruch zu dem zu sein, was ich gerade gesagt habe,
-denn der Sinn eines Dialogs ist es, alles zu unterdrücken, was sich hinter dem Dialog verbirgt, und den Benutzer gewissermaßen
-in eine Falle zu locken, aber das ist keine echte Tastaturfalle, wenn du es richtig machst.
+## Verschieben des Fokus
 
-## Den Fokus verschieben
+Hier ist eine weitere Regel. Lenken Sie den Tastaturfokus nicht auf eine Weise durch die Benutzeroberfläche, die den Benutzer verwirren
+kann. Wenn es keinen guten Grund gibt, den Fokus zu verschieben, verschieben Sie ihn nicht.
 
-Hier ist eine weitere Regel. Bewege den Tastaturfokus nicht auf eine Weise durch die Benutzeroberfläche, die den Benutzer
-verwirren kann. Wenn es keinen triftigen Grund gibt, den Fokus zu verschieben, solltest du ihn nicht verschieben.
+Aber wenn wir schon von guten Gründen sprechen, ist das Öffnen eines Dialogs einer dieser guten Gründe, um den Fokus zu verschieben.
+Wenn ein Benutzer auf die Schaltfläche klickt, um den Dialog zu öffnen, muss der Fokus auf etwas im Dialog verschoben werden. Was am
+besten geeignet ist, hängt vom Kontext ab. Wenn es sich um ein Formular handelt und das erste Element im Dialog ein Formularelement ist,
+kann es logisch sein, den Fokus auf dieses erste Formularelement zu senden. Ich persönlich bevorzuge es, sicherzustellen, dass das
+erste Element im Dialog eine Überschrift ist, und den Fokus auf diese Überschrift zu lenken, denn auf diese Weise werden Screenreader
+die Überschrift im Wesentlichen als den Namen oder die Beschriftung des Dialogs ankündigen, um diesen Namen explizit zu machen, fügen
+Sie übrigens aria-labelledby auf das Element ein, das role="dialogue" hat, und aria-labelledby würde sich auf die ID der Überschrift
+beziehen.
 
-Apropos gute Gründe: Das Öffnen eines Dialogs ist einer dieser guten Gründe, den Fokus zu verschieben. Wenn ein Nutzer auf
-die Schaltfläche zum Öffnen des Dialogs klickt, muss der Fokus auf etwas im Dialog verschoben werden. Was am besten geeignet
-ist, hängt vom Kontext ab. Wenn es sich um ein Formular handelt und das erste Element innerhalb des Dialogs ein Formularelement
-ist, kann es logisch sein, den Fokus auf dieses erste Formularelement zu setzen. Ich selbst bevorzuge es, sicherzustellen,
-dass das erste Element des Dialogs eine Überschrift ist, und den Fokus auf diese Überschrift zu richten, weil Screenreader
-die Überschrift im Wesentlichen als den Namen oder das Label des Dialogs ankündigen. Um diesen Namen explizit zu machen,
-füge übrigens aria-labelledby zu dem Element hinzu, das role=„dialogue“ hat, und aria-labelledby bezieht sich auf die ID
-der Überschrift.
+## Verlieren Sie den Fokus nicht
 
-## Lass den Fokus nicht verloren gehen
-
-Wenn ein Element, das den Tastaturfokus hat, verschwindet, z. B. wenn ein modaler Dialog geschlossen wird, musst du den Fokus
-an eine logische Stelle senden. Normalerweise bedeutet das, dass du den Fokus an die Schaltfläche zurückschickst, die den
-Dialog ursprünglich geöffnet hat. Stellenweise ist es sinnvoll, den Fokus an eine andere Stelle zu senden, aber dein
-Standardplan sollte immer sein, den Fokus zurück zur ursprünglichen Schaltfläche zu senden.
+Wenn ein Element mit dem Tastaturfokus verschwindet, müssen Sie den Fokus an einen anderen Ort senden. In der Regel heißt das, den
+Fokus wieder auf die Schaltfläche zu setzen, mit der der Dialog geöffnet wurde. Manchmal ist es gut, den Fokus an einen anderen Ort
+zu senden. Aber normalerweise sollte der Fokus immer wieder auf die ursprüngliche Schaltfläche gesetzt werden.
 
 ## Zusammengesetzte Komponenten
 
-Bei zusammengesetzten Komponenten wie Tabellisten, Optionsschaltflächengruppen, Kombinationsfeldern, Baumansichten usw. wird
-das Tastaturmuster ein wenig komplizierter.
+Mit vielen verschiedenen Elementen wie Tablisten, Optionsfeldern, Kombinationsfeldern, Baumansichten usw. ist die Tastaturbedienung
+etwas komplizierter.
 
-## Das Tastaturmuster für Radiogruppen
+## Das Tastaturmuster der Optionsgruppe
 
-Beginnen wir mit Radiobutton-Gruppen, die eigentlich ein natives HTML-Muster sind, die du aber mit ARIA und JavaScript
-nachbilden kannst. Normalerweise ist das nicht nötig, weil die nativen Radiobuttons einwandfrei funktionieren, aber wenn du
-sie neu erstellen musst, solltest du es richtig machen.
+Wir starten mit Radiobutton-Gruppen. Das sind HTML-Elemente, die Sie aber auch mit ARIA und JavaScript erstellen können. Normalerweise
+ist das nicht nötig, aber wenn Sie sie neu erstellen müssen, machen Sie es richtig.
 
-Das bedeutet Folgendes. Radiogruppen sind so konzipiert, dass nur ein Element innerhalb der Gruppe ausgewählt werden kann. Wenn
-eines der Optionsfelder ausgewählt ist, ist es auch das Einzige, zu dem die Benutzer/innen mit der Tabulatortaste wechseln
-können. Wenn es vier Optionsschaltflächen gibt und eine der mittleren Schaltflächen ausgewählt ist, landet der Fokus auf
-dieser mittleren Schaltfläche und nicht auf der ersten, wenn ein Benutzer mit der Tabulatortaste in die Optionsschaltflächengruppe
-wechselt. Wenn ein Benutzer die Umschalttaste benutzt, um mit der Tabulatortaste zurück in die Optionsschaltflächengruppe
-zu wechseln, landet der Fokus ebenfalls auf der mittleren Schaltfläche. Um von einer Optionsschaltfläche zur anderen zu wechseln
-oder eine der anderen Optionsschaltflächen auszuwählen, muss der Benutzer die Pfeiltasten nach oben oder unten oder nach rechts
-oder links benutzen.
+Hier ist, was es bedeutet: In einer Optionsfeld-Gruppe kann immer nur ein Element ausgewählt werden. Wenn ein Optionsfeld ausgewählt
+ist, können Benutzer mit der Tabulatortaste nur zu diesem wechseln. Wenn vier Optionsfelder vorhanden sind und eines davon ausgewählt
+ist, wird der Fokus auf dieses gesetzt, nicht auf das erste. Wenn man die Umschalttaste drückt, wechselt der Fokus zur mittleren
+Schaltfläche. Um ein anderes Optionsfeld auszuwählen oder zu wechseln, benutzt man die Pfeiltasten.
 
-Manche Leute denken, dass man mit der Tabulatortaste zu jedem Optionsfeld wechseln kann, aber so sind Optionsfelder nicht
-konzipiert. Es ist auch erwähnenswert, dass durch die Verwendung der Pfeiltaste innerhalb der Optionsschaltflächengruppe
-automatisch die Optionsschaltfläche ausgewählt wird, die den Tastaturfokus erhält. Es gibt also eine ganze Menge zu beachten
-bei diesem Radiogruppenmuster, und wenn du ein eigenes erstellen willst, musst du das alles nachmachen. Normalerweise macht
-das mehr Mühe, als es wert ist, aber wenn du es machen willst, dann mach es ganz.
+Manche Leute denken, dass man mit der Tabulatortaste zu jedem Optionsfeld wechseln kann. Das ist aber nicht möglich. Wenn man
+innerhalb der Optionsfeldgruppe die Pfeiltaste benutzt, wird das Optionsfeld ausgewählt, auf das man den Fokus setzen will. Dieses
+Muster ist ziemlich komplex. Wenn du eine eigene Radiogruppe erstellen willst, musst du all das nachbauen. Normalerweise ist das
+mehr Arbeit, als es wert ist. Aber wenn Sie es schon machen, dann machen Sie es richtig.
 
-## Das Tabulator-Komponenten-Tastaturmuster
+## Das Tastaturmuster der Registerkartenkomponente
 
-Wenn du darüber nachdenkst, sind Tab-Komponenten genau genommen Radiogruppen mit einer anderen Benutzeroberfläche, oder
-zumindest können wir sagen, dass sie Radiogruppen sind, auch wenn sie nicht genau dasselbe sind.
+Registerkartenkomponenten sind im Wesentlichen Optionsfeldgruppen mit einer anderen Benutzeroberfläche.
 
-Was ich damit meine, ist, dass du in einer Tablist immer nur eine Registerkarte auf einmal auswählen kannst, genauso wie
-#du in einer Radiogruppe immer nur eine Schaltfläche auswählen kannst. Deshalb kann das Tastaturverhalten deiner
-Registerkartenkomponente genau so sein wie bei einer Optionsgruppe. Du kannst es so einrichten, dass nur eine Registerkarte
-auswählbar ist und du die Pfeiltasten verwendest, um in einer Registerkarte zu navigieren. Wenn du die Pfeiltasten verwendest,
-wird automatisch ausgewählt, welche Registerkarte den Fokus erhält. Das ist normalerweise das Modell, das ich verwende.
+Sie können in einer Registerkartenliste immer nur einen Reiter auswählen. Genauso können Sie in einer Optionsgruppe immer nur ein
+Optionsfeld auswählen. Deshalb kann das Tastaturverhalten Ihrer Registerkartenkomponente genauso sein wie bei einer Optionsfeldgruppe.
+Sie können festlegen, dass nur ein Reiter ausgewählt werden kann. Sie können dann mit den Pfeiltasten durch die Reiter in einer
+Registerkartenliste navigieren. Wenn Sie die Pfeiltasten drücken, wird der ausgewählte Reiter ausgewählt. Das ist das Modell, das
+ich verwende.
 
-Es gibt aber noch ein anderes Modell, das sich größtenteils genauso verhält, nur dass die Registerkarte nicht automatisch
-ausgewählt wird, wenn du die Pfeiltasten benutzt. Du musst die Leertaste benutzen, um die Registerkarte auszuwählen. Diese
-Implementierung ist für die meisten Menschen unerwartet und kann daher für Verwirrung sorgen und sogar dazu führen, dass
-einige Leute denken, dass es keineswegs funktioniert. Trotzdem ist es ein gültiges Modell, wenn du es verwenden willst.
+Es gibt aber auch ein anderes Modell, bei dem die Pfeiltasten nicht automatisch den Fokus setzen. Sie müssen die Leertaste drücken,
+um diesen Tab auszuwählen. Diese Art der Umsetzung ist für die meisten Menschen überraschend. Deshalb kann es zu Verwirrung kommen
+und manche denken, dass es nicht funktioniert. Dieses Modell ist trotzdem gültig, wenn Sie es nutzen möchten.
 
-## Kannst du deine eigenen Tastaturmuster erfinden?
+## Können Sie Ihre eigenen Tastaturmuster erfinden?
 
-Diese Frage stellen sich Entwickler/innen oder Designer/innen manchmal, wenn sie in den ARIA-Empfehlungen auf ein Muster
-stoßen, das ihnen nicht gefällt, oder – was vielleicht häufiger vorkommt – wenn sie die Spezifikation gar nicht lesen und
-einfach etwas erfinden. Kannst du deine eigenen Muster, deine eigenen Tastaturmethoden und so weiter erfinden? Die kurze
-Antwort lautet: Ja, und es verstößt auch nicht gegen die Regeln, das zu tun. Aber wenn du dir etwas selbst ausdenkst und
-der Einzige auf der Welt bist, der weiß, wie man es macht, ist das nicht sehr nützlich.
+Manchmal fragen Entwickler oder Designer, ob sie ein Muster aus den ARIA-Empfehlungen verwenden können, das ihnen nicht gefällt.
+Oder sie haben die Spezifikation nicht gelesen und wollen trotzdem etwas erfinden. Kann man das tun? Kannst du eigene Muster,
+Tastaturmethoden und ähnliches entwickeln? Ja, das ist erlaubt. Wenn Sie aber etwas erfinden, was niemand sonst kennt, ist das
+nicht gut.
 
-Mit anderen Worten: Wähle eine Methode, die entweder durch die Standards oder durch Konventionen weithin bekannt ist,
-oder wenn du etwas von Grund auf neu entwickelst, stelle sicher, dass es zumindest intuitiv ist.
+Wählen Sie eine Methode, die bekannt ist, oder schaffen Sie etwas Neues, das intuitiv ist.
 
 ## Deaktivierte oder inaktive Steuerelemente
 
-In nativem HTML ist ein deaktiviertes Steuerelement nicht im normalen Tab-Flow enthalten. In ARIA-Komponenten kannst
-du das gleiche Verhalten mit deinen eigenen deaktivierten Steuerelementen implementieren, aber die ARIA-Empfehlungen
-fügen einige Nuancen hinzu, weil Screenreader-Benutzer oft mit der Tabulatortaste oder den Pfeiltasten nachsehen, was
-verfügbar ist. Wenn eine interaktive Entwicklung also weder über die Tabulatortaste noch über die Pfeiltasten zugänglich
-ist, kann es sein, dass der Nutzer sie gar nicht entdeckt und gar nicht merkt, dass sie da ist. Du kannst dem Steuerelement
-aria-disabled="true" hinzufügen, um den Nutzern mitzuteilen, dass das Steuerelement nicht verfügbar ist, ohne es tatsächlich
-aus der Tabulator-Reihenfolge zu entfernen.
+Ein deaktiviertes Steuerelement wird nicht normal angeklickt. Sie können das gleiche Verhalten mit Ihren eigenen deaktivierten
+Steuerelementen implementieren. Die ARIA-Empfehlungen fügen einige Nuancen hinzu, da Benutzer von Screenreadern häufig mit der
+Tabulatortaste navigieren oder die Pfeiltasten verwenden, um zu entdecken, was verfügbar ist. Wenn ein Element nicht über die
+Tabulatortaste oder Pfeiltasten erreichbar ist, wird es vom Benutzer nicht entdeckt. Sie können "aria-disabled=true" zum
+Steuerelement hinzufügen. So wissen Benutzer, dass sie es nicht benutzen können.
 
 ## Weitere Überlegungen zur ARIA-Tastatur
 
-Ich habe hier einige der wichtigsten ARIA-Tastaturüberlegungen behandelt, aber nicht alle. Wenn du deine eigenen Komponenten
-erstellen willst, solltest du dir den ARIA Authoring Practices Guide ansehen, um weitere Details zu erfahren.
+Hier finden Sie die wichtigsten Überlegungen zur ARIA-Tastatur. Wenn Sie eigene Komponenten erstellen, lesen Sie am besten den
+ARIA-Leitfaden.

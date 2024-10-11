@@ -2,33 +2,26 @@
 title: Rollen
 ---
 
-Wenn wir über Rollen in der Barrierefreiheit sprechen, ist die Rolle das, was die Sache semantisch macht. Ist es ein
-Bild oder ein Listenelement? Ist es eine Tabelle oder eine Überschrift? Was auch immer das Element ist, das ist seine
-Rolle.
+Wenn wir über Rollen in der Barrierefreiheit sprechen, ist die Rolle das, was das Element bedeutet. Ist es ein Bild oder ein
+Listeneintrag? Ist es eine Tabelle oder eine Überschrift? Die Rolle ist immer die gleiche, egal, um welches Element es sich handelt.
 
-HTML hat bereits viele eigene semantische Rollen. Du musst nichts Besonderes tun, um einem Link die Rolle eines Links
-zu geben.
+HTML hat schon viele native semantische Rollen. Sie müssen nichts Besonderes tun, um einem Link die Link-Rolle zu geben. Rollen von
+Eltern und Kindern. Wenn Sie mit einem vordefinierten Muster arbeiten, müssen Sie alle erforderlichen Rollen hinzufügen.
 
-Wenn du mit einem vordefinierten zusammengesetzten ARIA-Muster arbeitest, bei dem du mehr als eine Rolle hast, musst du
-alle notwendigen Rollen hinzufügen.
+Die Rolle "tab" gehört in ein übergeordnetes Element mit der Rolle "tablist". Ein Element mit der Rolle "Baum" muss in ein
+übergeordnetes Element mit der Rolle "Baum" eingefügt werden.
 
-Die Rolle „tab“ zum Beispiel gehört in ein übergeordnetes Element mit der Rolle „tablist“. Ein Element mit der Rolle von
-tree item gehört in ein übergeordnetes Element mit der Rolle von tree.
+Fügen Sie alle nötigen über- und untergeordneten Rollen hinzu, um eine vollständige Komponente zu erstellen.
 
-Füge immer alle richtigen Eltern- und Kindrollen ein, um eine vollständige Komponente zu erstellen.
+## Können Sie neue Rollen erfinden?
 
-## Kannst du neue Rollen erfinden?
+Was ist, wenn es keine vordefinierte Rolle für die Komponente gibt? Was ist, wenn Sie eine Karte erstellen, die der Nutzer anklicken
+kann? Können Sie eine Karte erstellen? Man kann keine zugängliche, interaktive Karte mit ARIA oder HTML erstellen. Sie können keine
+neue Rolle erfinden. Der Browser weiß nicht, was er damit machen soll. Deshalb können die Hilfstechnologien die Informationen nicht
+an die Benutzer weitergeben. Das hat keine Wirkung.
 
-Was ist, wenn es keine vordefinierte Rolle für die Art von Komponente gibt, die du erstellen willst? Was ist, wenn du eine
-interaktive Karte erstellen willst? Kannst du role="map" oder role="interactivemap" erstellen? In ARIA oder HTML gibt es
-keine native Möglichkeit, eine barrierefreie, interaktive Karte zu erstellen. Aber du kannst trotzdem keine Rolle für sie
-erfinden. Der Browser weiß einfach nicht, was er damit anfangen soll, und sie landet nicht im Baum der Barrierefreiheit,
-sodass die unterstützenden Technologien diese Informationen nicht an die Nutzer weitergeben. Damit ist nichts erreicht.
+Wenn Sie eine Karte oder andere Komponente erstellen wollen, die nicht von ARIA vorgegeben ist, können Sie das tun, aber nicht, indem
+Sie neue Rollen erfinden. Sie müssen mit den vorhandenen Rollen arbeiten, zum Beispiel mit HTML-Links, HTML-Schaltflächen,
+HTML-Formularfeldern und ARIA-Dialogen.
 
-Wenn du wirklich eine barrierefreie, interaktive Karte oder eine andere Komponente erstellen willst, die nicht von ARIA
-vorgegeben ist, kannst du das trotzdem tun, aber nicht, indem du Rollen erfindest. Stattdessen musst du mit den vorhandenen
-Rollen arbeiten, z. B. mit nativen HTML-Links oder nativen HTML-Schaltflächen die Datenfilter an die Karte übermitteln
-oder Dialoge öffnen, oder den ARIA-Dialogen selbst, oder nativen HTML-Formularelementen, wie der Suchfunktion, und vielleicht
-anderen ARIA-Komponenten.
-
-Mit anderen Worten: Nutze die Bausteine, die in ARIA enthalten sind, und setze sie für deine Komponente zusammen.
+Verwenden Sie die Bausteine aus ARIA und fügen Sie sie für Ihre Komponente zusammen.

@@ -2,38 +2,177 @@
 title: Formularvalidierung und Feedback
 ---
 
-Das Ziel der Formularvalidierung und des Feedbacks ist es, Fehler zu vermeiden, zu erkennen und zu beheben.
+Formularvalidierung und Feedback sollen dafür sorgen, dass keine Fehler entstehen, und dass Fehler behoben werden. Hier ist ein
+einfaches Formular, das ich zeigen will.
 
-- Jedes Formularfeld ein Label mit Barrierefreiheit hat. Das ist der erste Schritt, um Fehler zu vermeiden, denn wenn es kein
-  Label gibt, könnten die Nutzer verwirrt sein oder die falschen Informationen eingeben.
+1. Jedes Formularfeld hat eine Textbeschreibung in einfacher Sprache. So werden Fehler vermieden. Wenn kein Label vorhanden ist,
+   können Benutzer verwirrt sein oder die falschen Informationen eingeben.
 
-- Zweitens sind die Pflichtfelder mit einem Sternchen gekennzeichnet, damit die Nutzer wissen, dass sie die Felder nicht leer
-  lassen sollen. Wir können sogar noch mehr tun als nur das Sternchen, indem wir etwas auszeichnen, das ich dir gleich zeigen werde.
+2. Die erforderlichen Felder sind mit einem Sternchen gekennzeichnet. Das bedeutet: Bitte nicht leer lassen! Wir können es noch besser
+   machen, als nur mit einem Sternchen. Ich zeige Ihnen gleich, wie.
 
-- Und drittens ist der Submit-Button zu Beginn deaktiviert. Sie wird erst aktiviert, wenn alle erforderlichen Felder mit Daten
-  gefüllt sind. Die Deaktivierung des Submit-Buttons ist eine weitere einfache Möglichkeit, Fehler zu vermeiden, bevor sie an den
-  Server gesendet oder gespeichert werden. Eine andere Methode wäre, das Formular die Daten übermitteln zu lassen und dem Benutzer
-  anschließend eine Rückmeldung zu geben. Beide Methoden sind in Ordnung. Wenn du verhinderst, dass das Formular abgeschickt wird,
-  kannst du die Fehler vermeiden, bevor sie überhaupt auftreten.
+3. Die Schaltfläche "Senden" ist zunächst deaktiviert. Sie wird erst aktiviert, wenn alle nötigen Angaben gemacht wurden. So kann
+   man Fehler vermeiden, bevor sie an den Server gesendet oder gespeichert werden. Eine andere Möglichkeit ist, dass das Formular die
+   Daten überträgt und der Benutzer dann eine Rückmeldung bekommt. So oder so ist es okay. So kann man verhindern, dass das Formular
+   abgeschickt wird. Damit kann man Fehler vermeiden, bevor sie überhaupt entstehen.
 
-Alle Erfolgskriterien unter 3.3 sind für die Formularvalidierung relevant. Jedes Mal, wenn ein Nutzer Daten eingibt, die
-gespeichert werden sollen, muss nach Erfolgskriterium 3.3.4 mindestens eine der folgenden Bedingungen erfüllt sein. Die Aktion
-ist umkehrbar, d. h. die Nutzer/innen können die Daten nach dem Absenden bearbeiten, oder die Informationen werden durch
-Algorithmen überprüft, die häufige Fehler abfangen sollen, oder die Eingabe wird vom/von der Nutzer/in überprüft und genehmigt,
-bevor sie gespeichert wird.
+Ich werde die Tastatur nutzen, um alle Felder mit der Tabulatortaste zu überspringen. Es werden Meldungen angezeigt, die sagen, dass
+der Name und die Nachrichtenfelder nicht leer sein dürfen. Unten steht, dass ich alle erforderlichen Felder ausfüllen soll. Wenn ich
+die Werte in die Felder eingebe, verschwinden die Fehlermeldungen und die Schaltfläche "Senden" wird aktiv. Wenn ich das Formular
+abschicke, werden weitere Fehlermeldungen angezeigt. Noch nichts gesendet. Ich soll die Werte bestätigen. Wenn etwas nicht stimmt,
+kann ich zurückgehen und es ändern und dann erneut senden und überprüfen.
 
-Unser Formular verwendet die zweite und dritte Technik, d. h. die Überprüfung durch Algorithmen und die Bestätigung der Daten
-durch den Nutzer. Wenn wir außerdem eine Schaltfläche zum Bearbeiten hinzufügen, nachdem die Eingabe abgeschlossen ist, würde
-das auch den ersten Punkt erfüllen. Es ist nicht notwendig, alle drei Techniken anzuwenden, obwohl das in manchen Fällen eine
-gute Idee wäre.
+Wenn ich alles bestätigt habe, kann ich das Formular abschicken und die Daten senden. Am Ende bekomme ich eine Erfolgsmeldung, dass
+die Informationen auf der Website angekommen sind.
 
-Das Erfolgskriterium 3.3.3 verlangt, dass die Seite Vorschläge zur Fehlerbehebung macht, wenn Algorithmen ein Problem erkennen
-und es bekannte Lösungen gibt. In unserem Fall wissen wir, dass ein leeres Namens- oder Nachrichtenfeld ungültig ist, also sagen
-wir dem Nutzer, dass diese Felder nicht leer sein dürfen. Andere Formulare können den Benutzer auffordern, eine gültige
-E-Mail-Adresse einzugeben oder Zahlen statt Buchstaben für eine Telefonnummer einzugeben usw.
+Das ist ein übliches Modell zur Prüfung von Formularen. Das Gute daran ist, dass es auch für Menschen mit Behinderung funktioniert.
+Schauen wir uns den Prozess noch einmal an. Jetzt mit Screenreader.
 
-Es gibt noch weitere Überlegungen zu Formularen, vor allem, wenn sie interaktiver werden oder mehr benutzerdefinierte
-JavaScript-Komponenten wie Kombinationsfelder, Textvorhersagen oder simulierte Dropdowns enthalten. Je mehr du in Richtung
-benutzerdefinierte Komponenten, JavaScript und Interaktivität gehst, desto mehr solltest du dich mit ARIA beschäftigen, der
-Spezifikation für Barrierefreiheit von Rich Internet Applications. Denk aber daran, dass du nicht alles kompliziert machen
-musst. Die in diesem Video vorgestellten Techniken sind eine solide Grundlage für jede barrierefreie Form.
+> Sternname, Bearbeitung erforderlich, leer. Der Name darf nicht leer sein.
+> Sternnachricht, Bearbeitung erforderlich, mehrzeiliges Leerfeld. Die Nachricht darf nicht leer sein.
+> Art der Anfrage.
+> Combo-Box 'Technische Unterstützung' ist eingeklappt.
+> Haben Sie ein Konto bei uns?
+> Gruppierung, ja, Radio-Button nicht ausgewählt, eines von zwei.
+> Gruppierung von Benachrichtigungsmethoden.
+> Das Kontrollkästchen "E-Mail" ist nicht aktiviert.
+> Das Kontrollkästchen "Telefon" ist nicht aktiviert.
+> Füllen Sie alle erforderlichen Felder aus.
+> Der Name ist leer.
+> Die Nachricht ist leer.
+> Deaktivierte Schaltfläche.
+
+Ich habe das Formular noch nicht ausgefüllt. Ich werde die Umschalttaste plus Tab verwenden, um rückwärts zu navigieren und dann
+einige Teile auszufüllen.
+
+> Benachrichtigung.
+> Haben Sie den Sternentyp, Sternnamen bearbeiten erforderlich, ungültiger Eintrag, Name kann nicht leer sein, hat Autovervollständigung.
+> Paul Bohman, eins von eins, Paul Bohman.
+> Nachricht markieren, ungültigen Eintrag bearbeiten erforderlich.
+> Mehrzeilige Nachrichten dürfen nicht leer oder blank sein.
+> (Stimme springt)
+> Punkt.
+> Art der Anfrage, Kombinationsfeld.
+> Technische Hilfe, eingeklappt.
+> Fehlerbericht.
+> Haben Sie ein Konto bei uns?
+> Gruppierung?
+> Ja, Radio-Button.
+> Nicht markiert, einer von zweien.
+> Feld geprüft.
+> Gruppierung von Benachrichtigungsmethoden.
+> E-Mail, Kontrollkästchen nicht angekreuzt.
+> Angekreuzt.
+> Kontrollkästchen "Telefon" ist nicht angekreuzt.
+> Schaltfläche "Senden".
+> Kontaktieren Sie uns, Überschrift Ebene eins,
+> bitte überprüfen Sie die Genauigkeit.
+> Name Paul Bohman.
+> Nachricht, das ist meine Nachricht.
+> Art der Anfrage, Fehlerbericht.
+> Haben Sie ein Konto bei uns?
+> Ja.
+> Benachrichtigungsmethoden, E-Mail.
+> Absenden Button, Änderungen vornehmen.
+> Schaltfläche "Senden", Schaltfläche "Änderungen vornehmen".
+> Bearbeitung des Sternnamens erforderlich, Paul Bohman.
+> Bearbeitung der Sternnachricht erforderlich: mehrzeilig.
+> Das ist meine Nachricht.
+> Art der...
+> Haben Sie...
+> Benachrichtigungsmethoden.
+> Das Kontrollkästchen für das Telefon ist nicht angekreuzt.
+> Schaltfläche "Senden".
+> Kontaktieren Sie uns, Überschrift Ebene eins.
+> Schaltfläche "Senden".
+> Kontaktieren Sie uns Überschriftenebene eins.
+> Vielen Dank. Wir haben Ihre Anfrage erhalten.
+
+Dieses Formular sollte auch für Nutzer von Bildschirmleseprogrammen verständlich sein. Wenn man etwas eingibt, wird es laut
+vorgelesen. Der Screenreader sagt mir auch, welche Felder Pflicht sind. Das wird mit dem "aria-required"-Attribut gemacht. Wenn
+ich ein erforderliches Feld mit der Tabulatortaste verlasse, ohne Text einzugeben, erscheint eine Meldung, die vom Screenreader
+vorgelesen wird.
+
+> Der Name darf nicht leer sein.
+
+aria-required="true" macht die Fehlermeldung nicht automatisch sichtbar. Ich habe JavaScript hinzugefügt, damit der Screenreader
+anzeigt, dass es sich um ein erforderliches Feld handelt. Diese Nachricht hängt mit der Eingabe zusammen. Wenn es sich nur um Text
+handelt, erkennt der Screenreader ihn nicht als Attribut dieses Felds.
+
+Wenn Sie aria-describedby nicht verwenden, kann der Benutzer zum Text navigieren. Er muss dazu aber den Modus in der Sprachausgabe
+ändern und die Pfeile zum Navigieren verwenden, statt die Tabulatortaste. In einem Formular ist es unwahrscheinlich, dass Benutzer
+dies tun, es sei denn, sie denken, dass ihnen etwas fehlt.
+
+Die Fehlermeldungen sagen, welches Feld den Fehler hat. Es wird nicht nur gesagt, dass das Feld nicht leer sein darf. Die
+Fehlermeldung sagt, dass der Name und die Nachricht nicht leer sein dürfen. Das ist wichtig, weil die Fehlermeldung erscheint, wenn
+man das Feld verlässt. Der Fokus liegt dann auf einem anderen Feld, das keinen Fehler hat.
+
+Die Benutzer sollen nicht denken, dass das Feld, in dem sie gerade sind, das Fehlerfeld ist. Sie sollen wissen, dass es das vorherige
+Feld war. Sie gehen nach unten zu der Schaltfläche "Senden".
+
+> Füllen Sie alle erforderlichen Felder aus.
+> Name ist leer, Nachricht ist leer, Schaltfläche deaktiviert.
+
+Ich habe einen Text hinzugefügt, der besagt, dass die Funktion deaktiviert ist. Screenreader-Benutzer denken, dass sie auf "Senden"
+sind und hören, was sie tun müssen, um die Fehler zu beheben. Wenn wir den Fehler behoben haben, verschwindet diese Schaltfläche. Wenn
+sie nach unten gehen, hören sie die normale Schaltfläche "Senden".
+
+> Schaltfläche "Senden".
+
+Sie können es aktivieren. Es gibt auch andere Möglichkeiten. Vielleicht fällt Ihnen etwas Besseres ein. Aber wichtig ist, dass die
+Erfahrung für alle logisch und informativ ist. So erreichen wir das.
+
+Wenn der Benutzer das Formular abschickt, kommt er auf eine Seite, wo er bestätigen kann. Die alte Form gibt es nicht mehr. Wir
+sehen jetzt neue Informationen. Der Bereich mit den neuen Informationen ist jetzt wichtig. Ich verwende JavaScript, um den Fokus zu
+senden. Wenn wir den Fokus nicht senden, hört der Benutzer nichts. Manche denken, sie sind fertig, merken aber nicht, dass sie noch
+etwas bestätigen müssen. Andere suchen auf der Seite nach, weil sie denken, dass etwas schiefgelaufen ist. Wir wollen nicht, dass sie
+mitraten müssen.
+
+Für Entwickler ist hier etwas Wichtiges. Es ist nicht einfach, Inhalte, die vorher unsichtbar waren, barrierefrei zu machen. Wenn Sie
+dabei nicht auf die Barrierefreiheit achten, wird der Fokus zwar richtig angezeigt, aber von Screenreadern nicht angekündigt. Ich habe
+den Fokus erst auf die Überschrift gesendet, dann den alten Inhalt gelöscht und den neuen Inhalt eingeblendet. Danach habe ich eine
+kurze Pause von einer halben Sekunde gemacht und dann den Fokus nach unten an den neuen Textcontainer gesendet. Ich weiß, dass das
+in mehreren Schritten passiert, aber die Reihenfolge ist wichtig. Die wichtigste Erkenntnis ist:
+
+1. Lassen Sie nichts verschwinden, während es noch den Tastaturfokus hat.
+
+2. Manchmal muss man den Fokus auf etwas anderes legen, damit er nicht verloren geht. Das kann zum Beispiel die Überschrift auf
+   dieser Seite sein.
+
+3. Manchmal muss man eine kurze Pause machen, bevor man den Fokus auf neue Inhalte legt. So kann der Screenreader mitkommen.
+   Die Sprachausgabe muss das neue Markup verstehen. Wenn Sie den Fokus senden, bevor die Sprachausgabe Zeit hat, zu verarbeiten,
+   sagt sie wahrscheinlich nichts, obwohl der Fokus auf dem richtigen Element liegt.
+
+Sie können den Fokus nicht auf ein beliebiges Element legen. Entweder muss es natürlich fokussierbar sein oder es muss einen
+Tab-Index von -1 haben. Das heißt, es kann mit JavaScript fokussiert werden. Das habe ich hier gemacht. Es hat den Tab-Index -1.
+
+## Die "Focus-Hopping and Delay"-Technik
+
+Diese Methode heißt "Focus-Hopping and Delay", weil der Fokus von einem Element zum nächsten springt und dann eine Verzögerung
+eingefügt wird, bevor er auf dem endgültigen Element landet.
+
+Jetzt können Screenreader-Benutzer den neuen Text anhören, überprüfen und gegebenenfalls korrigieren oder das Formular absenden. Wenn
+sie es korrigieren wollen, wird der Fokus an das erste Feld im ursprünglichen Formular gesendet.
+
+Ich verwende die gleiche Technik wie beim Fokus-Hopping and Delay. Der Fokus wird erst auf die Überschrift verschoben, dann wird der
+aktuelle Inhalt ausgeblendet, dann wird das Formular angezeigt und dann auf das erste Feld. Wenn der Benutzer mit den Daten zufrieden
+ist, kann er sie erneut absenden. Er sieht dann die Bestätigungsseite. Wenn er sie zum letzten Mal absendet, wird er zu einer
+Erfolgsmeldung weitergeleitet. Auch hier verwende ich die gleiche Technik, damit der Fokus erfolgreich gesetzt wird.
+
+Ich möchte jetzt über barrierefreie Webinhalte sprechen. Alle Erfolgskriterien unter 3.3 sind für die Prüfung des Formulars wichtig.
+Wenn ein Benutzer Daten absendet, muss mindestens eine der folgenden Bedingungen erfüllt sein, damit das Formular erfolgreich ist.
+Die Benutzer können die Daten nach dem Senden bearbeiten. Man kann die Informationen auch von einem Algorithmus überprüfen lassen.
+Der Benutzer kann die Daten auch selbst überprüfen und freigeben.
+
+Unser Formular verwendet zwei Techniken, die Daten werden durch Algorithmen überprüft. Wenn wir nach der Übermittlung eine
+Schaltfläche "Bearbeiten" hinzufügen, ist auch der erste Punkt erledigt. Man muss nicht alle drei machen, aber es ist manchmal gut.
+
+Wenn Algorithmen einen Fehler erkennen, muss die Seite dem Nutzer sagen, wie er den Fehler beheben kann. Wir wissen, dass ein
+leeres Namens- oder Nachrichtenfeld ungültig ist. Deshalb sagen wir dem Benutzer, dass diese Felder nicht leer sein dürfen. In
+anderen Formularen kann der Benutzer aufgefordert werden, eine gültige E-Mail-Adresse oder eine Telefonnummer mit Zahlen statt
+Buchstaben einzugeben.
+
+Es gibt noch andere Überlegungen für Formulare. Insbesondere, wenn sie interaktiver werden oder mehr benutzerdefinierte
+JavaScript-Komponenten enthalten. Wenn Sie mehr JavaScript, Interaktivität und benutzerdefinierte Komponenten verwenden, müssen Sie
+sich mit ARIA befassen. Das ist eine Spezifikation für barrierefreie Rich-Internet-Anwendungen. Man muss nicht alles kompliziert
+machen. Die Techniken aus diesem Video sind eine gute Grundlage für jedes zugängliche Formular.

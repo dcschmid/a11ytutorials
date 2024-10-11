@@ -4,43 +4,43 @@ title: Andere Eingabemethoden
 
 ## Sprachsteuerung
 
-Wenn deine interaktiven Komponenten über die Tastatur zugänglich sind und deine Inhalte für Screenreader zugänglich sind,
-ist deine Website in den meisten Fällen automatisch für die Sprachsteuerung zugänglich. Da Sprachbefehle die Vorteile der
-Tastaturemulation nutzen und sich im Grunde genauso verhalten wie eine Tastatur.
+Normalerweise müssen Sie nichts Besonderes für die Sprachsteuerung tun. Ihre Website ist automatisch dafür zugänglich, wenn Ihre
+interaktiven Komponenten über die Tastatur erreichbar sind und Ihre Inhalte für Screenreader zugänglich sind. Nutzen Sie die Vorteile
+der Tastaturemulation. Sie verhalten sich im Grunde genauso wie eine Tastatur.
 
 ## Gesten
 
-Alle Aktionen, die mit Gesten interagieren, sollten auch für Tastaturnutzer verfügbar sein. Gesten können nicht nur die
-einzige Möglichkeit sein.
+Alle Gesten-Interaktionsmuster müssen auch für Tastaturbenutzer sein. Gesten sind nicht die einzige Möglichkeit, etwas zu tun.
 
 ## Touch-Interaktionen
 
-Die Barrierefreiheit der Tastatur ist auch hier von Bedeutung. Touch-Interaktionen funktionieren in der Regel gut, solange
-sie über die Tastatur zugänglich sind. Nachdem du dies erledigt hast, gibt es noch einige weitere Überlegungen.
+Auch hier muss man die Tasten gut erreichen können. Touch-Interaktionen funktionieren meistens gut, solange die Elemente über die
+Tastatur zugänglich sind. Sobald Sie das eingerichtet haben, gibt es ein paar weitere Punkte.
 
 ## Größe des Touch-Ziels
 
-Das Berührungsziel muss ausreichend groß sein, damit es für den Nutzer leicht zu aktivieren ist, ohne dass er versehentlich
-seitlich oder über oder unter dem beabsichtigten Berührungsziel berührt wird. Ab WCAG 2.2 müssen die Seiten des Berührungsziels
-mindestens 24 × 24 Pixel groß sein, z. B. für Navigationsmenüs, Schaltflächen oder ähnliche Bedienelemente.
+Das Touch-Ziel muss groß genug sein und sich einfach aktivieren lassen. Der Benutzer darf nichts anderes berühren. Seitlich, oben
+oder unten. Seit WCAG 2.2 müssen die Seiten des Touch-Ziels mindestens 24 x 24 CSS-Pixel groß sein. Das gilt für Navigationsmenüs,
+Schaltflächen und andere UI-Steuerelemente.
 
-Es gibt einige Ausnahmen, z. B. wenn das Berührungsziel ausreichend weit entfernt ist oder wenn das Berührungsziel einen Inline-Link
-enthält, z. B. wenn der Link in der Mitte eines Satzes erscheint.
+Es gibt ein paar Ausnahmen, zum Beispiel, wenn genug Abstand da ist oder wenn es ein Inline-Link ist.
 
-Es gibt noch einige weitere Feinheiten bei dieser Anforderung, aber der wichtigste Aspekt ist, dass du kein Design willst, das dazu
-führt, dass Menschen versehentlich auf das falsche Touch-Ziel klicken.
+Es gibt noch ein paar andere Punkte, die man beachten muss. Aber der wichtigste Punkt ist, dass das Design keine Fehler enthalten darf,
+durch die Nutzer aus Versehen auf das falsche Touch-Ziel klicken.
 
 ## Bewegungsauslösung
 
-Du musst vorsichtig sein, wenn du eine Funktion entwirfst, die auf die Bewegung des Nutzers reagiert. Zum Beispiel, wenn er sich
-bewegt oder umdreht. Oder wenn du das Telefon seitlich drehst oder kippst. Du kannst diese Methode benutzen. Aber du musst
-sicherstellen, dass die Funktion auch für andere Wege wie das Tippen funktioniert. Und du musst den Leuten ermöglichen, die Bewegung
-zu stoppen, wenn sie Probleme mit der Hand haben.
+Wenn Sie eine Funktion entwerfen, die auf die Bewegung des Benutzers reagiert, zum Beispiel beim Gehen, sich umdrehen oder schütteln,
+müssen Sie darauf achten. Das Gleiche gilt für Funktionen, die auf Gerätebewegungen reagieren, zum Beispiel ein Telefon schütteln oder
+kippen. Sie können diese Methoden verwenden, aber Sie müssen dafür sorgen, dass die gleiche Funktion auch mit anderen Methoden
+verfügbar ist, zum Beispiel mit der Tastatur. Außerdem müssen Sie den Benutzern erlauben, die Bewegungssteuerung zu deaktivieren,
+damit sie sie nicht versehentlich auslösen.
 
 ## Maus
 
-Nachdem ich die anderen Eingabemethoden besprochen habe, möchte ich die Maus als Letztes erwähnen. Es ist selten, dass ein
-Webentwickler eine Komponente mit der Maus zugänglich macht. Deshalb ist es wichtig, die Größe des Klick-Ziels zu kennen und
-dass jede Drag-and-drop-Funktion ein ähnliches Ziel hat wie die Tastatur.
+Als letztes erwähne ich noch die Maus. Es ist selten, dass ein Webentwickler vergisst, eine Komponente für die Maussteuerung
+zugänglich zu machen. Es gibt nicht viel zu sagen, außer dass die Größe des Klickziels und die Größe des Touch-Ziels eine Rolle
+spielen. Mit Touch-Oberflächen und Drag-and-Drop-Funktionalität benötigt ein Tastaturäquivalent sowie ein Äquivalent für einen
+einzelnen Zeiger. Damit Sie es nicht mit der Maus ziehen müssen, können Sie einfach mit der Maus klicken.
 
-Du hast bemerkt, dass alle diese Eingabemethoden mit der Tastatur übereinstimmen müssen.
+Sie werden festgestellt haben, dass alle diese Eingabemethoden ein Tastaturäquivalent haben.

@@ -4,106 +4,97 @@ title: Die wesentlichen Konzepte der Barrierefreiheit im Web
 
 import ExternalLink from '../../../components/ExternalLink.astro';
 
-Ich werde dir im Voraus eine kurze Zusammenfassung der wichtigsten Punkte geben, die du wissen solltest.
+Ich erkläre Ihnen vorab ein paar wichtige Punkte.
 
-## Nummer 1: Gesetzliche Anforderungen
+## Nummer 1: Gesetze
 
-Die Barrierefreiheit ist eine gesetzliche Verpflichtung, die in den weltweit meisten Teilen gilt. Es ist notwendig, sie
-zu befolgen. Ich kann noch viel mehr über die rechtlichen Aspekte berichten. Wenn du wie die meisten Entwickler bist,
-willst du nur wissen, was du tun musst und wie man es macht.
+Barrierefreiheit ist in den meisten Ländern gesetzlich vorgeschrieben. Sie müssen es tun. Ich könnte noch mehr über die rechtliche
+Lage sagen. Aber Sie wollen wissen, was Sie tun müssen und wie Sie es tun können. Daher fahre ich fort.
 
-## Nummer 2: Richtlinien
+## Nummer 2: Richtlinien.
 
-In den Web-Content Accessibility Guidelines, kurz <ExternalLink href="https://www.w3.org/WAI/standards-guidelines/wcag/" text="WCAG" />,
-werden die wichtigsten Schritte beschrieben. Um genau zu sein, musst du die WCAG-Stufe AA einhalten, die die mittlere Stufe der
-Richtlinien darstellt. Es existieren A, AA und AAA.
-
-Stufe A ist der geringste Arbeitsaufwand und Stufe AAA der größte. Die Stufe AA liegt in der Mitte. Niemand wird sich beschweren,
-wenn du alle Aufgaben der Stufe AAA machst. Aber in der Regel ist das nicht gesetzlich vorgeschrieben.
+Was zu tun ist, steht in den <ExternalLink href="https://www.w3.org/WAI/standards-guidelines/wcag/" text="WCAG" />. Manchmal wird
+WCAG auch "wacag" ausgesprochen. Sie müssen die WCAG Level AA einhalten, sofern Ihnen niemand etwas anderes sagt. Dies ist die
+mittlere Ebene in den Richtlinien. Es gibt drei Stufen: einfach, AA und AAA.
 
 ## Nummer 3: ARIA
 
-<ExternalLink href="https://www.w3.org/WAI/standards-guidelines/aria/" text="ARIA" /> ist ein Synonym für Accessible Rich Internet
-Applications. Für dynamische Inhalte und benutzerdefinierte UI-Komponenten ist es erforderlich, Techniken aus einer anderen
-Spezifikation namens ARIA zu verwenden. ARIA spielt eine Rolle bei Themen wie Dialogen und Navigationsmenüs sowie bei Anwendungen,
-die wie ein Dokument aussehen.
+Das steht für <ExternalLink href="https://www.w3.org/WAI/standards-guidelines/aria/" text="Accessible Rich Internet Applications" />.
+Für dynamische Inhalte und benutzerdefinierte UI-Komponenten brauchen Sie Techniken aus einer anderen Spezifikation, die ARIA heißt.
+ARIA ist wichtig für Dialoge, Navigationsmenüs und alles, was wie eine Anwendung aussieht. Im Gegensatz zu allem, was wie ein Dokument
+aussieht.
 
-## Nummer 4: Barrierefreiheit darf kein nachträglicher Gedanke sein
+## Nummer 4: Barrierefreiheit sollte von Anfang an mitgedacht werden, nicht erst, wenn alles fertig ist.
 
-Die Barrierefreiheit beginnt mit der Konzept- und Designphase und endet nicht mit der Entwicklungs- oder Testphase. Wenn der Inhalt
-oder die Komponente schon erstellt sind, bevor du sie auf Barrierefreiheit prüfst, dann ist es falsch. Schon jetzt ist es zu spät.
-Du kannst es immer noch reparieren, aber du verschwendest Zeit.
+Wenn man erst am Ende die Barrierefreiheit testet, ist es zu spät. Man kann es zwar noch reparieren, aber es kostet Zeit.
 
-## Nummer 5: Nutze automatisierte Tools
+## Nummer 5: Verwenden Sie Tools, mit denen Sie die Barrierefreiheit prüfen können.
 
-Es gibt Tools, die dir dabei helfen, die Barrierefreiheit zu verbessern. Die Axe-Tools von Deque sowie die Axe Dev Tools
-Browsererweiterung gehören dazu. Es ist unbedingt notwendig, solche Tools zu nutzen. Durch die Verwendung von empfohlenen
-Korrekturen für die von diesen Tools gefundenen Probleme kannst du Barrierefreiheit lernen.
+Dazu gehört auch die Axe-Werkzeugfamilie von Deque, zum Beispiel die Axe Dev Tools Browsererweiterung. Sie sollten diese Tools auf
+jeden Fall verwenden. Sie sparen Zeit und Mühe und lernen etwas über Barrierefreiheit. Und Sie können die empfohlenen Korrekturen für
+die Probleme, die von diesen Tools gefunden werden, umsetzen.
 
-## Nummer 6: Trotz meiner Empfehlung, automatische Tools zu verwenden, musst du wissen, dass automatische Tools nicht ausreichen.
+## Nummer 6: Auch wenn ich gerade gesagt habe, dass Sie automatisierte Werkzeuge verwenden sollten, müssen Sie wissen, dass das nicht genug ist.
 
-Kein automatisches Werkzeug ist in der Lage, alle Schwierigkeiten zu identifizieren. Eine Person, die sich mit Barrierefreiheit
-auskennt, muss über das Feedback hinausblicken, das diese Tools geben.
+Automatisierte Tools finden nicht alle Probleme. Jemand, der sich mit Barrierefreiheit auskennt, muss das Ganze noch einmal überprüfen,
+auch wenn die Tools keine Fehler anzeigen.
 
-## Nummer 7: Tastaturzugänglichkeit.
+## Nummer 7:  Tastatur
 
-Alle Sachen müssen gut mit der Tastatur funktionieren. Viele Hilfstechnologien, die von Menschen mit Behinderungen genutzt
-werden, sind auf die Tastatur oder eine Tastatur-Emulation zurückzuführen, und aus verschiedenen Gründen können viele Nutzer
-keine Maus verwenden. Die Nutzung der Tastatur ist in der Regel einfach und kann bei dynamischen Inhalten und benutzerdefinierten
-UI-Komponenten kompliziert sein.
+Die Tastatur muss einwandfrei funktionieren. Viele Menschen mit Behinderung nutzen eine Tastatur. Sie können keine Maus verwenden.
+Es gibt auch andere Gründe, warum sie eine Tastatur nutzen. Die Umsetzung der Tastaturzugänglichkeit ist einfach. Bei dynamischen
+Inhalten und benutzerdefinierten UI-Komponenten kann es kniffliger werden.
 
 ## Nummer 8: Textalternativen
 
-Ein visuelles Element, ob es sich um ein Bild oder eine Farbkodierung von Text handelt, muss durch Text vermittelt werden, um
-auch nicht visuelle Nutzer die Bedeutung zu verstehen.
+Jede Information, die man sehen kann, muss auch in Textform vorhanden sein. So können auch Menschen, die nicht sehen können, diese
+Informationen verstehen.
 
-## Nummer 9: Untertitel und Transkript
+## Nummer 9: Untertitel und Transkripte
 
-Es ist notwendig, jede sinnvolle Audiokomponente wie Videodialoge oder Erzählungen oder bedeutungsvolle Soundeffekte in Textform
-zu vermitteln, sei es durch Videountertitel oder Transkript.
+Alle wichtigen Teile des Audiomaterials wie zum Beispiel Dialoge oder Geräusche müssen in Textform erklärt werden. Das kann man mit
+Untertiteln oder mit Transkripten machen.
 
-## Nummer 10: Bildschirmleser
+## Nummer 10: Screenreader
 
-Die Webinhalte sollten mit einem Bildschirmlesegerät überprüft werden. Durch die Möglichkeit, einen Benutzer eines
-Bildschirmlesegeräts dazu zu bringen, ihn zu testen, ist das fantastisch. Dies solltest du unbedingt tun. Es ist wichtig,
-das Testen nicht nur anderen zu überlassen und je häufiger ein Entwickler einen Screenreader verwendet, um Tests
-durchzuführen. Bildschirmlesegeräte sind Programme, die Texte in Sprache umwandeln. Sie erkennen auch semantische Elemente,
-indem sie sagen: »Grafik«, »Tabelle«, »Überschrift« oder »Link«. Der Bildschirmleser verfügt über viele Tastenkombinationen,
-die es den Nutzern erlauben, sich durch Webinhalte zu bewegen. Ohne Bildschirmlesegerät können Sie nicht durch alle
-Überschriften oder Datentabellen von links navigieren.
+Testen Sie die Webseite mit einem Screenreader. Wenn ein echter Nutzer eines Screenreaders es testet, ist das super. Mach das.
+Entwickler sollten aber nicht alle Tests anderen überlassen. Je öfter ein Entwickler einen Screenreader verwendet, desto besser.
+Screenreader sind Softwareprogramme, die Text in Sprache umwandeln. Sie sagen dem Benutzer auch, welche Elemente auf einer Webseite
+gemeint sind. Zum Beispiel "Grafik", "Tabelle" oder "Überschrift". Oder "Link". Screenreader haben viele Funktionen. Sie haben
+Tastenkombinationen, mit denen man sich durch Webinhalte klicken kann. Man kann auch durch Überschriften oder Datentabellen navigieren.
 
-## Nummer 11: Der Accessibility-Tree
+## Nummer 11: Der Zugänglichkeitsbaum
 
-Browser haben einen Accessibility-Tree für die Benutzung. Assistive Technologien sind nicht auf die Übertragung von Texten
-beschränkt. Der Accessibility-Tree ermöglicht es Screenreadern und anderen unterstützenden Technologien, die Inhalte des
-Markups für den Nutzer sichtbar zu machen. Wenn das Bildschirmlesegerät eingeschaltet ist, können die Leute nach diesen
-Dingen suchen. Die Entwicklertools des Firefox-Browsers ermöglichen, den Accessibility-Tree zu sehen. Wenn du eine Maus
-benötigst, kannst du mit der rechten Maustaste auf ein Element klicken und »Barrierefreiheits-Eigenschaften« auswählen.
-Oder wenn du eine Tastatur auf einem Mac verwendest, kannst du Option plus Befehl plus I drücken und dann auf
-„Barrierefreiheit“ gehen. Unter Windows kannst du auch die Tastenkombination Strg plus Umschalttaste plus I und gehst dann
-auf die gleiche Registerkarte. Was du in der Baumstruktur der Barrierefreiheit siehst, sind Dinge wie der Name und der Wert
-sowie andere Attribute, die zu den Elementen gehören. Diese Informationen können für Bildschirmlesegeräte und andere
-Bildschirmlesegeräte sowie andere Hilfstechnologien zugänglich gemacht werden.
+Browser haben einen Zugänglichkeitsbaum. Sie tun das, ohne dass Sie es wissen. Assistive Technologien können viel. Sie können zum
+Beispiel nur Text vermitteln. Der Barrierefreiheitsbaum ermöglicht es, mit Screenreadern zu arbeiten. Auch andere Programme können
+damit arbeiten. Sie können dann zum Beispiel Überschriften, Orientierungspunkte, Bilder und Links anzeigen. Wenn ein Screenreader
+eingeschaltet ist, können Nutzer nach diesen Elementen navigieren. Der Zugänglichkeitsbaum lässt sich ganz einfach in den
+Entwicklertools des Firefox-Browsers anzeigen. Wenn Sie eine Maus verwenden, können Sie mit einem Rechtsklick das Element auswählen
+und dann auf "Barrierefreiheitseigenschaften prüfen" klicken. Oder drücken Sie auf einer Mac-Tastatur die Tasten
+"Option + Befehl + I" und gehen Sie dann zur Registerkarte "Barrierefreiheit". Bei Windows geht das auch mit Strg + Shift + I und
+der gleichen Registerkarte. Im Barrierefreiheitsbaum sehen Sie zum Beispiel den Namen und den Wert des Elements. Das sind die Dinge,
+die für Screenreader und andere Hilfsmittel zugänglich gemacht werden können.
 
 ## Nummer 12: Mobile Bildschirmlesegeräte
 
-Auf mobilen Geräten sind Bildschirmleser ähnlich wie auf Desktop- oder Laptop-Geräten, deshalb lohnt es sich, auch hier zu testen.
+Screenreader auf mobilen Geräten sind ähnlich, aber nicht gleich. Es lohnt sich, sie auf Desktop- oder Laptop-Geräten zu testen. Auch
+auf mobilen Geräten kann mit einem eingeschalteten Screenreader gearbeitet werden.
 
 ## Nummer 13: Farbkontrast
 
-Du musst Text- und UI-Farben auswählen, mit ausreichend Kontrast zum Hintergrund.
+Wählen Sie Farben für Text und UI aus. Die Farben sollten sich vom Hintergrund abheben.
 
-## Nummer 14: Grundlegende Techniken zur Barrierefreiheit können schnell erlernt werden
+## Nummer 14: Techniken zur Barrierefreiheit.
 
-Dies ist die positive Nachricht und das ist das Ziel dieses Buches.
+Die kann man schnell lernen. Das ist das Ziel dieses Kurses.
 
-## Nummer 15: Barrierefreiheit ist auch komplex
+## Nummer 15: Barrierefreiheit ist nicht einfach.
 
-Barrierefreiheit ist eine Eigenschaft, die sich über einen langen Zeitraum entwickeln kann. Obwohl die Grundlagen ausreichend
-sind, ist es wichtig, die notwendigen Schritte zu unternehmen, um die Barrierefreiheit zu verbessern.
+Barrierefreiheit muss man lernen. Das dauert Jahre. Auch wenn die Grundlagen einfach sind, denken Sie daran: Es ist nicht einfach,
+Barrierefreiheit umzusetzen.
 
-## Nummer 16: Barrierefreiheit ist für echte Menschen wichtig
+## Nummer 16: Barrierefreiheit ist wichtig für alle Menschen.
 
-Es ist wichtig, dass wir die Menschen nicht ausschließen und ihnen erlauben, alltägliche Aufgaben im Internet zu erledigen.
-Dies sind einige der wichtigsten Aspekte. Ist das alles bereits alles? Wenn du diese Dinge beachtest, bist du auf einem
-guten Weg, Barrierefreiheit zu einem festen Bestandteil des Entwicklungsprozesses zu machen.
+Wir betreiben Barrierefreiheit, damit niemand ausgeschlossen wird und alle alltägliche Aufgaben im Web erledigen können. Das sind
+die wichtigsten Punkte. Ist das schon alles? Es gibt noch viel mehr, aber wenn Sie diese Dinge im Hinterkopf behalten, sind Sie auf
+dem besten Weg, Barrierefreiheit zu einem wichtigen Teil der Entwicklung zu machen.

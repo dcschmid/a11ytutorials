@@ -8,87 +8,82 @@ Zunächst ein Hinweis. Die Verwendung eines Bildschirmlesegeräts wird dir unzug
 genau weißt, wie man einen solchen benutzt. Das wird dich frustrieren und du wirst viele falsche positive Meldungen
 bekommen. Nimm dir die Zeit, den Screenreader kennenzulernen.
 
-## Benutze deine Tastatur
+## Verwenden Sie Ihre Tastatur
 
-Ein Einsatz einer Maus oder eines Trackpads während eines Screenreader-Tests wäre Betrug. Warum? Viele blinde Nutzer
-können eine Maus benutzen, aber sie wissen nicht, wohin sie ihn bewegen oder wann sie klicken sollen. Eine Maus ist
-kein gutes Eingabegerät für Blinde. Setze stattdessen auf die Tastatur. Blinde Nutzer/innen können sich das Tastaturlayout
-sowie die Tastenkombinationen für das Betriebssystem, den Browser und den Bildschirmleser selbst merken.
+Wenn man beim Testen des Screenreaders eine Maus oder ein Trackpad benutzt, ist das Betrug. Warum? Auch wenn blinde Menschen
+eine Maus benutzen können, sehen sie den Mauszeiger nicht. Sie wissen also nicht, wohin sie ihn verschieben oder wann sie darauf
+klicken sollen. Eine Maus ist nicht gut zum Schreiben. Für blinde Menschen. Benutzen Sie stattdessen die Tastatur. Blinde Benutzer
+merken sich, welche Tasten sie drücken müssen, um das Betriebssystem zu bedienen. Den Browser und den Screenreader.
 
 ## Grundlegende Tastaturmethoden
 
-Die folgenden Tastaturmethoden funktionieren unabhängig von deinem Bildschirmlesegerät.
+Diese Tastaturmethoden funktionieren gut, egal, ob Sie eine Sprachausgabe haben oder nicht.
 
-Verwende die Tabulatortaste, um vorwärts durch fokussierbare Elemente zu gehen.
+- Blättern Sie mit der Tabulatortaste durch die Elemente, die Sie fokussieren können.
 
-Benutze Shift + Tab, um rückwärtszugehen.
+- Verwenden Sie Umschalt + Tabulatortaste, um rückwärts zu gehen.
 
-Benutze die Eingabetaste
+- Verwenden Sie die Eingabetaste.
 
-Benutze die Leertaste, um ein Kontrollkästchen oder ein Optionsfeld auszuwählen.
+- Verwenden Sie die Leertaste, um Kontrollkästchen oder Optionsfelder auszuwählen.
 
-Benutze auch die Leertaste, um Schaltflächen zu aktivieren, und in manchen Fällen Blätternmodus funktioniert auch die Eingabetaste.
+- Verwenden Sie auch die Leertaste, um Schaltflächen zu aktivieren.
 
-Benutze Audiokürzungen
+- Verwenden Sie auch die Pfeiltasten, um zwischen den Optionsfeldern zu navigieren.
 
-Verwende auch die Pfeiltasten, um zwischen den Optionsfeldern zu navigieren.
-
-Bitte beachte, dass die Tabulatortaste dich nicht zum nächsten Optionsfeld bringt, wenn du die Pfeiltaste innerhalb einer
-Optionsfeldgruppe verwendest. Sie führt dich zu dem nächsten Element in der Optionsgruppe. So sind Radiogruppen aufgebaut.
- Es existieren zahlreiche andere Tastaturmethoden, doch das reicht für den Anfang.
+Wenn Sie in einem Optionsfeld die Pfeiltaste drücken, können Sie mit der Tabulatortaste nicht zum nächsten Feld springen. Sie
+kommen dann zum nächsten Element, das Sie auswählen können. Das ist außerhalb der Radiogruppe. So sind Radiogruppen gemacht. Es
+gibt noch mehr Tastaturmethoden, aber das reicht erst einmal.
 
 ## Achte auf Name, Rolle und Wert
 
-Die Richtlinien zur Barrierefreiheit im Internet verlangen, dass die Elemente der Benutzeroberfläche einen Namen, eine
-Rolle und einen Wert enthalten und die Bildschirmlesegeräte dies angeben, sobald sie verfügbar sind.
+Die Regeln für barrierefreie Internetseiten verlangen, dass Name, Rolle und Wert eines Elements in einer geeigneten Kombination
+angezeigt werden. Bei Elementen der Benutzeroberfläche muss angegeben werden, ob ein Screenreader verfügbar ist. Wir hören uns an,
+wie NVDA dieses Element ankündigt.
 
-Jedes semantische Element sollte mindestens einen Namen und eine Rolle haben, und es kann auch mehrere Werte benötigen.
+Jedes Element braucht einen Namen und eine Rolle. Manchmal braucht es auch Werte.
 
-Nicht-semantische Elemente wie `<div>`, `<span>` und `<p>` benötigen weder Namen noch Rollen oder Werte.
+Nicht-semantische Elemente wie `<div>`, `<span>` und `<p>` brauchen keine Namen, Rollen oder Werte.
 
-## Höre auf die Ergebnisse der Benutzeraktionen
+## Hören Sie auf die Ergebnisse von Benutzeraktionen
 
-Du musst ein Feedback hören. Ein geeignetes Feedback könnte das Lesen neuer Inhalte sein, die gerade erschienen sind.
+Sie müssen sich Rückmeldungen anhören. Feedback könnte zum Beispiel sein, neue Inhalte zu lesen.
 
-Wir haben hauptsächlich fokussierbare Elemente diskutiert, mit denen du interagieren kannst. Du möchtest, dass der
-Screenreader nicht fokussierte Elemente wie Absätze, Überschriften oder Grafiken liest? Hierfür musst du andere Methoden
-anwenden.
+Bisher ging es vor allem um Elemente, mit denen Sie interagieren können. Was ist, wenn Sie nicht fokussierbare Elemente wie
+Absätze ausblenden möchten? Dafür gibt es verschiedene Methoden.
 
-Überprüfe die Barrierefreiheit von nicht fokussierbare Inhalten mit dem Browse-Modus von NVDA.
+Mit dem Browse-Modus von NVDA kann man überprüfen, ob man nicht fokussierbare Inhalte erreichen kann.
 
-NVDA hat zwei Hauptmodi zum Lesen:
+NVDA hat zwei Hauptlesemodi:
 
-- Fokusmodus
+1. Fokusmodus und
 
-- Browse-Modus
+2. Browse-Modus.
 
-Der Fokusmodus ist für die Interaktion mit Formularen und Steuerelementen gedacht. Im Browse-Modus hingegen kannst du durch
-nicht fokussierbare Inhalte navigieren. NVDA schaltet automatisch zwischen dem Fokusmodus und dem Browse-Modus um. Wenn du
-die Tabulatortaste drückst, wechselt NVDA in den Fokusmodus. Wenn du die Pfeiltasten nach oben und unten verwendest, schaltet
-NVDA in den Browse-Modus um.
+Der Fokusmodus ist zum Arbeiten mit Formularen und Steuerelementen. Das habe ich in diesem Video gemacht. Der Browse-Modus ist zum
+Navigieren durch Inhalte gedacht, die nicht fokussiert werden können. NVDA wechselt automatisch zwischen Fokus- und Browse-Modus.
+NVDA wechselt in den Fokusmodus, wenn Sie die Tabulatortaste drücken. Mit den Pfeiltasten nach oben und unten kann man zwischen
+Browse-Modus und Fokusmodus wechseln.
 
-Für diejenigen, die den Browse-Modus nicht kennen, besteht der Fehler, dass sie annehmen, dass etwas nicht zugänglich ist,
-wenn man es nicht mit der Tabulatortaste ansteuern kann. Bitte tu das nicht. Das ist gänzlich unnötig und schafft ein schlechtes
-Benutzererlebnis für Screenreader-Nutzer. Verwende einfach die Pfeiltasten nach oben und unten, um nicht fokussierbare Inhalte
-zu testen.
+Manche Leute denken, dass alles auf einer Seite zugänglich ist, wenn man nicht zu etwas tippen kann. Das ist ein Fehler. Bitte
+nicht. Das ist unnötig und macht die Benutzung für Menschen mit Screenreadern schwer. Testen Sie nicht fokussierbare Inhalte mit
+den Pfeiltasten nach oben und unten.
 
-## Navigiere nach semantischen Elementen
+## Navigieren durch semantische Elementen
 
-Auch im Browse-Modus gibt es ein paar Tricks, um durch nicht fokussierbare semantische Elemente zu navigieren. Verwende
-etwa den Buchstaben H, um zur nächsten Überschrift zu navigieren, den Buchstaben G, um zur nächsten Grafik zu navigieren,
-T, um zur nächsten Tabelle zu navigieren, L, um zur nächsten Liste zu navigieren, D, um zum nächsten Orientierungspunkt zu
-navigieren, und benutze die Umschalttaste + diese Buchstaben, um zum vorherigen Element dieses Typs zurückzugehen.
+Der Browse-Modus hat auch ein paar Tricks, zum Beispiel für die Navigation in nicht fokussierbaren Elementen. Mit dem Buchstaben H
+kommen Sie zur nächsten Überschrift, mit G zur nächsten Grafik, mit T zur nächsten Tabelle, mit L zur nächsten Liste, mit D zum
+nächsten Orientierungspunkt. Mit Umschalt + Buchstabe gehen Sie rückwärts zum vorherigen Element.
 
-Du kannst auch mit Einfügen + F7 oder Feststelltaste + F7 eine Liste mit verschiedenen Arten von semantischen Elementen
-aufrufen, wenn du diese Konfigurationsoption in NVDA gewählt hast.
+Sie können auch eine Liste mit verschiedenen Arten von semantischen Elementen öffnen. Klicken Sie dazu auf Einfügen + F7 oder
+Feststelltaste + F7. Diese Tastenkombination müssen Sie zuvor in NVDA einstellen.
 
-Worauf solltest du achten, wenn du im Browse-Modus testest? Hier sind ein paar Dinge. Es ist am besten, wenn Webseiten
-sowohl Überschriften als auch Orientierungspunkte haben. Wenn es keine Überschriften oder Orientierungspunkte gibt, ist
-das verdächtig, auch wenn es legitime Anwendungsfälle wie diesen gibt. Und wenn du einen Text hast, der visuell als
-Überschrift fungiert, muss er semantisch als echte Überschrift gekennzeichnet sein, damit Bildschirmleser ihn als solche
-erkennen können. Dasselbe gilt für Tabellen und Listen und so weiter. Grundsätzlich gilt: Wenn etwas wie eines der
-semantischen Standardelemente aussieht, sollte es auch so gekennzeichnet werden.
+Was sollten Sie beim Testen im Browse-Modus beachten? Hier sind ein paar Punkte: So findet man Überschriften und Orientierungspunkte
+auf Webseiten am besten. Wenn es keine Überschriften oder Orientierungspunkte gibt, ist das verdächtig. Es gibt zwar legitime
+Anwendungsfälle, aber das ist trotzdem nicht normal. Wenn Text als Überschrift angezeigt wird, muss er auch als solche gekennzeichnet
+werden. Screenreader können damit navigieren. Das gilt auch für Tabellen und Listen. Wenn etwas wie ein Standardelement aussieht,
+sollte es auch als solches gekennzeichnet werden.
 
-In Tabellen kannst du übrigens im Browse-Modus navigieren, indem du mit Strg + Alt + den Pfeiltasten nach oben, unten,
-rechts oder links von einer Zelle zur nächsten springst. Dabei solltest du die Spalten- und/oder Zeilenüberschriften hören.
-Ist das nicht der Fall, ist das ein Fehler in der Barrierefreiheit.
+Tabellen können im Browse-Modus angeklickt werden. Sie können von einer Zelle in eine andere wechseln. Sie können mit den Pfeiltasten
+nach oben, unten, rechts oder links navigieren. Sie sollten die Überschriften hören, während Sie das tun. Wenn Sie diese nicht hören,
+ist etwas falsch.

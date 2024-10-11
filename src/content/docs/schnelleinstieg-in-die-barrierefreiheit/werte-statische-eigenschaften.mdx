@@ -1,19 +1,16 @@
 ---
-title: Werte – statische Eigenschaften
+title: Werte - Statische Eigenschaften
 ---
 
-Neben der Rolle, dem Namen und der Beschreibung kannst du in ARIA auch andere Arten von Werten für Elemente festlegen.
+Sie können auch andere Werte zuweisen, zum Beispiel mit ARIA-Elementen.
 
-Wenn du etwa einen Schieberegler mit role="slider" erstellst, möchtest du vielleicht mit aria-valuemin und aria-valuemax
-einen Mindest- und einen Höchstwert festlegen, damit der Benutzer keine irrelevanten oder ungültigen Werte wählt.
+Sie können mit "aria-valuemin" und "aria-valuemax" einen Mindest- und einen Höchstwert festlegen, damit der Benutzer keine falschen
+oder irrelevanten Werte auswählt.
 
-Oder wenn du ein ARIA-Datengitter erstellst, kannst du Dinge wie aria-colcount für die Spaltenanzahl oder aria-rowcount angeben.
+Sie können ein ARIA-Datenraster mit Eigenschaften wie "aria-colcount" für die Anzahl der Spalten und "aria-haspopups" erstellen.
+Bei einigen Elementen, z. B. Menüs und Web-Apps, können Sie die Benutzer informieren, dass ein Element ein Popup hat.
 
-Bei manchen Elementen wie Menüs und Web-Apps kann es sinnvoll sein, die Nutzer mit aria-haspopup darauf hinzuweisen, dass
-ein Element ein Pop-up hat.
+Sie können in einem Dialog "aria-modal=true" eingeben, damit Hilfstechnologien alle Elemente ignorieren, die nicht im Dialog
+enthalten sind.
 
-Bei einem Dialog kannst du aria-modal="true" verwenden, um Hilfstechnologien mitzuteilen, dass sie alle Elemente ignorieren
-sollen, die sich nicht im Dialog befinden.
-
-Alle bisher genannten Eigenschaften sind in der Regel statisch. Sie geben einem Element Parameter oder teilen den Benutzern
-von Hilfstechnologien etwas über das Element mit, aber diese Werte ändern sich in der Regel nicht.
+Alle bisher genannten Eigenschaften sind meistens immer gleich. Diese Werte bleiben meistens gleich.

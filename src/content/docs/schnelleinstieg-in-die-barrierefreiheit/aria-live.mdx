@@ -2,63 +2,62 @@
 title: ARIA-Live
 ---
 
-Manchmal ist es sinnvoll, die Nutzer/innen auf etwas aufmerksam zu machen, ohne dass sie den Fokus wechseln müssen. Beispiele
-dafür sind die sogenannten Toast-Meldungen, die am oberen oder unteren Bildschirmrand erscheinen. Bei diesen Toast-Nachrichten
-kann es sich um Fehlermeldungen oder Warnungen handeln. Etwa die Meldung, dass die Webseite keine Verbindung zum Server
-herstellen konnte, oder Bestätigungsmeldungen. Unter anderem die Meldung, dass die Einstellungen des Nutzers erfolgreich
-gespeichert wurden.
+Manchmal ist es gut, den Benutzer auf etwas aufmerksam zu machen, ohne dass sich viel ändert. Beispiele sind Nachrichten, die am
+oberen oder unteren Bildschirmrand auftauchen. Toast-Nachrichten können Fehlermeldungen oder Warnungen sein. Zum Beispiel, wenn
+die Webseite keinen Kontakt zum Server bekommt oder wenn man etwas bestätigen muss. Zum Beispiel, wenn gesagt wird, dass die
+Einstellungen eines Benutzers gespeichert wurden.
 
-Es wäre unangebracht, den Tastaturfokus auf diese Art von Meldungen zu verschieben, denn dadurch würden die Nutzer/innen ihren
-Platz auf der Seite verlieren. Diese Art von Ereignissen sind gute Kandidaten für aria-live-Ankündigungen.
+Es wäre nicht gut, wenn die Benutzer ihren Platz auf der Seite verlieren, nur weil sie auf eine solche Nachricht schauen müssen.
+Diese Ereignisse eignen sich gut für "aria-live"-Ankündigungen.
 
-Die Funktionsweise von aria-live besteht darin, dass du einen leeren Container auf der Seite als aria-live-Region markierst und
-dann Text in diesen Container einfügst. Screenreader achten auf Änderungen in aria-live-Regionen und wenn sie eine Änderung
-feststellen, kündigen sie den Text an. aria-live=„assertive“ versus aria-live="polite". aria-live-Regionen können entweder
-als aria-live="assertive" oder als aria-live="polite" gekennzeichnet werden.
+Die Funktion ist einfach: Aria-live ist ein leerer Container, der als solcher markiert ist. Dann wird Text eingefügt. Screenreader
+merken, wenn sich etwas in einer aria-live-Region ändert und sagen dann den Text dazu. Es gibt zwei Arten von aria-live: "assertive"
+und "polite".
 
-Assertive aria-live-Ansagen sollen von Screenreadern sofort angesagt werden. Sie unterbrechen alle anderen Ansagen, die der
-Screenreader zu diesem Zeitpunkt möglicherweise gemacht hat. Höfliche aria-live-Ansagen sollen bis zu einer logischen Pause
-warten, bevor sie angesagt werden. Die letzte Ansage kommt in die Warteschlange und wird angesagt, wenn sie an der Reihe ist.
+Screenreader sollten alle Ansagen mit aria-live sofort anzeigen. Sie unterbrechen alle anderen Ansagen, die der Screenreader gerade
+gesagt hat. Wenn eine aria-live-Ansage zurückhaltend ist, sollte sie erst nach einer kurzen Pause ansagen. Die letzte Ankündigung
+wird aufgeschoben und erst später gegeben.
 
 ## role="alert"
 
-role="alert" ist eine besondere Art von aria-live Region. Du brauchst aria-live nicht als Attribut hinzuzufügen, da role="alert"
-bereits als Live-Region interpretiert wird.
+role="alert" ist eine besondere Art von "aria-live"-Region. Sie müssen nicht "aria-live" hinzufügen, da "role=alert" es bereits als
+aktive Region interpretiert.
 
-## aria-live Best Practices
+## Best Practices für "aria-live".
 
-Hier sind ein paar Best Practices, damit aria-live konsistent funktioniert.
+Hier sind ein paar Tipps, wie du aria-live einheitlich nutzen kannst.
 
-- Die aria-live-Region muss leer beginnen, ohne Inhalt. Er ist ein Container, der darauf wartet, dass Text mit JavaScript dynamisch
-  in ihn eingefügt wird. Wenn du eine Seite lädst, auf der der aria-live-Bereich bereits mit Text gefüllt ist, verhält er sich nicht
-  wie aria-live. Er verhält sich dann wie normaler Text.
+- Die "aria-live"-Region muss leer sein. Es handelt sich um einen Container, der auf JavaScript wartet. Wenn eine Seite geladen wird,
+  deren aria-live-Bereich bereits Text enthält, funktioniert sie nicht wie aria-live. Es ist ganz normaler Text.
 
-- Füge keinen Text in die aria-live-Region ein, sobald du sie erstellt hast. Vergewissere dich, dass die aria-live-Region im DOM
-  und in der Barrierefreiheit eingerichtet wurde und dass Screenreader Zeit hatten, sie zu analysieren, bevor du versuchst, Text
-  in sie einzufügen. Was will ich damit sagen? Assistenztechnologien benötigen einen Moment, um die Existenz einer Aria-Live-Region
-  zu registrieren, bevor sie bereit sind, jeden Text, der darin eingefügt wird, zu melden. Eine sichere Methode ist es,
-  sicherzustellen, dass beim Laden der Seite eine leere Aria-Live-Region vorhanden ist. Du könntest auch einen neuen Aria-Live-Knoten
-  nach dem Laden der Seite hinzufügen, aber wenn du das tust, füge eine JavaScript-Verzögerung von vielleicht einer halben oder
-  einer Sekunde hinzu, bevor du den Ankündigungstext zum Knoten hinzufügst.
+- Fügen Sie Text nicht sofort nach der Erstellung in den Bereich ein. Stellen Sie sicher, dass der Bereich im DOM und im
+  Zugänglichkeitsbaum festgelegt wurde und dass Screenreader Zeit hatten, ihn zu analysieren. Was heißt das? Assistive Technologien
+  brauchen einen Moment, um zu erkennen, dass eine aria-live Region da ist. Erst dann können sie Text anzeigen, der in diese Region
+  eingefügt wird. Eine sichere Technik ist, dass beim Laden der Seite ein leerer aria-live-Bereich vorhanden ist. Sie können auch
+  nach dem Laden der Seite einen neuen aria-live-Knoten hinzufügen. Fügen Sie dazu aber eine JavaScript-Verzögerung von etwa einer
+  halben oder einer ganzen Sekunde hinzu.
 
-- Bewege den Fokus nicht in die aria-live-Region. Wenn du den Fokus verschiebst, ist das ein Missbrauch von aria-live. In manchen
-  Fällen kann es sinnvoll sein, den Fokus auf neu hinzugefügten Text zu verschieben. Wenn du das tust, wird der Text vom
-  Bildschirmleser bereits angesagt, sodass aria-live nicht mehr benötigt wird. Du solltest entweder den Fokus dort lassen, wo
-  er ist, und aria-live verwenden, oder du solltest den Fokus verschieben und aria-live nicht verwenden. Aber mach nicht beides.
+  - Wenn man auf die erste Schaltfläche klickt, erscheint ein neuer Knoten im DOM. Ihm wurde bereits Text hinzugefügt. Die meisten
+    Screenreader werden nichts sagen, weil sich nichts geändert hat. Wenn Sie auf die zweite Schaltfläche klicken, wird Text in einen
+    bereits vorhandenen aria-live-Bereich eingefügt. Bildschirmlesegeräte können das gut anzeigen. Wenn Sie auf die dritte Schaltfläche
+    klicken, wird erst Text in den aria-live-Knoten eingefügt und dann eine Sekunde gewartet. So wissen Screenreader, dass sich etwas
+    geändert hat.
 
-- Halte den aria-live Text kurz. aria-live Regionen sind flüchtig. Sie sind wie Sternschnuppen. Sie werden angekündigt und
-  dann sind sie wieder weg. Und das Schlimmste ist, dass sie unterbrochen werden können, der/die Nutzer/in z. B. einen Tastendruck
-  auf der Tastatur macht, wird die Aria-Live-Meldung in gewisser Weise nicht wiederhergestellt; sie ist zwar noch auf dem Bildschirm,
-  aber in den meisten Fällen nicht mehr leicht zu finden. Oder wenn der Nutzer beginnt, im Dokument zu navigieren, kann es sein,
-  dass er den aria-live-Text noch findet, aber dann ergibt er aus dem Kontext heraus keinen Sinn mehr. Je kürzer deine Nachricht
-  ist, desto wahrscheinlicher ist es, dass der Screenreader-Nutzer sie vollständig versteht. Je länger deine Nachricht ist, desto
-  wahrscheinlicher ist es, dass sie unterbrochen und nicht gehört wird.
+- Achten Sie nicht zu sehr auf die aria-live-Region. Wenn Sie den Fokus verschieben, ist das ein Fehler. Manchmal ist es gut, den
+  Fokus auf neuen Text zu verschieben. Dann wird der Text schon von der Sprachausgabe angekündigt. Eine zusätzliche Ankündigung mit
+  aria-live ist dann nicht nötig. Sie können den Fokus entweder dort lassen und aria-live nutzen, oder ihn verschieben und nicht
+  nutzen. Aber machen Sie nicht beides.
 
-- Verwende zusätzliche aria-live Funktionen, wo es sinnvoll ist. Für die meisten Dinge reicht es aus, aria-live="assertive" oder
-  aria-live="polite" zu verwenden. Beachte aber, dass du spezielle aria-live-Regionen für Status, Alerts, Log, Marquee erstellen
-  und du wählen kannst, ob du nur Elemente ankündigen willst, die zu einer aria-live-Region hinzugefügt werden, oder nur Elemente,
-  wenn sie entfernt werden, und es gibt noch eine Reihe weiterer Eigenschaften, wenn du anspruchsvollere Implementierungen von
-  aria-live benötigst, aber es würde den Rahmen dieses Abschnittes sprengen, darauf näher einzugehen.
+- Halten Sie den Text kurz, der mit "aria-live" beginnt. "aria-live"-Regionen sind nur kurz zu sehen. Sie sind wie Sternschnuppen.
+  Sie werden angekündigt und dann sind sie vorbei. Das Schlimmste ist, dass sie unterbrochen werden können. Wenn der Benutzer
+  beispielsweise eine Taste auf der Tastatur drückt und die Nachricht nicht mehr angezeigt wird, ist sie trotzdem noch auf dem
+  Bildschirm. Manchmal ist sie aber schwer zu finden. Oder der Benutzer bewegt sich im Dokument und findet den Text, aber dann macht
+  er im Kontext keinen Sinn. Eine kurze Nachricht wird eher gehört als eine lange. Ist die Nachricht zu lang, wird sie unterbrochen
+  und der Rest geht verloren.
 
-- Teste mit einem Bildschirmlesegerät. Stelle sicher, dass deine Implementierung tatsächlich funktioniert, indem du so viele
-  Browser, Plattformen und Geräte wie möglich testest, einschließlich Desktop und Mobile.
+- Verwenden Sie gegebenenfalls zusätzliche aria-live-Funktionen. Für die meisten Dinge reicht die Verwendung von "assertive" oder
+  "polite". Sie können spezielle aria-live-Bereiche für Status, Warnungen, Protokoll und Marquee erstellen. Sie können wählen, ob Sie
+  nur Elemente ankündigen möchten, die einer aria-live-Region hinzugefügt werden, oder nur Elemente, wenn sie entfernt werden. Es gibt
+  noch ein paar weitere Eigenschaften, wenn Sie anspruchsvollere Implementierungen von aria-live benötigen.
+
+- Testen Sie mit Sprachausgabe. Testen Sie Ihre Software in verschiedenen Browsern, auf verschiedenen Geräten und Plattformen.

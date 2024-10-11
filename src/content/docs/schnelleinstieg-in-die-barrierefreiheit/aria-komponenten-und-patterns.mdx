@@ -1,29 +1,25 @@
 ---
-title: ARIA-Komponenten und -Patterns
+title: ARIA-Komponenten und -Muster
 ---
 
-import ExternalLink from "../../../components/ExternalLink.astro";
+Mit ARIA können Sie auf Webseiten noch mehr Komponenten erstellen. Mit HTML, JavaScript und CSS können wir Formulare, Schaltflächen
+und Links erstellen. Aber wir können keine modalen Dialoge, Fortschrittsmesser, Tooltips, Baumansichten, Komboboxen und Warnungen
+erstellen. Dabei ist es schwierig, die Rollen und Eigenschaften dieser Komponenten zu kommunizieren. ARIA ermöglicht es uns,
+zusätzliche Rollen und Eigenschaften für unsere Komponenten zu erstellen. Außerdem bietet es einen standardisierten Rahmen für
+Interaktionsmodelle, insbesondere für die Nutzung mit der Tastatur.
 
-ARIA erweitert die Auswahl der Komponenten, die du auf Webseiten erstellen kannst. Wenn wir uns ausschließlich auf
-HTML, JavaScript und CSS beschränken, können wir Formularelemente, Schaltflächen und Links erstellen, aber keine
-modalen Dialoge, Fortschrittsanzeigen, Tooltips, Baumansichten, Kombinationsfelder oder Warnmeldungen, zumindest
-nicht in einer Weise, die die Rollen und Eigenschaften dieser Komponenten kommuniziert. ARIA ermöglicht es uns,
-zusätzliche Rollen mit zusätzlichen Eigenschaften und Werten zu erstellen, sowie einen standardisierten Rahmen für
-Interaktionsmodelle, insbesondere wenn es um die Tastatur geht.
+Die Web Accessibility Initiative des W3C hat einen Leitfaden für die Erstellung von ARIA-Komponenten veröffentlicht. Wenn Sie einen
+modalen Dialog erstellen müssen, öffnen Sie dieses Muster, lesen Sie darüber, sehen Sie sich die Funktionsbeispiele an und achten Sie
+genau auf die Richtlinien. Es ist eine Art Rezeptbuch für gute ARIA-Komponenten, die für alle zugänglich sind.
 
-Die Web Accessibility Initiative des W3C veröffentlichte einen ARIA Authoring Practices Guide sowie Design Patterns und
-Beispiele unter <ExternalLink href="https://www.w3.org/WAI/ARIA/apg/" text="ARIA Authoring Practices Guide" />.
+Wenn du das Muster liest und denkst, dass du es besser machen kannst, kannst du dein eigenes Muster erstellen. Vielleicht für die
+Zugänglichkeit der Tastatur. Technisch ist das möglich, aber wahrscheinlich nicht besser. Oder anders gesagt: Es kann zwar besser sein,
+aber es wird anders sein als das bekannte Muster. Die Nutzer werden sich also wahrscheinlich nicht zurechtfinden. Auch wenn es
+technisch zugänglich ist, denken die Leute vielleicht, dass es das nicht ist.
 
-Wenn du dir ein Muster durchliest und denkst, dass es gut ist, aber ich habe eine bessere Vorstellung davon, wie es
-funktioniert. Dann beginnst du mit der Entwicklung eines eigenen Musters für die Barrierefreiheit mit der Tastatur. Dies
-ist technisch möglich und möglicherweise barrierefrei, aber wahrscheinlich ist deine Methode nicht besser. Auch wenn
-sie sich in einigen Bereichen verbessert, wird sie sich von dem etablierten Muster unterscheiden, sodass die Nutzerinnen
-und Nutzer wahrscheinlich verwirrt sein werden. Obwohl es technisch barrierefrei ist, denken sie möglicherweise, dass es
-nicht barrierefrei ist.
+Was ist, wenn Sie nicht alle ARIA-Muster verwenden?
 
-Was ist, wenn du einige der ARIA-Muster implementierst und andere nicht? Ist das genug? Nein. Es könnte sogar noch
-schlimmer werden.
+Ist das genug? Nein, das ist sogar schlimmer.
 
-Partielle ARIA-Implementierungen sind häufig nur unvollständige Versionen des Originals. Mach keine halben Sachen bei ARIA.
-Mach nicht nur die Teile, die du kennst oder auf die du Lust hast. Mach alles oder lass es ganz bleiben. Das ist eine
-Vereinbarung, die du treffen musst, wenn du ARIA einsetzt.
+Wenn Sie ARIA nur teilweise umsetzen, ist das keine gute Lösung. Nehmen Sie die Aufgabe ernst und setzen Sie ARIA als Ganzes um. Das
+ist die Abmachung, die Sie treffen, wenn Sie mit ARIA beginnen.

@@ -1,38 +1,29 @@
 ---
-title: Werte – dynamische Eigenschaften und Zustände
+title: Attribute – Dynamische Eigenschaften und Zustände
 ---
 
-ARIA bietet eine Vielzahl an dynamischen Eigenschaften und Zuständen, um die Barrierefreiheit von Rich Interactions zu erhöhen.
+ARIA macht es einfacher, mit Elementen zu interagieren.
 
-Bei einem Schieberegler zum Beispiel kannst du zusätzlich zu den Eigenschaften aria-valuemin und aria-valuemax mit JavaScript
-die Eigenschaft aria-valuenow dynamisch aktualisieren, wenn der Benutzer das Steuerelement hin und her schiebt. Diese Art von
-Eigenschaft kann nicht statisch sein, da sie vom Benutzer manipuliert und verändert wird.
+Bei einem Schieberegler können Sie JavaScript nutzen, um das "aria-valuenow" zu aktualisieren, wenn der Benutzer den Regler bewegt.
+Diese Eigenschaft kann nicht statisch sein, weil der Benutzer sie ändert.
 
-Ein anderes Beispiel: Für Dropdown-Menüs solltest du JavaScript schreiben, um zwischen aria-expanded="true" und
-aria-expanded="false" umzuschalten.
+Oder ein anderes Beispiel: In Dropdown-Menüs sollten Sie JavaScript schreiben, um zwischen "aria-expanded" und "aria-pressed" zu
+wechseln. In Umschalttasten sollten Sie zwischen "aria-pressed" und "aria-pressed" wechseln. Für Kombinationsfelder, Registerkarten,
+Registerkartenlisten oder auswählbare Knoten sollten Sie "aria-selected=true" oder "aria-selected=false" verwenden.
 
-Bei Schaltflächen zum Umschalten solltest du zwischen aria-pressed="true" und "false" wechseln. Bei Kombinationsfeldern,
-Registerkarten in einer Registerliste, auswählbaren Knoten in einer Baumansicht oder anderen ähnlichen Arten von UI-Komponenten
-solltest du aria-selected="true" oder "false" verwenden.
+Oder als anderes Beispiel: Wenn ein Benutzer die Sortierreihenfolge einer Spalte ändert, sollten Sie zwischen "aufsteigend" und
+"absteigend" wechseln.
 
-Oder ein anderes Beispiel: Wenn ein Nutzer die Sortierreihenfolge einer Spalte in einer Tabelle ändert, solltest du zwischen
-aria-sort="ascending" und "descending" wechseln.
-
-Und je nachdem, welche Art von Komponente du erstellst oder welche Art von Interaktion du entwirfst, stehen dir noch weitere
+Je nachdem, welche Art von Komponente Sie erstellen oder welche Art von Interaktion Sie entwerfen, stehen Ihnen mehrere andere
 Eigenschaften zur Verfügung.
 
-Beachte nur, dass sich keiner dieser Werte von selbst ändert. Wenn du ein Menü beim Laden der Seite auf aria-expanded="false"
-setzt, wird die Schaltfläche weiterhin aria-expanded="false" lauten, es sei denn, du schreibst JavaScript, um sie zu erweitern
-und die ARIA-Eigenschaft zu aktualisieren.
+Diese Werte ändern sich nicht automatisch. Wenn Sie ein Menü beim Laden der Seite auf "aria-expanded=false" festlegen, wird die
+Schaltfläche weiterhin "aria-expanded=false" anzeigen.
 
-Mit anderen Worten: Durch das Hinzufügen von ARIA-Attributen erhältst du keine kostenlose Funktionalität. Die gesamte dynamische
-Funktionalität muss von JavaScript kommen, das du hinzufügst. Das ist der Preis, den du für die Verwendung von ARIA zahlst.
+Sie bekommen keine automatische Funktion, wenn Sie einfach ARIA-Attribute hinzufügen. Dynamische Funktionen müssen von JavaScript
+stammen, das Sie hinzufügen. Das ist der Preis, den Sie für die Nutzung von ARIA zahlen.
 
-ARIA bedeutet also zusätzliche Arbeit, aber es gibt dir auch eine Menge Möglichkeiten. Und sei gewarnt: Wenn du vergisst, einige
-der dynamischen ARIA-Eigenschaften zu aktualisieren, während der Benutzer mit der Komponente interagiert, kannst du die
-Barrierefreiheit sogar noch verschlechtern, weil du dem Benutzer der Hilfstechnologie ungenaue Informationen über den Zustand der
-Komponente gibst.
+ARIA bedeutet mehr Arbeit, bietet Ihnen aber viele Möglichkeiten. Wenn Sie einige der dynamischen ARIA-Eigenschaften nicht aktualisieren,
+während der Benutzer mit der Komponente interagiert, kann das die Barrierefreiheit verschlechtern.
 
-Wie ich bereits gesagt habe, musst du, wenn du ARIA verwenden willst, den ganzen Weg gehen. Füge alle korrekten Rollen, Namen,
-Beschreibungen und Werte beim Laden der Seite hinzu und aktualisiere jede Eigenschaft, die dynamisch geändert werden muss, wann
-immer es angebracht ist.
+ARIA ist aufwändig, aber es lohnt sich. Sie müssen alle korrekten Angaben machen und die Eigenschaften immer aktuell halten.

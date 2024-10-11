@@ -1,95 +1,82 @@
 ---
-title: Namen oder Labels
+title: Namen und Beschriftungen
 ---
 
-Der Name oder das Label eines Elements können auf unterschiedliche Weise vergeben werden, abhängig von der Art des Elements.
-Es gibt sowohl native HTML- als auch ARIA-Methoden, mit denen Namen vergeben werden.
+Der Name oder die Beschriftung eines Elements kann auf verschiedene Arten angegeben werden, je nachdem, um was für ein Element es
+sich handelt. Man kann Elemente auf verschiedene Arten benennen, mit HTML oder ARIA.
 
-## Links
+## Verknüpfungen
 
-Der native Name eines Links kann zum Beispiel aus dem Linktext abgeleitet werden. Ein Link mit der Aufschrift „Kontaktieren
-Sie uns“ hat den Namen „Kontaktieren Sie uns“. Wenn ein Link nur ein Bild enthält, wird der Alttext des Bildes sowohl als Name
-des Bildes als auch als Name für den Link verwendet. Bei Verlinkungen, die sowohl Bilder als auch Text beinhalten, wird die
-Kombination aus Alt-Text des Bildes und dem Text im Link zum Namen des Links verwendet.
+Der Name eines Links steht im Linktext. Ein Link mit der Aufschrift "Kontaktieren Sie uns" heißt "Kontaktieren Sie uns". Wenn ein
+Link nur ein Bild enthält, ist der Alt-Text des Bildes der Linkname. Wenn ein Link ein Bild und Text enthält, wird der Name des Links
+aus dem Alt-Text des Bildes und dem Text im Link gebildet.
 
-## Überschriften und Buttons
+## Überschriften und Button-Tags
 
-Die gleichen Prinzipien gelten für Überschriften und Buttons. Die Bezeichnung einer Überschrift oder eines Buttons bezieht
-sich auf den Text und/oder die Bilder, die darin enthalten sind. Die Barrierefreiheit ist im Prinzip kostenlos, wenn du diese
-Elemente mit Text versiehst.
+Das gilt auch für Überschriften und Schaltflächen. Eine Überschrift oder ein Schaltflächen-Tag besteht aus dem Text und/oder den
+Bildern. Sie bekommen den Namen für diese Art von Elementen kostenlos, indem Sie Text einfügen.
 
-## Formularelemente
+## Formular-Elemente
 
-Bei den Formularelementen ist es ein wenig anders. Du bekommst die Barrierefreiheit nicht umsonst, indem du einfach einen Text
-neben das Steuerelement des Formulars schreibst. Der Text muss mit dem Label-Tag und dem Formularelement verknüpft werden.
+Bei Formularelementen ist das anders. Sie bekommen den Namen nicht umsonst, indem Sie Text neben dem Formularsteuerelement hinzufügen.
+Sie müssen den Text mit dem Formularelement verknüpfen, indem Sie das "label"-Tag verwenden.
 
-Bitte beachtet, dass der Text innerhalb des Label-Tags und nicht der Text der ID für den barrierefreien Namen verwendet werden.
-Die ID dient nur dazu, die Verbindung herzustellen, und sie ist unsichtbar.
+Der Name wird nicht über die ID, sondern über den Text im label-Tag festgelegt. Die ID ist nur für die Verknüpfung da und unsichtbar.
 
-## Mit ARIA über native Namen hinausgehen
+## Verwendung von ARIA, um über native Namen hinauszugehen
 
-ARIA bietet dir mit aria-label weitere Möglichkeiten, Elemente mit Namen oder Labels zu versehen.
+ARIA bietet Ihnen weitere Möglichkeiten, Namen oder Labels zu Elementen hinzuzufügen. Diese werden mit "aria-label" und "aria-label"
+bezeichnet.
 
-Bei einem Bild könntest du zum Beispiel statt alt=„Smiley“ aria-label=„Smiley“ hinzufügen. Ich wiederhole den Hinweis, dass
-du immer zuerst die native Methode verwenden solltest, in diesem Fall den Alt-Text für ein Bild und nicht die ARIA-Methode.
+Sie können bei einem Bild anstelle von "smiley face" "aria-labelledby" hinzufügen. Das ist dasselbe. Aber verwenden Sie immer zuerst
+die native Methode. In diesem Fall also den Alt-Text für ein Bild. Und nicht die ARIA-Methode, wann immer dies möglich ist.
 
 ## aria-labelledby vs. aria-label
 
-aria-labelledby funktioniert anders als aria-label. aria-labelledby ist eine Referenz auf die ID eines anderen Elements auf
-der Seite. Nehmen wir das Beispiel einer Tabelle: Anstatt das Element Bildunterschrift zu verwenden, könntest du aria-labelledby
-für die Tabelle verwenden und auf die ID eines Textes über oder unter der Tabelle verweisen. Das gibt der Tabelle einen Namen.
-So wie das Bildunterschrift-Tag. In diesem Fall ist aria-labelledby funktional gleichwertig mit dem Tag caption.
+aria-labelledby ist ein Element, das auf ein anderes Element auf der Seite verweist. Statt das caption-Element zu verwenden, könnte man
+in einer Tabelle aria-labelledby nutzen und auf die ID eines Textes über oder unter der Tabelle verweisen. So bekommt die Tabelle einen
+Namen, wie das Caption-Tag auch. In diesem Fall ist aria-labelledby genauso wie das Caption-Tag.
 
-Beachte, dass du weder den eigentlichen Namen noch den Text in das aria-labelledby-Attribut einfügst. Du kannst zum Beispiel
-nicht sagen: aria-labelledby="smiley face". Wenn du das tust, würde der Browser nach etwas mit der ID „smiley“ und etwas anderem
-mit der ID „face“ suchen, um den Namen aus diesen beiden Elementen zu extrahieren und sie dann als Label für dein Element zu
-kombinieren, denn der Browser interpretiert „smiley“ und „face“ als zwei separate IDs, die durch ein Leerzeichen getrennt sind.
-Screenreader lesen also direkt den Text von aria-label, aber indirekt den Text anderer Elemente, die von aria-labelledby
-referenziert werden. Sie werden nur anders gehandhabt.
+Sie müssen weder den Namen noch den Text in das "aria-labelledby"-Attribut eintragen. Wenn Sie also zum Beispiel "aria-label" verwenden,
+würde der Browser nach Elementen mit den IDs "smiley" und "face" suchen. Diese würden dann als Beschriftung für Ihr Element verwendet
+werden. Der Browser interpretiert nämlich "smiley" und "face" als zwei separate IDs, die durch ein Leerzeichen getrennt sind.
+Screenreader lesen den Text von "aria-label" direkt, aber den Text anderer Elemente, die durch "aria-labelledby" referenziert werden,
+indirekt. "aria-labelledby" wird anders gehandhabt.
 
-In dem Beispiel mit dem „smiley“ und dem „face“, die durch ein Leerzeichen getrennt sind, bedeutet das, dass du mehr als einen
-Text für ein Label verwenden kannst, der sich in verschiedenen Teilen des Bildschirms befinden kann. Das kann in kniffligen
-Situationen nützlich sein, z. B. wenn sich ein Element in einem Raster oder einer tabellenähnlichen Struktur befindet und du
-dich auf zwei oder mehr Textstücke beziehen musst, z. B. eine Spaltenüberschrift und eine Zeilenüberschrift, um das vollständige
-Label oder den Namen des Elements abzuleiten. Du kannst eine, zwei, drei oder beliebig viele aria-labelledby ID-Referenzen haben,
-aber je mehr Referenzen du einfügst, desto länger wird das Label und desto verwirrender kann es werden.
+Sie können mehrere Textabschnitte für eine Beschriftung verwenden, die sich in verschiedenen Teilen des Bildschirms befinden. Das ist
+praktisch, wenn sich ein Element in einem Raster oder einer tabellenähnlichen Struktur befindet und Sie auf zwei oder mehr Textteile
+verweisen müssen, zum Beispiel eine Spaltenüberschrift und eine Zeilenüberschrift, um den Namen des Elements abzuleiten. Sie können
+eine, zwei, drei oder mehr ID-Referenzen haben. Je mehr, desto länger das Label. Das kann verwirrend sein.
 
-Außerdem ist zu beachten, dass das Attribut aria-label versteckt ist, während der Text, auf den aria-labelledby verweist,
-sichtbar ist, zumindest ist er normalerweise sichtbar, es sei denn, du wendest einen CSS-Trick an. Das ist ein wichtiger
-Unterschied zwischen den beiden. Screenreader Nutzern wird aria-label vorgelesen, aber sehende Nutzer sehen es nicht, im
-Gegensatz zu aria-labelledby, das sowohl von Screenreadern als auch von sehenden Nutzern erkannt wird.
+Das "aria-label"-Attribut ist versteckt, während der Text, der durch "aria-labelledby" referenziert wird, sichtbar ist. Sie können das
+ändern, aber nur mit CSS. Das ist ein großer Unterschied. Screenreader-Benutzer hören das "aria-label", aber sehende Benutzer sehen es
+nicht. "aria-labelledby" wird dagegen von Screenreadern und sehenden Benutzern wahrgenommen.
 
 ## Die Berechnung des barrierefreien Namens
 
-Was passiert, wenn du mehrere Methoden gleichzeitig verwendest, um einem Element einen Namen zuzuweisen? Was ist, wenn dein
-Bild einen Alt-Text, ein aria-label und ein aria-labelledby hat? Oder was ist, wenn dein Formularelement ein Label-Tag und
-aria-label und aria-labelledby hat und vielleicht sogar einen Textwert oder Platzhalter enthält? Das sind gute Fragen. Zum
-Glück gibt es bereits eine Möglichkeit, mit solchen Redundanzen und Widersprüchen umzugehen, und zwar mit der Logik in der
-Veröffentlichung zur Berechnung von Barrierefreiheit und Beschreibungen.
+Was passiert, wenn man mehrere Methoden benutzt, um einem Element einen Namen zu geben? Was ist, wenn das Bild einen Alternativtext
+hat? Was ist, wenn ein Formularelement ein Label-Tag hat? Vielleicht sogar mit Textwert oder Platzhalter? Das sind gute Fragen. Es
+gibt bereits eine Lösung für dieses Problem. Sie heißt "Logik in der Veröffentlichung" und berechnet zugängliche Namen und
+Beschreibungen.
 
-Die Logik ist etwas kompliziert, aber hier ist die Quintessenz davon.
+Hier wird es etwas kompliziert, aber hier ist der Kern der Sache.
 
-- Nur eine Art von Name wird sozusagen den Wettbewerb um den Elementnamen gewinnen. An der Spitze steht aria-labelledby. Er
-  gewinnt vor allen anderen. Wenn du also alle anderen Benennungsmethoden gleichzeitig hast, werden sie alle ignoriert, außer
-  dem Wert aria-labelledby.
+- Es gibt nur einen Namen, der Elementbezeichnung wird. aria-labelledby ist der beste Name. Wenn Sie mehrere Namensgebungsverfahren
+  haben, wird aria-labelledby immer zuerst behandelt.
 
-- Die nächste in der Hierarchie ist aria-label, und darunter steht die native HTML-Methode, z. B. der Alttext eines Bildes oder
-  der Text in einem Label-Tag, das mit einem Formularelement verbunden ist.
+- Als nächstes kommt aria-label. Das ist die HTML-Methode, zum Beispiel der Alt-Text eines Bildes oder der Text in einem Label-Element.
 
-- Darunter kommt das title-Attribut, das ich offen gesagt nie als einzige Methode empfehle, um einem Element einen Namen zu geben,
-  also ignoriere es einfach.
+- Als nächstes kommt das title-Attribut. Ich empfehle das nicht, um einem Element einen Namen zu geben. Du kannst es also ignorieren.
 
-In diesem Beispiel haben wir Text in jeder einzelnen der Möglichkeiten, und aria-labelledby gewinnt vor allen anderen, sodass
-Screenreader-Nutzer „Grafik, Giraffe“ hören werden. In der Beschreibung steht dann Krokodil, was natürlich falsch ist, aber der
-Algorithmus für Barrierefreiheit und Beschreibung bestimmt, was mit einem übrig gebliebenen Titelattribut wie diesem passiert.
+In diesem Beispiel haben wir Text in jeder einzelnen der Möglichkeiten. Aria-labelledby hat Vorrang. Nutzer von Bildschirmlesegeräten
+hören deshalb "Grafik, Giraffe". Sie hören dann auch, dass in der Beschreibung "Krokodil" steht, was falsch ist. Aber das ist der Name,
+der angezeigt wird, wenn der Algorithmus so eingestellt ist.
 
-In meiner Erklärung hier habe ich die Dinge etwas vereinfacht, aber das sind für die meisten Dinge die wichtigsten Punkte. Im
-Zweifelsfall kannst du die Elemente in den berechneten Eigenschaften des Accessibility-Tree von Chrome überprüfen. Wenn du
-einige Methoden durchgestrichen siehst, bedeutet das, dass diese Methoden den Kampf um die Benennung verloren haben. Nur die
-Methode, die nicht durchgestrichen ist, gewinnt.
+In meiner Erklärung hier habe ich die Dinge etwas vereinfacht, aber das sind die wichtigsten Punkte. Wenn Sie Zweifel haben, können Sie
+die Elemente in den berechneten Eigenschaften des Barrierefreiheitsbaums von Chrome überprüfen. Wenn Sie einige Methoden durchgestrichen
+sehen, bedeutet dies, dass diese Methoden den Namenskampf verloren haben. Nur die nicht durchgestrichene Methode gewinnt.
 
-Und noch etwas ist erwähnenswert: Du kannst einem nicht semantischen Element keinen barrierefreien Namen hinzufügen. Wenn du also
-sagst, div aria-label="smiley face", funktioniert das nicht. Ein div ist semantisch nichts, also kann es keinen Namen haben.
-Dasselbe gilt für das span-Element. Wenn du einem span-Element ein Label hinzufügen willst, z. B. wenn du es für ein Schriftsymbol
-verwendest, musst du ihm zuerst eine semantische Rolle zuweisen, z. B. role="img" für Bild, und ihm dann aria-label zuweisen. Wenn
-du das tust, werden Screenreader „Grafik, Smiley“ sagen. Außerdem, wenn du die Rolle weglässt, sagen Screenreader nichts.
+Sie können einem Element, das keine Bedeutung hat, keinen barrierefreien Namen hinzufügen. Ein "div" mit dem Attribut "aria-label" wird
+nicht funktionieren. Ein div hat keine Bedeutung, deshalb kann es keinen Namen haben. Das gilt auch für das span-Element. Wenn Sie einem
+Span einen Text hinzufügen möchten, müssen Sie ihm zuerst eine Rolle zuweisen, zum Beispiel "img" für ein Bild, und dann einen Wert
+zuweisen. Der Screenreader sagt dann "Grafik, Smiley". Screenreader sagen nichts, wenn man die Rolle weglässt.

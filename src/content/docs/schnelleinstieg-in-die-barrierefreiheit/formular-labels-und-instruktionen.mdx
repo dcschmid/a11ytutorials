@@ -1,71 +1,77 @@
 ---
-title: Formular Labels und Instruktionen
+title: Formular-Etiketten und Anweisungen
 ---
 
-## Formular-Labels und Instruktionen testen
+## Testen von Formularetiketten und Anweisungen
 
-Alle Formulareingaben müssen programmatisch zugeordnete Labels enthalten. Automatisierte Tools können die fehlenden Labels aufspüren, daher ist es ratsam, zunächst mit einem automatisierten Tool zu beginnen.
+Für alle Formulareingaben müssen Etiketten programmgesteuert zugeordnet werden. Mit automatisierten Tools kann man viele Fälle
+fehlender Etiketten abfangen. Deshalb ist es sinnvoll, zuerst mit einem solchen Tool zu beginnen. Überprüfen Sie nach dem Ausführen
+der automatisierten Prüfungen, ob die Etiketten richtig sind. Am besten benutzt man einen Screenreader und klickt mit der
+Tabulatortaste durch alle Formulareingaben. Achte darauf, dass die Beschriftungen zu den Eingaben passen.
 
 ## Genauigkeit der Labels
 
 Nachdem du die automatischen Prüfungen durchgeführt hast, überprüfe die Richtigkeit der Labels. Am besten schaltest du einen Bildschirmleser ein und gehst mit der Tabulatortaste durch alle Formulareingaben. Vergewissere dich, dass die Labels mit den Eingaben übereinstimmen.
 
-## Group Labels
+## Gruppenbeschriftungen
 
-Für eine Gruppe von zusammenhängenden Eingaben ist ein Label für die gesamte Gruppe erforderlich, falls die Eingaben für
-sich genommen keinen Sinn ergeben, wenn sie aus dem Zusammenhang gerissen werden. Ein beliebtes Beispiel sind Gruppen von
-Optionsfeldern. Jedes Optionsfeld benötigt ein eigenes Label, und jede Optionsfelder benötigt ein Gruppen-Label. Es reicht
-nicht aus, dass ein Screenreader-Nutzer weiß, dass zwei Radio-Buttons mit den Bezeichnungen „Ja“ und „Nein“ existieren. Der
-Benutzer muss auch die Frage kennen, die man stellt. Hier ist die Frage: „Magst du heiße Schokolade?“. Das Label der Gruppe
-muss programmatisch mit der Gruppe verknüpft werden, um die Verknüpfung zu erkennen. Um das zu testen, musst du mit der
-Tabulatortaste auf die erste Optionsschaltfläche klicken. Das Bildschirmlesegerät muss das Label für die Gruppe und das
-einzelne Optionsfeld lesen.
+Manchmal muss man eine Gruppe von ähnlichen Eingaben zusammenfassen und einen gemeinsamen Namen dafür finden. Das ist nötig, wenn die
+einzelnen Eingaben für sich genommen keinen Sinn ergeben. Ein Beispiel sind Optionsfeldgruppen. Jedes Optionsfeld braucht eine eigene
+Bezeichnung. Für die Gruppe von Optionsfeldern braucht man eine Gruppenbezeichnung. Es reicht nicht, dass ein Benutzer weiß, dass es
+zwei Optionsfelder mit den Bezeichnungen "Ja" und "Nein" gibt. Der Benutzer muss auch wissen, was er gefragt wird. Die Frage ist:
+"Magst du heiße Schokolade?" Die Gruppenbezeichnung muss der Gruppe zugeordnet werden, damit Sprachausgaben sie erkennen können. Um
+das zu testen, gehen Sie mit der Tabulatortaste zum ersten Optionsfeld in einer Gruppe von Optionsfeldern. Die Sprachausgabe muss die
+Beschriftung für die Gruppe und das einzelne Optionsfeld lesen.
 
-Versuche auch, indem du mit der Umschalttaste und der Tabulatortaste rückwärts in die Radiogruppe gehst, beginnend mit dem
-letzten Radio-Button. Wie im vorherigen Test sollte der Bildschirmleser sowohl das Label der Gruppe als auch das des einzelnen
-Radio-Buttons lesen.
+Sie können auch mit Umschalt + Tabulatortaste wechseln, um rückwärts in die Radiobutton-Gruppe zu wechseln, beginnend mit dem letzten
+Radiobutton. Wie beim letzten Test sollten die Sprachausgaben sowohl die Gruppe als auch das einzelne Feld nennen.
 
-Ein Group Label ist für eine Gruppe von Texteingaben erforderlich, wenn sie einen gemeinsamen Zweck haben, z. B. drei
-Felder als separate Teile derselben Telefonnummer oder drei Felder als separate Teile der Sozialversicherungsnummer einer
-Person.
+Manchmal braucht man eine Gruppenbezeichnung für mehrere Texteingaben. Das ist zum Beispiel der Fall, wenn drei Felder zusammen eine
+Telefonnummer oder die Sozialversicherungsnummer einer Person ergeben.
 
-## Tabellen- oder Gitternetzüberschriften als Label
+## Tabellen- oder Gitterüberschriften als Formularbeschriftungen
 
-Einige Schnittstellen verwenden ein Tabellen- oder Rasterformat mit Zeilen- oder Spaltenüberschriften, die zur Eingabe in
-die Matrixstruktur dienen. Mit einem Bildschirmlesegerät musst du zu jeder Eingabe gehen und sicherstellen, dass alle
-relevanten Spalten- und Zeilenköpfe korrekt gelesen werden.
+Einige Schnittstellen verwenden ein Tabellen- oder Rasterformat mit Überschriften für Zeilen und Spalten. Diese dienen als
+Beschriftungen für die Eingaben in der Matrixstruktur. Mit der Tabulatortaste können Sie mit dem Screenreader zu jeder Eingabe
+wechseln und sicherstellen, dass alle Überschriften korrekt gelesen werden.
 
 ## Sichtbare Labels
 
-Die Labels müssen jederzeit auf dem Bildschirm erkennbar sein. Unsichtbare oder verschwindende Labels stellen einen Fehler in
-der Barrierefreiheit dar. Platzhaltertext in einem Textfeld ist kein gutes sichtbares Label, weil er nicht visuell beständig
-ist. Der Platzhaltertext verschwindet, sobald die Benutzer/innen mit der Eingabe beginnen, sodass sie nicht in der Lage sind,
-die korrekten Daten in die richtigen Felder einzutragen, es sei denn, sie löschen den bereits eingegebenen Text. Wenn Designer
-auf das Aussehen von Platzhaltern bestehen, können sie eine benutzerdefinierte Funktion erstellen, die ihre Position an die
-Außenseite des Feldes verschiebt und nach oben gleitet. Diese clevere Lösung entspricht den Richtlinien für Barrierefreiheit.
+Die Beschriftungen müssen immer sichtbar sein. Wenn Beschriftungen nicht immer zu sehen sind, ist das ein Fehler. Ein Platzhaltertext
+in einem Textfeld ist keine gute Beschriftung, weil er nicht immer sichtbar ist. Der Platzhaltertext verschwindet, wenn der Benutzer
+mit der Eingabe beginnt. So kann er nicht überprüfen, ob er die richtigen Informationen in die richtigen Felder eingegeben hat. Er
+muss den Text, den er bereits eingegeben hat, löschen. Wenn Designer darauf bestehen, dass Platzhalter so aussehen, wie sie es gerne
+hätten, kann man das umgehen, indem man ein eigenes Feature erstellt, das die Platzhalter nach außen des Feldes verschiebt und nach
+oben gleiten lässt. Das passiert zum Beispiel, wenn der Benutzer mit der Tabulatortaste in das Feld wechselt oder wenn er mit der
+Eingabe beginnt. Diese Art von Lösung ist barrierefrei.
 
 ## Farbkontrast
 
-Labels müssen die Richtlinien zum Farbkontrast einhalten. Manche Designer erstellen Labels mit wenig Kontrast, aber der
-kontrastarme Text ist ein Problem für die Barrierefreiheit. Jeder benutzerdefinierte Platzhalter muss einen höheren Textkontrast
-haben als die Standardeinstellung. Automatisierte Tools können einige der Farbkontrast Probleme erkennen, jedoch nicht immer
-mit absoluter Genauigkeit. Verwende einen manuellen Farbkontrast-Checker wie den dequeuniversity.com/color-contrast, um die
-exakte Kombination von Vorder- und Hintergrundfarbe zu testen und festzustellen, ob sie passt oder nicht.
+Farbkontrast-Etiketten müssen richtig farbig sein. Manche Designer machen gerne Etiketten mit wenig Kontrast. Aber der Text auf
+den Etiketten muss auch gut lesbar sein. Grauer Text ist auch ein Problem. Der Standard-Farbton ist zu hell, um die Richtlinien
+für Barrierefreiheit zu erfüllen. Alle benutzerdefinierten Lösungen müssen einen höheren Textkontrast als die Standardeinstellung
+aufweisen. Automatisierte Tools können einige Probleme mit dem Farbkontrast finden, aber nicht immer genau. Das gilt vor allem,
+wenn Hintergrundbilder oder Farbverläufe dabei sind. Machen Sie eine Farbkontrastprüfung, zum Beispiel auf
+dequeuniversity.com/color-contrast. So finden Sie die richtige Kombination von Vordergrund- und Hintergrundfarbe. Überprüfen Sie, ob
+sie besteht.
 
-Es ist wichtig zu beachten, dass nicht alle Icons für sehende Benutzer so selbsterklärend sind, wie die Designer glauben,
-dass sie es sind. Es ist oft sinnvoll, das Symbol mit Text zu ergänzen, obwohl dies keine Voraussetzung für Barrierefreiheit
-ist. Das Symbol dient sowohl der Schaltfläche als auch der Texteingabe als visuelles Label. Die Texteingabe erfordert zwar
-ein eigenes programmatisches Label, das mit aria-label oder einer ähnlichen Technik ausgeblendet werden kann, aber aus
-visueller Sicht ist es in Ordnung, wenn das Icon sowohl für die Schaltfläche als auch für die Texteingabe verwendet wird.
+## Symbole
+
+Symbole sind am besten, wenn der Text dazu visuell dargestellt wird. Manchmal ist es okay, nur ein Symbol als Beschriftung zu nehmen.
+Aber es muss auch eine Textalternative für blinde Nutzer geben. Manche Symbole sind für sehende Benutzer nicht selbsterklärend. Deshalb
+sollten Sie bedenken, dass Benutzer verwirrt werden können, wenn sie nicht wissen, wofür das Symbol gedacht ist. Es ist oft besser,
+das Symbol mit Text zu ergänzen. Das ist aber keine Voraussetzung für Barrierefreiheit. In diesem Fall ist die Beschriftung für das
+Suchfeld auf der Schaltfläche neben dem Suchfeld. Das Symbol ist die Beschriftung für die Schaltfläche und die Texteingabe. Die
+Texteingabe braucht immer noch eine eigene Bezeichnung. Diese kann mit "aria-label" oder einer ähnlichen Technik ausgeblendet werden.
+Es ist aber okay, wenn das Symbol sowohl die Schaltfläche als auch die Texteingabe beschriftet. Wenn eine Eingabe besondere
+Anforderungen hat, zum Beispiel wie ein Datum formatiert wird, sollten Anweisungen bereitgestellt werden. Es ist gut, wenn diese
+Anweisungen auch mit der Eingabe verbunden sind. Sie können testen, ob das der Fall ist, indem Sie mit der Tabulatortaste zur Eingabe
+wechseln, wenn ein Bildschirmlesegerät aktiviert ist. Achten Sie darauf, dass das Bildschirmlesegerät zuerst das Etikett und dann die
+Anweisungen liest.
 
 ## Instruktionen für Formulareingaben
 
-Wenn eine Eingabe besondere Anforderungen stellt, wie die Formatierung eines Datums, ist es ratsam, Instruktionen zu geben.
-Es wäre am sinnvollsten, diese Anweisungen programmatisch mit der Eingabe zu verknüpfen. Du kannst testen, ob die Anweisungen
-programmatisch mit der Eingabe verknüpft sind, indem du bei eingeschaltetem Bildschirmlesegerät mit der Tabulatortaste zur
-Eingabe gehst und darauf achtest, dass das Bildschirmlesegerät zuerst das Label und anschließend die dazugehörigen Instruktionen.
-
-Wenn die Anweisungen nicht mit dem Programm verknüpft sind, liest das Gerät nur das Label. Zunächst solltest du das
-automatische Tool auf fehlende Formular-Labels überprüfen und dann manuell sicherstellen, dass die Labels korrekt sind.
-Dabei solltest du sicherstellen, dass die Labels immer auf dem Bildschirm zu sehen sind und nicht verschwinden. Die
-Instruktionen sind programmatisch mit ihren Eingaben verknüpft.
+Wenn die Anweisungen nicht programmgesteuert zugeordnet sind, zeigt das Bildschirmlesegerät nur das Etikett an. Zuerst sollten Sie
+ein Tool ausführen, das nach fehlenden Formularbeschriftungen sucht. Dann überprüfen Sie manuell, ob alle Beschriftungen vorhanden
+sind, ob es Gruppenbeschriftungen gibt, wenn nötig, und ob die Beschriftungen immer sichtbar sind. Achten Sie auch auf einen
+ausreichenden Farbkontrast und darauf, dass die Anweisungen programmatisch zugeordnet sind.

@@ -57,7 +57,7 @@
 
 <script>
   let isPaused = false;
-  let intervalId: string | number | NodeJS.Timeout | undefined;
+  let intervalId: any;
   const button = document.getElementById("toggle-btn") as HTMLButtonElement;
 
   // Funktion, die Buchstaben vertauscht

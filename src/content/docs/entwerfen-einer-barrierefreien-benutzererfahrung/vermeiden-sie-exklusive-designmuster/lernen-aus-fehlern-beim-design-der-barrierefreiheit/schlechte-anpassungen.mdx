@@ -1,0 +1,62 @@
+---
+title: Schlechte Anpassungen
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Picture } from 'astro:assets';
+
+import FailInelegantRamp from "../../../../../assets/ux/fail-inelegant-ramp.jpg";
+import FailRampAvailable from "../../../../../assets/ux/fail-ramp-available.jpg";
+
+## Unelegante Retrofit-Designs
+
+Manche Designer glauben, dass Barrierefreiheit das Aussehen ihrer Designs verändert. Die meisten Techniken zur Barrierefreiheit im
+Internet verändern das Aussehen einer Webseite nicht. Sie wirken im unsichtbaren Markup und nicht auf der Webseite.
+
+Das ist aber nicht immer der Fall, wenn das Design von Anfang an schlecht zugänglich war. Manchmal ist das ursprüngliche Design so
+schlecht, dass Sie es erst umbauen müssen, um Barrierefreiheit zu erreichen. Oder Sie müssen ganz von vorne anfangen und ein neues
+Design machen.
+
+<Aside type="danger" title="Schlechtes Beispiel: Unelegantes Rampendesign">
+  Das Foto unten zeigt eine Rollstuhlrampe mit Zaun und Geländer. Sie führt vom Bürgersteig den Hügel hinauf. Dabei macht sie etwa
+  acht Zickzack-Kurven, bevor sie die Haustür erreicht. Die Rampe ist so lang, dass sie den ganzen Vorgarten ausfüllt. Das Design ist
+  wahrscheinlich funktional und entspricht wahrscheinlich den Richtlinien für Barrierefreiheit für Rollstuhlfahrer. Es wurde aber erst
+  nachträglich hinzugefügt.
+
+  <Picture src={FailInelegantRamp} formats={['avif', 'webp']} alt="" />
+
+  Das Haus hätte von Anfang an barrierefrei gebaut werden sollen. Dann wäre die jetzige Lösung eleganter. Das Haus könnte näher an
+  der Straße stehen. Der Hügel könnte so ausgehoben werden, dass man direkt vom Bürgersteig zur Haustür kommt. Man braucht dann keine
+  Zickzack-Rampe. Das Haus könnte auch woanders gebaut werden.
+
+  Als das Haus gebaut wurde, konnte man das nicht mehr ändern. Man kann diese Entscheidungen treffen, bevor man das Haus baut. Danach
+  ist das schwierig oder teuer.
+</Aside>
+
+## Unelegante Designs als vorübergehende Korrekturen
+
+Manchmal muss man eine schnelle Lösung für ein Zugänglichkeitsproblem finden. Dabei ist es wichtig, eine Lösung zu entwerfen, die
+auf lange Sicht funktioniert. Das Problem ist, dass aus der Notlösung eine Dauerlösung wird. Es ist einfacher, alles so zu lassen,
+wie es ist, als alles neu zu machen.
+
+Beim Webdesign müssen Sie sich entscheiden: Entwerfen und implementieren Sie eine temporäre Lösung und dann eine dauerhaftere
+Lösung? Oder sollten Sie die Überarbeitung auslassen und gleich eine richtige Lösung entwerfen?
+
+Es gibt nicht nur eine Antwort auf diese Frage. Es dauert eine Weile, bis das Problem gelöst ist. Der zweistufige Ansatz behebt
+den schlimmsten Teil schneller, ist aber am Ende aufwendiger, weil Sie zwei Lösungen finden müssen. Wenn das Problem mit der
+Barrierefreiheit schlimm ist, sollte man es schnell beheben. Wenn das Problem nicht so schlimm ist, kann es sich lohnen, nur eine
+Lösung zu entwickeln, auch wenn es länger dauert.
+
+## Platzieren von Barrierefreiheitsmerkmalen hinter Hindernissen
+
+Es ist nicht gut, wenn jemand Hilfe braucht, um die Barrierefreiheitsfunktionen zu nutzen. Die Nutzer sollen die
+Barrierefreiheitsfunktionen selbst nutzen können. Das ist das Wichtigste bei der Barrierefreiheit.
+
+<Aside type="danger" title="Schlechtes Beispiel: Rollstuhlrampe auf Anfrage verfügbar">
+  Es ist nicht fair, von einem Rollstuhlfahrer zu erwarten, dass er ein Gebäude betritt, um eine Rampe zu beantragen,
+  wenn er das Gebäude nicht mit dem Rollstuhl betreten kann. Und jemand dachte sich, das wäre eine gute Idee.
+
+  <Picture src={FailRampAvailable} formats={['avif', 'webp']} alt="" />
+
+  Sie können Ihre barrierefreien Funktionen nicht verstecken und erwarten, dass sie genutzt werden.
+</Aside>

@@ -1,0 +1,293 @@
+---
+title: Wichtige Designkonzepte
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import { Picture } from 'astro:assets';
+import { Aside } from '@astrojs/starlight/components';
+import {YouTube} from 'astro-lazy-youtube-embed'
+
+import OrigamiCrane from "../../../../../assets/ux/origami-crane.svg";
+import FastFood from "../../../../../assets/ux/fast-food.png";
+
+## Grundsatz 1: Machen Sie es den Benutzern leicht, erfolgreich zu sein
+
+Wir wollen, dass die Benutzer erfolgreich sind. Das ist die wichtigste Designherausforderung. Sie wollen, dass Ihre Benutzer ihre
+Aufgaben erfüllen. Ihr Design sollte für den Benutzer einfach, überzeugend und erfolgreich sein. Die Aufgaben sollten klar und
+verständlich sein.
+
+## Grundsatz 2: Vereinfachen
+
+Bei der Barrierefreiheit für Menschen mit kognitiven Behinderungen ist es wichtig, alles so einfach wie möglich zu machen.
+
+### 2.1: Vereinfachen Sie die visuelle Benutzeroberfläche
+
+Wie viele Spalten brauchen Sie für das Design? Wie viele Widgets und Funktionen brauchen Sie? Wie viele Abschnitte wollen Sie auf einer
+Seite? Wie viele Untermenüs brauchen Sie?
+
+Die Antwort ist meistens: weniger als Sie denken.
+
+Jede Webseite sollte nur eine Hauptaufgabe haben. Die Oberfläche sollte so einfach wie möglich sein.
+
+### 2.2: Vereinfachen Sie die Navigation
+
+Die Hauptnavigation sollte kurz und sinnvoll sein.
+
+Man muss zuerst überlegen, welche Zwecke oder Abschnitte die Website hat. Dann teilt man sie in Kategorien ein. Am besten macht man
+das in einer Hierarchie. Eine Kategorie "Videospiele" könnte zum Beispiel drei Unterkategorien haben: "Action-Spiele", "Strategiespiele"
+und "Puzzlespiele". Unter diesen Kategorien könnte man dann jeweils Hunderte von Produkten auflisten. Die beste Kategorie zu finden,
+kann viel Zeit dauern. Denken Sie daran, wie die Benutzer suchen möchten, und nicht nur daran, wie Sie die Dinge organisieren möchten.
+
+Halten Sie die Anzahl der Untermenüs klein, damit alles einfach bleibt.
+
+### 2.3: Vereinfachen Sie die Prozesse und Aufgaben
+
+UX-Fachleute wissen, wie schwierig es sein kann, komplexe Aufgaben zu vereinfachen, um sie für die Benutzer einfacher zu machen. Wenn
+man es richtig macht, ist es auch eine der lohnendsten Designherausforderungen. Aus geschäftlicher Sicht kann der Unterschied zwischen
+schwierigen und einfachen Aufgaben direkte Auswirkungen auf den Umsatz haben. Wenn es beispielsweise schwierig ist, etwas zu kaufen,
+brechen viele Menschen den Vorgang ab, bevor sie den Kauf abschließen.
+
+Achten Sie besonders auf die Kernprozesse und -aufgaben einer Website. Auf der Website einer Fluggesellschaft könnten die Kernaufgaben
+wie folgt definiert werden:
+
+<Steps>
+
+1. Buchung oder Änderung einer Reservierung, einschließlich aller Flugannehmlichkeiten
+2. Einchecken für einen Flug
+3. Zugriff auf einen persönlichen Reiseplan
+4. Zugriff auf den Status eines Fluges
+5. Zugriff auf ein persönliches Vielfliegerkonto
+6. Zugriff auf Flugpläne
+7. Zugriff auf Kontaktinformationen der Fluggesellschaft
+</Steps>
+
+Diese Aufgaben sind in den USA im Air Carrier Access Act (ACAA) festgelegt. Je nach Website können weitere Aufgaben hinzugefügt werden.
+Für eine Bank könnten die Aufgaben wie folgt definiert werden:
+
+<Steps>
+1. Kontostände und Transaktionen überprüfen
+2. Aktuelle und frühere Monatsauszüge abrufen
+3. Geldbeträge zwischen Konten überweisen
+4. Persönliche Kontodaten (Adresse, E-Mail-Adresse, Telefonnummer usw.) abrufen und bearbeiten
+5. Bankkontaktinformationen abrufen
+6. Dienstleistungen beantragen (Darlehen, Girokonten usw.)
+</Steps>
+
+<Aside title="Überlegen Sie sich die verschiedenen Aufgabenwege">
+  Denken Sie daran, dass die tatsächlichen Schritte, die eine Person für eine bestimmte Aufgabe durchlaufen muss, je nach
+  Zugriffsmethode variieren. Der Weg durch eine Aufgabe für einen sehenden Mausbenutzer kann sich stark von dem Weg durch dieselbe
+  Aufgabe für einen blinden Tastaturbenutzer unterscheiden. Es kann hilfreich sein, ein Flussdiagramm oder ein Prozessdiagramm zu
+  zeichnen, um die Schritte im Detail zu untersuchen.
+</Aside>
+
+### 2.4: Vereinfachen Sie den Inhalt
+
+Der Text muss eventuell auch einfacher geschrieben werden. Das ist eins der schwierigsten Ziele.
+
+Methode 1: Zusammenfassungen. Man kann am Anfang und am Ende eines Abschnitts eine kurze Zusammenfassung schreiben. Man kann auch
+Aufzählungslisten mit den wichtigsten Punkten erstellen. Eine andere Möglichkeit ist, oben auf der Seite ein Inhaltsverzeichnis zu
+erstellen. Das Inhaltsverzeichnis sollte die wichtigsten Konzepte zusammenfassen. Zusammenfassungen bieten Benutzern zwei Versionen
+einer Information: eine kurze und eine lange.
+
+Methode 2: Ändern Sie den Inhalt selbst. Manchmal ist es am besten, den Inhalt zu ändern. Das heißt, man vereinfacht das Vokabular,
+entfernt große Textblöcke, formuliert anders und so weiter.
+
+## Grundsatz 3: Stellen Sie alternative Darstellungen bereit
+
+Texte können mit Videos, Audioinhalten, Bildern, Fotos und Diagrammen ergänzt werden.
+
+<Aside type="tip" title="Gutes Beispiel: Anleitung zum Falten eines Origami-Kranichs">
+  Wenn Sie nur eine Anleitung zum Falten eines Origami-Kranichs hätten, könnten Sie es vielleicht schaffen. Aber es ist einfacher,
+  wenn Sie auch Bilder oder ein Video haben.
+
+  ### Textanweisungen
+
+
+  <Steps>
+    1. Falten Sie ein quadratisches Blatt Papier, sodass die bunte Seite nach oben zeigt. Falten Sie die obere Ecke zur unteren
+       Ecke. Jetzt knicken und wieder öffnen. Dann falten Sie das Papier seitlich.
+    2. Drehen Sie das Papier auf die weiße Seite. Falten Sie das Papier in der Mitte und knicken Sie es. Öffnen Sie es wieder und
+       falten Sie es erneut.
+    3. Falten Sie die oberen drei Ecken des Modells zur unteren Ecke. Glätten Sie das Modell.
+    4. Falten Sie die Laschen zur Mitte und entfalten Sie sie.
+    5. Falten Sie die Oberseite des Modells nach unten.
+    6. Öffnen Sie die oberste Lasche, indem Sie sie nach oben und gleichzeitig die Seiten nach innen drücken. Glätten Sie es und
+       knicken Sie es.
+    7. Drehen Sie das Modell um. Wiederholen Sie die Schritte 4 bis 6 auf der anderen Seite.
+    8. Falten Sie die oberen Laschen zur Mitte.
+    9. Wiederholen Sie dies auf der anderen Seite. Ihr Modell sollte nun so aussehen.
+    10. Falten Sie die "Beine" des Modells nach oben. Falten Sie sie gut und entfalten Sie sie dann wieder.
+    11. Falten Sie die "Beine" entlang der Knicke.
+    12. Falten Sie eine Seite, um einen Kopf zu formen. Falten Sie dann die Flügel nach unten.
+  </Steps>
+
+  ### Bebilderte Anleitung
+
+  <Picture src={OrigamiCrane} formats={['avif', 'webp']} alt="" />
+
+  ### Videoanleitungen
+
+  <YouTube videoId="Ux1ECrNDZl4" title="Origami: Crane [tutorial]" thumbnail={3} />
+
+  ### Video-Transkript
+
+  Wir nehmen ein quadratisches Blatt Papier für den Origami-Kranich. Jedes Papier ist geeignet. Falten Sie das Papier zunächst in
+  der Mitte. Jetzt haben wir zwei Falten gemacht. Durch Drehen sind sie jetzt Bergfalten. Wir falten es in die andere Richtung,
+  diagonal. Erst in eine Richtung, dann in die andere. Drehen Sie das Blatt so, dass die Falten Bergfalten sind. Drücken Sie in die
+  Mitte und klappen Sie es zusammen. OK, der offene Teil sollte zu Ihnen zeigen. Falten Sie eine der Laschen entlang der Mittellinie,
+  sodass die Kante mit der Mittelfalte ausgerichtet ist. Ja, genau. Machen Sie das auch mit der Klappe auf der anderen Seite. Jetzt
+  ist es eine Drachenform. Klappe den oberen Teil zurück. Achte darauf, nicht zu weit zu gehen, sondern richte es an der Kante aus.
+  Jetzt öffnest du es wieder. Jetzt machen wir eine Blütenblattfalte. Dazu heben wir die obere Schicht an und falten sie nach hinten.
+  So entsteht ein großes Rechteck. Ich wiederhole das noch einmal. So können Sie sehen, wie sich das Papier bewegt. Und auf der
+  anderen Seite machen wir auch eine Blütenblattfalte. Als erstes machen wir diagonale Falten. Öffnen Sie das, heben Sie die erste
+  Schicht an, ziehen Sie sie nach hinten und glätten Sie die Form.
+
+  Sie müssen nur diese beiden Falten umkehren. Ja, genau so. Und glätten Sie die Form. Das ist eine Vogelbasis. Und jetzt nehmen wir
+  den Teil mit den Füßen und falten die Kante fast zur Mitte. Nicht ganz, nur fast. Das macht die Innenfaltung später einfacher. Und
+  auch die Klappe auf der anderen Seite. Falten Sie beide Klappen auf der Rückseite in der Mitte. Drehen Sie das Blatt um und
+  wiederholen Sie den Vorgang. Gehe nicht den ganzen Weg, sondern nur fast bis zum Zentrum. OK, jetzt haben wir zwei Laschen. Nimm
+  eine Lasche und falte sie als Vorfaltung für die innere Rückfalte hoch. Siehst du diese Falte? Das ist eine Bergfalte. Sie wird
+  innen in die Form des restlichen Modells gedreht. Deshalb heißt sie so. Drehen Sie die Falte um und stecken Sie die Klappe in das
+  Modell. Und mache das Gleiche mit der anderen Klappe. Das kann man in einem Schritt machen, wie ich es gerade zeige, oder wie beim
+  ersten Falten. OK. Jetzt haben Sie diese Form. Klappen Sie die Flügel nach unten. Wählen Sie einen Hals, um den Kranich zu machen.
+  Ich nehme diesen und mache eine andere Faltung. So sind wir fertig. Danke fürs Zuschauen. Sagt mir, ob die Diagramme nützlich waren.
+  Tschüss.
+</Aside>
+
+## Prinzip 4: Planen Sie zusätzliche Zeit ein
+
+Manche Menschen mit geistiger Behinderung verstehen Informationen langsamer als andere. Geben Sie ihnen mehr Zeit, um auf Dinge wie
+Sitzungszeitüberschreitungen, Fristen, Sonderangebote, interaktive Inhalte, animierte Inhalte usw. zu reagieren. Manchmal ist es auch
+gut, wenn Benutzer Timeouts verschieben oder abbrechen oder Zeitlimits verlängern können.
+
+## Prinzip 5: Fokussieren Sie die Aufmerksamkeit des Nutzers
+
+### 5.1: Ablenkungen beseitigen oder reduzieren
+
+Sie wollen Ihre Benutzer nicht ablenken. Ablenkungen können zum Beispiel sein:
+
+- Werbung
+
+- Automatische Wiedergabe von Videos, Audios oder Animationen
+
+- Zeitgesteuerte Interface-Elemente wie Karussells oder rotierende Banner
+
+- Automatisch aktualisierte Informationen wie Social-Media-Feeds (Facebook, Twitter usw.), Börsenticker usw.
+
+- Visuell ansprechende Inhalte, die nicht Teil des Hauptinhalts oder der Hauptbotschaft sind
+
+- Visuell unausgewogene Designs
+
+- Überladene Designs ohne klaren Fokus oder Zweck
+
+Es ist gut, wenn man diese Ablenkungen vermeidet oder zumindest weniger davon hat. Sie können auch dafür sorgen, dass die Nutzer
+die wichtigsten Teile des Inhalts gut sehen können.
+
+### Prinzip 5.2: Präsentieren Sie eine kleine Anzahl klar definierter Aufgaben
+
+Was will die Webseite? Wenn Sie 20 Aufgaben haben, von denen niemand weiß, dann hat die Seite keinen Zweck. Power-User mögen es,
+wenn die Seite flexibel ist. Aber alle Benutzer profitieren davon, wenn die Seite übersichtlich ist.
+
+### Prinzip 5.3: Machen Sie das Erlebnis fesselnd und unterhaltsam
+
+Wenn etwas Spaß macht, verstehen Menschen es leichter und wenden es auch öfter an.
+
+Manche Menschen mit kognitiven Behinderungen mögen eine Umgebung, die wie ein Spiel ist. Sie wollen die Benutzeroberfläche nicht
+in ein Spiel verwandeln, weil das die Aufgaben schwieriger macht. Aber ein paar spielerische Elemente können die Webseite
+unterhaltsamer machen, solange sie dazu da sind, um die Webseite zu nutzen.
+
+Sie können lustige Bilder oder Gesichter verwenden, um Ihre Ideen zu präsentieren. Das Design stellt die drei Optionen mit Gesichtern
+dar, statt nur mit Text zu fragen. Ein grüner Smiley bedeutet: "Mir gefällt es!" Ein gelbes Gesicht steht für "Ich weiß nicht." Ein
+rotes Gesicht mit Sorgenfalten steht für "Es gefällt mir nicht".
+
+Hinweis: Dies ist nur ein Bild. Die Schaltflächen und Links funktionieren nicht.
+
+<Picture src={FastFood} formats={['avif', 'webp']} alt="" />
+
+### 5.4: Verwenden Sie visuelle Designhinweise, um Aufmerksamkeit zu erregen
+
+#### 5.4.1 Leerraum:
+
+Isolieren Sie wichtige Inhalte, indem Sie sie mit Leerraum ("Leerraum") umgeben.
+
+#### 5.4.2 Farbe:
+
+Verwenden Sie Farben, die Aufmerksamkeit erzeugen.
+
+#### 5.4.3 Kontrast:
+
+Verwenden Sie Farben, die sich stark unterscheiden. Setzen Sie den hohen Kontrast bei wichtigen Elementen ein.
+
+#### 5.4.4 Der Blick anderer:
+
+Verwenden Sie Fotos oder Bilder von Menschen, die auf das Objekt schauen, auf das Ihre Benutzer achten sollen.
+
+#### 5.4.5 Überraschung:
+
+Zeigen Sie Bilder, die anders sind. Bilder, die man nicht erwartet, oder Bilder, die humorvoll sind. Achten Sie darauf, dass die
+Überraschung hilfreich ist und nicht vom Wesentlichen ablenkt.
+
+#### 5.4.6 Rahmengestaltung:
+
+Heben Sie die wichtigen Elemente mit Rahmen, Konturen oder einem anderen Schema hervor. So stehen sie im Mittelpunkt.
+
+#### 5.4.7 Richtungshinweise:
+
+Verwenden Sie Pfeile oder andere Hinweise, um auf wichtige Inhalte zu verweisen.
+
+#### 5.4.8 Führungslinien:
+
+Zeigen Sie der Person, worauf sie achten soll.
+
+#### 5.4.9 Bewegung:
+
+Bewegung kann die Aufmerksamkeit des Benutzers auf sich ziehen. Das kann aber zu Problemen bei der Barrierefreiheit führen.
+
+### 5.5: Verwenden Sie Text, um Aufmerksamkeit zu erregen
+
+- Verwenden Sie große, fette Überschriften. Diese müssen im HTML-Code als solche gekennzeichnet sein.
+
+- Schreibe kurze, aussagekräftige Überschriften. Verwenden Sie kurze Wörter und Phrasen in Überschriften.
+
+- Verwenden Sie auffällige Wörter.
+
+- Verwenden Sie Ausrufezeichen und Fragezeichen, um Ideen zu betonen.
+
+- Verwenden Sie fetten Text, um wichtige Ideen hervorzuheben.
+
+- Zusammenfassungswörter: Markieren Sie die Hauptidee eines Satzes oder Absatzes.
+
+### 5.6: Verwenden Sie auditive Hinweise, um Aufmerksamkeit zu erregen
+
+Automatisch abgespielte Audioinhalte auf Websites sind nicht empfehlenswert. Aber Audio kann die Aufmerksamkeit der Nutzer auf
+sich ziehen. Manchmal ist Audio okay. Bestätigungs- und Benachrichtigungstöne können sinnvoll sein.
+
+Sie könnten "Gut gemacht!" oder "Herzlichen Glückwunsch!" sagen lassen. "Fertig!" oder "Hoppla!" Sie müssen wohl etwas beheben
+oder eine andere Nachricht schicken, die zu den Umständen passt. Auch hier gilt: Seien Sie vorsichtig. Manche Menschen mit
+kognitiven Behinderungen brauchen beim Hören gleichzeitig die Geräusche von einer Webseite und die von ihrem Screenreader. Deshalb
+sollten die Töne nicht zu laut sein. Im Idealfall können Benutzer diese Töne ausschalten. Achte darauf, dass die Töne kurz sind und
+nicht die einzige Art sind, wie Informationen vermittelt werden. Schreiben Sie die Informationen auch in Text um.
+
+## Prinzip 6: Sofortiges Feedback sowohl für Erfolgs- als auch für Fehlerszenarien bereitstellen
+
+Auch auf schönen Websites machen Benutzer Fehler. Sie sollten so schnell wie möglich Feedback geben. Die WCAG-Anforderung sagt, dass
+Fehlermeldungen wichtig sind, aber auch Erfolgsmeldungen sind wichtig.
+
+Wenn ein Benutzer etwas macht, zum Beispiel eine Funktion aktiviert oder ein Formular sendet, muss er eine Rückmeldung bekommen, ob
+das geklappt hat oder nicht.
+
+Wenn ein Benutzer ein Formular ausfüllt, sollte er eine Bestätigung oder eine Fehlermeldung bekommen, wenn er es sendet. Manche Leute
+finden es gut, wenn sie gleich beim Ausfüllen des Formulars eine Fehlermeldung bekommen.
+
+- Für sehende Benutzer ist die Inline-Validierung von Formularelementen der schnellste Weg, um Feedback zu geben.
+
+- Für Benutzer von Screenreadern können Fehlermeldungen bei der Inline-Validierung schwierig sein. Sie sind aber in vielen Fällen
+  nicht effektiv. Solange die Inline-Validierung gut konzipiert ist, gibt es keine Probleme. Auch wenn Benutzer von Screenreadern
+  die Fehlermeldungen erst nach dem Absenden des Formulars bemerken (es sei denn, sie navigieren im Formular rückwärts zu den
+  Fehlerfeldern).
+
+- Benutzer von Screenreadern durchsuchen Formulare oft mit der Tabulatortaste, bevor sie einen Teil ausfüllen. Wenn man ein Feld
+  nur mit der Tabulatortaste betritt und verlässt, ohne etwas einzugeben, kann das die Inline-Validierung auslösen. Der Benutzer
+  bekommt dann die Fehlermeldung "Das Feld darf nicht leer sein". Wenn der Benutzer das Formular erneut durchläuft, kann es verwirrend
+  sein, wenn Fehlermeldungen angezeigt werden. Sie müssen aber auch daran denken, dass Inline-Feedback für Benutzer von Screenreadern
+  auch Nachteile hat.

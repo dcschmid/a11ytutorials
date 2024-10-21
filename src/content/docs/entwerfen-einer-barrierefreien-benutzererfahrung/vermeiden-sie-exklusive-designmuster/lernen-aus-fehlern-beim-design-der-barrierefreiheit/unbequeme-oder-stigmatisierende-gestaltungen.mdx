@@ -1,0 +1,66 @@
+---
+title: Unbequeme oder stigmatisierende Gestaltungen
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Picture } from 'astro:assets';
+
+import FailNationalGallery from "../../../../../assets/ux/fail-national-gallery.jpg";
+import AccessibleEntranceInBack from "../../../../../assets/ux/accessible-entrance-in-back.png";
+import FailBackDoor from "../../../../../assets/ux/fail-back-door.jpg";
+import ColoredEntrance from "../../../../../assets/ux/colored-entrance.png";
+
+## Unbequeme oder stigmatisierende Gestaltungen in der physischen Welt
+
+<Aside type="danger" title="Schlechtes Beispiel: Barrierefreier Eingang im hinteren Bereich">
+  Viele Gebäude haben eine Treppe zum Haupteingang.
+
+  <Picture src={FailNationalGallery} formats={['avif', 'webp']} alt="" />
+
+  Einige Gebäude haben einen neuen Eingang bekommen, der für Rollstuhlfahrer geeignet ist. Der barrierefreie Eingang ist oft nicht
+  so gut zu finden. Er liegt zum Beispiel an einer Seite, in einer Ecke, hinten, in einer Gasse, bei den Mülleimern oder an einem
+  anderen Ort.
+
+  <Picture src={AccessibleEntranceInBack} formats={['avif', 'webp']} alt="" />
+
+  <Picture src={FailBackDoor} formats={['avif', 'webp']} alt="" />
+
+  Es erinnert an die schlechten Seiten der Rassentrennung und Vorurteile, auch wenn das nicht gewollt ist.
+
+  <Picture src={ColoredEntrance} formats={['avif', 'webp']} alt="" />
+
+  Manche Eigentümer von Gebäuden mit barrierefreien Eingängen im hinteren Bereich haben keine Vorurteile gegenüber Menschen mit
+  Behinderungen. Manche Gebäude sind aus Ziegeln und Mörtel gebaut. Vor allem, wenn sie alt sind und vor der Gesetzgebung für
+  Behindertenrechte gebaut wurden, ist es schwierig, barrierefreie Eingänge einzubauen. In der Zeit der Rassentrennung gab es
+  getrennte Eingänge. Das war keine Frage der Physik. Das war nur ein Vorurteil.
+
+  Es ist für sie aber trotzdem nicht angenehm und vielleicht auch ein bisschen peinlich, wenn sie auf die Rückseite eines Gebäudes
+  gehen müssen, um hineinzukommen. Wenn eine Person im Rollstuhl mit Freunden unterwegs ist, können alle Freunde durch den Haupteingang
+  gehen, die Person im Rollstuhl jedoch nicht. Die Behinderung wird zu sehr gezeigt. Alle müssen warten, bis die Person im Rollstuhl
+  den Umweg nimmt. Oder sie warten gemeinsam.
+</Aside>
+
+## Webdesigns, die unbequem oder stigmatisierend sind
+
+Beispiele für Design-Entscheidungen, die für Menschen mit Behinderung unangenehm oder schlecht sind, sind:
+
+- Eine weniger zugängliche "Version": Ein Link zu einer Website, die eine "barrierefreie Version" anbietet. Diese Version ist eine
+  abgespeckte Textversion mit einigen Funktionen. Es ist nicht gut, wenn man die Hauptwebsite gar nicht nutzen kann. Und es ist auch
+  nicht gut, weil die Person merkt, dass sie ein schlechteres Design bekommt als der Rest der Bevölkerung.
+
+- Sie können uns anrufen, wenn Sie Hilfe bei der Nutzung der Website brauchen. Eine Website, die man nicht erreichen kann. Darauf
+  steht eine Telefonnummer. Menschen mit Behinderung können dort anrufen. So bekommen sie Hilfe. Auch wenn die Website das von Anfang
+  an hätte machen sollen. In diesem Fall muss die Person ihre Behinderung offenbaren. Das kann stigmatisierend sein. Wenn die Person
+  außerhalb der Geschäftszeiten anruft, geht niemand ans Telefon. Sie kann dann erst am nächsten Tag oder nach dem Wochenende erreichen,
+  was sie wollte. Das ist unpraktisch.
+
+- PDF-Dokument nicht zugänglich. Auf Webseite wird zu einer E-Mail-Adresse verlinkt, die besagt, dass die barrierefreie Version auf
+  Anfrage erhältlich ist. Auch hier gibt es die gleichen Probleme wie beim letzten Mal: Man muss sagen, dass man behindert ist und
+  eventuell lange warten.
+
+- Ein Widget, das für die Mausinteraktion entwickelt wurde, verfügt über Barrierefreiheitsfunktionen. Diese sind aber nicht intuitiv
+  und wurden nur zur Erfüllung von Barrierefreiheitsstandards hinzugefügt.
+
+- Hier wird erklärt, warum einige Widgets nicht barrierefrei sind. Ein komplexes Widget wie eine Chemielabor-Simulation kann für
+  Benutzer ohne Behinderungen schwer barrierefrei gestaltet werden. Deshalb gibt es eine Textbeschreibung, die erklärt, was Sie
+  erleben oder lernen sollen. Die Informationen sind für alle da, aber man kann das Widget nicht gleich gut nutzen.

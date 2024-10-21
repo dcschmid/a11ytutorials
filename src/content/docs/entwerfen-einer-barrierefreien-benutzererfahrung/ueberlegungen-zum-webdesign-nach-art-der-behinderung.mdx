@@ -1,0 +1,422 @@
+---
+title: Überlegungen zum Webdesign, nach Art der Behinderung
+---
+
+import Table from "../../../components/Table.astro";
+
+## Designüberlegungen für Blinde
+
+<table>
+  <theader slot="header">
+    <th scope="col">Designüberlegungen</th>
+    <th scope="col">Warum?</th>
+  </theader>
+
+  <tbody slot="body">
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Alle Inhalte müssen in Textform oder als Textäquivalent (z. B. Alt-Text für Bilder) dargestellt werden.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Screenreader können Bilder nicht direkt lesen, aber sie können die Texte dazu lesen, die Sie ihnen zur Verfügung stellen.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Alle Funktionen müssen über die Tastatur verfügbar sein. Achten Sie darauf, den Test mit eingeschaltetem Screenreader
+        durchzuführen.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Blinde Benutzer können eine Maus oder ein Trackpad zwar nutzen, aber sie wissen nicht, wo sich der Mauszeiger befindet. Sie
+        navigieren besser über die Tastatur.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Der Inhalt muss gut strukturiert und verständlich sein. Dazu gehören Überschriften, Orientierungspunkte, Tabellen, Listen
+        und so weiter.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Viele Nutzer von Bildschirmleseprogrammen öffnen Listen, um zu verstehen, was auf einer Seite steht. Sie können auch zu
+        bestimmten Stellen auf der Seite springen, zum Beispiel zum Hauptinhaltspunkt oder zu einer Überschrift.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Alle individuell angepassten Steuerelemente müssen richtig benannt, zugeordnet und eingestellt sein. Sie müssen auch ihren
+        Wert ändern, wenn dies nötig ist.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Benutzerdefinierte Steuerelemente haben keine semantischen Teile. Deshalb können Screenreader Benutzern nicht mitteilen, was
+        das Widget ist. Auch können Benutzer nicht über die Eigenschaften des Widgets informieren. Das geht nur, wenn man die
+        Informationen über ARIA-Namen, Rollen, Zustände und Eigenschaften angibt.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Benutzer müssen sofort eine Rückmeldung bekommen, wenn sie etwas machen. Wenn eine Funktion aktiviert wird, darf es keine
+        Stille geben!
+      </td>
+      <td role="cell" data-label="Warum?">
+        Beispiele für Feedback sind: ein erweiteter oder reduzierter Bereich, eine Änderung des Werts an einem Steuerelement (z. B.
+        an einem Schieberegler), eine erfolgreiche oder erfolglose Übermittlung eines Formulars, eine Benachrichtigung, dass eine
+        neue Seite in einer Single-Page-Anwendung geladen wurde.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Blinde Menschen brauchen zu Videos auch Beschreibungen, damit sie alles verstehen.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Blinde Menschen können Videos hören, aber nicht sehen. Wenn die Bilder wichtige Informationen enthalten, müssen sie
+        beschrieben werden, damit blinde Menschen sie verstehen können.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Auf Handys und Tablets:
+
+        - Man muss auf alles klicken.
+
+        - Mit aktiviertem Screenreader funktionieren keine benutzerdefinierten Wischaktionen auf Webseiten.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Wenn man blind ist und ein mobiles Gerät benutzt, werden Wischaktionen von der Software verwendet. Damit Funktionen und
+        Steuerelemente auf einer mobilen Webseite funktionieren, müssen sie angeklickt werden.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Designüberlegungen für Sehbehinderte
+
+<table>
+  <theader slot="header">
+    <th scope="col">Designüberlegungen</th>
+    <th scope="col">Warum?</th>
+  </theader>
+  <tbody slot="body">
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Die Pinch-to-Zoom-Funktion darf nicht abgeschaltet werden.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Wenn man auf einer Webseite nicht zoomen kann, können Menschen mit Sehbehinderung, die Bildschirmlupen zum Lesen von
+        Inhalten verwenden, Informationen auf einer Webseite möglicherweise nicht richtig sehen.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Der Text muss sich vom Hintergrund abheben. Sie können das mit denaxe DevTools, der Browsererweiterung für Barrierefreiheit
+        von Deque oder einem ähnlichen Tool überprüfen.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Manche Benutzer mit Sehbeeinträchtigung sehen nur wenig Kontrast. Deshalb können Text, Rahmen und andere Elemente in
+        ähnlichen Helligkeitsstufen erscheinen. Für diese Benutzer sind Textelemente, die die gleiche Farbe wie der Hintergrund
+        haben, schwer zu lesen.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Links, Schaltflächen und Steuerelemente sollten einen Fokus-Zustand haben, der sichtbar ist.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Manche blinden oder sehbehinderten Menschen nutzen eine Tastatur, eine Maus oder beides, um sich im Internet zu bewegen. Die
+        Zustände ":focus" und ":hover" zeigen an, wo sich der Tastatur- oder Mausfokus auf einer Webseite befindet. Der
+        Standardbrowser-Status ":focus" ist akzeptabel, aber Benutzer mit Sehbehinderung profitieren von den CSS-Zuständen
+        ":focus" und ":hover".
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Die Oberfläche sollte klar unterscheiden, was Inhalt ist und was Steuerung.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Auch hier können Menschen mit geringer Sehkraft Steuerelemente auf Webseiten schwer erkennen, weil sie mit dem Text und
+        dem Hintergrund verschmelzen.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Designaspekte für Farbenblindheit
+
+<table>
+  <theader slot="header">
+    <th scope="col">Designüberlegungen</th>
+    <th scope="col">Warum?</th>
+  </theader>
+  <tbody slot="body">
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Alle Informationen müssen klar und deutlich sein. Man muss keine Farben unterscheiden. Wenn nur Rot und Grün zur
+        Info verwendet werden, ist das schwierig.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Wenn Farben die einzige Möglichkeit sind, um Informationen auf einer Webseite zu zeigen, können Menschen, die bestimmte
+        Farben nicht erkennen können, diese Informationen nicht sehen. Verwenden Sie auch Text und Symbole, um Informationen zu
+        vermitteln.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Designaspekte für Taubheit und Schwerhörige
+
+<table>
+  <theader slot="header">
+    <th scope="col">Designüberlegungen</th>
+    <th scope="col">Warum?</th>
+  </theader>
+  <tbody slot="body">
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Alle Videos müssen mit Untertiteln sein.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Ohne Untertitel können gehörlose Menschen nicht verstehen, worum es in einem Video geht. Sie hören auch wichtige Geräusche
+        nicht, die zum Verständnis wichtig sind.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Für alle Audioinhalte muss es eine schriftliche Zusammenfassung geben.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Transkripte enthalten alle Informationen, die man aus einer Audio-Aufnahme herauslesen kann. Dazu gehören zum Beispiel
+        Dialoge, Erzählungen, Musik und Geräusche.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Es ist gut, wenn man Videos in Gebärdensprache übersetzt.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Es gibt Gehörlose, die nur gebärden. Für diese Gruppe sind Gebärdensprachdolmetscher besser als Untertitel und Texte.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Gestaltungsaspekte für Taubblindheit
+
+<table>
+  <theader slot="header">
+    <th scope="col">Designüberlegungen</th>
+    <th scope="col">Warum?</th>
+  </theader>
+  <tbody slot="body">
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Alle Überlegungen zur Blindheit sind wichtig.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Taubblinde nutzen wie Blinde einen Screenreader. Taubblinde Menschen lesen Inhalte, die sie berühren, mit einem Gerät, das
+        ihnen die Brailleschrift anzeigt.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Alle Überlegungen für Taubheit gelten.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Wenn jemand taub ist, sollte es eine andere Möglichkeit geben, um an Audioinhalte zu kommen. Am besten in einem Textformat.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Für Multimedia-Inhalte wie Videos und Audios sollte es ein Transkript geben.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Für taubblinde Menschen sind Transkripte die einzige Möglichkeit, um an Informationen aus Videos und Audios zu kommen.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Designaspekte für Geschicklichkeit/motorische Behinderungen
+
+<table>
+  <theader slot="header">
+    <th scope="col">Designüberlegungen</th>
+    <th scope="col">Warum?</th>
+  </theader>
+  <tbody slot="body">
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Alle Funktionen müssen mit der Tastatur bedienbar sein.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Für alle, die eine Tastatur benutzen, sollte alles, was man mit einer Maus machen kann, auch mit der Tastatur gehen. Manche
+        Menschen können nicht so gut mit einer Maus umgehen.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+       Links, Schaltflächen und Steuerelemente sollten einen Fokus-Zustand haben, der sichtbar ist.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Sehende Tastaturbenutzer wissen nur dann, wo sich der Tastaturfokus befindet, wenn der Fokus sichtbar ist. Wenn der
+        Fokus deaktiviert ist, können Benutzer mit Sehbeeinträchtigung auf Webseiten nur schwer oder gar nicht interagieren.
+        Der Standardstatus des Browsers ist akzeptabel. Aber auch sehende Tastaturbenutzer können von den erweiterten CSS-Zuständen
+        profitieren.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+       Sie können Benutzer warnen, bevor die Sitzung abläuft. Sie können ihnen auch die Möglichkeit geben, die Sitzung zu verlängern.
+       Die Warnung muss langsam reagieren. Die Reaktionszeit sollte mindestens zwei Minuten betragen.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Menschen mit Behinderung brauchen mehr Zeit, um Informationen in eine Webseite einzugeben. Sie brauchen mehr Zeit und mehr
+        Zeit zum Antworten.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+       Sie können Benutzer warnen, bevor die Sitzung abläuft. Sie können ihnen auch die Möglichkeit geben, die Sitzung zu
+       verlängern. Die Warnung muss langsam reagieren. Die Reaktionszeit sollte mindestens zwei Minuten betragen.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Menschen mit Behinderung brauchen mehr Zeit, um Informationen in eine Webseite einzugeben. Sie brauchen mehr Zeit und mehr
+        Zeit zum Antworten.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+       Bieten Sie große Klickziele für Benutzer, deren Bewegungen schwer zu kontrollieren sind.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Wenn Menschen zittern oder Krämpfe haben, müssen sie auf einer Webseite Ziele aktivieren können. So können auch Menschen
+        mit Beeinträchtigungen die Ziele auf der Webseite gut erkennen.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Designüberlegungen für Sprachbehinderungen
+
+<table>
+  <theader slot="header">
+    <th scope="col">Designüberlegungen</th>
+    <th scope="col">Warum?</th>
+  </theader>
+  <tbody slot="body">
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Gib keine Spracheingaben ein, zum Beispiel in Apps, Widgets oder Spielen.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Menschen mit Sprachbehinderungen können nicht gut sprechen. Sie brauchen deshalb andere Möglichkeiten, um sich auszudrücken.
+        Zum Beispiel Text-Chats, Formulare, E-Mails usw.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Designaspekte für kognitive Behinderungen
+
+<table>
+  <theader slot="header">
+    <th scope="col">Designüberlegungen</th>
+    <th scope="col">Warum?</th>
+  </theader>
+  <tbody slot="body">
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Für Benutzer mit geringerem Verständnis:
+
+          - Mach die Benutzeroberfläche einfacher.
+
+          - Mach den Inhalt einfacher.
+
+          - Mach Videos und Audio einfacher.
+
+          - Mach die Auswahlmöglichkeiten auf dem Bildschirm einfacher.
+
+          - Sie sollten Hilfefunktionen bereitstellen.
+
+          - Das Design muss benutzerfreundlich sein.
+
+          - Testen Sie die Benutzerfreundlichkeit mit echten Benutzern. Am besten sind dabei auch Menschen mit kognitiven
+            Behinderungen dabei.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Benutzer, die wenig verstehen, haben mehr Spaß, wenn alles einfach ist. Sie können zu viele Optionen und komplexe
+        Informationen nicht gut verarbeiten.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Für Benutzer, die sich nicht mehr erinnern:
+
+        - Informationen werden auf verschiedenen Bildschirmen und innerhalb eines Pfads angezeigt.
+
+        - Sie können Hilfe anfordern.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Eine Website, die überall gleich aussieht, ist für Menschen mit Gedächtnisverlust gut. Wenn eine Website zu kompliziert ist,
+        ermüdet sie Benutzer mit Gedächtnisverlust. Wenn ein Benutzer Probleme hat, kann er Hilfe bekommen, um sich auf der Webseite
+        zurechtzufinden.
+      </td>
+    </tr>
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Für Leute, die sich leicht ablenken lassen:
+
+         - Schützen Sie sich vor Ablenkungen (vermeiden Sie Werbung, Karussells, laute Töne, Videos usw.).
+      </td>
+      <td role="cell" data-label="Warum?">
+        Wenn es auf einer Webseite zu viele Ablenkungen gibt, können Menschen mit kognitiven Behinderungen wichtige Informationen
+        verpassen. Ablenkungen können dazu führen, dass Nutzer den Fokus verlieren und die Webseite verlassen.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Designaspekte für Lesebehinderungen
+
+<table>
+  <theader slot="header">
+    <th scope="col">Designüberlegungen</th>
+    <th scope="col">Warum?</th>
+  </theader>
+  <tbody slot="body">
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Für Menschen, die nicht gut lesen können:
+
+        - Fügen Sie Bilder, Videos und Audio-Inhalte hinzu.
+
+        - Vermeiden Sie den höchsten Kontrast zwischen Text und Hintergrund (z. B. Schwarz auf Weiß). Aber achten Sie darauf, dass
+          der Kontrast für Menschen mit Sehbehinderung passt.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Für Menschen, die Probleme mit Text haben, sind andere Formate wie Bilder, Audio und Video besser. Für Menschen mit
+        Schwierigkeiten beim Lesen kann der höchste Kontrast auch anstrengend sein. Farben mit leichtem Kontrast, zum Beispiel
+        Dunkelgrau gegen Weiß oder Off-White, können hier helfen.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Designüberlegungen für Anfallserkrankungen
+
+<table>
+  <theader slot="header">
+    <th scope="col">Designüberlegungen</th>
+    <th scope="col">Warum?</th>
+  </theader>
+  <tbody slot="body">
+    <tr role="row">
+      <td role="cell" data-label="Designüberlegungen">
+        Für Menschen, die Probleme mit Text haben, sind andere Formate wie Bilder, Audio und Video besser. Für Menschen mit
+        Schwierigkeiten beim Lesen kann der höchste Kontrast auch anstrengend sein. Farben mit leichtem Kontrast, zum Beispiel
+        Dunkelgrau gegen Weiß oder Off-White, können hier helfen.
+      </td>
+      <td role="cell" data-label="Warum?">
+        Blinkende oder flackernde Inhalte können bei anfälligen Benutzern epileptische Anfälle auslösen.
+      </td>
+    </tr>
+  </tbody>
+</table>

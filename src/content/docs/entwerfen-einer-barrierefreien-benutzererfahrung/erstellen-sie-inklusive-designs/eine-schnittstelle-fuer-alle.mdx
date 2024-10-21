@@ -1,0 +1,173 @@
+---
+title: Eine Schnittstelle für alle?
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Kann man eine Schnittstelle entwerfen, die alle Bedürfnisse von Menschen mit verschiedenen Behinderungen erfüllt?
+
+Es ist nicht möglich, alle Bedürfnisse mit einem einzigen Design zu erfüllen. Aber ein gutes Design kann viel erreichen. Deshalb ist
+es besser, ein einziges Design zu machen, das für alle passt, als viele verschiedene.
+
+## Ein Webdesign reicht fast immer aus
+
+Man sollte keine extra Designs machen, nur um sie barrierefrei zu machen:
+
+- Manchmal sind separate Designs nicht nötig. Sie können alle Barrierefreiheit in einem einzigen Design für fast alle Arten von
+  Behinderungen einbauen (schwere kognitive Behinderungen sind die Ausnahme).
+
+- Benutzer wissen vielleicht nicht, dass es barrierefreie Versionen gibt: Auch wenn man barrierefreie Versionen für jede Behinderung
+  erstellt, wissen die Benutzer nicht, dass es sie gibt. Es ist einfacher für eine Person, eine Website zu nutzen, als herauszufinden,
+  wie sie barrierefrei zugänglich ist. Das gilt vor allem für Menschen mit geistigen Behinderungen. Sie merken vielleicht nicht, dass
+  es eine andere Version gibt, die für sie besser ist.
+
+- Es gibt eine lange Geschichte von Menschen mit Behinderungen, die an den Rand gedrängt wurden. Restaurants mit Treppen vor der Tür
+  sind für Rollstuhlfahrer nicht zugänglich. Sie stellen deshalb Schilder auf, die Rollstuhlfahrer nach hinten bitten. Es ist nicht
+  schön, wenn man den Haupteingang nicht benutzen kann. Rollstuhlfahrer wollen die Haustür benutzen wie alle anderen. Auch Nutzer mit
+  Behinderungen wollen lieber die Hauptversion der Website nutzen. Sie haben Angst, dass sie etwas verpassen, wenn sie nicht zur
+  Hauptversion gehen.
+
+- Die Wartung von Webdesigns ist schon schwer genug. Es ist zu viel verlangt, dass Ihr Webteam zwei oder mehrere Versionen wartet. Wenn
+  Sie nur die Hauptversion aktuell halten, werden die alternativen Versionen veraltet. Dadurch können die barrierefreien Designs nicht
+  mehr genutzt werden.
+
+- Man kann nicht sehen, wer behindert ist. Man kann nicht automatisch erkennen, wer eine Behinderung hat und wer nicht. Man kann nicht
+  erkennen, welche Hilfsmittel jemand benutzt. Der Webserver bekommt keine Informationen, die Entwicklern helfen, Skripte zu erstellen,
+  die auf der Verwendung von Hilfstechnologien basieren. Man kann nicht sagen, ob jemand Untertitel oder ein Transkript braucht oder ob
+  er oder sie sich sonst irgendwie anpassen muss. So etwas kann man nicht wissen. Man kann diese Funktionen nicht nur für bestimmte
+  Benutzer bereitstellen. Man kann nicht wissen, ob jemand eine Behinderung hat, nur weil er auf Barrierefreiheits-Funktionen zugreift.
+  Nicht alle Menschen, die Untertitel aktivieren, sind taub. Vielleicht können sie den Ton nicht einschalten, weil sie sich in einem
+  öffentlichen Bereich befinden. Nicht alle Menschen, die die vergrößerte Ansicht von Websites verwenden, sind blind. Vielleicht zeigen
+  sie die Website für alle auf einer Leinwand und müssen sie größer machen, damit auch die Leute in der letzten Reihe sie sehen können.
+
+## Raum für Innovationen: Ist es jemals eine gute Idee, separate Designs für die Zugänglichkeit zu erstellen?
+
+Erstellen Sie keine separaten Designs. Wir können uns ein Gedankenexperiment überlegen, um zu zeigen, wo die Probleme liegen und um
+neue Ideen zu bekommen.
+
+Es gibt aber auch Situationen, in denen separate Designs sinnvoll sein können. Für Menschen mit kognitiven Behinderungen ist ein
+separates Design sinnvoll. Ein separates Design kann für Menschen mit kognitiven Behinderungen hilfreich sein. Es kann Dinge
+vereinfachen, die Aufmerksamkeit besser fokussieren und bei Bedarf zusätzliche Hilfe bieten.
+
+Manchmal wäre es auch hilfreich zu wissen, wann eine Person ein Bildschirmlesegerät verwendet. Dann kann man bestimmte Funktionen
+ein- oder ausschalten. In den meisten Fällen ist das nicht nötig, weil die Funktionen für Barrierefreiheit bei Screenreadern im Markup
+verborgen sind. Manchmal beeinflusst eine Funktion zur Barrierefreiheit eines Screenreaders das Aussehen von Bildern.
+
+<Aside title="Wichtige Warnung:">
+  Es ist nicht sinnvoll, separate Designs für verschiedene Behinderungen zu erstellen. Wir besprechen das hier, um über neue Ideen
+  nachzudenken.
+
+  Seien Sie bei jedem Schritt vorsichtig. Sie können mehr Schaden als Nutzen anrichten, wenn sie falsch angewendet werden. Am
+  sichersten ist es, ein barrierefreies Design zu erstellen.
+</Aside>
+
+## Erkennen von Screenreadern
+
+Es ist derzeit nicht möglich, Screenreader zu erkennen. Das hat aber auch Vorteile. So können Entwickler Inhalte erstellen, die auch
+für Benutzer von Screenreadern gut sind. Es wird vielleicht nie passieren. Viele Screenreader-Benutzer hoffen, dass es nie passiert,
+weil sie befürchten, dass die Funktion missbraucht wird. Sie haben Angst, dass Entwickler sehen, dass nur wenige Screenreader-Benutzer
+ihre Website nutzen, um sich um Barrierefreiheit zu kümmern. Benutzer von Screenreadern wollen nicht, dass ihre Informationen gegen sie
+verwendet werden.
+
+Aber lassen wir die Gründe dafür, warum es noch nicht passiert ist, jetzt mal außen vor und fragen: Was wäre, wenn es doch passieren
+würde? Wie können wir das gut machen?
+
+Alle gängigen Browser und Screenreader sollten die Screenreader-Erkennung unterstützen, damit die Funktion sich durchsetzt und
+nützlich ist. Es müsste eine Abmachung geben, damit die Informationen zwischen dem Screenreader, dem Browser und dem Webserver
+weitergegeben werden. Das müsste Teil der Barrierefreiheits-Funktion des gesamten Systems sein.
+
+Zweitens: Es dauert lange, bis es sich verbreitet. Die Leute werden ihre Browser und Screenreader nicht aktualisieren. Deshalb kann
+man sich nicht darauf verlassen, dass das in ein paar Jahren noch funktioniert. Sie müssten alle Funktionen zur Barrierefreiheit auch
+ohne Screenreader bereitstellen, da einige Benutzer von Sprachausgaben erst nach dem Upgrade davon profitieren können.
+
+Drittens: Diese Funktion sollte man nur selten nutzen. Diese Funktion sollte nur in Sonderfällen verwendet werden, wenn es schwierig
+ist, die Zugänglichkeit von Screenreadern in einem normalen Design zu erreichen. In manchen Fällen ist das praktisch:
+
+- Wenn man mit responsiven Tabellen oder Grid-Systemen arbeitet, kann das für Screenreader problematisch sein.
+
+- Wenn Sie ein besonderes Widget erstellen, das mit Screenreadern gut funktionieren soll, brauchen Sie möglicherweise zusätzliche
+  Anweisungen oder eine andere Auszeichnungssprache. Die meisten ARIA-Widget-Rollen werden jetzt in modernen Browsern und Screenreadern
+  einigermaßen gut unterstützt. Deshalb sollte die Erstellung eines benutzerdefinierten Widgets kein Grund sein, eine spezielle
+  Screenreader-Version zu erstellen.
+
+- Um bekannte Probleme mit Screenreadern zu umgehen, Diese Begründung sollte aber nur mit Vorsicht verwendet werden, weil sich die
+  Technologien weiterentwickeln. Sie wollen keine Version erstellen, die nur unter bestimmten Bedingungen funktioniert. Sie wollen
+  sie auch nicht mehr ändern, wenn sich der Screenreader ändert.
+
+Viertens wollen Sie keine komplett andere Seite für Nutzer von Screenreadern erstellen. Sie möchten kleine Teile der Seite erstellen,
+die sich je nach Bildschirmlesegerät ändern.
+
+## Einfache Bedienung
+
+Die größte Herausforderung bei der Erstellung separater Versionen für Menschen mit Behinderungen ist es, diese so bereitzustellen,
+dass sie leicht zu finden, einfach zu aktivieren und einfach zu verwenden sind. Am meisten profitieren Menschen mit kognitiven
+Behinderungen von einer separaten Version. Aber sie können Barrierefreiheitsfunktionen am wenigsten selbst finden und aktivieren.
+Manche Menschen mit kognitiven Behinderungen brauchen bei Internet-Aktivitäten Hilfe. Dann ist es wahrscheinlich, dass der Assistent
+die Barrierefreiheitsfunktionen aktiviert. Aber man kann sich nicht immer darauf verlassen.
+
+### Möglichkeit 1: Fügen Sie der Website selbst eine Anpassung der Zugänglichkeit hinzu.
+
+Sie können der Website weitere Funktionen hinzufügen.
+
+- Eine Schaltfläche, um die Schrift zu vergrößern.
+
+- Eine Schaltfläche, um den Kontrast zu erhöhen.
+
+- Eine Schaltfläche, um zwischen der mobilen und der Desktop-Ansicht zu wechseln.
+
+- Eine Schaltfläche, um zwischen einer einfachen und einer ausführlichen Version zu wechseln. Die einfache Version ist für
+  Menschen mit kognitiven Behinderungen.
+
+- Eine Schaltfläche zum Vorlesen des Textes. Damit können Menschen mit Seh-, kognitiven oder Lesebehinderungen den Text hören.
+
+- ... und andere mögliche direkte Verbesserungen
+
+Sie sollten diese Ideen umsetzen. Speichern Sie die Einstellungen des Benutzers. Entweder in einem Sitzungscookie oder im
+Profil des Benutzers in einer Datenbank. Wenn die Website Benutzerinformationen auf dem Server speichert. Dieser Ansatz hat aber
+auch Nachteile:
+
+- Die Einstellungen gelten nur für diese Website. Das gilt nicht für andere Websites.
+
+- Die Einstellungen werden nicht zwischen Browsern übertragen, es sei denn, sie werden auf dem Server gespeichert und der Benutzer
+  muss sich anmelden.
+
+- Viele Leute wissen nicht, dass es Bedienelemente für Barrierefreiheit auf Websites gibt. Deshalb nutzen sie sie auch nicht.
+
+- Die meisten Leute, die diese Funktionen brauchen, machen es auf eine andere Art, zum Beispiel mit Einstellungen im Betriebssystem
+  oder mit Software von anderen Firmen. Manchmal ist es nicht nötig, eine Website barrierefrei zu machen. Es gibt ja andere
+  Möglichkeiten, das Gleiche auf allen Websites zu tun.
+
+- Wenn Benutzer eine Bildschirmlupe mit hohen Kontrast-Einstellungen verwenden, werden ihre individuellen Einstellungen auf der Website
+  überschrieben. Dadurch können sie den beabsichtigten Effekt nicht erfahren.
+
+Dieser Ansatz hat auch einige positive Seiten:
+
+- Wenn man auf einer Website Bedienelemente für Barrierefreiheit einfügt, zeigt das, dass die Website barrierefrei ist.
+
+- Website-Designer können Einstellungen für ihr Design vornehmen. Designer sollten in der Lage sein, eine bessere Benutzererfahrung
+  zu schaffen als die Einstellungen im Betriebssystem oder in assistiver Technologie.
+
+- Auch Menschen mit leichten Behinderungen können die Barrierefreiheitsfunktionen nutzen, ohne sich mit der Installation, dem
+  Erlernen und der Verwendung von Hilfstechnologien beschäftigen zu müssen.
+
+Wenn Sie die Einschränkungen und positiven Seiten berücksichtigen, können Sie sich dafür entscheiden, so vorzugehen. Die
+Standardversion der Website sollte aber trotzdem so zugänglich wie möglich sein. Es gibt keine barrierefreie und keine unzugängliche
+Version. Das wäre nicht inklusiv. Verwenden Sie diese Ideen als zusätzliche Optionen, nicht als wichtigsten Ansatz für Barrierefreiheit.
+
+### Möglichkeit 2: Fügen Sie den Benutzerprofilen im Browser Einstellungen für die Barrierefreiheit hinzu.
+
+Browser könnten Informationen über den Nutzer in den Einstellungen speichern und diese an den Webserver weitergeben. Viele Browser
+können sich bei einem zentralen Server anmelden. So kann man die Einstellungen auf allen Geräten gleich lassen. Das ist praktisch,
+wenn man ein neues Gerät benutzt.
+
+### Möglichkeit 3: Fügen Sie den Benutzerprofilen in der Cloud Einstellungen für die Barrierefreiheit hinzu.
+
+Eine weitere Möglichkeit ist, die Präferenzen des Benutzers in der Cloud zu speichern. Dazu kann man eine Drittanbieter-Website nutzen.
+Die Einstellungen werden dann über den Browser an den Webserver übermittelt. So kann man mit mehr als einem Browser surfen.
+
+### Bedenken hinsichtlich des Datenschutzes
+
+Bei all diesen Ansätzen gibt es Bedenken, was den Datenschutz angeht. Was ist, wenn die Person ihre Behinderung nicht sagen will?
+Könnten die Informationen gegen sie verwendet werden? Ist es wichtig zu wissen, ob jemand eine Behinderung hat? Sie sollten diese
+Bedenken ernst nehmen. Die Informationen über die behinderungsbezogenen Präferenzen des Nutzers sollten anonym und getrennt von
+anderen Nutzerdaten gespeichert werden.

@@ -1,0 +1,93 @@
+---
+title: Untersuchen der Grenzfälle
+---
+
+import { Picture } from 'astro:assets';
+import { Aside } from '@astrojs/starlight/components';
+
+import BellCurve from "../../../../assets/ux/bell-curve.png";
+import BellCurveEdgeCases from "../../../../assets/ux/bell-curve-edge-cases.png";
+
+## Entwerfen für die statistische Normalverteilung der Benutzer
+
+Wenn Sie immer für den "durchschnittlichen" Benutzer entwerfen, verpassen Sie die Chance, mehr Menschen zu erreichen. Wir klären
+jetzt, was das Wort "normal" bedeutet. In der Mathematik bedeutet "normal", dass man etwas mit einer bestimmten Wahrscheinlichkeit
+erwartet. Es beschreibt, wie wahrscheinlich es ist, dass ein Mitglied einer Gruppe bestimmte Eigenschaften hat, die für die Gruppe
+typisch sind. Sie wird durch eine grafische Kurve dargestellt, die oft als "Glockenkurve" bezeichnet wird. Die Form sieht ähnlich
+aus wie eine Glocke. Oder Sie denken sich, es ist ein Hügel, der aus dem Boden kommt, nach oben zur Spitze wird und dann wieder
+in den Boden geht.
+
+<Picture src={BellCurve} formats={['avif', 'webp']} alt="" />
+
+Wenn Sie Ihr Design für die meisten Benutzer machen, erfüllen Sie deren Bedürfnisse am besten. Das ist die Mehrheit. Sie denken,
+das ist gut genug. Die meisten Ihrer Nutzer sind damit zufrieden. Aber für 32 % Ihrer Nutzer ist das nicht gut genug.
+
+## Entwerfen für die Randfälle
+
+Was wäre, wenn Sie zwei Zielbenutzer statt einem identifizieren würden? Einen bei zwei Standardabweichungen links vom Mittelwert
+und einen bei zwei Standardabweichungen rechts vom Mittelwert? So könnten Sie die Bedürfnisse von zwei sehr unterschiedlichen Arten
+von Menschen erfüllen. Ihr Design müsste dann einen Mittelweg zwischen ihnen finden. So würden Sie die Bedürfnisse von 95% bis 99,7%
+der Benutzer erfüllen.
+
+<Picture src={BellCurveEdgeCases} formats={['avif', 'webp']} alt="" />
+
+Man muss mehr planen und geschickter sein, wenn man für Leute entwirft, die nicht so viel können oder wissen. Es profitieren mehr
+Leute davon.
+
+Wir entwickeln Videospiele für Menschen mit unterschiedlichen Fähigkeiten.
+
+- Menschen, die blind sind
+
+- Menschen mit eingeschränkter Mobilität
+
+## Herausforderung: Videospiele für blinde Menschen
+
+Stellen Sie sich vor, Sie sollen Videospiele für blinde Menschen machen. Sie können den Bildschirm nicht sehen, also muss er nicht
+gut aussehen. Sie brauchen keine grafische Benutzeroberfläche.
+
+Blinde Menschen tippen Informationen in den Computer. Bei Videospielen können Sie sich etwas mehr austoben. Kann man andere
+Eingabegeräte wie Maus, Joystick, Game-Controller, Bewegungs- oder Spracherkennung auch für blinde Menschen nutzen? Sie hören die
+Ausgabe des Spiels über einen Screenreader. Sie können auch das Audio des Spiels hören. Sie können den Bildschirm nicht sehen. Alles
+muss also über Audio verfügbar sein. Oder Sie nutzen taktiles Feedback.
+
+<Aside title="Ein paar Fragen, die Sie sich stellen sollten:">
+  - Wie würden Sie das Design angehen?
+
+  - Welche Annahmen müssen Sie verwerfen, um das Projekt zum Erfolg zu führen?
+
+  - Wie müssten Interaktionen für blinde Menschen aussehen?
+
+  - Gibt es Interaktionen, die unmöglich wären?
+
+  - Würde das Spiel auch für Menschen funktionieren, die sehen können?
+</Aside>
+
+## Herausforderung: Videospiele für Menschen mit eingeschränkter Mobilität
+
+Jetzt schauen wir uns eine andere Gruppe von Menschen an: Das sind Menschen, die ihre Hände nicht gut genug benutzen können,
+um Standard-Videospielschnittstellen zu verwenden. Manche können ihre Hände gar nicht benutzen, andere haben Zittern in den
+Händen oder können nicht so gut greifen und sich schnell bewegen. Jeder Mensch ist anders und hat andere Fähigkeiten.
+
+Für Menschen mit motorischen Behinderungen gibt es viele Möglichkeiten, um etwas einzugeben. Hier sind ein paar Beispiele:
+
+- Geräte, mit denen man mit den Augen zeigen und auswählen kann.
+
+- Geräte mit einem Schalter, mit denen man eine Taste drücken kann, um mit einer Tastatur und Menüs auf dem Bildschirm zu interagieren.
+
+- Geräte, mit denen man atmen kann, um damit zu steuern. Mit dem Atem kann man eine Tastatur und Menüs auf dem Bildschirm steuern.
+
+- Eine Software erkennt Sprache und wählt Elemente auf dem Bildschirm aus.
+
+- Mit einem Mundstab kann man tippen und eine Maus bedienen.
+
+Wenn die Person nicht behindert ist, bekommt sie eine visuelle und akustische Ausgabe. So, wie Menschen mit Seh- und Hörfähigkeit sie
+erwarten würden. Für diesen Fall muss man sich keine Gedanken über die Ausgabe machen.
+
+<Aside title="Ein paar Fragen, die Sie sich stellen sollten:">
+  - Wie ähnlich sind die Bedürfnisse von blinden und mobilitätseingeschränkten Menschen beim Spielen von Videospielen?
+
+  - Wie wichtig sind die Lösungen für die andere Gruppe, wenn man die Herausforderung für eine Gruppe vollständig löst?
+
+  - Wie viel Überschneidung gibt es, wenn man die Herausforderungen nur für blinde und für Menschen mit eingeschränkter Mobilität
+    löst und Nutzer ohne Behinderung ignoriert? Brauchen Sie noch einen dritten Anwendungsfall für Menschen ohne Behinderung?
+</Aside>

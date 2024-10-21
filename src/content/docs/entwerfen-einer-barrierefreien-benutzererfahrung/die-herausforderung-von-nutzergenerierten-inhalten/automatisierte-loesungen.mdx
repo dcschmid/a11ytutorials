@@ -1,0 +1,189 @@
+---
+title: Automatisierte Lösungen
+---
+
+import {YouTube} from 'astro-lazy-youtube-embed'
+import { Aside } from '@astrojs/starlight/components';
+import { Picture } from 'astro:assets';
+
+import ExternalLink from "../../../../components/ExternalLink.astro";
+import AutoCaption from "../../../../assets/ux/autocaption.png";
+import AutoCaptionMistake from "../../../../assets/ux/autocaption-mistake.png";
+import Fruit from "../../../../assets/ux/fruit.png";
+import Paul from "../../../../assets/ux/paul.png";
+import Felten from "../../../../assets/ux/felten.png";
+import Fruit2 from "../../../../assets/ux/fruit-2.png";
+
+Barrierefreiheit ist eine tolle Sache. Aber leider gibt es noch keine automatische Funktion, die unzugängliche Inhalte in
+barrierefreie Inhalte umwandelt. Ist das realistisch? Es gibt schon Fortschritte, aber es muss noch viel mehr getan werden.
+Die gute Nachricht ist, dass wir in einigen Bereichen schon viel erreicht haben. Die schlechte Nachricht ist, dass wir in
+anderen Bereichen noch viel tun müssen. Das wird nie vollständig möglich sein. Denn einige Funktionen zur Barrierefreiheit
+hängen von der Absicht ab, nicht nur von den technischen Methoden.
+
+## Skype-Übersetzer
+
+Der Skype Translator wurde entwickelt, damit Menschen in verschiedenen Sprachen sprechen können. Die Software übersetzt
+gesprochene Sprache. Erst später erkannte man, dass man damit auch gehörlosen Menschen helfen kann. So können Gehörlose
+jetzt mit Hörenden in Echtzeit reden.
+
+<YouTube videoId="spqqcJf5e5Q" title="Microsoft Inclusive Design: Inclusive Skype Communication with audio description" thumbnail={3} />
+
+## Automatische Untertitel in YouTube-Videos
+
+Auf YouTube gibt es seit Jahren automatische Untertitel. Dazu werden Spracherkennungsprogramme auf den Videos ausgeführt und das
+Ergebnis dann mit dem Video synchronisiert. Die Technologie wurde immer besser, bis zu dem Punkt, dass einige Videos sehr genau
+automatisch untertitelt werden können. Aber das klappt nur unter bestimmten Bedingungen:
+
+- Die Stimme muss deutlich sein.
+
+- Die Qualität muss gut sein.
+
+- Stimmen dürfen sich nicht überschneiden.
+
+- Hintergrundgeräusche und Musik dürfen nicht stören.
+
+- Die Akzente der Sprecher müssen den YouTube-Algorithmen bekannt sein.
+
+<Aside type="tip" title="Beispiel für automatische Beschriftung">
+  Das Video im Screenshot unten wird von einer klaren Stimme erzählt und die Untertitel sind meistens richtig. Der Untertitel
+  passt genau zu dem Bild.
+
+  <Picture src={AutoCaption} formats={['avif', 'webp']} alt="" />
+
+  In einigen anderen Teilen der Untertitel für dieses Video stimmt etwas nicht. Im Bild unten sagt der Untertitel-Algorithmus
+  "he throw". Heathrow ist ein Flughafen in London.
+
+  <Picture src={AutoCaptionMistake} formats={['avif', 'webp']} alt="" />
+</Aside>
+
+Die Technologie für automatische Untertitel ist vielversprechend, auch wenn sie noch nicht perfekt ist. Wenn die Algorithmen so gut
+wie Menschen darin sind, schlechte Audioqualität oder überlappende Stimmen zu erkennen, kann jedes Video im Web mit Untertiteln
+versehen werden. So können auch gehörlose Menschen die Videos nutzen. Die Autoren der Inhalte müssen dazu nichts tun. Wir sind noch
+nicht so weit, aber wir kommen immer näher dran.
+
+### Audiodeskriptionen
+
+Automatische Untertitel sind nicht perfekt. Blinde Menschen brauchen immer noch Beschreibungen zu Videos. Audiodeskriptionen sind
+Beschreibungen, die erklären, was man sieht. So können auch blinde Menschen Videos verstehen. Beispiele sind: Wörter, die auf eine
+Tafel geschrieben sind und nicht laut vorgelesen werden, wichtige Gesichtsausdrücke, körperliche Handlungen (wie einen Ball werfen
+oder tanzen) usw. Es ist schwer vorstellbar, dass eine automatische Audiodeskriptionsfunktion funktionieren oder nützlich sein könnte.
+Aber vielleicht ist es nach mehreren Jahren des Experimentierens mit künstlicher Intelligenz möglich.
+
+## Automatisierter alt Text auf Facebook-Bildern
+
+Im April 2016 hat Facebook damit begonnen, automatisch Text zu Bildern hinzuzufügen. Zuerst kam die Funktion für iOS, dann für die
+normale Website und für Android. Mehr Infos zur Ankündigung gibt es in der
+<ExternalLink href="http://newsroom.fb.com/news/2016/04/using-artificial-intelligence-to-help-blind-people-see-facebook/"
+text="Facebook-Pressemitteilung und im Video über automatischen Alt-Text" />.
+
+Die Funktion funktioniert überraschend gut. Facebook sagt nicht viel über die Bilder. Es steht immer dabei: "Bild kann enthalten".
+Hier sind ein paar Beispiele:
+
+<Aside type="tip" title="Auto-Alt-Text Beispiel 1">
+
+  <Picture src={Fruit} formats={['avif', 'webp']} alt="" />
+
+  Der von Facebook bereitgestellte Auto-Alt-Text:
+
+  > "Bild könnte enthalten: Obst und Lebensmittel."
+
+  Ein vollständigerer, von Menschen geschriebener Alternativtext könnte etwa so lauten:
+
+  > "Mehrere Sorten Äpfel (Fuji, Granny Smith und andere) auf einem Tisch, im Vordergrund gruppiert, im Hintergrund Säcke mit
+  > Orangen und Clementinen."
+</Aside>
+
+<Aside type="tip" title="Auto-Alt-Text Beispiel 2">
+  <Picture src={Paul} formats={['avif', 'webp']} alt="" />
+
+  Der von Facebook bereitgestellte Auto-Alt-Text:
+
+  > "Das Bild kann enthalten: 1 Person, lächelnd, Nacht."
+
+  Ein vollständigerer, von einem Menschen geschriebener alt Text könnte etwa so lauten:
+
+  > "Das Porträt eines Mannes in einem dunklen Mantel, der nachts im Atrium eines großen modernen Gebäudes lächelt; Im Hintergrund
+  > sind glitzernde Banner zu sehen, die von der Decke hängen, und violette Lichter, die die tragenden Stützen der hohen
+  > Atrium-Glaswände beleuchten."
+
+  Wir könnten auch noch sagen, wer auf dem Foto zu sehen ist. Facebook verwendet Gesichtserkennung und hat die Person auf dem Foto
+  richtig erkannt. Facebook hat sich aber entschieden, den Namen nicht in den alt-Text aufzunehmen. Das Unternehmen beruft sich dabei
+  auf Datenschutzbedenken.
+</Aside>
+
+<Aside type="tip" title="Auto-Alt-Text Beispiel 2">
+  <Picture src={Felten} formats={['avif', 'webp']} alt="" />
+
+  Dieser Beitrag war anders aufgebaut. Der Link hatte ein Hintergrundbild, das von CSS bereitgestellt wurde. Der Link hatte
+  keinen Text auf dem Bildschirm. Deshalb hat Facebook den Text als "aria-label-Attribut" hinzugefügt.
+
+  Der von Facebook bereitgestellte Auto-Aria-Label-Text:
+
+  > "Titelbild der Veranstaltung Red Dress Ball mit dem Eric Felten Jazz Orchestra - 11. Februar."
+
+  In diesem Fall hat Facebook den Alternativtext nicht automatisch erkannt. Der Name des Ereignisses wurde verwendet, was in
+  diesem Fall eine gute Lösung ist. Das Bild enthält mehr Text als den Namen des Ereignisses. Dieser Text müsste in einem anderen
+  Textformat zur Verfügung gestellt werden. Der Link ist aber zumindest für Screenreader sinnvoll. Ich hoffe, dass auf der Detailseite
+  alle anderen Informationen erklärt werden, denn sonst sind sie nicht verfügbar.
+</Aside>
+
+### Die inhärenten Grenzen von alt automatisiertem Text
+
+Die Algorithmen von Facebook sind sehr clever, aber sie zeigen trotzdem nicht das ganze Bild. Es gibt nicht den einen richtigen
+Text für Bilder.
+
+- Wenn das Bild Äpfel und Orangen zeigen soll, muss der Text das auch sagen. Die Orangen sind hier unwichtig und müssen nicht einmal
+  erwähnt werden.
+
+- Das Bild könnte man auch so verwenden: "Hey, schau mal, was ich heute im Laden gekauft habe:" Obst! "Ich versuche, mich gesünder
+  zu ernähren. Seht her, was ich gekauft habe: Obst!" Dann sind die Apfelsorten unwichtig. Aber es geht um die Menge an Obst und
+  darum, dass keine fettigen Lebensmittel dabei sind. Das muss der Text dann rüberbringen.
+
+Manchmal ist ein kurzer, allgemeiner Alt-Text besser als gar kein Alt-Text.
+
+### Fehlt: Die Möglichkeit, benutzerdefinierten alt Text zu Titelbildern hinzuzufügen
+
+Man kann derzeit keinen benutzerdefinierten Text zum Titelbild auf Facebook hinzufügen. Das ist ein großes Problem. Es wäre ganz
+einfach, ein Textfeld für die Alt-Texte zur Oberfläche zum Hochladen/Bearbeiten von Bildern hinzuzufügen. Facebook erlaubt zwar
+Bildbeschreibungen, die man auf dem Bildschirm sehen kann. Aber die meisten Leute nutzen das Beschreibungsfeld nicht so. Die gute
+Nachricht ist, dass man zu einem Foto innerhalb eines Beitrags einen alt benutzerdefinierten Text hinzufügen kann. Wie das geht,
+ist aber nicht klar.
+
+<Aside type="danger" title="Unzureichende Bildbeschreibung">
+  Die meisten Leute denken, dass man im Beschreibungsfeld Dinge erklärt, die man auf dem Bild nicht sieht. Sie denken, jeder kann
+  das Bild sehen. Deshalb beschreiben sie es nicht so, wie es eine sehbehinderte Person braucht.
+
+  <Picture src={Fruit2} formats={['avif', 'webp']} alt="" />
+
+  Vom Benutzer bereitgestellte Beschreibung:
+
+  > "Schau, was ich gekauft habe!"
+
+  Für blinde Menschen ist diese Beschreibung nicht gut genug.
+
+  Ein Textfeld mit Anweisungen könnte die Situation verbessern.
+</Aside>
+
+## Die Zukunft automatisierter Barrierefreiheitslösungen
+
+Welche anderen Bereiche könnten noch automatisiert werden, damit sie barrierefreier werden? Hier sind ein paar Vorschläge:
+
+- Eine automatisierte Tabellenstruktur ist eine Software, die erkennt, welche Tabellenstruktur richtig ist, auch wenn die Tabelle
+  nicht richtig gekennzeichnet ist. Sie kann bei Bedarf Tabellenüberschriften anwenden.
+
+- Formulare ohne Beschriftungen werden von JAWS und VoiceOver automatisch beschriftet. Diese Logik könnte man noch verbessern.
+
+- Die Software könnte erkennen, welches Widget der Autor erstellen wollte und es dann korrigieren.
+
+- Automatisierte Kontrastkorrektur: Algorithmen können den Kontrast anpassen oder Warnungen ausgeben.
+
+- Und so weiter.
+
+Man kann automatisierte Lösungen an zwei Stellen anwenden.
+
+- Während des Schreibens
+
+- Am fertigen Text
+
+Facebook könnte den alten Text zu einem Bild hinzufügen und den Autor fragen, ob der Text gut ist. Wenn nicht, schreiben Sie bitte
+eine genauere Bildbeschreibung. So liegt die Verantwortung wieder bei den Inhaltsautoren.

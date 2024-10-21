@@ -17,6 +17,7 @@ export default defineConfig({
       sidebar: [
         {
           label: "Schnelleinstieg in die Barrierefreiheit",
+          collapsed: true,
           items: [
             "schnelleinstieg-in-die-barrierefreiheit/einleitung",
             "schnelleinstieg-in-die-barrierefreiheit/die-wesentlichen-konzepte-der-barrierefreiheit-im-web",
@@ -61,10 +62,12 @@ export default defineConfig({
         },
         {
           label: "Grundlagen der Barrierefreiheit – Behinderungen und Richtlinien",
+          collapsed: true,
           items: [
             "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/einleitung",
             {
               label: "Arten von Behinderungen: Personen",
+              collapsed: true,
               items: [
                 "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/einleitung",
                 "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/arten-von-behinderungen-personen/blind",
@@ -82,6 +85,7 @@ export default defineConfig({
             },
             {
               label: "Leitlinien",
+              collapsed: true,
               items: [
                 "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/leitlinien/einleitung",
                 "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/leitlinien/wcag",
@@ -91,6 +95,7 @@ export default defineConfig({
             },
             {
               label: "Gesetze",
+              collapsed: true,
               items: [
                 "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/gesetze/einleitung",
                 "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/gesetze/usa",
@@ -101,6 +106,7 @@ export default defineConfig({
             },
             {
               label: "Mythen und Missverständnisse über Barrierefreiheit",
+              collapsed: true,
               items: [
                 "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/mythen-und-missverstaendnisse/einleitung",
                 "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/mythen-und-missverstaendnisse/mythos-barrierefreiheit-kommt-nur-einer-kleine-minderheit-zugute",
@@ -111,6 +117,105 @@ export default defineConfig({
                 "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/mythen-und-missverstaendnisse/zusammenfassung",
               ],
             },
+          ],
+        },
+        {
+          label: "Entwerfen einer barrierefreien Benutzererfahrung",
+          collapsed: true,
+          items: [
+            "entwerfen-einer-barrierefreien-benutzererfahrung/einleitung",
+            {
+              label: "Barrierefreiheit und inklusives Design",
+              collapsed: true,
+              items: [
+                "entwerfen-einer-barrierefreien-benutzererfahrung/barrierefreiheit-und-inklusives-design/einleitung",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/barrierefreiheit-und-inklusives-design/definition-von-barrierefreiheit-als-mindestanforderung",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/barrierefreiheit-und-inklusives-design/7-prinzipien-des-universellen-designs",
+              ],
+            },
+            {
+              label: "Vermeiden Sie exklusive Designmuster",
+              collapsed: true,
+              items: [
+                "entwerfen-einer-barrierefreien-benutzererfahrung/vermeiden-sie-exklusive-designmuster/einleitung",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/vermeiden-sie-exklusive-designmuster/annahmen-untersuchen",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/vermeiden-sie-exklusive-designmuster/designs-die-zur-ausgenzung-fuehren",
+                {
+                  label: "Lernen aus Fehlern beim Design der Barrierefreiheit",
+                  collapsed: true,
+                  items: [
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/vermeiden-sie-exklusive-designmuster/lernen-aus-fehlern-beim-design-der-barrierefreiheit/einleitung",
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/vermeiden-sie-exklusive-designmuster/lernen-aus-fehlern-beim-design-der-barrierefreiheit/versagen-bei-der-gestaltung",
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/vermeiden-sie-exklusive-designmuster/lernen-aus-fehlern-beim-design-der-barrierefreiheit/ineffektive-designs",
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/vermeiden-sie-exklusive-designmuster/lernen-aus-fehlern-beim-design-der-barrierefreiheit/unvollstaendige-designs",
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/vermeiden-sie-exklusive-designmuster/lernen-aus-fehlern-beim-design-der-barrierefreiheit/schlechte-anpassungen",
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/vermeiden-sie-exklusive-designmuster/lernen-aus-fehlern-beim-design-der-barrierefreiheit/unbequeme-oder-stigmatisierende-gestaltungen",
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/vermeiden-sie-exklusive-designmuster/lernen-aus-fehlern-beim-design-der-barrierefreiheit/verfall-der-zugänglichkeit-im-laufe-der-zeit",
+                  ],
+                },
+              ],
+            },
+            {
+              label: "Vielfalt umarmen",
+              collapsed: true,
+              items: [
+                "entwerfen-einer-barrierefreien-benutzererfahrung/vielfalt-umarmen/einleitung",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/vielfalt-umarmen/untersuchen-der-grenzfaelle",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/vielfalt-umarmen/user-research-mit-menschen-mit-behinderungen",
+              ],
+            },
+            {
+              label: "Erstellen Sie inklusive Designs",
+              collapsed: true,
+              items: [
+                "entwerfen-einer-barrierefreien-benutzererfahrung/erstellen-sie-inklusive-designs/einleitung",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/erstellen-sie-inklusive-designs/das-spektrum-der-faehigkeits-personas",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/erstellen-sie-inklusive-designs/eine-barrierefreiheit-zuerst-denkweise",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/erstellen-sie-inklusive-designs/nebeneffekte",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/erstellen-sie-inklusive-designs/eine-schnittstelle-fuer-alle",
+              ],
+            },
+            {
+              label: "Affordanzen Überdenken",
+              collapsed: true,
+              items: [
+                "entwerfen-einer-barrierefreien-benutzererfahrung/affordanzen-ueberdenken/einleitung",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/affordanzen-ueberdenken/definieren-von-affordanzen",
+                {
+                  label: "Blind: Eine audio-strukturelle Nutzererfahrung",
+                  collapsed: true,
+                  items: [
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/affordanzen-ueberdenken/blind-eine-audio-strukturelle-nutzererfahrung/einleitung",
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/affordanzen-ueberdenken/blind-eine-audio-strukturelle-nutzererfahrung/audio-strukturelle-seiten-ux",
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/affordanzen-ueberdenken/blind-eine-audio-strukturelle-nutzererfahrung/audio-strukturelle-interaktion-ux",
+                  ],
+                },
+                "entwerfen-einer-barrierefreien-benutzererfahrung/affordanzen-ueberdenken/taubblind-eine-taktile-strukturelle-ux-nur-mit-text",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/affordanzen-ueberdenken/gehoerlos-eine-stille-visuelle-ux",
+                {
+                  label: "Die Herausforderung kognitiver Behinderungen",
+                  collapsed: true,
+                  items: [
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/affordanzen-ueberdenken/die-herausforderung-kognitiver-behinderungen/einleitung",
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/affordanzen-ueberdenken/die-herausforderung-kognitiver-behinderungen/was-es-bedeautet-eine-kognitiv-behinderung-zu-haben",
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/affordanzen-ueberdenken/die-herausforderung-kognitiver-behinderungen/wichtige-designkonzepte",
+                    "entwerfen-einer-barrierefreien-benutzererfahrung/affordanzen-ueberdenken/die-herausforderung-kognitiver-behinderungen/wcag-richtlinien-zum-nutzen-kognitiver-behinderungen",
+                  ],
+                },
+              ],
+            },
+            {
+              label: "Die Herausforderung von nutzergenerierten Inhalten",
+              collapsed: true,
+              items: [
+                "entwerfen-einer-barrierefreien-benutzererfahrung/die-herausforderung-von-nutzergenerierten-inhalten/einleitung",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/die-herausforderung-von-nutzergenerierten-inhalten/nutzung-der-richtlinien-fuer-die-barrierefreiheit-des-authoring-tools",
+                "entwerfen-einer-barrierefreien-benutzererfahrung/die-herausforderung-von-nutzergenerierten-inhalten/automatisierte-loesungen",
+              ],
+            },
+            "entwerfen-einer-barrierefreien-benutzererfahrung/ueberlegungen-zum-webdesign-nach-art-der-behinderung",
+            "entwerfen-einer-barrierefreien-benutzererfahrung/grundlegende-checkliste-fuer-die-barrierefreiheit-im-web-fuer-designer",
+            "entwerfen-einer-barrierefreien-benutzererfahrung/zusammenfassung",
           ],
         },
       ],

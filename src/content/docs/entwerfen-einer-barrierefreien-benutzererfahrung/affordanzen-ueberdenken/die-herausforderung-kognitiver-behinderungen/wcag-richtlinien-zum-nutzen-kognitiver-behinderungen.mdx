@@ -1,0 +1,427 @@
+---
+title: WCAG-Richtlinien zum Nutzen kognitiver Behinderungen
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+import ExternalLink from '../../../../../components/ExternalLink.astro';
+
+Auch wenn die <ExternalLink href="https://www.w3.org/TR/WCAG21/" text="WCAG 2.1" /> nicht alles für Menschen mit kognitiven
+Behinderungen erklärt, gibt es ein paar wichtige Punkte, die man wissen sollte.
+
+Einige dieser Richtlinien sind nicht nur für Menschen mit kognitiven Behinderungen. Sie gelten für alle Zielgruppen. Das ist gut,
+weil es beweist, dass es bei barrierefreiem Design immer Nebeneffekte gibt. Es ist aber schwierig zu sagen, dass diese Richtlinien
+nur für Menschen mit kognitiven Behinderungen wichtig sind.
+
+Die WCAG-Richtlinie mit dem deutlichsten Zusammenhang mit kognitiven Behinderungen ist 3.1.5: Leseniveau.
+
+<Aside title="Anmerkung:">
+  Einige Benutzer mit Lesebehinderungen (und anderen Arten von kognitiven Behinderungen) nutzen Screenreader, um besser lesen zu
+  können. Deshalb gelten alle WCAG-Richtlinien, die sich mit der Zugänglichkeit für Screenreader befassen, auch für diese Benutzer.
+  Die meisten Menschen mit kognitiven Behinderungen nutzen keine Screenreader. Deshalb sind die Screenreader-spezifischen Richtlinien
+  hier nicht enthalten.
+</Aside>
+
+## WCAG Single-A-Richtlinien
+
+### 2.5.2 Zeigerabbruch: Funktionen, die mit einem Zeiger bedient werden können, erfüllen mindestens eine der folgenden Bedingungen (Stufe A)
+
+- Das Down-Event des Zeigers wird nicht verwendet.
+
+- Abbruch oder Rückgängig: Die Funktion wird beim Auf-Ereignis abgeschlossen. Man kann sie auch abbrechen oder rückgängig machen.
+
+- Das Up-Ereignis macht alles rückgängig, was beim Down-Ereignis passiert ist.
+
+- Das Abschließen der Funktion beim Down-Ereignis ist wichtig.
+
+Was hat das mit Behinderungen beim Denken zu tun? Alle Benutzer können Fehler beheben, wenn sie die Abbruch- oder Rückgängig-Funktion
+nutzen. Benutzer mit geistigen Behinderungen können davon besonders profitieren.
+
+<Aside type='tip' title="Techniken für 2.5.2">
+  Dafür gibt es verschiedene Techniken:
+
+  - Sie müssen verhindern, dass Drag-and-Drop-Aktionen abgebrochen werden.
+
+  - Achte darauf, dass Berührungsereignisse nur ausgelöst werden, wenn man die Berührung aus einem Steuerelement entfernt.
+</Aside>
+
+### 3.3.1 Wenn ein Fehler erkannt wird, wird das fehlerhafte Element angezeigt und der Fehler beschrieben. (Stufe A)
+
+Was hat das mit Behinderungen beim Denken zu tun? Man muss wissen, wann etwas nicht stimmt, was das Problem ist und wie man es behebt.
+Menschen mit kognitiven Behinderungen können Probleme haben, das Problem zu finden, wenn sie keine Anleitung bekommen.
+
+<Aside type='tip' title="Techniken für 3.3.1">
+  Dafür gibt es verschiedene Techniken:
+
+  - Wenn ein Fehler auftritt, zeigen Sie eine Fehlermeldung an. Diese sollte klar und prägnant sein und erklären, was der Fehler ist.
+</Aside>
+
+### 3.3.2 Labels oder Anweisungen: Labels oder Anweisungen werden angezeigt, wenn der Nutzer etwas eingeben muss. (Stufe A)
+
+Labels und Anweisungen sind gut für alle, aber besonders wichtig für Menschen mit kognitiven Behinderungen. Die Anweisungen für
+Menschen mit kognitiven Behinderungen müssen einfacher und klarer sein. Am besten sind Anweisungen in Video- oder Audioformat.
+
+<Aside type='tip' title="Techniken für 3.3.2">
+  Dafür gibt es verschiedene Techniken:
+
+  - Jedes interaktive Element braucht eine genaue Bezeichnung, die daneben steht.
+
+  - Geben Sie Anweisungen, wenn es verwirrend sein könnte.
+
+  - Schreibe die Anweisungen so, dass sie leicht verständlich sind.
+</Aside>
+
+## WCAG-Doppel-A-Richtlinien
+
+### 1.3.5 Zweck der Eingabe bestimmen: Der Zweck jedes Eingabefelds kann programmiert werden. Dazu muss man wissen: (Stufe AA)
+
+- Das Eingabefeld hat einen bestimmten Zweck. Dieser wird im Abschnitt
+  <ExternalLink href="https://www.w3.org/TR/WCAG21/#input-purposes" text="Eingabezwecke für Benutzeroberflächenkomponenten" /> erklärt.
+
+- Der Inhalt wird mithilfe von Technologien umgesetzt, die erkennen, was der Nutzer mit seiner Eingabe meint.
+
+Formulare können für Menschen mit kognitiven Behinderungen schwierig zu verstehen sein. Sie könnten auch lieber eigene Bilder statt
+Wörter zum Beschriften von Formularen nutzen. Ein Formular, das automatisch ausgefüllt werden kann, ist sehr hilfreich.
+
+<Aside type='tip' title="Techniken für 1.3.5">
+  Dafür gibt es verschiedene Techniken:
+
+  - Verwenden Sie HTML5-Attribute für die automatische Vervollständigung.
+</Aside>
+
+### 1.4.12 Textabstand: Bei mit Auszeichnungssprachen erstellten Inhalten, die die folgenden Textstileigenschaften unterstützen, geht kein Inhalt oder keine Funktion verloren, wenn alle folgenden Elemente festgelegt und keine anderen Eigenschaften geändert werden: (Ebene AA)
+
+- Zeilenhöhe: mindestens das 1,5-Fache der Schriftgröße;
+
+- Absatzabstand: mindestens das 2-Fache der Schriftgröße;
+
+- Buchstabenabstand: mindestens das 0,12-Fache der Schriftgröße;
+
+- Wortabstand: mindestens das 0,16-Fache der Schriftgröße.
+
+Wie wirkt sich das auf Menschen mit Lernschwäche aus? Für Menschen mit Legasthenie kann es einfacher sein, mit zusätzlichen Abständen
+zu lesen. Sie können auch eine eigene Schriftart verwenden, um besser zu lesen.
+
+<Aside type='tip' title="Techniken für 1.4.12">
+  Dafür gibt es verschiedene Techniken:
+
+  - Erlauben Sie, dass Textabstände in CSS geändert werden.
+
+  - Lassen Sie Textabstände in CSS ohne Umbruch zu.
+</Aside>
+
+### 1.4.13 Inhalte bei Hover oder Fokus: Wenn der Mauszeiger oder der Tastaturfokus verschwindet und dann wieder erscheint, gilt Folgendes: (Stufe AA)
+
+- Man kann es abbrechen. Es gibt einen Mechanismus, um den zusätzlichen Inhalt zu schließen, ohne den Mauszeiger zu bewegen oder den
+  Tastaturfokus zu verändern. Das gilt nicht, wenn der zusätzliche Inhalt einen Eingabefehler meldet oder andere Inhalte verdeckt oder
+  ersetzt.
+
+- Man kann den zusätzlichen Inhalt überfahren, wenn man mit der Maus darüber fährt.
+
+- Der zusätzliche Inhalt bleibt sichtbar, bis der Benutzer ihn schließt oder seine Informationen nicht mehr gültig sind.
+
+Was hat das mit Behinderungen beim Denken zu tun? Alle Benutzer brauchen Zeit, um neue Inhalte zu verstehen. Benutzer mit kognitiven
+Behinderungen finden es besonders frustrierend, wenn Inhalte kurz erscheinen und dann verschwinden, bevor sie sie überprüfen können.
+
+<Aside type='tip' title="Techniken für 1.4.13">
+  Dafür gibt es verschiedene Techniken:
+
+  - Für ARIA: "role=tooltip" verwenden.
+
+  - Für CSS: Verwenden Sie Hover- und Fokus-Pseudoklassen für Mauszeiger und Text.
+</Aside>
+
+### 3.2.3 Konsistente Navigation: Navigationselemente, die auf mehreren Webseiten vorkommen, bleiben immer an der gleichen Stelle, es sei denn, der Nutzer ändert etwas. (Stufe AA)
+
+Was hat das mit Behinderungen beim Denken zu tun? Wenn die Benutzeroberfläche wechselt, kann das verwirrend sein. Manche Menschen mit
+kognitiven Behinderungen mögen keine Veränderungen. Sie werden es schwer haben, neue Schnittstellen zu erlernen.
+
+<Aside type='tip' title="Techniken für 3.2.3">
+  Dafür gibt es verschiedene Techniken:
+
+  - Verwenden Sie eine Vorlage, bei der die Navigation immer am gleichen Ort ist.
+
+  - Die Reihenfolge der Links in der Navigation sollte gleich bleiben.
+
+  - Löschen Sie die aktuelle Seite nicht aus der Navigation. Manchmal ist es besser, auf die aktuelle Seite nicht zu verlinken,
+    sondern nur in der Navigationsliste zu erwähnen.
+</Aside>
+
+### 3.2.4 Einheitliche Bezeichnung: Komponenten mit gleicher Funktion auf verschiedenen Webseiten werden einheitlich bezeichnet. (Stufe AA)
+
+Warum das bei Menschen mit kognitiven Einschränkungen ein Problem ist: Manche Menschen mit kognitiven Behinderungen erkennen nicht,
+dass zwei Namen für dasselbe stehen können. Wenn es zwei Links gibt, zum Beispiel "Kontakt" und "Rufen Sie uns an". Manchmal weiß man
+nicht, dass zwei Links auf dieselbe Seite verweisen. Ein anderes Beispiel: Wenn es einen 5-stufigen Prozess gibt, bei dem man auf
+einen Link klicken muss, um zur nächsten Seite zu gelangen, sollte das Wort im Link immer gleich sein. Man kann zum Beispiel "nächste"
+oder "weiter" oder ein anderes Wort nehmen. Aber immer das gleiche Wort. Verwende keine verschiedenen Wörter.
+
+<Aside type='tip' title="Techniken für 3.2.4">
+  Dafür gibt es verschiedene Techniken:
+
+  - Schreiben Sie den Text für alle Links gleich.
+
+  - Schreiben Sie den Text für alle Schaltflächen gleich.
+
+  - Verwenden Sie den gleichen Text, wenn Sie sich auf dasselbe Element beziehen (z. B. eine Tabelle, ein Formular, ein Bild usw.).
+</Aside>
+
+### 3.3.3 Wenn ein Fehler automatisch erkannt wird und es Korrekturvorschläge gibt, werden diese dem Nutzer angezeigt. Das gilt nicht, wenn die Vorschläge die Sicherheit oder den Zweck des Inhalts gefährden. (Stufe AA)
+
+Was hat das mit Denkstörungen zu tun? Manche Menschen mit kognitiven Behinderungen sind verwirrt, desorientiert oder entmutigt, wenn
+ein Fehler auftritt. Sie wissen aber nicht, warum und wie sie ihn beheben können.
+
+<Aside type='tip' title="Techniken für 3.3.3">
+  Dafür gibt es verschiedene Techniken:
+
+  - Veröffentlichen Sie zusätzlich oder anstelle einer Fehlermeldung eine Erklärung, wie der Fehler behoben werden kann.
+
+    - Beispiel 1 (Fehler gefunden, Lösung): Die E-Mail ist ungültig. Ihre E-Mail-Adresse muss ein @-Zeichen enthalten.
+
+    - Beispiel 2: Fehleridentifikation und Fehlerkorrektur in einem. "Sie müssen eine Größe auswählen."
+</Aside>
+
+### 3.3.4 Fehlervermeidung (Rechtliche, Finanzielle, Daten)
+
+Für Webseiten, die für den Benutzer rechtliche Verpflichtungen oder finanzielle Transaktionen auslösen, die vom Benutzer
+kontrollierbare Daten ändern oder löschen oder die Testantworten von Benutzern übermitteln, gilt:
+
+-  Reversibel: Einreichungen sind rückgängig zu machen.
+
+-  Geprüft Der Nutzer kann seine Daten überprüfen und gegebenenfalls ändern.
+
+-  Bestätigt: Man kann die Daten überprüfen, bestätigen und korrigieren, bevor man sie abschickt.
+
+Menschen mit kognitiven Behinderungen machen oft Fehler. Am besten hilft man ihnen, damit sie keine Fehler machen.
+
+<Aside type='tip' title="Techniken für 3.3.4">
+  Dafür gibt es verschiedene Techniken:
+
+  - Fassen Sie alle Daten zusammen, die der Benutzer übermitteln soll, bevor er sie offiziell übermittelt.
+
+  - Bitte den Benutzer, die Aktion zu bestätigen.
+
+  - Gib einen kurzen Warnton ab und zeige eine Warnung an, wenn der Benutzer die Daten übermittelt. Bestätige dann die Absichten
+    des Benutzers.
+
+  - Gib den Benutzern Zeit, ihre Daten zu ändern oder zu stornieren, nachdem sie übermittelt wurden.
+
+  - Wenn Daten gelöscht werden, sollten sie in einem Papierkorb gespeichert werden, damit sie wiederhergestellt werden können.
+</Aside>
+
+## WCAG Triple-A-Richtlinien
+
+### 1.3.6 Zweck erkennen: Man kann festlegen, wofür bestimmte Elemente auf einer Benutzeroberfläche sind. (Stufe AAA)
+
+Was hat das mit Behinderungen beim Denken zu tun? Dieses Erfolgskriterium hilft Benutzern, ihr Weberlebnis anzupassen. Benutzer,
+die Symbole besser verstehen als Wörter, können mithilfe von Hilfsprogrammen Symbole auf dem Bildschirm platzieren. Sie können
+auch uninteressante Teile der Seite ausblenden, damit sie sich auf den Inhalt konzentrieren können. Das wäre gut für Leute, die
+Probleme mit Lesen, Verstehen oder Konzentration haben.
+
+<Aside type='tip' title="Techniken für 1.3.6">
+  Dafür gibt es verschiedene Techniken:
+
+  - Mit ARIA-Orientierungspunkten können Sie Bereiche einer Seite erkennen.
+
+  - Technik, die es noch nicht gibt: Markieren Sie Teile der Benutzeroberfläche mit HTML-Mikrodaten.
+</Aside>
+
+### 2.2.6 Wenn eine Aktion zu lange dauert, wird der Nutzer gewarnt. Benutzer werden vor Datenverlust gewarnt, wenn sie zu lange inaktiv sind. Die Daten werden aber mindestens 20 Stunden aufbewahrt, wenn der Benutzer nichts macht. (Stufe AAA)
+
+Benutzer mit kognitiven Behinderungen brauchen mehr Zeit für Aufgaben. Sie sollten die Benutzer vor einer Zeitüberschreitung warnen.
+So können sie ihre Arbeit speichern oder ihre Sitzung verlängern.
+
+<Aside type='tip' title="Techniken für 2.2.6">
+  Dafür gibt es verschiedene Techniken:
+
+  - Legen Sie fest, dass nach mindestens 20 Stunden Inaktivität eine Sitzungszeitüberschreitung erfolgt.
+
+  - Speichern Sie die Benutzerdaten für mehr als 20 Stunden.
+
+  - Geben Sie eine Warnung aus, wenn ein Prozess durch Inaktivität unterbrochen wird.
+</Aside>
+
+### 3.1.3 Ungewöhnliche Wörter: Es gibt eine Funktion, um Wörter oder Ausdrücke zu finden, die nicht so verwendet werden, wie man es normalerweise tut. Dazu gehören auch Redewendungen und Fachwörter. (Stufe AAA)
+
+Was hat das mit Behinderungen beim Denken zu tun? Manche können gut lesen, andere nicht. Manche Menschen können nicht lesen. Andere
+können nur einfache Texte lesen.
+
+<Aside type='tip' title="Techniken für 3.1.3">
+  Dafür gibt es verschiedene Techniken:
+
+  - Im Text steht:
+
+    - Schreibe die Wörter direkt im Text, wenn sie im Text vorkommen.
+
+      - Eine geizige Gesellschaft riskiert, die Beziehungen zwischen Arm und Reich zu verschärfen.
+
+      - Eine geizige Gesellschaft birgt die Gefahr, die Kluft zwischen Arm und Reich zu vergrößern.
+
+    - Schreibe die Wörter in einen Tooltip. Der Tooltip wird geöffnet, wenn man mit dem Mauszeiger darauf zeigt oder die Tastatur
+      benutzt. Wenn die Wörter oft vorkommen, kann die Definition aus einer zentralen Datenbank oder Datei kommen, die auf der
+      ganzen Website verwendet wird.
+
+      - Beispiel: "Von einer geizigen Person kann man kein großzügiges Trinkgeld erwarten."
+
+    - Erstelle eine Liste mit Erklärungen für ungewöhnliche Wörter. Die Liste mit den Erklärungen kann am Ende der Seite oder in
+      einem extra Glossar stehen. Füge einen Link hinzu, der zur Definition des Wortes führt. Sonst ist die Definition schwer zu finden.
+
+    - Biete eine Funktion, mit der man Wörter nachschlagen kann.
+
+  - In Multimedia:
+
+    - Schreiben Sie das Skript so, dass Wörter, die man nicht kennt, vom Erzähler erklärt werden. Wenn es eine extra Audiospur gibt,
+      kann das Video in zwei Versionen gezeigt werden: eine ohne und eine mit Erklärung. Achte darauf, dass die Version mit den
+      zusätzlichen Erklärungen leicht zu finden ist und dass klar ist, wofür sie ist.
+
+    - Schreiben Sie die Definition der Wörter auf den Bildschirm. Am besten mit einer Erklärung dazu. So können alle Zuschauer die
+      Definition lesen, auch diejenigen, die nicht lesen oder sehen können.
+
+  Für Menschen mit kognitiven Behinderungen ist die erste Option am besten. Das Wort wird sofort im Kontext definiert. Der Benutzer
+  muss nicht herausfinden, wie er die Definition findet und wie er an die ursprüngliche Stelle zurückkehrt. Die Tooltip-Option ist
+  auch gut, weil der Benutzer nicht die Seite wechseln muss.
+</Aside>
+
+### 3.1.4 Abkürzungen: So kann man herausfinden, was eine Abkürzung bedeutet. (Stufe AAA)
+
+Für Menschen mit kognitiven Behinderungen sind manche Akronyme ein Rätsel. Das gilt auch für viele Menschen ohne Behinderungen. Manche
+Menschen mit kognitiven Behinderungen verstehen nicht, was ein Akronym ist.
+
+<Aside type='tip' title="Techniken für 3.1.4">
+  Dafür gibt es verschiedene Techniken:
+
+  - Im Text steht:
+
+    - Schreibe die Abkürzung aus oder erkläre sie.
+
+      - Beispiel: " Die Taucher benutzten SCUBA (Selbstständiges Unterwasser-Atemgerät), um die Unterwasserteile der Höhle zu erkunden."
+
+    - Stellen Sie die Abkürzung in einem Tooltip (ARIA role="tooltip") zur Verfügung, der
+      durch Bewegen der Maus und Tastaturfokusierung aktiviert wird.
+
+    - Schreiben Sie die Erklärung zur Abkürzung in das `<abbr>`-Element. So wird sie bei Mouse-over in den meisten Browsern und
+      Bildschirmlesegeräten angezeigt. Für Tastaturbenutzer ist die Erweiterung leider immer noch nicht verfügbar. Beispiel:
+
+      - Beispiel-Code: `<abbr title="Self-Contained Underwater Breathing Apparatus">SCUBA</abbr>`
+
+  - In Multimedia:
+
+    - Schreiben Sie das Skript so, dass Abkürzungen vom Sprecher erklärt werden.
+
+    - Schreib das Akronym und seine Bedeutung auf den Bildschirm. Für diejenigen, die nicht lesen können, erkläre es.
+</Aside>
+
+### 3.1.5 Wenn der Text nach der Entfernung von Namen und Titeln zu schwierig ist, gibt es eine Version mit einfacheren Inhalten oder eine Version für Leute, die mehr wissen. (Stufe AAA)
+
+Wie wirkt sich das auf Menschen mit Lernschwierigkeiten aus? Das Verständnis von Menschen mit kognitiven Behinderungen ist sehr
+unterschiedlich. Es gibt sehr gut entwickelte Menschen und sehr schlecht entwickelte Menschen. Für Menschen, die Sprache schwer
+verstehen, ist es gut, wenn die Wörter einfach sind und die Sätze nicht zu lang.
+
+<Aside type='tip' title="Techniken für 3.1.5">
+  Dazu gibt es diverse Techniken:
+
+  - Im Text, den man liest:
+
+    - Schreiben Sie so einfach wie möglich, aber nicht einfacher.
+
+    - Schreibe eine kurze Zusammenfassung am Anfang des Textes. Du kannst sie auch als Link oder Schaltfläche einfügen.
+
+    - Schreiben Sie eine einfachere Version des Textes und stellen Sie diese den Benutzern zur Verfügung.
+
+    - Sie können den Text auch mit Bildern, Audio- oder Videodateien ergänzen.
+
+  - Bei Multimedia:
+
+    - Schreiben Sie das Skript so einfach wie möglich, aber so detailliert wie nötig.
+
+    - Fassen Sie den Inhalt in einfacher Sprache zusammen.
+
+    - Schreiben Sie den Inhalt als einfache Sprache um. Bieten Sie den Benutzern beide Versionen an.
+
+    - Verwenden Sie Bilder und Videos, um Konzepte zu erklären.
+</Aside>
+
+<Aside title="Bestimmung des Leseniveaus:">
+  Die WCAG empfiehlt für das Leseniveau einen niedrigen Bildungsabschluss. Wie wissen Sie, ob Sie dieses Niveau erreicht haben? Sie
+  können auch einen Test machen, um zu sehen, ob Sie den Text gut verstehen. Den Test finden Sie hier: ReadabilityFormulas.com Sie
+  zeigen aber, wie gut man lesen kann. Man sollte mit mehreren Methoden testen. Der Test zeigt die Ergebnisse von sieben verschiedenen
+  Lesbarkeitsalgorithmen und liefert eine Punktzahl.
+</Aside>
+
+### 3.1.6 Aussprache: Es gibt eine Funktion, mit der man herausfinden kann, wie ein Wort ausgesprochen wird, wenn man die Bedeutung nicht kennt. (Stufe AAA)
+
+Wie hängt das mit kognitiven Behinderungen zusammen? Manchmal kennt eine Person ein Wort, wenn sie es hört, aber nicht aufgeschrieben
+sieht. Eine Ausspracheanleitung kann helfen.
+
+<Aside type='tip' title="Techniken für 3.1.6">
+  Dazu gibt es diverse Techniken:
+
+  - Im Text steht:
+
+    - Schreiben Sie das Wort so auf, wie es ausgesprochen wird.
+
+    - Schreibe die Aussprache als Quickinfo, damit man sie sich besser merken kann.
+
+    - Fügen Sie die Aussprache in ein Glossar ein. Bieten Sie einen Link zum Glossar an.
+
+    - Bieten Sie eine Audio-Datei an, in der die Wörter zu hören sind.
+
+  - In Multimedia:
+
+     - Die Wörter aus der Erzählung oder dem Dialog sollten immer laut ausgesprochen werden, wenn sie auf dem Bildschirm erscheinen.
+</Aside>
+
+<Aside title="Sollten Sie die offizielle linguistische Syntax verwenden?">
+
+  Linguisten nutzen internationale Zeichen, um Laute korrekt aufzuschreiben. Die meisten Menschen wissen nicht, wie sie die Zeichen
+  lesen sollen. Deshalb kann es helfen, die Aussprache stattdessen in Lautsprache zu schreiben.
+
+  Zum Beispiel schreibt Merriam Webster die Aussprache des Wortes "pronunciation" folgt:
+
+   \prə-ˌnən(t)-sē-ˈā-shən also ÷-ˌnau̇n(t)-\
+
+   Manche Leute wissen, wie es richtig geschrieben wird. Das ist wichtig, wenn es auf Genauigkeit ankommt. In anderen Fällen kann
+   es aber auch helfen, es anders zu schreiben.
+
+   pro-nun-see-AY-shun
+
+   Das verstehen die meisten Menschen besser.
+</Aside>
+
+### 3.2.5 Änderung auf Anfrage: Änderungen des Kontexts werden nur auf Wunsch des Benutzers gemacht oder es gibt einen Mechanismus, um solche Änderungen zu stoppen. (Stufe AAA)
+
+Wenn sich die Benutzeroberfläche ändert, sind Menschen mit kognitiven Behinderungen oft verwirrt. Das gilt vor allem, wenn sie die
+Änderung nicht selbst angefordert haben.
+
+<Aside type='tip' title="Techniken für 3.2.5">
+  Dazu gibt es diverse Techniken:
+
+  - Achten Sie darauf, dass keine wichtigen Ereignisse (z. B. das Laden neuer Seiten) durch andere Ereignisse wie Änderungen des
+    Mauszeigers, des Fokus oder von Formularelementen ausgelöst werden. Verwenden Sie stattdessen Ereignisse wie das Klicken auf einen
+    Link oder Button.
+</Aside>
+
+### 3.3.5 Hilfe: Kontextsensitive Hilfe ist verfügbar. (Stufe AAA)
+
+Für Menschen mit kognitiven Behinderungen ist es besonders wichtig, dass sie Hilfe bekommen.
+
+<Aside type='tip' title="Techniken für 3.3.5">
+  Dazu gibt es diverse Techniken:
+
+  - Bieten Sie auf jeder Seite Hilfe an. Beschreiben Sie, was auf dieser Seite zu tun ist.
+
+  - Geben Sie einen Link für einen Live-Chat an. So können Sie sich von jemandem helfen lassen.
+
+  - Fügen Sie neben dem Element (Formularfeld, Widget usw.) einen kurzen Inline-Hilfetext ein, der Erklärungen,
+    Formatierungshinweise usw. enthält.
+
+  - Fügen Sie bei Formularfeldern oder Widgets, die zusätzliche Erklärungen benötigen, ein Pop-up mit Erklärungen hinzu.
+
+  - Geben Sie eine Telefonnummer an, um jemanden anzurufen, der Ihnen helfen kann.
+</Aside>
+
+### 3.3.6 Fehler vermeiden Für Webseiten, bei denen der Benutzer Informationen übermitteln muss, gilt: (Stufe AAA) 1) Die Übermittlung kann rückgängig gemacht werden. 2) Geprüft Der Nutzer kann seine Daten überprüfen und gegebenenfalls ändern. 3) Bestätigt: Es gibt eine Möglichkeit, die Daten zu überprüfen, zu bestätigen und zu ändern, bevor man sie abschickt.
+
+<Aside title="Anmerkung:">
+  Diese Richtlinie ist ähnlich wie 3.3.4 Fehlervermeidung (Rechtliches, Finanzen, Daten). Sie gilt aber nicht nur für rechtliche,
+  finanzielle und datenbezogene Situationen.
+</Aside>

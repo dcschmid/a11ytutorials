@@ -1,0 +1,89 @@
+---
+title: Taubblind - Eine taktile-strukturelle UX nur mit Text
+---
+
+Taubblinde Menschen haben ähnliche Erfahrungen im Internet wie Menschen, die nur blind sind. Beide Gruppen nutzen Sprachausgabe.
+Der Unterschied ist, dass ein blinder Benutzer die Sprachausgabe hört und ein taubblinder Benutzer sie auf einem Braille-Gerät spürt.
+
+Alle Techniken zur Barrierefreiheit im Internet für blinde Benutzer gelten auch für taubblinde Benutzer, außer wenn es um Audio geht
+(z. B. Audiobeschreibungen für Videos). Taubblinde Benutzer können den Ton nämlich nicht hören. Weil die Techniken für gehörlose
+Menschen visuell sind, zum Beispiel Untertitel für Videos, lassen sie sich nicht gut auf taubblinde Menschen anwenden. Taubblinde
+Nutzer brauchen alle Inhalte als Text, den Maschinen lesen können.
+
+Ein Braille-Gerät hat kleine Stifte, die nach oben ragen und Braille-Zeichen bilden. Der Benutzer liest die Textzeile, indem er mit
+dem Finger über die Stifte fährt. Wenn die Zeile zu Ende ist, kann der Nutzer eine Taste drücken, um die nächste Zeile zu lesen. Er
+kann auch andere Tasten auf der Tastatur drücken, um sich auf einer Seite zu bewegen. Dabei benutzt er die gleichen Techniken wie
+blinde Nutzer von Bildschirmleseprogrammen.
+
+## Alles muss in einem Textformat vorliegen
+
+Eine Webseite muss für taubblinde Menschen in Textform verfügbar sein. Alles muss in Textform vorliegen. Es gibt keine Ausnahmen,
+aber einige Unterschiede:
+
+- Der Text für Bilder wird als Text gezählt.
+
+- Beschriftungen zählen als Text, solange sie nicht ausgeblendet sind.
+
+- ARIA-Live-Ansagen zählen als Text, egal, ob sie auf dem Bildschirm zu sehen sind oder nicht.
+
+- Manchmal ist es okay, Text, der nicht angezeigt wird, für Screenreader-Nutzer hinzuzufügen. Aber man sollte das nur als
+  letztes Mittel machen.
+
+- Für taubblinde Menschen sind Untertitel in Videos nicht hilfreich, weil sich die Untertitel zu schnell ändern. Außerdem kann man
+  nicht einfach auf die Untertitel zugreifen, auch wenn sie in Textform vorliegen. Ein Transkript ist die einzige Möglichkeit, damit
+  taubblinde Menschen Videos und Multimedia-Inhalte verstehen können.
+
+## Multimedia für taubblinde Nutzer
+
+Es gibt keine Multimedia-Angebote für taubblinde Menschen. Sie können das Video nicht sehen und den Ton nicht hören. Sie können aus
+Multimedia-Inhalten eine textbasierte Version machen. Dafür wird ein Transkript erstellt.
+
+Das Transkript sollte leicht zu finden sein und als solches erkennbar sein. Es gibt verschiedene Wege, ein Transkript auf einer
+Webseite zu veröffentlichen:
+
+- In einem Video auf einer Website.
+
+  - Ist das Transkript zu lang, können Sie eine Höhe für den Container festlegen und ihn auf overflow:auto oder Ähnliches
+    festlegen. Dann können sehende Benutzer bei Bedarf durch das Transkript scrollen. Blinde oder taubblinde Menschen können
+    nicht scrollen. Sie werden nicht einmal wissen, dass man nach unten scrollen kann.
+
+  - Sie können am Anfang des Transkripts einen Link einfügen, mit dem Benutzer von Screenreadern das Transkript überspringen
+    können. Sie können den Link immer sichtbar machen oder nur, wenn er angeklickt wird. Sie möchten den Link nicht für sehende
+    Benutzer unsichtbar machen, da diese sonst verwirrt würden. Für Screenreader-Benutzer ist die Verwendung eines versteckten
+    Links eigentlich in Ordnung. Sie müssen aber alle Anwendungsfälle berücksichtigen.
+
+- In einem Dialog, den du mit der "Schaltfläche Transkript anzeigen" öffnen kannst.
+
+- Auf einer extra Seite, wenn du auf "Link zum Transkript" klickst.
+
+Es gibt keine Möglichkeit in HTML, ein Transkript mit einem Video zu verknüpfen. Sie können zwar Untertitel mit einem Video
+verknüpfen, aber das funktioniert bei Transkripten nicht. Sie könnten "aria-describedby" auf das "video"-Element verwenden, um
+auf das Transkript zu verweisen. Wenn das Transkript lang ist, würde die Sprachausgabe es aber komplett vorlesen, wenn der Fokus
+auf dem "video"-Element liegt. Screenreader lesen den Text, der mit aria-describedby versehen ist. Die Benutzer können aber nicht
+anhalten und neu starten oder durch den Text navigieren. Es kommt alles wie eine große Textwüste daher. Wenn der Benutzer die
+Sprachausgabe anhält, kann er den Rest des Textes nur noch von vorne anhören.
+
+Das Problem, dass man das Transkript nicht automatisch mit dem Video verbinden kann, lässt sich lösen, indem man das Transkript
+direkt nach dem Video einfügt.
+
+## Das ideale Design für taubblinde Benutzer
+
+Die gute Nachricht ist, dass Ihr Webdesign für taubblinde Benutzer zugänglich gemacht werden kann, ohne dass Sie eine separate
+Version entwerfen müssen. Die größte Herausforderung bei Taubblindheit sind Multimedia-Inhalte.
+
+Denken Sie zuerst an "Text": Multimedia-Inhalte sind für dieses Publikum nutzlos. Für taubblinde Menschen sind Multimedia-Inhalte
+nutzlos. Deshalb sollten Sie von Anfang an textbasierte Versionen aller Multimedia-Inhalte erstellen.
+
+Für taubblinde Benutzer ist ein einfaches Design am besten.
+
+Teile des Designs und des Inhalts sollten mit den richtigen Begriffen gekennzeichnet werden. So lassen sie sich leichter finden.
+
+Die Nutzung eines aktualisierbaren Braillegeräts ist langsamer als das Betrachten und Anhören mit den Augen bzw. einem Screenreader.
+Lassen Sie die Benutzer selbst bestimmen, wie schnell sie die Inhalte erhalten möchten.
+
+Gängige Formulierungen sind: Viele taubblinde Benutzer suchen auf der Seite nach bestimmten Wörtern oder Sätzen. Deshalb sollten Sie
+Formulierungen verwenden, die erwartet werden. Benutzer finden zum Beispiel Seiten mit den Überschriften "Kontakt" oder "Über uns".
+Wenn Sie "Kontakt aufnehmen" oder "Wer wir sind" schreiben, finden die Benutzer nicht, was sie suchen. Diese Phrasen sind zwar erlaubt,
+aber nicht hilfreich.
+
+Techniken für Screenreader: Benutzen Sie alle anderen Techniken, damit auch gehörlosblinde Menschen die Seite gut nutzen können.

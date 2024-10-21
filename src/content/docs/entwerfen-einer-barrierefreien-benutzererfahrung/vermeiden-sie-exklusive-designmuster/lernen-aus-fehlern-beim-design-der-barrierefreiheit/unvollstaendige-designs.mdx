@@ -1,0 +1,96 @@
+---
+title: Unvollständige Entwürfe
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Picture } from 'astro:assets';
+
+import FailRampDoor from "../../../../../assets/ux/fail-ramp-door.jpg";
+import FailRampStep from "../../../../../assets/ux/fail-ramp-door-step.jpg";
+import FailCurbCut from "../../../../../assets/ux/fail-curbcut-median.png";
+import FailParkingCurb from "../../../../../assets/ux/fail-parking-curb.jpg";
+
+## Teillösungen lösen das Problem möglicherweise überhaupt nicht
+
+Manchmal ist es genauso schlimm, nur wenig über etwas zu wissen, wie gar nichts darüber zu wissen. Viele denken, dass sie nur ein
+paar Dinge tun müssen, um barrierefrei zu sein. Dabei vergessen sie, dass es wichtig ist, sich mit Barrierefreiheit zu beschäftigen.
+
+Sie fügen ein paar ARIA-Attribute hinzu, ohne sich zu überlegen, wie sie funktionieren oder in das Gesamtbild passen. Oder sie
+versuchen, eine schlechte Aktivierreihenfolge zu beheben, indem sie tabindex allem Werte zuweisen. Das macht das Problem aber
+schlimmer.
+
+Wenn es einen Fehler im Design gibt, kann das dazu führen, dass die Barrierefreiheit nicht funktioniert.
+
+Manche Fehler bei der Barrierefreiheit sind schlimm, aber wenn Sie etwas entwerfen, sollten Sie wissen, was Sie erreichen wollen und
+wie Sie das machen. Meistens muss mindestens eine Person im Team Ahnung von Barrierefreiheit haben. Nicht jeder muss ein Experte sein,
+aber man muss auf den Experten hören und die Techniken vollständig umsetzen.
+
+## Unvollständige Entwürfe in der physischen Welt, die völlig versagen
+
+Manchmal ist ein Design auf den ersten Blick gut, aber trotzdem nicht gut umgesetzt, weil niemand darüber nachgedacht hat, wie die
+einzelnen Teile zusammenpassen. Wenn zwei Teile nicht zusammenpassen, führt das immer noch zu einem unzugänglichen Ergebnis.
+
+<Aside type="danger" title="Schlechtes Beispiel: Türen, die Rollstuhlrampen blockieren">
+  Im folgenden Beispiel kann ein Rollstuhlfahrer die Tür zur Rampe nicht öffnen, nachdem er oben auf der Rampe angekommen ist. Die
+  Person, die das zusammenstellte, wusste, dass der Eingang eine Rampe brauchte, dachte aber nicht darüber nach.
+
+  Rollstuhlfahrer brauchen Platz, um den Rollstuhl zu manövrieren, am Türgriff zu ziehen und sich zurückzuziehen, während sie am
+  Türgriff ziehen. Am besten wäre es, wenn es einen Knopf gäbe, der die Tür automatisch öffnet. Aber dafür muss man auch Platz haben,
+  um den Rollstuhl zu manövrieren.
+
+  Die Tür und der Rollstuhl wurden nicht zusammen geplant. Das ist das größte Problem in diesem Design.
+
+  <Picture src={FailRampDoor} formats={['avif', 'webp']} alt="" />
+
+  Die Rampe ist zu steil.
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Rampen, die zu Stufen führen">
+  Eine Rollstuhlrampe sollte keine Stufen haben. Auch wenn die Rampe selbst zugänglich ist, kann eine Treppe an einer anderen Stelle
+  die gesamte Rampe für Menschen mit Rollstuhl unzugänglich machen.
+
+  Wenn man nicht alle Stufen entfernt, ist das der größte Nachteil bei dieser Rampe.
+
+  <Picture src={FailRampStep} formats={['avif', 'webp']} alt="" />
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Zebrastreifen mit einem Bordsteinschnitt auf dem Bürgersteig, aber nicht auf dem Mittelstreifen">
+  Wenn jemand mit dem Rollstuhl über die Straße will, kann er einfach vom Bürgersteig auf die Straße fahren. Aber er kommt nicht über
+  den Mittelstreifen, der den Weg zum Zebrastreifen blockiert. Die Absenkungen der Bordsteine sind gut gemacht, aber für
+  Rollstuhlfahrer ist das Ergebnis schlecht.
+
+  Es ist ein Fehler, dass man nicht daran gedacht hat, wie Rollstuhlfahrer die Straße überqueren.
+
+  <Picture src={FailCurbCut} formats={['avif', 'webp']} alt="" />
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Behindertenparkplatz ohne Bordsteinabsenkungen">
+  Es ist gut, dass es auf diesem Parkplatz einen so großen Behindertenparkplatz gibt. Weniger gut ist, dass es keine Möglichkeit gibt,
+  mit dem Rollstuhl vom Parkplatz auf den Bürgersteig zu gelangen, da es keine Bordsteinabsenkung gibt.
+
+  Auch hier ist das schwächste Glied, dass die gesamte Erfahrung des Rollstuhltransports von einem Ort (Parkplatz) zum anderen
+  (Bürgersteig) nicht berücksichtigt wurde.
+
+  <Picture src={FailParkingCurb} formats={['avif', 'webp']} alt="" />
+</Aside>
+
+## Unvollständige Designs für die Barrierefreiheit im Web, die vollständig versagen
+
+Es gibt mehr Fehlermöglichkeiten als Erfolgschancen bei der Barrierefreiheit. Hier sind ein paar Beispiele:
+
+- Ein barrierefreies Widget kann nicht geöffnet werden, weil der Auslöser eine benutzerdefinierte JavaScript-Schaltfläche ist. Das
+  Dialogfeld ist zugänglich, aber Tastaturbenutzer können es nicht aktivieren.
+
+- Manche Objekte werden versteckt. Eine Webseite ist barrierefrei, wenn sie nicht mit "aria-hidden="true"" versehen wurde. Dadurch
+  können Bildschirmleseprogramme die Elemente nicht lesen. Benutzer können mit der Tabulatortaste zu den Elementen wechseln, die sie
+  fokussieren möchten. Die Sprachausgabe sagt aber nichts dazu.
+
+- Man kann tabindex zu fokussierbaren Elementen hinzufügen, um eine schlechte Tabulatorreihenfolge zu beheben. Theoretisch kann man
+  zu jedem Element auf einer Seite tabindex hinzufügen, um die Tabulatorreihenfolge zu korrigieren. Aber selbst wenn man es perfekt
+  macht, verbessert das nichts, wenn die Lesereihenfolge schlecht ist. Die Reihenfolge wird nicht mehr synchronisiert. Wenn man neue
+  Elemente in das DOM einfügt oder welche daraus entfernt, könnten die tabindex-Werte wieder durcheinander geraten und durch JavaScript
+  geändert werden. Das wäre sehr aufwendig. Tabindex kann auch zu Problemen führen. Besonders bei benutzerdefinierten JavaScript-Widgets
+  sind die Werte "0" und "-1" nützlich.
+
+- Wenn man mit einem benutzerdefinierten JavaScript-Widget interagieren muss, um zum nächsten Schritt zu gelangen, und man kann nicht
+  darauf zugreifen, kommt man nicht weiter. Sie können nicht weitermachen.

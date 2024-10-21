@@ -1,0 +1,305 @@
+---
+title: Audio-strukturelle Seiten-UX
+---
+
+import { Picture } from 'astro:assets';
+import { Aside } from '@astrojs/starlight/components';
+
+import WikipediaAnnotatedOff from "../../../../../assets/ux/wikipedia-annotated-off.png";
+import WikipediaAnnotated from "../../../../../assets/ux/wikipedia-annotated.png";
+import JawsElementsList from "../../../../../assets/ux/jaws-elements-list.png";
+
+## Screenreader schaffen ein audio-strukturiertes Erlebnis
+
+Blinde Menschen hören den Inhalt von Internetseiten mit einem Programm namens Screenreader. Das ist eine Stimme, die Text in Sprache
+umwandelt. Man kann eine Webseite auch komplett laut vorlesen lassen, aber das macht kaum jemand. Wenn Sie das machen, müssen Sie
+sich jedes Mal den Anfang der Seite anhören, auch den Markennamen, die Hauptnavigation und andere Funktionen wie Suche, Anmeldung
+usw. Sobald Sie beim Hauptinhalt sind, müssen Sie sich alles anhören. Man konnte nicht überfliegen. Du müsstest dir auch alle Links
+und Infos in der Fußzeile anhören.
+
+Es wäre zu viel Arbeit, alles auf jeder Webseite zu hören.
+
+Du kannst auch nicht einfach auf einer Webseite herumklicken, um etwas zu machen. Du musst immer erst den Screenreader stoppen und
+dann die Tastatur benutzen, um die Aufgabe auszuführen.
+
+Wie weißt du, wo du klicken kannst? Der Screenreader sagt Ihnen, wenn Sie zu einem Link, einer Texteingabe oder einer Schaltfläche
+kommen. Der Screenreader weiß, was die Elemente sind, weil sie im Browser und Betriebssystem angezeigt werden.
+
+<Aside title="Beispiel: Das visuelle Layout im Vergleich zur semantischen Struktur der Wikipedia-Startseite">
+  Der Screenshot zeigt den oberen Rand der Wikipedia-Startseite (Stand: Februar 2017).
+
+  <Picture src={WikipediaAnnotatedOff} formats={['avif', 'webp']} alt="" />
+  <Picture src={WikipediaAnnotated} formats={['avif', 'webp']} alt="" />
+
+  Das obige Diagramm zeigt, wie eine Webseite für einen Screenreader-Benutzer aussieht. Aber es ist noch nicht ganz richtig, da es
+  immer noch um eine visuelle Darstellung geht. Lassen Sie uns die Seite so darstellen, wie sie ein Screenreader-Benutzer sieht.
+
+  ### Eine audiostrukturelle "Ansicht" des oberen Randes der Wikipedia-Seite:
+
+  - Landmarken (0 insgesamt)
+    - Keine Landmarken verfügbar.
+  - Rubriken (1 insgesamt)
+    - Stufe 1: "Wikipedia Die freie Enzyklopädie"
+  - Formularelemente (4 insgesamt)
+    - Texteingabe: "Suche"
+    - Auswahlliste: "Englisch"
+    - Button: Es wird kein Etikett bereitgestellt
+    - Button: Lies Wikipedia in deiner Sprache
+  - Bilder (2 insgesamt)
+    - "Wikipedia"
+    - "Wikipedia-Logo"
+  - Links (11 insgesamt, in diesem Teil der Seite)
+    - "Wikipedia"
+    - "Englisch 5 323 000+ Artikel"
+    - "日本語 1 044 000+ 記事"
+    - "Deutsch 2 016 000+ Artikel"
+    - "Español 1 306 000+ artículos"
+    - "Русский 1 363 000+ статей"
+    - "Français 1 829 000+ articles"
+    - "Italiano 1 323 000+ voci"
+    - "中文 918 000+ 條目"
+    - "Português 951 000+ artigos"
+    - "Polski 1 201 000+ haseł"
+  - Listen (0 insgesamt, in diesem Teil der Seite)
+    - Es sind keine Listen verfügbar.
+
+  Jetzt verstehen wir besser, was Screenreader-Benutzer erleben.
+
+  Einige Screenreader sagen, welche Elemente auf einer Seite zu sehen sind, sobald sie geladen ist. JAWS sagt zum Beispiel, dass die
+  Seite 4 Regionen, 12 Überschriften und 78 Links hat. Die "Regionen" sind die Landmarken. Benutzer von JAWS verstehen schon, wie eine
+  Seite aufgebaut ist, ohne dass sie etwas tun müssen.
+
+  Wenn JAWS-Benutzer eine Liste bestimmter Elementtypen oder anderer Listen hören möchten, drücken sie EINFÜGEN + F3. So wird das
+  unten gezeigte Dialogfeld angezeigt.
+
+  <Picture src={JawsElementsList} formats={['avif', 'webp']} alt="" />
+
+  Mit JAWS können Benutzer alle Elemente auflisten, zum Beispiel:
+
+  - Anker (Links)
+  -Blockzitate
+  - Knöpfe
+  - Kontrollkästchen
+  - Steuerelemente (auswählbare ARIA-Widgets, z.B. Tabs)
+  - Abschnitte
+  - Eingabefelder (Texteingaben)
+  - Formularfelder
+  - Rahmen
+  - Grafiken
+  - Überschriften
+  - Verknüpfungen
+  - Listenelemente
+  - Listen
+  - Objekte
+  - Absätze
+  - Platzmarkierungen
+  - Optionsfelder
+  - Tabellen
+
+  In dieser Liste gibt es keine Landmarken. Aber mit JAWS kann man mit der R-Taste durch Landmarken navigieren oder die Liste der
+  Landmarken öffnen. Auch andere Screenreader wie NVDA und VoiceOver zeigen die Landmarken an.
+
+  Auch wenn der Benutzer die Elemente nicht in einer Liste aufruft, sagt die Sprachausgabe ihm, was es ist, wenn er zu den Elementen
+  kommt. Zum Beispiel: Überschrift Ebene 1, Grafik: Wikipedia, die freie Enzyklopädie.
+
+  ### Audiostrukturelle Probleme mit der Wikipedia-Startseite
+
+  Vielleicht ist Ihnen aufgefallen, dass die Wikipedia-Seite eine komplizierte Struktur hat.
+
+  - Es gibt keine besonderen Merkmale auf der Seite. Die nützlichsten Landmarken sind "header", "nav", "main" und "footer".
+    Dieses Design hat keine Landmarken. Benutzer von Sprachausgaben können nicht direkt zu diesen Abschnitten navigieren, da sie nicht
+    in der Struktur angegeben wurden.
+
+  - Formularelemente: Der Suchbutton hat keine Beschriftung. Der Screenreader sagt deshalb nur "Schaltfläche". Das ist nicht sehr
+    nützlich.
+
+  - Der Linktext enthält den Namen der Sprache (z. B. Englisch) und die Anzahl der Artikel (über 5 Millionen). Die Zahlen werden mit
+    Leerzeichen geschrieben, nicht mit Kommas oder Punkten. Leerzeichen teilen Zahlen. Anstatt "fünf Millionen,
+    dreihundertdreiundzwanzigtausend" zu sagen, sagt man "fünf, dreihundertdreiundzwanzig, null null null". Die Zahlennotation ist
+    für Screenreader-Benutzer schwer zu verstehen, weil die Zahlen dadurch anders ausgesprochen werden.
+
+  - Es gibt keine Listen auf dieser Seite. Hier gibt es keine Listen. Die Liste der Sprachen am oberen Rand der Seite kann als Liste
+    formatiert werden. Wenn es als Liste formatiert wäre, würde der Screenreader sagen, wie viele Elemente es gibt. Das hilft dem
+    Benutzer, den Inhalt der Liste zu verstehen. Unter dem Screenshot sind noch mehr Listen.
+</Aside>
+
+<Aside title="Beispiel: Eine Wikipedia-Artikelseite">
+  Die Art, wie man einen Wikipedia-Artikel hört, ist anders als auf der Startseite. Die Struktur ist nämlich eine andere.
+  Hier ist zuerst die Gesamtansicht:
+
+  ### Die audiostrukturelle "Ansicht" eines Wikipedia-Artikels
+
+  - Landmarken (13 insgesamt)
+    - Haupt-Landmarke
+    - Navigationsbereich: "Persönliche Tools"
+    - Navigationsbereich: "Namensräume"
+    - Navigationsbereich: "Ansichten"
+    - Suchbereich
+    - Banner (Kopfzeile) Bereich
+    - Navigations-Orientierungspunkt: "Navigation"
+    - Navigations-Orientierungspunkt: "Werkzeuge"
+    - Navigations-Orientierungspunkt: "Interaktion"
+    - Navigations-Orientierungspunkt: "Drucken/Exportieren"
+    - Navigations-Orientierungspunkt: "Weitere Projekte"
+    - Navigationspunkt: "Sprachen"
+    - Inhaltsinfo (Fußzeile) Landmarke
+  - Rubriken (43 insgesamt)
+    - Ebene 1: " Barrierefreiheit im Internet"
+      - Ebene 2: " Inhalt "
+      - Stufe 2: Assistive Technologien, " die für das Surfen im Internet verwendet werden [ Bearbeiten ]"
+      - Stufe 2: " Richtlinien für barrierefreies Webdesign [ Bearbeiten ]"
+        - Stufe 3: " Richtlinien für die Barrierefreiheit von Webinhalten [ Bearbeiten ]"
+        - Stufe 3: " Kritik an den WAI-Richtlinien [ Bearbeiten ]"
+        - Stufe 3: " Weitere Richtlinien [ Bearbeiten ]"
+          - Level 4: " Kanada [ Bearbeiten ]"
+          - Level 4: " Philippinen [ Bearbeiten ]"
+          - Level 4: "Spanien [ Bearbeiten ]"
+          - Level 4: " Schweden [ Bearbeiten ]"
+          - Level 4: "Vereinigtes Königreich [ Bearbeiten ]"
+          - Ebene 4: " Japan [ Bearbeiten ]"
+      - Ebene 2: " Wesentliche Bestandteile der Barrierefreiheit im Web [ Bearbeiten ]"
+      - Ebene 2: " Richtlinien für verschiedene Komponenten [ Bearbeiten ]"
+        - Ebene 3: " Richtlinien für die Barrierefreiheit des Autorentools (ATAG) [ Bearbeiten ]"
+        - Ebene 3: " Richtlinien für die Barrierefreiheit von Webinhalten (WCAG) [ Bearbeiten ]"
+        - Level 3: " Richtlinien für die Barrierefreiheit von Benutzeragenten (UAAG) [ Bearbeiten ]"
+      - Level 2: " Rechtsvorschriften zur Barrierefreiheit im Internet [ Bearbeiten ]"
+        - Level 3: "Australien [ Bearbeiten ]"
+        - Level 3: "Brasilien [ Bearbeiten ]"
+        - Level 3: "Europäische Union [ Bearbeiten ]"
+        - Ebene 3: "Irland [ Bearbeiten ]"
+        - Ebene 3: "Israel [ Bearbeiten ]"
+        - Ebene 3: "Italien [ Bearbeiten ]"
+        - Ebene 3: "Norwegen [ Bearbeiten ]"
+        - Ebene 3: "Vereinigtes Königreich [ Bearbeiten ]"
+      - Ebene 2: " Audits der Barrierefreiheit von Websites [ Bearbeiten ]"
+      - Ebene 2: " Verbesserung unzugänglicher Websites [ Bearbeiten ]"
+      - Ebene 2: " Barrierefreie Webanwendungen und WAI-ARIA [ Bearbeiten ]"
+      - Ebene 2: "Siehe auch"
+      - Ebene 2: " Referenzen"
+      - Stufe 2: "Weiterführende Literatur"
+      - Stufe 2: "Externe Links"
+        - Stufe 3: " Normen und Richtlinien"
+        - Stufe 3: " Behördliche Vorschriften"
+  - Formularelemente (4 insgesamt)
+    - Schaltfläche: "ausblenden"
+    - Suchtextfeld: "Wikipedia durchsuchen"
+    - Taste: "Start"
+    - Taste: "Spracheinstellungen
+  - Bilder (4 insgesamt)
+    - "Behindertengerechte Zeichen.svg"
+    - "Kategorie"
+    - "Wikimedia Stiftung"
+    - "Angetrieben von MediaWiki"
+  - Links (441 insgesamt)
+    - "Navigation"
+    - "Suchen"
+    - "Wikipedia"
+    - "Wikipedia: Barrierefreiheit"
+    - "Behinderung"
+    - "[anzeigen]"
+    - ... und viele weitere Links (hier der Kürze halber gekürzt)
+  - Listen (insgesamt 41 Listen auf oberster Ebene: 39 Punktlisten und 2 nummerierte Listen; insgesamt 53 Listen einschließlich
+    Unterlisten)
+
+  Können Sie sich vorstellen, was auf dieser Seite zu sehen ist? Dies ist die Hauptansicht der Seite. Man sieht sie so, wie sie ein
+  Bildschirmlesegerät anzeigt. Für Nutzer von Bildschirmlesegeräten sind alle anderen visuellen Aspekte unwichtig. Wenn Sie sich viele
+  Gedanken über die Bedeutung der Wörter machen, können Sie eine bessere Webseite für Menschen mit Sehbeeinträchtigung machen.
+
+### Eine audiostrukturelle Analyse der Wikipedia-Artikelseite
+
+Hier findest du Punkte, die dir helfen, dich zu orientieren: Wikipedia-Artikelseiten haben mehr Orientierungspunkte als die Startseite.
+
+- Ein wichtiger Orientierungspunkt (`<main>` oder `<div role="main">`)
+- 9 Navigationslandmarken (`<nav>` oder `<div role="nav">`), jede mit Namen, die es dem Benutzer ermöglichen, sie voneinander
+  zu unterscheiden.
+- Eine Suchlandmarke (`<div role="search">`)
+- Eine Banner-/Header-Landmarke (`<header>` oder `<div role="banner">`)
+- Eine Footer/ContentInfo-Landmarke (`<footer>` oder `<div role="contentinfo">`).
+
+Die Liste der verfügbaren Landmarken ist gut, aber neun Navigationslandmarken sind zu viel. Es ist besser, nicht zu viele Landmarken
+zu haben. Landmarken sind dafür da, dass man Dinge schneller und einfacher findet. Es gibt keine schnellere und einfachere Art, Dinge
+zu finden, als mit Landmarken. Deshalb sollte es nicht zu viele davon geben.
+
+Überschriften: Die Überschriften sind gut strukturiert. Die Vorlage hat ein paar Überschriften, der Artikel selbst hat auch ein paar
+Überschriften in der Fußzeile. Das "[Bearbeiten]" am Ende der Überschriften im Hauptartikel ist verwirrend. Das ist ein Link, mit
+dem man den Text bearbeiten kann. Der Link ist in der Überschrift. Das ist kein Problem. Das ist nichts Schlimmes.
+
+Formularelemente: Die Beschriftungen der Formularelemente sind okay.
+
+Bilder: Das erste Bild in der Liste hat keinen Alt-Text. Sprachausgaben nutzen den Dateinamen, wenn es keinen Alternativtext gibt. In
+diesem Fall hatten wir Glück. Der Name der Datei ist für Menschen lesbar und leicht verständlich. Aber wenn der Dateiname zum Beispiel
+"img0298.svg" gewesen wäre, wüssten wir nicht, was das Bild zeigt.
+
+Links: Es gibt viele Links. Das ist kein Problem. Ein Problem ist, dass mehrere Links den gleichen Text haben: "[show]". So kann man
+die Links nicht unterscheiden.
+
+Auf dieser Seite gibt es viele Listen. Einige davon sind Unterlisten. Sie stehen in einer Hierarchie. Einige davon sind für die
+Navigation wichtig. Andere sind im Inhalt. Sie sind als Listen gekennzeichnet. Das ist gut.
+</Aside>
+
+## Was ist die ideale audiostrukturelle Benutzererfahrung für eine Seite?
+
+Wie machen Sie eine gute Benutzererfahrung bei Audioinhalten? Gibt es eine perfekte audiostrukturelle Benutzererfahrung?
+
+Jede Website ist anders. Aber es gibt ein paar Dinge, die Sie immer beachten sollten.
+
+### Ideale Orientierungspunkte
+
+Eine Liste mit Punkten, die man sich zum Orientieren merken kann, könnte so aussehen:
+
+- `<header>` (oder `<div role="banner">`)
+  - `<nav>` (oder `<div role="navigation">`)
+  - `<div role="search">`
+- `<main>` (oder `<div role="main">`)
+- `<footer>` (oder `<div role="contentinfo">`)
+
+Das ist alles, was Sie brauchen. Die Liste mit den Sehenswürdigkeiten ist kurz. Das ist gut so. Landmarken helfen den Benutzern,
+Teile einer Webseite schneller zu finden. Wenn die Liste zu lang ist, suchen die Benutzer genauso lange in den Landmarken wie auf
+der Seite selbst.
+
+In den meisten Fällen brauchen Sie nur eine Kopfzeile, eine Suche, einen Hauptinhalt und eine Fußzeile. Sie können mehrere
+Navigationsbereiche haben, aber es ist oft besser, sie auf die Hauptnavigation zu beschränken. Wenn Sie mehrere Navigationsbereiche
+festlegen, geben Sie ihnen eindeutige Namen. Verwenden Sie dafür aria-label.
+
+### Ideale Überschriften
+
+- Eine Überschrift sollte aus einer Ebene bestehen, die mit "h1" beginnt. Sie sollte im Hauptinhalt stehen.
+
+- Es sollte nur eine Überschrift der Ebene 1 geben, aber das ist nicht zwingend. Ein Dialogfeld sollte mit einer Überschrift der
+  Ebene 1 beginnen, da es wie eine kleine Webseite ist.
+
+- Jeder Hauptteil sollte eine Überschrift haben.
+
+- Die Überschriften sollten den Inhalt der Seite logisch gliedern.
+
+- Überschriften sollten nicht von einer Ebene zur nächsten springen. Ein Element der Ebene 2 sollte also nie Element der Ebene 5 sein.
+
+### Ideale Formularelemente
+
+Alle Formularelemente brauchen genaue Beschriftungen. Es gibt noch andere Punkte zur Barrierefreiheit von Formularen. Diese kommen
+aber erst zum Einsatz, wenn das Formular benutzt wird, nicht bei der Auflistung der Elemente.
+
+### Ideale Bilder
+
+Der Alt-Text wird in der Liste der Bilder angezeigt. Deshalb sollten Sie sicherstellen, dass das Bild einen Alt-Text enthält und
+dieser gut ist. Der Alt-Text muss genau, aussagekräftig und verständlich sein.
+
+### Ideale Links
+
+- Jeder Link braucht einen Namen, der gültig und barrierefrei ist. Der barrierefreie Name kann aus Text, dem Alt-Text eines Bildes
+  oder einer Beschriftung bestehen.
+
+- Der Linktext sollte sagen, was man auf der Seite findet.
+
+- Der Linktext sollte sinnvoll und eindeutig sein.
+
+- Fügen Sie so viele Links ein, wie Sie wollen. Wikipedia-Artikel haben oft mehr Links als andere Webseiten. Die Links sind aber
+  angemessen und es ist nicht falsch, viele Links zu haben. Allerdings dauert es lange, sich durch alle Links zu klicken.
+
+### Ideallisten
+
+- Verwende die richtigen Markierungen für Listen, wenn du eine Liste präsentierst.
+
+- Verwenden Sie immer die richtige Liste für den jeweiligen Fall.
+
+- Sie können so viele Listen nutzen, wie Sie wollen.

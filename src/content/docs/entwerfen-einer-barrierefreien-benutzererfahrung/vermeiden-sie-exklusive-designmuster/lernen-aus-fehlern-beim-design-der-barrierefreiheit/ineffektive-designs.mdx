@@ -1,0 +1,75 @@
+---
+title: Ineffektive Designs
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Picture } from 'astro:assets';
+
+import FailRamp3 from "../../../../../assets/ux/fail-ramp-steep3.jpg";
+import FailRampPushing from "../../../../../assets/ux/fail-ramp-steep-pushing.jpg";
+import FailRampSnow from "../../../../../assets/ux/fail-wheelchair-ramp-snow.jpg";
+
+Manche barrierefreien Designs sind von Anfang an schlecht. Manchmal ist Barrierefreiheit einfach gesunder Menschenverstand, aber oft
+braucht man dafür auch viel Fachwissen. Wenn Sie eine komplexe, moderne Website entwerfen, ohne Experten für Barrierefreiheit
+einzubeziehen, wird das Ergebnis nicht barrierefrei sein. Es wird nicht barrierefrei sein.
+
+Nicht jeder im Team muss ein Experte für Barrierefreiheit sein. Aber je mehr Wissen die Teammitglieder haben, desto besser. Dann
+müssen die Experten für Barrierefreiheit weniger arbeiten. Im Idealfall kennt sich das ganze Team mit Barrierefreiheit aus. Dann
+können die Experten für Barrierefreiheit sich um die schwierigen Fälle kümmern, statt sich mit einfachen Dingen wie dem Alt-Text
+für Bilder aufzuhalten.
+
+## Designs, die Best Practices nicht berücksichtigen
+
+Wir können uns den Zugang von Rollstuhlfahrern zu Gebäuden vorstellen, wie den Zugang zu Gebäuden mit Treppen. Um die Treppen zu
+kompensieren, werden Rampen gebaut.
+
+Die meisten Fehler bei der Barrierefreiheit sind eigentlich offensichtliche Fehler. Wir hoffen, dass niemand so etwas tut. Deshalb
+ist es so wichtig, dass wir alle auf Barrierefreiheit achten.
+
+<Aside type="danger" title="Schlechtes Beispiel: Steile Rollstuhlrampen">
+  Rollstuhlrampen sind gut für die Zugänglichkeit von Gebäuden. Aber sie dürfen nicht zu steil sein, damit Rollstuhlfahrer sie nutzen
+  können. Sie sind sogar gefährlich! Schlechte Rollstuhlrampen-Designs wie die unten gezeigten basieren auf einer guten Idee, die der
+  Designer falsch umgesetzt hat. Vielleicht hat der Designer die Idee gut verstanden, sich aber dafür entschieden, Abkürzungen zu
+  nehmen. Vielleicht aus Faulheit oder vielleicht in der Annahme, dass niemand die Rampen benutzen würde.
+
+  Wenn jemand mit dem Rollstuhl die steile Rampe hinunterfährt, stürzt er wahrscheinlich und der Rollstuhl kippt um.
+
+  <Picture src={FailRamp3} formats={['avif', 'webp']} alt="Eine kurze, steile Betonrampe mit einem aufgemalten Rollstuhlsymbol führt vom Bürgersteig hinauf zu einer offenen Tür eines Ladens" />
+
+  Manche Rollstuhlfahrer bekommen Hilfe, wenn sie eine steile Rampe benutzen. Andere nicht.
+
+  <Picture src={FailRampPushing} formats={['avif', 'webp']} alt="Eine kurze, steile Betonrampe mit einem aufgemalten Rollstuhlsymbol führt vom Bürgersteig hinauf zu einer offenen Tür eines Ladens" />
+
+  Auch wenn Hilfe da ist, kann es schwierig werden, wenn das Wetter schlecht ist.
+
+  <Picture src={FailRampSnow} formats={['avif', 'webp']} alt="Eine kurze, steile Betonrampe mit einem aufgemalten Rollstuhlsymbol führt vom Bürgersteig hinauf zu einer offenen Tür eines Ladens" />
+</Aside>
+
+## Unwirksame Designs im Web
+
+Bei der Erstellung von Webinhalten kann man sich leicht um die Regeln für barrierefreie Internetseiten drücken. Schlechte Lösungen
+helfen nicht, Barrieren abzubauen. Man sollte es richtig machen.
+
+Welche Regeln gelten für das Internet? Es geht um die WCAG 2.2.
+
+Die häufigsten Designfehler sind:
+
+- Die Überschriften sind keine richtigen Überschriften. Die Überschriften sind eigentlich keine Überschriften. Sie sehen aus wie
+  Überschriften, aber Screenreader erkennen sie nicht, weil das Markup keine Bedeutung hat.
+
+- Wenn Widgets keine Informationen über Namen, Rollen und Werte von Komponenten enthalten, können sie von Screenreadern nicht
+  genutzt werden.
+
+- Wenn Sie keine ordnungsgemäße Verwaltung des Tastaturfokus haben, müssen Sie die Benutzererfahrung der Tastaturinteraktion
+  gestalten. Es wird nicht automatisch erstellt. Wenn Sie benutzerdefinierte Widgets haben, die Inhalte ein- und ausblenden,
+  Nachrichten anzeigen oder AJAX-Anfragen starten, müssen Sie immer wissen, wo sich der Tastaturfokus befindet. Der Fokus muss
+  sinnvoll auf Benutzeranforderungen und Ereignisse reagieren.
+
+- Wenn Sie blasse Farben mit schlechtem Kontrast verwenden, erfüllen Sie die Bedürfnisse von Menschen mit Sehbehinderung nicht.
+  Sie müssen Ihr Design ändern, um die Richtlinien für den minimalen Kontrast zu erfüllen.
+
+- Formularvalidierung mit Hinweisen. Wenn es nach einer Formularvalidierung zu Fehlern kommt, müssen Sie mehr tun, als nur das
+  Aussehen zu ändern. Blinde Menschen sehen die Veränderungen nicht.
+
+- Neben diesen gibt es noch viele andere Arten von Designfehlern bei der Barrierefreiheit, aber dies sind häufige Quellen für Fehler
+  bei der Barrierefreiheit.

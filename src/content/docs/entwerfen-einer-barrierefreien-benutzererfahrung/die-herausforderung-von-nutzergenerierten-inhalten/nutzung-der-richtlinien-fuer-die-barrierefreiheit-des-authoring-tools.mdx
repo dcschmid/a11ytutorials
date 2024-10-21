@@ -1,0 +1,136 @@
+---
+title: Nutzung der Richtlinien für die Barrierefreiheit des Authoring-Tools
+---
+
+Viele Entwickler sehen ihre Webanwendungen nicht als Autorentools an, auch wenn sie welche haben. Viele Entwickler wissen nicht, dass
+es Richtlinien für barrierefreie Webanwendungen gibt. Diese Richtlinien gelten, wenn Ihre Anwendung Benutzereingaben zulässt, die im
+Web veröffentlicht werden können. Einige Beispiele sind:
+
+- Content-Management-Systeme und Blog-Authoring-Systeme
+
+- Funktionen für Benutzerkommentare (Foren, Diskussionen, Blog-Kommentare usw.)
+
+- Produktbewertungs- und Rezensionsfunktionen
+
+- Social-Media-Plattformen
+
+- Funktionen zur Dokumentenprüfung und Zusammenarbeit
+
+- Alles, was Benutzereingaben ermöglicht und veröffentlicht
+
+ATAG 2.0 besteht aus zwei Teilen:
+
+1. Machen Sie die Benutzeroberfläche des Autorentools für alle zugänglich.
+
+2. Helfen Sie mit, barrierefreie Inhalte zu erstellen.
+
+Der Abschnitt über die barrierefreie Benutzeroberfläche des Authoring-Tools ist eine Zusammenfassung von WCAG 2.0. Deshalb werden wir
+diesen Abschnitt hier nicht analysieren. Wir besprechen jetzt, wie man barrierefreie Inhalte erstellt.
+
+## Vollautomatische Prozesse machen barrierefreie Inhalte möglich (ATAG B.1)
+
+### Sicherstellen, dass automatisch festgelegte Inhalte geöffnet werden können (ATAG B.1.1)
+
+Erstelle eine Bibliothek mit barrierefreien Vorlagen und Methoden, auf die bereits zugegriffen werden kann. So müssen sich Benutzer
+keine Gedanken über die Barrierefreiheit machen, wenn sie diese Vorlagen und Methoden verwenden. Überprüfen Sie, ob alles barrierefrei
+ist, damit die Autoren nichts mehr ändern müssen.
+
+### Informationen zur Barrierefreiheit bewahren (ATAG B.1.2)
+
+Achten Sie darauf, dass Ihre Filter keine Funktionen löschen, die die Autoren selbst hinzugefügt haben. Entweder Sie sind weniger
+streng in Bezug auf den Inhalt oder Sie nutzen intelligente Algorithmen, die Barrierefreiheitsmerkmale erkennen und beibehalten. Die
+erste Option ist einfacher, aber es gibt Sicherheitsbedenken. Die zweite Option ist aufwendiger, aber sicherer.
+
+## Wir helfen Autorinnen und Autoren, barrierefreie Inhalte zu erstellen (ATAG B.2)
+
+### Sicherstellen, dass Inhalte barrierefrei produziert werden können. (ATAG B.2.1)
+
+Es gibt zwei Möglichkeiten, um diese Richtlinie zu erfüllen:
+
+1. Erstellen Sie Widgets, die barrierefrei sind.
+
+2. Lassen Sie Autoren den Text anpassen, zum Beispiel den HTML-Code.
+
+Den Autoren zu erlauben, den HTML-Quellcode zu bearbeiten, ist eine gute Lösung für alle Situationen. Aber die meisten Autoren werden
+das nicht nutzen, weil sie sich damit nicht auskennen. Sie müssen Barrierefreiheitsfunktionen in die Autoren-Werkzeuge selbst einbauen.
+Hier sind ein paar Beispiele:
+
+- Mit einem Widget können Benutzer Bilder hinzufügen und Text dazu schreiben.
+
+- Ein Widget zum Erstellen von HTML-Tabellen. Damit können Benutzer eine Überschrift und den Bereich für diese Überschrift angeben.
+
+- Ein Widget, mit dem Benutzer Überschriften angeben können. So können sie sicher sein, dass es sich um Überschriften und nicht um
+  andere Absätze oder Elemente handelt.
+
+### So erstellen Sie barrierefreie Inhalte (ATAG B.2.2)
+
+Wenn wir ein Widget zum Erstellen von HTML-Tabellen nehmen, sollten die Methoden zum Angeben von Überschriften und dem Bereich für
+diese Überschriften leicht zu finden und zu verwenden sein. Die Benutzeroberfläche könnte eine Tabelle zeigen, wo die Funktionen
+platziert werden könnten. Es kann auch Erklärungen geben, die zeigen, was die Funktionen sind und warum sie wichtig sind. Die
+Oberfläche könnte wie ein Assistent sein, der den Nutzer Schritt für Schritt durch den Prozess führt. Es gibt viele Möglichkeiten, das zu machen.
+
+### Wir helfen Autoren, Inhalte zu verwalten, die nicht aus Text bestehen. (ATAG B.2.3)
+
+Am Anfang sollten Autoren einen Text zu einem Bild hinzufügen, das nur einmal verwendet wird. Aber Sie können noch mehr. Bilder und
+Medien, die mehrfach verwendet werden, sollten über Attribute verfügen, die ebenfalls wiederverwendet werden können. Der Alternativtext
+eines Bildes sollte weiterhin mit dem Bild verbunden bleiben. Autoren sollten das Bild mit dem vorhandenen Alt-Text einfügen können,
+ohne es zu verändern. Sie können den Autoren auch die Möglichkeit geben, den Alt-Text zu ändern, ohne den ursprünglichen Alt-Text zu
+verändern.
+
+### Unterstützen Sie Autoren mit barrierefreien Vorlagen. (ATAG B.2.4)
+
+- Bieten Sie Vorlagen an, die Autoren verwenden können.
+
+- Autoren sollen eigene barrierefreie Vorlagen erstellen können. Zeigen Sie ihnen dazu die wichtigsten Funktionen für die
+  Barrierefreiheit.
+
+- Sagen Sie den Benutzern, dass sie keine unzugänglichen Vorlagen verwenden sollen. Ermutigen Sie sie, die barrierefreien Vorlagen
+  zu nutzen.
+
+### Unterstützen Sie Autoren mit barrierefreien Texten. (ATAG B.2.5)
+
+Für Inhalte gelten die gleichen Ideen wie für Vorlagen (siehe oben).
+
+- Bieten Sie fertige Inhalte an, die Autoren verwenden können.
+
+- Autoren sollen eigene barrierefreie Inhalte erstellen können. Sie sollen auch über die wichtigsten Funktionen zur Barrierefreiheit
+  informiert werden.
+
+- Sagen Sie den Benutzern, welche Inhalte im System nicht barrierefrei sind und welche barrierefrei.
+
+## Wir helfen Autorinnen und Autoren dabei, ihre Inhalte barrierefreier zu machen. (ATAG B.3)
+
+Hier geht es um Programme, mit denen Autoren ihre Texte nach der Erstellung korrigieren können.
+
+### Wir helfen Autoren dabei, ihre Texte auf Barrierefreiheitsprobleme zu überprüfen. (ATAG B.3.1)
+
+Ein Authoring-Tool kann eine Prüfung für vorhandene Inhalte durchführen und Fehler bei der Barrierefreiheit finden. Jedes Tool
+zum Überprüfen hat Einschränkungen. Es kann aber zumindest einige Arten von Fehlern finden und ist besonders für Anfänger hilfreich.
+
+### Helfen Sie Autoren, Probleme mit der Barrierefreiheit zu lösen. (ATAG B.3.2)
+
+Benutzer können bei Reparaturen so unterstützt werden:
+
+- Hier findet ihr allgemeine Informationen zu Barrierefreiheitsfehlern. Entweder als Referenz oder als Feedback zu bestimmten Fehlern,
+  die mit einem Tool zur Barrierefreiheitsprüfung gefunden wurden.
+
+- Tools, die Autoren bei der Behebung von Fehlern helfen.
+
+## Autorenwerkzeuge machen es einfacher, barrierefreie Inhalte zu erstellen. (ATAG B.4)
+
+### Es muss sichergestellt werden, dass Funktionen zur Erstellung barrierefreier Inhalte immer verfügbar sind. (ATAG B.4.1)
+
+- Integrieren Sie Barrierefreiheitsfunktionen in den Autorprozess, damit sie selbstverständlich wirken.
+
+- Barrierefreiheitsfunktionen sollten sichtbar sein.
+
+- Machen Sie es den Benutzern nicht schwer, Barrierefreiheitsfunktionen zu nutzen. Sie sollten immer aktiv sein.
+
+- Wenn Barrierefreiheitsfunktionen deaktiviert werden können, informieren Sie die Benutzer und machen Sie es einfach, sie wieder zu
+  aktivieren.
+
+### Dokumentation so anlegen, dass barrierefreie Inhalte erstellt werden können. (ATAG B.4.2)
+
+Auch Hilfefunktionen sollten barrierefreie Techniken nutzen. Wenn man ein Bild hinzufügt, sollte man auch den Alternativtext anzeigen.
+Das gilt auch, wenn es im Artikel nicht um Text geht. Seien Sie aufmerksam, wenn Sie die Beispiele überprüfen. Achten Sie darauf, dass
+keine schlechten Techniken zur Barrierefreiheit modelliert werden.

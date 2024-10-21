@@ -1,0 +1,46 @@
+---
+title: Audio-strukturelle Interaktion UX
+---
+
+Benutzer von Bildschirmlesegeräten interagieren mit Elementen über die Tastatur, nicht mit der Maus. Alles muss mit der Tastatur
+bedienbar sein.
+
+Wenn Benutzer mit Elementen über ihre Tastatur interagieren, hören sie auf das Gerät. Die wichtigsten Arten von Feedback sind:
+
+- Name: Der Name des Elements. Wenn der Benutzer die Arten von semantischen Elementen auflistet, sich auf sie konzentriert oder
+  sie durchliest, sagt die Sprachausgabe den Namen an.
+
+- Beschreibung: Weitere Infos zum Element (über "aria-describedby"). Screenreader sagen in der Regel zuerst, wie das Element heißt,
+  und dann, was es bedeutet.
+
+- Es geht darum, herauszufinden, um welches Element es sich handelt. Beispiele sind Textfelder, Tab-Panel-Widgets, Baumansichten,
+  Schaltflächen, Links, Grafiken oder Dialogfelder. Screenreader sagen, welche Rolle die meisten semantischen Elemente haben.
+
+- Wert:
+
+  - Eigenschaften sind Merkmale von Elementen wie z. B. "aria-valuemax" (auf Schiebereglern), "aria-controls" und "aria-owns" usw.
+
+  - Zustände sind veränderbare Bedingungen für ein Element. Beispiele sind "aria-selected=true/false", "aria-checked=true/false" und
+    "aria-hidden=true/false". In den meisten Fällen lesen Sprachausgaben die Zustandsänderung automatisch aus, wenn der Benutzer eine
+    Funktion aktiviert. Wenn der Benutzer eine Schaltfläche aktiviert, die sich von "aria-expanded=false" zu "aria-expanded=true"
+    ändert, sagt die Sprachausgabe zum Beispiel "erweitert". Man braucht keine JavaScript- oder Live-Regionen, damit eine Sprachausgabe
+    die Zustandsänderung ankündigt.
+
+- "Live-" Ankündigungen: Updates
+
+## Live-Veranstaltungen
+
+Für blinde Menschen sind Live-Ereignisse schwierig. Live-Untertitel in Videos helfen nicht, egal in welchem Format sie vorliegen. Bei
+professionellen Videos werden die Untertitel in das Video eingebettet. So kann sie ein Screenreader nicht vorlesen. Auch wenn ein
+Text verwendet wird, gibt es die gleichen Probleme wie bei voraufgezeichneten Inhalten. Man kann nicht einfach auf die Bildunterschriften
+zugreifen.
+
+Eine Lösung ist, dass die Seite in Echtzeit aktualisiert wird. Man kann Text in Echtzeit in ein Dokument schreiben, zum Beispiel mit
+AJAX. Der Benutzer kann den Text dann mit normalen Befehlen lesen. Der Nachteil ist, dass der Benutzer den Text nicht beenden kann und
+dann neuer Text über ihm veröffentlicht wird. Dann muss der Benutzer den Text von hinten nach vorne lesen, um den neuen Text zu finden.
+Das dauert lange und ist verwirrend, wenn die Textpassage lang ist oder mehrere Aktualisierungen stattgefunden haben. Die AJAX-Methode
+funktioniert zwar, ist aber nicht die beste Lösung.
+
+Lade die Schaltfläche "Mehr Live-Text". Es wäre besser, wenn taubblinde Benutzer mit einem Knopfdruck selbst entscheiden können, wann
+sie den Inhalt laden. Wenn der Button aktiviert ist, sollte der Fokus an den neuen Text gehen. Der Container muss auf "tabindex=–1"
+gesetzt werden, damit der Fokus erfolgreich empfangen wird.

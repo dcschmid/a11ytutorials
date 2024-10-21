@@ -13,7 +13,7 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/starlight": "^0.28.3",
     "accessible-astro-components": "^2.3.6",
-    "astro": "^4.16.0",
+    "astro": "^4.16.5",
     "astro-feelback": "^0.3.4",
     "astro-lazy-youtube-embed": "^0.5.1",
     "rehype-external-links": "^3.0.0",
@@ -24,6 +24,6 @@
     "typescript": "^5.6.3"
   },
   "devDependencies": {
-    "sass": "^1.79.4"
+    "sass": "^1.79.5"
   }
 }

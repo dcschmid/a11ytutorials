@@ -1,0 +1,54 @@
+---
+title: Verfall der Zugänglichkeit im Laufe der Zeit
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Picture } from 'astro:assets';
+
+import FailRampPlanter from "../../../../../assets/ux/fail-ramp-planter.png";
+import FailParkingDumpster from "../../../../../assets/ux/fail-parking-dumpster.jpg";
+import FailRampInstructions from "../../../../../assets/ux/fail-ramp-instructions.jpg";
+import FailParkingPole from "../../../../../assets/ux/fail-parking-pole.jpg";
+import FailCurbCut from "../../../../../assets/ux/fail-curb-cut.jpg";
+
+## "Verfall der Zugänglichkeit" in der physischen Welt
+
+Wenn Menschen nicht wissen, wie sie barrierefreie Designs umsetzen sollen, oder wenn sie die Verantwortung weitergeben, ohne sich
+mit dem Thema auszukennen, kann das zu Problemen führen. Ein Design, das nicht barrierefrei ist, wird mit der Zeit immer schlechter.
+
+<Aside type="danger" title="Negativbeispiel: Barrieren auf Rollstuhlwegen">
+  Wenn jemand eine große Topfpflanze auf die Rollstuhlrampe stellt, will er oder sie den Menschen im Rollstuhl nicht schaden. Aber
+  genau das passiert, wenn man den Weg mit einer großen Topfpflanze versperrt.
+
+  <Picture src={FailRampPlanter} formats={['avif', 'webp']} alt="" />
+
+  Die Leute, die den Parkplatz für Menschen mit Behinderung geschaffen haben, haben das wahrscheinlich richtig gemacht. Sie dachten,
+  dass der Platz für Menschen mit Behinderung da ist. Sie haben nicht damit gerechnet, dass jemand einen Müllcontainer in die Mitte
+  stellt, sodass man den Parkplatz nicht mehr benutzen kann.
+
+  <Picture src={FailParkingDumpster} formats={['avif', 'webp']} alt="" />
+
+  Die Rampe für Rollstuhlfahrer unten funktioniert gut, aber das große Holzschild in der Mitte versperrt den Weg. Das Schild sagt,
+  dass Rollstuhlfahrer freien Weg haben. Das ist aber nicht wahr.
+
+  <Picture src={FailRampInstructions} formats={['avif', 'webp']} alt="" />
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Permanente Barrieren, die den Zugang für Rollstuhlfahrer blockieren">
+  Die Beispiele zeigen, dass die Zugangsbarrieren leicht zu beheben sind. Es ist schlimmer, wenn jemand etwas Dauerhaftes macht,
+  wie einen Lichtpfosten aus Zement in der Mitte der Einfahrt zu einem Behindertenparkplatz zu installieren.
+
+  <Picture src={FailParkingPole} formats={['avif', 'webp']} alt="" />
+
+  Wenn jemand eine Mauer baut, wo die Bordsteinabsenkung auf den Bürgersteig trifft, kann man keinen Rollstuhl von der Straße auf
+  den Bürgersteig bringen.
+
+  <Picture src={FailCurbCut} formats={['avif', 'webp']} alt="" />
+</Aside>
+
+## "Verfall der Barrierefreiheit" im Web
+
+Die Beispiele sind lächerlich, aber so etwas passiert ständig im Internet. Ein Team erstellt eine barrierefreie Website, aber sie
+denken nicht daran, dass Barrierefreiheit ein wichtiger Teil des Prozesses ist. Wenn Menschen vergessen, barrierefrei zu arbeiten,
+oder wenn neue Mitarbeiter ohne Wissen über barrierefreies Design dazukommen, passieren Fehler. Die Website ist wieder genauso schlecht
+wie vor der Veröffentlichung des barrierefreien Designs.

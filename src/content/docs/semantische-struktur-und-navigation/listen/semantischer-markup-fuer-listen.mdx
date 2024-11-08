@@ -1,0 +1,111 @@
+---
+title: Semantischer Markup für Listen
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Listen müssen korrekt ausgezeichnet werden
+
+HTML kennt drei Arten von Listen:
+
+1. Ungeordnete Listen (`<ul>`) werden als Aufzählungen von Listenelementen (`<li>`) dargestellt. Ungeordnete Listen sollten
+   verwendet werden, wenn eine Reihe von Elementen in beliebiger Reihenfolge angeordnet werden kann.
+
+2. Geordnete Listen (`<ol>`) werden als nummerierte Listen von Listenelementen (`<li>`) dargestellt. Geordnete Listen sollten
+   verwendet werden, wenn die Listenelemente in einer bestimmten Reihenfolge angeordnet werden müssen.
+
+3. Definitionslisten (oder Beschreibungslisten in HTML5) (`<dl>`) werden als Begriffspaare (`<dt>`) und Definitionen (`<dd>`)
+   dargestellt. Definitions-/Beschreibungslisten werden verwendet, um einen Begriff mit seiner Definition oder einen Namen mit
+   einem Wert zu verknüpfen.
+
+Ein Screenreader sagt dem Benutzer, wenn er zu einer Liste kommt und wie viele Elemente in der Liste sind. So wissen die Zuhörer,
+was sie hören werden.
+
+Wenn Sie eine Liste nicht als solche kennzeichnen, zum Beispiel mit einer Tabelle oder dem Element, können Screenreader den Hörer
+nicht informieren.
+
+<Aside type="tip" title="Gutes Beispiel: Eine ungeordnete Liste mit korrektem Markup">
+Hier ist eine Liste mit korrekter Auszeichnung:
+
+```html live
+<p>These are a few of my favorite things</p>
+<ul>
+  <li>Raindrops on roses</li>
+  <li>Whiskers on kittens</li>
+  <li>Bright copper kettles</li>
+  <li>Warm woolen mittens</li>
+  <li>Brown paper packages tied up with strings</li>
+  <li>Cream colored ponies</li>
+  <li>Crisp apple strudels</li>
+  <li>Doorbells and sleigh bells</li>
+  <li>Schnitzel with noodles</li>
+  <li>Wild geese that fly with the moon on their wings</li>
+  <li>Girls in white dresses with blue satin sashes</li>
+  <li>Snowflakes that stay on my nose and eyelashes</li>
+  <li>Silver white winters that melt into springs</li>
+</ul>
+<p>These are a few of my favorite things</p>
+<ul>
+  <li>Raindrops on roses</li>
+  <li>Whiskers on kittens</li>
+  <li>Bright copper kettles</li>
+  <li>Warm woolen mittens</li>
+  <li>Brown paper packages tied up with strings</li>
+  <li>Cream colored ponies</li>
+  <li>Crisp apple strudels</li>
+  <li>Doorbells and sleigh bells</li>
+  <li>Schnitzel with noodles</li>
+  <li>Wild geese that fly with the moon on their wings</li>
+  <li>Girls in white dresses with blue satin sashes</li>
+  <li>Snowflakes that stay on my nose and eyelashes</li>
+  <li>Silver white winters that melt into springs</li>
+</ul>
+```
+
+VoiceOver sagt die Liste so auf:
+
+- "These are a few of my favorite things.
+- List 13 items.
+- Bullet, Raindrops on roses.
+- Bullet, Whiskers on kittens.
+- Bullet, Bright copper kettles.
+- Bullet, Warm woolen mittens.
+- Bullet, Brown paper packages tied up with strings.
+- Bullet, Cream colored ponies.
+- Bullet, Crisp apple strudels.
+- Bullet, Doorbells and sleigh bells.
+- Bullet, Schnitzel with noodles.
+- Bullet, Wild geese that fly with the moon on their wings.
+- Bullet, Girls in white dresses with blue satin sashes.
+- Bullet, Snowflakes that stay on my nose and eyelashes.
+- Bullet, Silver white winters that melt into springs"
+
+JAWS liest den Inhalt fast genauso wie VoiceOver. Der einzige Unterschied ist, dass JAWS am Ende "Listenende" ankündigt.
+(JAWS macht auch mal eine Pause, als würde es Luft holen. Das ist aber nicht so wichtig.)
+
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Gefälschte Liste, die mit break (`<br>`)-Elementen erstellt wurde">
+Obwohl Bildschirmleser den gesamten Text in der untenstehenden gefälschten Liste vorlesen, wird blinden Benutzern
+nicht mitgeteilt, dass es sich um eine Liste handelt, sodass sie nicht von semantischen Hinweisen profitieren können.
+
+```html live
+<p>These are a few of my favorite things:</p>
+<p>
+  Raindrops on roses<br />
+  Whiskers on kittens<br />
+  Bright copper kettles<br />
+  Warm woolen mittens<br />
+  Brown paper packages tied up with strings<br />
+  Cream colored ponies<br />
+  Crisp apple strudels<br />
+  Doorbells and sleigh bells<br />
+  Schnitzel with noodles<br />
+  Wild geese that fly with the moon on their wings<br />
+  Girls in white dresses with blue satin sashes<br />
+  Snowflakes that stay on my nose and eyelashes<br />
+  Silver white winters that melt into springs
+</p>
+```
+
+</Aside>

@@ -1,0 +1,263 @@
+---
+title: Link-Text
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Ein Link muss einen Text enthalten, der durch den Algorithmus zur Berechnung des barrierefreien Namens festgelegt wurde.
+
+Damit Bildschirmleseprogramme den Link vorlesen können, muss ihm ein Name zugeordnet sein. Wenn ein Link keinen Namen hat, zeigen
+Bildschirmleseprogramme den Linktext an. So wissen die Benutzer, was der Link macht.
+
+Der Name eines Links wird so berechnet:
+
+1. aria-labelledby
+
+2. aria-label
+
+3. Das ist der Text zwischen den öffnenden und schließenden `<a>`- und `</a>`-Elementen (mit Alt-Text bei Bildern).
+
+4. Das title-Attribut ist für Screenreader eine schlechte Lösung. Es sollte nicht für die Bezeichnung von Links verwendet werden.
+
+Der Name des Links sollte zuerst festgelegt werden, auch wenn der Linktext nicht an erster Stelle im Link steht. Für
+komplexere Situationen gibt es andere Methoden.
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Linktext innerhalb des <a>`-Elements"
+>
+Der Linktext muss für ein Bildschirmlesegerät erkennbar sein, darf nicht doppelt vorkommen und muss sich fokussieren lassen.
+Links müssen mit dem HTML-Element "a" gekennzeichnet werden, damit jeder Link einen Namen hat, den man lesen kann.
+
+```html live
+<p><a href="https://dequeuniversity.com/contact/">Contact Us</a></p>
+<p><a href="https://dequeuniversity.com/resources/">Examples & Resources</a></p>
+```
+
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Linktext aus dem alt-Attribut des img-Elements"
+>
+Das alt-Attribut des img-Elements sorgt dafür, dass der Link klar ist und von Bildschirmlesern erkannt wird.
+
+```html live
+<p>
+  <a href="http://www.deque.com">
+    <img
+      width="93"
+      height="33"
+      alt="Deque Systems"
+      src="https://dequeuniversity.com/assets/images/template/courses2014/DequeLogo.png"
+    />
+  </a>
+</p>
+```
+
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Verwendung von aria-label, um den nativen Linktext zu überschreiben"
+>
+Das Attribut "aria-label" ermöglicht es, einem Link einen Text zuzuweisen. Dieses Beispiel zeigt, wie man aria-label bei
+mehreren "Teaser"-Nachrichten auf einer Seite verwendet. Jeder Link hat den gleichen Text "Weiterlesen...". Das aria-label
+ermöglicht es, die einzelnen Links voneinander zu unterscheiden.
+
+```html live
+<p>
+  The National Museum of African American History and Culture was established in
+  2003 by an Act of Congress, making it the 19th Smithsonian Institution museum.
+  <a
+    href="https://www.si.edu/Museums/african-american-history-and-culture-museum"
+    aria-label="Read more about the National Museum of
+      African American History and Culture"
+  >
+    Read more...
+  </a>
+</p>
+<p>
+  The National Air and Space Museum, Steven F. Udvar-Hazy Center displays
+  hundreds of aviation and space artifacts that are too large to exhibit in the
+  museum on the National Mall in Washington, D.C.
+  <a
+    href="https://www.si.edu/Museums/air-and-space-museum-udvar-hazy-center"
+    aria-label="Read more about the Steven F. Udvar-Hazy Center"
+  >
+    Read more...
+  </a>
+</p>
+<p>
+  The National Museum of American History is devoted to the scientific,
+  cultural, social, technological, and political development of the United
+  States.
+  <a
+    href="https://www.si.edu/Museums/american-history-museum"
+    aria-label="Read more about the National Museum of American History"
+  >
+    Read more...
+  </a>
+</p>
+```
+
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Zusätzlicher Linktext mit verstecktem Text"
+>
+Manchmal ist es gut, wenn Menschen, die Bildschirmlesegeräte nutzen, zusätzliche Infos zu einem Link bekommen. Die Infos
+sollten dann aber nicht sichtbar sein. Der Text wird mit CSS ausgeblendet.
+
+```html live
+<style>
+  .visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    border: 0;
+    height: 1px; margin: -1px;
+    overflow: hidden;
+    padding: 0
+    width: 1px;
+    white-space: nowrap;
+  }
+</style>
+
+<p>
+  The National Museum of American History is devoted to the scientific,
+  cultural, social, technological, and political development of the United
+  States.
+  <a href="https://www.si.edu/Museums/american-history-museum">
+    Read more
+    <span class="visually-hidden">
+      about the National Museum of American History </span
+    >...
+  </a>
+</p>
+```
+
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Verwendung von aria-label zur Bereitstellung von Linktext für Hintergrundbilder"
+>
+Soziale Medien haben eigene Links. Die werden oft mit Hintergrundbildern gemacht. Für sehende Menschen sieht das gut aus, aber
+die Links haben keinen Namen. In diesem Beispiel zeigt aria-label den Linktext an, den Screenreader vorlesen.
+
+```html live
+<a
+  href="https://www.facebook.com/dequesystems/"
+  class="facebook"
+  aria-label="Deque's Facebook page"
+>
+  Facebook
+</a>
+```
+
+</Aside>
+
+## Ein Link sollte klar machen, wohin er führt.
+
+Benutzer von Bildschirmlesegeräten hören sich Links oft an, ohne zu wissen, was sie bedeuten. Sie navigieren durch die Links oder
+nutzen Tastaturbefehle, um alle Links auf einer Seite anzuzeigen. Am besten ist es, wenn alle Links auch ohne Kontext verständlich
+sind.
+
+<table>
+  <thead>
+    <tr>
+      <th>Schlechter Linktext</th>
+      <th>Guter Linktext</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hier klicken</td>
+      <td>Optionen für die Computerkonfiguration</td>
+    </tr>
+    <tr>
+      <td>Hier</td>
+      <td>ein Artikel über Bienen auf der Smithsonian-Website</td>
+    </tr>
+    <tr>
+      <td>Mehr lesen</td>
+      <td>Lesen Sie mehr über Gaming Memes</td>
+    </tr>
+    <tr>
+      <td>Mehr</td>
+      <td>Mehr über die wissenschaftliche Methode</td>
+    </tr>
+  </tbody>
+</table>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Der Linktext ergibt aus dem Kontext heraus Sinn"
+>
+Hier finden Sie empfohlene Beispiele für Linktexte.
+
+```html live
+<p>Learn more about <a href="/products.html">our products</a>.</p>
+<p>
+  Read a fascinating article about the
+  <a href="http://tinyurl.com/c3z77jt">resident microbes in the human body</a>.
+</p>
+<p>
+  Our <a href="surpassed.html">second quarter earnings</a> have surpassed
+  investor expectations.
+</p>
+```
+
+</Aside>
+
+<Aside
+  type="danger"
+  title="Schlechtes Beispiel: Nicht-beschreibender Linktext"
+>
+Die Links haben keine Erklärung, wohin sie führen. Für Menschen mit Sehbeeinträchtigung ist es deshalb schwieriger, die
+Links zu verstehen.
+
+```html live
+<p>Learn more about our products <a href="/products.html">here</a>.</p>
+<p>To read a fascinating article about the resident microbes in the human body
+  <a href="http://tinyurl.com/c3z77jt">click here</a>.
+</p>
+<p>Our second quarter earnings have surpassed investor expectations.
+  <a href="surpassed.html">More...</span></a>
+</p>
+```
+
+</Aside>
+
+## Der Linktext sollte die Rolle nicht wiederholen.
+
+Das Bildschirmlesegerät sagt "Link" und zeigt dann den Linktext an. Man muss das Wort "Link" nicht in den Linktext schreiben.
+
+## Beschriftungen, Namen und Textalternativen für Inhalte, die auf mehreren Webseiten gleich sind, müssen immer gleich gekennzeichnet werden.
+
+<Aside
+  type="danger"
+  title="Schlechtes Beispiel: Links auf dieselbe Seite mit unterschiedlichem Linktext"
+>
+Diese beiden Links führen zum gleichen Ort, aber mit unterschiedlichen Namen.
+
+```html live
+<p><a href="contact.html">Our Company</a></p>
+<p><a href="contact.html">Contact Us</a></p>
+```
+
+</Aside>
+
+<Aside
+  type="danger"
+  title="Schlechtes Beispiel: Links zu verschiedenen Seiten mit demselben Linktext"
+>
+Diese beiden Links führen zu verschiedenen Orten, haben aber den gleichen Text.
+
+```html live
+<p><a href="contact.html">Contact Us</a></p>
+<p><a href="directory.html">Contact Us</a></p>
+```
+
+</Aside>

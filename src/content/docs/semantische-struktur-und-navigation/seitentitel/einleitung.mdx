@@ -1,0 +1,28 @@
+---
+title: Einleitung
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Picture } from 'astro:assets';
+
+import PageTitle from "../../../../assets/semantic-structure/page-title.png";
+
+## Der Titel der Seite ist das Erste, was Benutzer von Bildschirmleseprogrammen sehen.
+
+Der `<title>` ist wichtig, weil ein Benutzer eines Screenreaders ihn als erstes hört. Blinde Menschen können nicht schnell
+sehen, worum es auf einer Webseite geht. Sie sind auf den Seitentitel angewiesen, um diese Informationen zu bekommen.
+Webseiten ohne Titel sind für Benutzer von Screenreadern schlecht, weil sie sich durch die ganze Webseite klicken müssen, um
+zu verstehen, worum es geht.
+
+<Aside type="tip" title="Ein gutes Beispiel ist: Die Webseite hat einen passenden Titel">
+  Die meisten Browser zeigen den Seitentitel über der Seite an. In Browsern mit Registerkarten wird der Titel in der Registerkarte
+  angezeigt. So erkennt man geöffnete Seiten leicht und kann schnell zwischen ihnen wechseln.
+
+  <Picture src={PageTitle} formats={['avif', 'webp']} alt="" />
+
+  ### Mehrwert: Seitentitel helfen, dass man bei Suchmaschinen weiter oben angezeigt wird.
+
+  Suchmaschinen zeigen den Seitentitel auch bei Suchergebnissen an. Gute Titel helfen den Benutzern, schnell die richtigen
+  Ergebnisse zu finden. Gute Seitentitel sind wichtig für die Suchmaschinenoptimierung (SEO) und sorgen dafür, dass die Seite
+  barrierefrei ist.
+</Aside>

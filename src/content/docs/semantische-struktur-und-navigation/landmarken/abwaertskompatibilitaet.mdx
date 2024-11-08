@@ -1,0 +1,54 @@
+---
+title: Abwärtskompatibilität
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Orientierungspunkte sollten abwärtskompatibel sein.
+
+Wenn Sie ältere Browser unterstützen möchten, müssen Sie einige zusätzliche Schritte unternehmen, damit die HTML-5-Elemente richtig
+angezeigt werden.
+
+<Aside type="tip" title="Gutes Beispiel: Setzen Sie die Orientierungspunkte auf display:block">
+  Damit die HTML5-Orientierungspunkte für sehende Benutzer in älteren Browsern richtig angezeigt werden, sollten Sie ihnen die
+  Eigenschaft "block" zuweisen. Sie könnten sonst untereinander angezeigt werden, was das Seitenlayout zerstören könnte. Sie können
+  auch andere HTML5-Elemente auf "display: block" setzen, um sie abwärtskompatibel zu machen. Manchmal ist es besser, einige dieser
+  Elemente auf "display: inline" zu setzen. Entscheiden Sie selbst, was Sie tun.
+
+  ```html
+  <style>
+    /* landmarks */
+    article, aside, footer, header, main, nav, section,
+
+    /* other HTML 5 elements that should (probably)
+    be set to display:block */
+    audio, canvas, datalist, details, figcaption,
+    figure, output, progress, summary, video {
+      display:block;
+    }
+  </style>
+  ```
+</Aside>
+
+<Aside type="tip" title="Gutes Beispiel: Verwendung von JavaScript zur Behebung von Problemen bei der Darstellung von Orientierungspunkten in IE 8 und niedriger">
+  Im IE 8 und darunter müssen Sie zunächst jeder nicht erkannten HTML5-Tags eine Instanz erstellen. Erst dann können Sie ihnen Stile
+  zuweisen. Sie könnten Dummy-HTML5-Tags in das HTML-Dokument einfügen, aber das würde zu Problemen führen. Zum Beispiel würden zwei
+  Hauptregionen verwirren. Eine Lösung ist, JavaScript zu nutzen, um die Tags zu erstellen. Die JavaScript-Tags werden nicht im DOM
+  angezeigt. So werden die Benutzer von Bildschirmleseprogrammen nicht verwirrt.
+
+  Mark Pilgrim hat in seinem Buch "Dive into HTML 5" dieses Problem beschrieben und eine Lösung entwickelt. Leider ist die Website
+  nicht mehr verfügbar.
+
+  ```html
+  <!--[if lt IE 9]>
+  <script>
+    var e = ("abbr,article,aside,audio,bdi,canvas,datalist,details,dialog," +
+      "figcaption,figure,footer,header,keygen,mark,menu,meter,main,nav,output," +
+      "progress,rp,ruby,rt,section,source,summary,time,track,video,wbr").split(',');
+      for (var i = 0; i < e.length; i++) {
+          document.createElement(e[i]);
+      }
+  </script>
+  <![endif]-->
+  ```
+</Aside>

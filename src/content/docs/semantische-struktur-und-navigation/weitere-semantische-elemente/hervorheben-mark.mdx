@@ -1,0 +1,83 @@
+---
+title: Hervorheben (<mark>)
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Hervorgehobener Text sollte mit dem Element `<mark>` markiert werden
+
+Sehende Benutzer erkennen wichtige Passagen besser. Verwenden Sie das Element "mark", wenn Sie etwas hervorheben möchten. In
+Browsern wird der Text oft gelb hinterlegt. Das Aussehen kann mit CSS geändert werden.
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Das `<mark>-Element wird verwendet, um wichtigen Text hervorzuheben"
+>
+  ```html
+  <p>
+    All informative images <mark>require</mark> valid, meaningful alternative
+    text.
+  </p>
+  ```
+</Aside>
+
+## Bildschirmlesegeräte und das `<mark>` Element
+
+Das `<mark>`-Element ist korrekt, aber Bildschirmlesegeräte sagen das nicht, sodass es für Benutzer keinen Nutzen hat.
+Sehende Benutzer profitieren aber von der Hintergrundfarbe. Trotzdem ist das `<mark>`-Element am besten, weil es den gewünschten
+Zweck erfüllt.
+
+## Kritisch hervorgehobener Text sollte durch eine textbasierte Methode ergänzt werden, um die Bedeutung der Hervorhebung zu vermitteln
+
+Die Hervorhebung ist eine Aufwertung, die Screenreader-Benutzer nicht sehen müssen. Wenn der Text ohne Hervorhebung nicht verständlich
+ist, müssen Sie die Hervorhebung durch einen Text ergänzen, den Screenreader anzeigen können.
+
+Das `<mark>`-Element ist ein gutes Zeichen, weil es etwas bedeutet. Aber wenn die Leser über die Hervorhebung informiert werden müssen,
+muss es eine andere Lösung geben. Man kann am Anfang und am Ende jedes hervorgehobenen Abschnitts Text einfügen, der nicht sichtbar ist.
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Versteckter Text zur Hervorhebung für Screenreader-Benutzer"
+>
+  Beachten Sie, dass diese Technik SEHR sparsam eingesetzt werden sollte, und
+  zwar nur dann, wenn die Bedeutung verloren ginge, wenn die Benutzer nicht auf
+  die Hervorhebung hingewiesen würden. Beachten Sie auch, dass sehbehinderte
+  Benutzer die Formatvorlagen überschreiben können, so dass eine Art visuelle
+  Textmethode vorhanden sein muss. In diesem Beispiel erklärt ein Satz unterhalb
+  des hervorgehobenen Textes, welches Wort hervorgehoben ist. Zugegebenermaßen
+  ist diese Methode ziemlich überflüssig und klobig, so dass es am besten ist,
+  einfach keinen Text zu erstellen, der eine Hervorhebung erfordert, um ihn zu
+  verstehen.
+
+```html
+<head>
+  <title>Sample web page</title>
+  <style>
+      .visually-hidden {
+      position: absolute;
+      clip: rect(0 0 0 0);
+      border: 0;
+      height: 1px; margin: -1px;
+      overflow: hidden;
+      padding: 0
+      width: 1px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <p>The verb is highlighted in the sentence below:</p>
+  <p>
+    The woman
+    <mark>
+      <span class="visually-hidden">begin highlight</span>
+      threw
+      <span class="visually-hidden">end highlight</span>
+    </mark>
+    the Frisbee.
+  </p>
+  <p>(The verb is "threw.")</p>
+</body>
+```
+
+</Aside>

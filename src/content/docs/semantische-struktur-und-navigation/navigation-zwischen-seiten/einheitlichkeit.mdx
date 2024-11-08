@@ -1,0 +1,71 @@
+---
+title: Einheitlichkeit
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Wenn ein Navigationsmuster auf einer Webseite erscheint, muss es in der gleichen Reihenfolge dargestellt werden. Die Reihenfolge darf nicht geändert werden, wenn man durch die Webseite navigiert.
+
+Wenn die Links im Hauptmenü nicht immer gleich sind, finden Benutzer eine Website schwer.
+
+<Aside
+  type="danger"
+  title="Schlechtes Beispiel: Abweichung in der Navigationsreihenfolge"
+>
+Zwei Seiten enthalten dieselben Navigationslinks, aber die Links sind unterschiedlich angeordnet.
+
+```html
+<h1>[Page A Title Here]</h1>
+
+<h2>Table of Contents</h2>
+<ul>
+  <li><a href="#fruits">Fruits</a></li>
+  <li><a href="#vegetables">Vegetables</a></li>
+  <li><a href="#meats">Meats</a></li>
+  <li><a href="#dairy">Dairy</a></li>
+  <li><a href="#breads">Breads, Pasta, & Cereals</a></li>
+  <li><a href="#soups_canned">Soups & Canned Goods</a></li>
+  <li><a href="#frozen">Frozen Foods</a></li>
+  <li><a href="#desserts">Desserts</a></li>
+  <li><a href="#snack">Snack Foods</a></li>
+</ul>
+
+<div>[Page A content here...]</div>
+
+<h1>[Page B Title Here]</h1>
+
+<h2>Table of Contents</h2>
+<ul>
+  <li><a href="#breads">Breads, Pasta, & Cereals</a></li>
+  <li><a href="#dairy">Dairy</a></li>
+  <li><a href="#desserts">Desserts</a></li>
+  <li><a href="#frozen">Frozen Foods</a></li>
+  <li><a href="#fruits">Fruits</a></li>
+  <li><a href="#meats">Meats</a></li>
+  <li><a href="#snack">Snack Foods</a></li>
+  <li><a href="#soups_canned">Soups & Canned Goods</a></li>
+  <li><a href="#vegetables">Vegetables</a></li>
+</ul>
+
+<div>[Page B content here...]</div>
+```
+
+</Aside>
+
+## Bestimmte Hilfsmechanismen müssen auf mehreren Webseiten in einer bestimmten Reihenfolge erscheinen. Eine Änderung ist nur möglich, wenn der Benutzer dies initiiert.
+
+<Aside type="tip" title="Gutes Beispiel: Einheitliche Reihenfolge">
+Es ist wichtig, dass Benutzer beim Ausführen von Aufgaben (sofern verfügbar) problemlos Hilfe erhalten können. Wenn Sie
+sicherstellen, dass sich die Hilfemechanismen auf jeder Seite an derselben relativen Position befinden, sind sie leicht zu finden.
+
+Die Hilfemechanismen, die unter diese Regel fallen, sind:
+
+- Kontaktdaten von Mitarbeitern
+
+- Mechanismus für den Kontakt mit Mitarbeitern
+
+- Selbsthilfeoption
+
+- Vollständig automatisierter Kontaktmechanismus
+
+</Aside>

@@ -1,0 +1,259 @@
+---
+title: Zusammenfassung der Tabelle
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Für Datentabellen gibt es eine Zusammenfassung
+
+Es ist keine Zusammenfassung der Tabelle nötig. Die Tabelle sollte so einfach und gut organisiert sein, dass man sie verstehen kann,
+ohne eine Zusammenfassung zu lesen. Manchmal ist es hilfreich, die wichtigsten Punkte einer Tabelle kurz zusammenzufassen. So können
+auch Menschen, die ein Bildschirmlesegerät nutzen, die Tabelle besser verstehen.
+
+Zusammenfassungen sollten kurz und verständlich sein. Bei komplexen Tabellen können sie auch länger sein. Man kann
+Tabellenzusammenfassungen auf verschiedene Arten darstellen:
+
+1. Fügen Sie die Zusammenfassung in den Absatz vor oder nach der Tabelle ein.
+
+2. Fügen Sie die Zusammenfassung in die Beschriftung der Tabelle ein, wenn sie kurz ist.
+
+3. Fügen Sie die Tabelle in eine Abbildung ein und geben Sie den Titel und die Zusammenfassung in die Abbildung ein.
+
+4. Fügen Sie die Zusammenfassung in das "summary"-Attribut ein (für HTML-Versionen vor HTML 5).
+
+<Aside
+type="tip"
+title="Gutes Beispiel: Methode 1: Fügen Sie die Zusammenfassung in den Absatz vor oder nach der Tabelle ein (mit aria-describedby)"
+>
+Jeder kann auf die Tabelle zugreifen, wenn sie in einem Absatz steht. Wenn man das "aria-describedby"-Attribut hinzufügt, können
+Bildschirmleseprogramme den Absatz mit der Tabelle verknüpfen.
+
+```html live
+<p id="table-description">
+  This table lists the members of the Greensprings Running Club and their
+  personal best times in various race distances. The first column lists the
+  runners and the first row lists the race distances.
+</p>
+
+<table aria-describedby="table-description">
+  <caption>
+    Greensprings Running Club Personal Bests
+  </caption>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">1 mile</th>
+    <th scope="col">5 km</th>
+    <th scope="col">10 km</th>
+  </tr>
+  <tr>
+    <th scope="row">Mary</th>
+    <td>8:32</td>
+    <td>28:04</td>
+    <td>1:01:16</td>
+  </tr>
+  <tr>
+    <th scope="row">Betsy</th>
+    <td>7:43</td>
+    <td>26:47</td>
+    <td>55:38</td>
+  </tr>
+  <tr>
+    <th scope="row">Matt</th>
+    <td>7:55</td>
+    <td>27:29</td>
+    <td>57:04</td>
+  </tr>
+  <tr>
+    <th scope="row">Todd</th>
+    <td>7:01</td>
+    <td>24:21</td>
+    <td>50:35</td>
+  </tr>
+</table>
+```
+
+Sie können auch eine Zusammenfassung machen, die nur für Leute mit Bildschirmleseprogramm gilt.
+
+```html
+<p id="table-description" class="visually-hidden">
+  This table lists the members of the Greensprings Running Club and their
+  personal best times in various race distances. The first column lists the
+  runners and the first row lists the race distances.
+</p>
+```
+
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Methode 2: Fügen Sie die Zusammenfassung in die `<caption>` der Tabelle ein, solange die Zusammenfassung kurz ist."
+>
+Diese Methode klappt nur, wenn die Zusammenfassung kurz ist.
+
+Dieses Beispiel ist etwas länger als ideal für eine Bildunterschrift. Der erläuternde Text geht über den Zweck der Bildunterschrift
+hinaus. Aber diese Methode funktioniert trotzdem und ist besser, als den Text überhaupt nicht einzufügen.
+
+```html live
+<table>
+  <caption>
+    Greensprings Running Club Personal Bests<br />
+    (The first column lists the runners and the first row lists the race
+    distances)
+  </caption>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">1 mile</th>
+    <th scope="col">5 km</th>
+    <th scope="col">10 km</th>
+  </tr>
+  <tr>
+    <th scope="row">Mary</th>
+    <td>8:32</td>
+    <td>28:04</td>
+    <td>1:01:16</td>
+  </tr>
+  <tr>
+    <th scope="row">Betsy</th>
+    <td>7:43</td>
+    <td>26:47</td>
+    <td>55:38</td>
+  </tr>
+  <tr>
+    <th scope="row">Matt</th>
+    <td>7:55</td>
+    <td>27:29</td>
+    <td>57:04</td>
+  </tr>
+  <tr>
+    <th scope="row">Todd</th>
+    <td>7:01</td>
+    <td>24:21</td>
+    <td>50:35</td>
+  </tr>
+</table>
+```
+
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Methode 3: Fügen Sie zumindest die Zusammenfassung in derselben `<figcaption> wie die Tabelle ein."
+>
+Die Zusammenfassung ist in diesem Beispiel in einem Absatz nach der `<figcaption>` enthalten:
+
+```html live
+<figure>
+  <figcaption>Greensprings Running Club Personal Bests</figcaption>
+  <p>
+    (The first column lists the runners and the first row lists the race
+    distances)
+  </p>
+
+  <table>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">1 mile</th>
+      <th scope="col">5 km</th>
+      <th scope="col">10 km</th>
+    </tr>
+    <tr>
+      <th scope="row">Mary</th>
+      <td>8:32</td>
+      <td>28:04</td>
+      <td>1:01:16</td>
+    </tr>
+    <tr>
+      <th scope="row">Betsy</th>
+      <td>7:43</td>
+      <td>26:47</td>
+      <td>55:38</td>
+    </tr>
+    <tr>
+      <th scope="row">Matt</th>
+      <td>7:55</td>
+      <td>27:29</td>
+      <td>57:04</td>
+    </tr>
+    <tr>
+      <th scope="row">Todd</th>
+      <td>7:01</td>
+      <td>24:21</td>
+      <td>50:35</td>
+    </tr>
+  </table>
+</figure>
+```
+
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Methode 4: Fügen Sie die Zusammenfassung in das Zusammenfassungs-Attribut ein."
+>
+
+<Aside title="Hinweis">
+  Das Attribut "summary" ist in HTML 5 veraltet. Deshalb ist diese Methode für
+  Seiten, die HTML 5 verwenden, ungeeignet. Sie kann auch für Seiten verwendet
+  werden, die XHTML oder frühere HTML-Versionen nutzen.
+</Aside>
+
+Das summary-Attribut kann verwendet werden, um eine Tabelle zu organisieren oder eine Zusammenfassung des Inhalts bereitzustellen.
+Die Informationen im caption-Element sollten nicht wiederholt, sondern ergänzt werden. Die Zusammenfassung ist auf dem
+Bildschirm nicht sichtbar, wird aber von Bildschirmleseprogrammen nach der Beschriftung gelesen.
+
+In unserem Beispiel können wir das summary-Attribut nutzen, um zu beschreiben, wie die Tabelle aufgebaut ist.
+
+```html live
+<table
+  summary="This table lists the members of the
+Greensprings Running Club and their personal best times
+in various race distances. The first column lists the
+runners and the first row lists the race distances."
+>
+  <caption>
+    Greensprings Running Club Personal Bests
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">1 mile</th>
+      <th scope="col">5 km</th>
+      <th scope="col">10 km</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mary</th>
+      <td>8:32</td>
+      <td>28:04</td>
+      <td>1:01:16</td>
+    </tr>
+    <tr>
+      <th scope="row">Betsy</th>
+      <td>7:43</td>
+      <td>26:47</td>
+      <td>55:38</td>
+    </tr>
+    <tr>
+      <th scope="row">Matt</th>
+      <td>7:55</td>
+      <td>27:29</td>
+      <td>57:04</td>
+    </tr>
+    <tr>
+      <th scope="row">Todd</th>
+      <td>7:01</td>
+      <td>24:21</td>
+      <td>50:35</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+</Aside>
+
+## Eine Zusammenfassung in Form einer Datentabelle, sofern vorhanden, sollte die Tabelle für Benutzer von Bildschirmleseprogrammen verständlicher machen.
+
+Wenn es eine Zusammenfassung gibt, sollte sie Leuten mit Bildschirmleseprogramm helfen, die Informationen besser zu verstehen. Verwenden 
+Sie keine Zusammenfassung, um Keywords zu platzieren (für die Suchmaschinenoptimierung) und machen Sie sie nicht zu lang. Schreiben Sie 
+sie kurz, präzise und aussagekräftig.

@@ -1,0 +1,33 @@
+---
+title: Best Practices für Überschriftsebene 1
+---
+
+## Der Beginn des Hauptinhalts sollte mit `<h1>` beginnen
+
+Eine Webseite sollte mit einer Überschrift der Ebene 1 beginnen. Weitere Überschriften sind davor nicht nötig. Die Unterabschnitte
+einer Seite sollten als Überschrift der Ebene 2 gekennzeichnet werden. Wenn es Unterabschnitte innerhalb der Abschnitte der Ebene 2 gibt,
+sollten diese als Ebene 3 gekennzeichnet werden. Alles, was vor dem Hauptinhalt der Seite steht, sollte nicht mit Überschriften versehen
+werden. Die `<h1>` sollte am Anfang des Hauptinhalts stehen, damit Benutzer von Bildschirmleseprogrammen direkt zur ersten `<h1>` navigieren
+können. So kommen sie schneller zum Hauptinhalt der Webseite. Wenn es keine `<h1>` gibt oder wenn die `<h1>`
+nicht am Anfang des Hauptinhalts steht, müssen Benutzer von Bildschirmleseprogrammen mehr von der Webseite anhören, um sie zu verstehen.
+Das kostet Zeit.
+
+Es gibt Ausnahmen, bei denen es nicht sinnvoll ist, den Inhalt mit einer `<h1>` zu beginnen. Manchmal ist es besser, andere Überschriften
+vor den Hauptinhalt zu setzen. Diese Ausnahmen gelten aber nicht für die meisten Webseiten.
+
+## Eine Webseite sollte nur eine `<h1>`-Überschrift haben.
+
+Mit wenigen Ausnahmen sollten die meisten Webseiten nur eine Überschriftenebene 1 haben, um deutlich zu machen, wo der Hauptinhalt beginnt.
+Eine häufige Ausnahme von dieser bewährten Vorgehensweise ist, wenn eine Seite ein Modal oder Overlay enthält. Das Modal/Overlay ist ein 
+Element, das über der Hauptseite angezeigt wird, und die Überschriftenebene des Modal-Titels wird oft als `<h1>` gekennzeichnet. Dies sollte 
+jedoch keine Verwirrung bei den Benutzern stiften, da das Modal und seine Überschrift nicht verfügbar sein sollten, während ein Benutzer 
+mit der Hauptseite interagiert, und die Hauptseite sollte nicht verfügbar sein, während ein Benutzer mit dem Modal/Overlay interagiert.
+
+Eine weitere mögliche Ausnahme sind Indexseiten mit mehreren Blogartikeln, die auf derselben Seite zusammengefasst sind, wobei jeder 
+Blogartikel auf der Seite mit `<h1>` beginnt. Auch dieses Beispiel muss jedoch keine Ausnahme von der Regel darstellen. Die oberste 
+Überschriftenebene 1 könnte der Titel des Blogs sein (z. B. „Pauls Kameratipps“), und jeder Blogartikel auf der Indexseite könnte mit `<h2>`
+beginnen. Wenn die einzelnen Blog-Artikel jedoch auch auf eigenen Seiten erscheinen, sollten diese Seiten mit `<h1>` beginnen und nicht mit 
+`<h2>`. Daher ist es in der Praxis möglicherweise sinnvoller, `<h1>` sowohl auf der Seite mit dem einzelnen Blog-Artikel als auch auf der 
+kombinierten Indexseite mit mehreren Artikeln zu verwenden. Auf diese Weise ist es einfacher, das Markup zu pflegen, auch wenn es für 
+die Barrierefreiheit nicht ideal ist.
+

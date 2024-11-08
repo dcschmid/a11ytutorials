@@ -1,0 +1,32 @@
+---
+title: Layout Tabellen
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Tabellen sind nicht geeignet für rein visuelle Layouts.
+
+Es wird davon abgeraten, Tabellen für Layouts und nicht für Daten zu verwenden. Das ist aber zulässig, weil es die Richtlinien für
+Barrierefreiheit so vorsehen. Layout-Tabellen sind nicht schlimm für die Barrierefreiheit. Aber Tabellen sind eigentlich für Datengitter
+gemacht. Deshalb ist es besser, sie nur dafür zu verwenden. Außerdem ist CSS eine bessere Methode, um Layouts für das moderne Web zu
+entwerfen.
+
+Wenn eine Layout-Tabelle verwendet werden muss, sollte man role="presentation" zum Element hinzufügen. Dann lesen Bildschirmleseprogramme
+den Inhalt als Text und nicht als Tabelle. Sie behandeln die Tabelle dann wie ein div- oder p-Element.
+
+## In Layout-Tabellen dürfen keine Markierungen für Datentabellen sein.
+
+Wenn eine Tabelle nur zur Gestaltung dient, sollten Sie keine Kopfzeilen für Datentabellen einfügen. Sonst zeigen Bildschirmleseprogramme
+an, dass eine Tabelle vorhanden ist. Die Benutzer erwarten dann, dass die Tabelle Daten enthält. Das ist bei Layouttabellen nicht der Fall.
+
+Insbesondere dürfen Layout-Tabellen Folgendes nicht enthalten:
+
+- Das `<caption>`-Element
+
+- Das `<summary>`-Attribut
+
+- Das `<th>`-Element
+
+- Das scope-Attribut
+
+- Das headers-Attribut

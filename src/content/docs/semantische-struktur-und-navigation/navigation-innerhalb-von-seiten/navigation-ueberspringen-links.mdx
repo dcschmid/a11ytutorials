@@ -1,0 +1,153 @@
+---
+title: Navigation überspringen Links
+---
+
+import { Aside } from "@astrojs/starlight/components";
+import { Picture } from "astro:assets";
+
+import SkiNavStyles from "../../../../assets/semantic-structure/ski-nav-styles.png";
+import SkiNavLong from "../../../../assets/semantic-structure/skip-nav-long.png";
+
+## Es sollte einen Link zum Überspringen geben, damit Nutzer direkt zum Hauptinhalt kommen
+
+Der Hauptinhalt einer Webseite steht in einem typischen Layout selten an erster Stelle. Bevor Benutzer zum Hauptinhalt
+gelangen können, müssen sie Funktionen wie das Logo und das Branding der Website, die Seitensuche, das Anmelde-Widget und
+die Hauptnavigation überspringen. In einigen Fällen erscheint auch eine sekundäre Navigationsebene vor dem Hauptinhalt.
+Der obere Bereich einer Webseite kann ziemlich lang sein.
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Navigationslink überspringen"
+>
+Der Link "Navigation überspringen" ist für Menschen mit Bildschirmleseprogramm. Sie können so direkt zum Hauptinhalt der
+Seite kommen, ohne jedes Mal die Navigation durchlaufen zu müssen.
+
+```html
+<div id="skipnav"><a href="#mainContent">Skip navigation</a></div>
+
+<!-- the header, navigation, etc. go here -->
+
+<main id="mainContent" tabindex="-1">
+  <!-- the main content goes here -->
+</main>
+```
+
+Bei einigen Browsern wie Safari muss das Linkziel entweder angeklickt werden können oder über einen Tabindex-Wert verfügen,
+damit es funktioniert. Wenn der Link nicht fokussierbar ist und keinen Tabindex-Wert hat, scrollt der Viewport zwar an die
+entsprechende Stelle, aber wenn der Benutzer die Tabulatortaste drückt, springt der Fokus wieder nach oben. So funktioniert
+"Navigation überspringen" nicht. Wenn man dem Link den Tabindex "-1" zuweist, funktioniert es. Dabei wird die natürliche
+Tabulatorreihenfolge des Inhalts auf der Seite nicht beeinträchtigt.
+
+</Aside>
+
+<Aside
+  type="danger"
+  title="Schlechtes Beispiel: Es wurde kein Sprunglink bereitgestellt"
+>
+  Der folgende Screenshot zeigt eine Website, wie sie für Menschen mit
+  Sehbeeinträchtigung angezeigt wird. Der wichtigste Teil der Seite ist oben.
+  Visuelle Benutzer können einfach über die Navigation hinwegsehen.
+
+<Picture src={SkiNavStyles} formats={["avif", "webp"]} alt="" />
+
+Wenn die Stile deaktiviert sind, sieht man den oberen Abschnitt vor dem Hauptinhalt besser. Vor dem Hauptinhalt sind
+76 Links und 5 Formularfelder. Einige dieser Links und Funktionen sind nur für Nutzer sichtbar, die JavaScript aktiviert
+haben. Auch wenn wir das berücksichtigen, gibt es hier immer noch viele Funktionen. Für blinde und sehbehinderte Menschen
+kann es schwierig sein, alle Funktionen zu überspringen, um zum Hauptinhalt zu gelangen.
+
+Hinweis: Wenn die Stile deaktiviert sind, werden die Links nacheinander vorgelesen. Das ist ein sehr großer Screenshot.
+
+<Picture src={SkiNavLong} formats={["avif", "webp"]} alt="" />
+
+</Aside>
+
+## Der Link "Überspringen" sollte ganz oben auf der Seite stehen
+
+Der Link "Navigationslink überspringen" sollte ganz am Anfang des Dokuments stehen, damit Benutzer wiederholte Navigation
+überspringen können. Er sollte auf die ID am Anfang des Hauptinhalts der Seite verweisen. Oft ist das Ziel eine `<h1>` am
+Anfang des Hauptinhalts. Wenn der Link "Navigation überspringen" weiter unten auf der Seite steht, funktioniert er nicht.
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Platzieren Sie den Link „Navigation überspringen“ an erster Stelle"
+>
+Der Sprunglink ist der erste Link auf der Seite im folgenden Beispiel.
+
+```html
+<body>
+  <div id="skipnav"><a href="#mainContent">Skip navigation</a></div>
+
+  <!-- header, navigation, etc. go here -->
+
+  <main id="mainContent" tabindex="-1">
+    <h1>Content starts here</h1>
+    <!-- all other content in the main landmark goes here -->
+  </main>
+</body>
+```
+
+</Aside>
+
+## Ein Sprunglink muss immer sichtbar sein
+
+### Option 1: Link immer sichtbar machen
+
+Man kann einen "Navigation überspringen"-Link auch immer sichtbar machen. Das ist die einfachste Möglichkeit, aber wahrscheinlich
+auch die unbeliebteste. So können alle Benutzer, ob sehend oder blind, von "Navigation überspringen"-Links profitieren.
+
+### Option 2: Link bei Tastaturfokus sichtbar machen
+
+Designer mögen das Aussehen von "Navigation überspringen"-Links nicht. Sie werden deshalb vor sehenden Benutzern verborgen. Das
+ist okay, solange der Link zu sehen ist, wenn man die Tastatur benutzt. Der Link kann mit CSS ausgeblendet und mit CSS wieder
+eingeblendet werden.
+
+<Aside title="Hinweis">
+  Verwenden Sie nicht "display:none", um die Links "Navigation überspringen"
+  auszublenden. Das ist für Tastaturbenutzer, einschließlich Benutzer von
+  Bildschirmleseprogrammen, nicht gut.
+</Aside>
+
+<Aside type="tip" title="Gutes Beispiel: Anzeige im Fokus">
+```html
+<head>
+  <title>Museum Information</title>
+  <style>
+    #skipnav a {
+      position: absolute;
+      clip: rect(0 0 0 0);
+      border: 0;
+      height: 1px; margin: -1px;
+      overflow: hidden;
+      padding: 0
+      width: 1px;
+      white-space: nowrap;
+    }
+    #skipnav a:focus {
+      clip:auto;
+      left:0;
+      top:0;
+      width:100%;
+      height:auto;
+      margin:0;
+      padding:10px 0;
+      background:#fdf6e7;
+      border:2px solid #990000;
+      border-left:none;
+      border-right:none;
+      text-align:center;
+      font-weight:bold;
+      color:#990000;
+    }
+  </style>
+</head>
+<body>
+  <div id="skipnav"><a href="#mainContent">Skip navigation</a></div>
+  <!-- document banner, navigation, etc. -->
+  <main id="mainContent" tabindex="-1">
+      <h1>Link will take users to this location.</h1>
+      <!-- other content in the main content -->
+  </main>
+  <!-- other content on the web page -->
+</body>
+```
+</Aside>

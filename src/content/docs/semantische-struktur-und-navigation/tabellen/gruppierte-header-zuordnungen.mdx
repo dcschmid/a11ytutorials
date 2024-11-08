@@ -1,0 +1,146 @@
+---
+title: Gruppierte Header-Zuordnungen
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Die Überschriften der Tabellendaten-Gruppen müssen mit den Datenzellen-Gruppen übereinstimmen.
+
+Wenn Sie Tabellenüberschriften zusammenführen, müssen Sie eine Überschrift kennzeichnen. Am einfachsten ist es,
+"rowgroup" oder "colgroup" zu verwenden. Bildschirmleser zeigen die Überschriften dann nacheinander an.
+
+<Aside title="Hinweis">
+  Manchmal ist die Navigation in Tabellenüberschriften für Benutzer von
+  Bildschirmleseprogrammen verwirrend, auch wenn die Überschriften ausgezeichnet
+  sind. Erstellen Sie einfache Tabellen ohne verbundene Zellen und
+  Überschriftengruppen.
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: scope=„colgroup“ auf Spaltengruppenüberschriften angewendet"
+>
+Diese Tabelle hat mehrere Ebenen von Spaltenüberschriften.
+
+```html live
+<table class="data complex">
+  <caption>
+    Table with colgroup
+  </caption>
+  <thead>
+    <tr>
+      <td rowspan="2">&nbsp;</td>
+      <th colspan="3" scope="colgroup">Females</th>
+      <th colspan="3" scope="colgroup">Males</th>
+    </tr>
+    <tr>
+      <th scope="col">Mary</th>
+      <th scope="col">Betsy</th>
+      <th scope="col">Joanne</th>
+      <th scope="col">Matt</th>
+      <th scope="col">Todd</th>
+      <th scope="col">Jake</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1 mile</th>
+      <td>8:32</td>
+      <td>7:43</td>
+      <td>9:51</td>
+      <td>7:55</td>
+      <td>7:01</td>
+      <td>7:51</td>
+    </tr>
+    <tr>
+      <th scope="row">5 km</th>
+      <td>28:04</td>
+      <td>26:47</td>
+      <td>38:15</td>
+      <td>27:27</td>
+      <td>24:21</td>
+      <td>24:31</td>
+    </tr>
+    <tr>
+      <th scope="row">10 km</th>
+      <td>1:01:16</td>
+      <td>55:38</td>
+      <td>1:56:01</td>
+      <td>57:04</td>
+      <td>50:35</td>
+      <td>50:45</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: scope=„rowgroup“ auf Gruppentitel angewendet"
+>
+Die Tabelle kann so gedreht werden, dass die Kopfzeilen seitlich als Zeilen und nicht als Spalten angezeigt werden.
+
+Die sechs Überschriften in dieser Tabelle sind männlich oder weiblich.
+
+```html live
+<table class="data complex">
+  <caption>
+    Table with rowgroup
+  </caption>
+  <thead>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+      <th scope="col">1 mile</th>
+      <th scope="col">5 km</th>
+      <th scope="col">10 km</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" scope="rowgroup">Females</th>
+      <th scope="row">Mary</th>
+      <td>8:32</td>
+      <td>28:04</td>
+      <td>1:01:16</td>
+    </tr>
+    <tr>
+      <th scope="row">Betsy</th>
+      <td>7:43</td>
+      <td>26:47</td>
+      <td>55:38</td>
+    </tr>
+    <tr>
+      <th scope="row">Joanne</th>
+      <td>9:51</td>
+      <td>38:15</td>
+      <td>1:56:01</td>
+    </tr>
+    <tr>
+      <th rowspan="3" scope="rowgroup">Males</th>
+      <th scope="row">Matt</th>
+      <td>7:55</td>
+      <td>27:29</td>
+      <td>57:04</td>
+    </tr>
+    <tr>
+      <th scope="row">Todd</th>
+      <td>7:01</td>
+      <td>24:21</td>
+      <td>50:35</td>
+    </tr>
+    <tr>
+      <th scope="row">Jake</th>
+      <td>7:51</td>
+      <td>24:31</td>
+      <td>50:45</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+Bildschirmleseprogramme haben früher weniger gut mit "rowgroup" funktioniert als mit "colgroup". Für eine gute Zugänglichkeit 
+ist es am besten, die Tabelle so auszurichten, dass sie sich mit "colgroup" und nicht mit "rowgroup" anzeigen lässt.
+
+</Aside>

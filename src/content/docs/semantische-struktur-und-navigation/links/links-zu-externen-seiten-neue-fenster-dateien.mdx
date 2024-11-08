@@ -1,0 +1,159 @@
+---
+title: Links zu externen Seiten, neue Fenster, Dateien
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Wenn ein Link in einem neuen Fenster oder einer neuen Registerkarte geöffnet wird, sollte das angezeigt werden
+
+Manche Leute finden es hilfreich zu wissen, wann ein Link in einem neuen Fenster öffnet. Man kann zum Beispiel "öffnet in einem n
+euen Fenster" schreiben oder ein Symbol mit einem kurzen Text daneben setzen. Achten Sie darauf, dass der Hinweis für alle
+Benutzer gut sichtbar ist.
+
+<Aside
+  type="danger"
+  title="Schlechtes Beispiel: Kein Hinweis, dass der Link in einem neuen Fenster oder einer neuen Registerkarte geöffnet wird"
+>
+Der Link sagt nicht, dass er in einem neuen Fenster geöffnet wird.
+
+```html live
+<p>
+  <a href="https://dequeuniversity.com" target="_blank">Deque training</a>
+</p>
+```
+
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Bild mit Alt-Text, der angibt, dass der Link in einem neuen Fenster geöffnet wird"
+>
+Dieses Beispiel zeigt, wie man ein Bild mit alt verwenden kann. Sehende Benutzer sehen ein Symbol, das anzeigt, dass der Link in
+einem neuen Fenster geöffnet wird. Blinde Benutzer hören den Text, der angezeigt wird.
+
+```html
+<p>
+  <a href="https://dequeuniversity.com" target="_blank">
+    Deque training
+    <img src="newWindow.png" alt="opens new window" width="16" height="16" />
+  </a>
+</p>
+```
+
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: CSS und ARIA verwenden, um anzuzeigen, dass ein Link in einem neuen Fenster geöffnet wird"
+>
+So sieht man, dass ein Link in einem neuen Fenster geöffnet wird. Sehende Benutzer sehen ein Symbol, das ihnen sagt, dass der
+Link in einem neuen Fenster geöffnet wird. Blinde Benutzer hören einen Text, der dasselbe sagt.
+
+```html
+<p>
+  <a
+    aria-describedby="a11y-message--new-window"
+    class="icon--new-window"
+    href="https://dequeuniversity.com"
+    target="_blank"
+    >Deque training</a
+  >
+</p>
+. .
+<span aria-hidden="true" class="visually-hidden" id="a11y-message--new-window">
+  (opens new window)</span
+>
+```
+
+Mit der Klasse "icon--new-window" kann man ein Symbol nach dem Linktext einfügen. Das Element mit der ID "a11y-message--new-window" stellt
+den Text "öffnet ein neues Fenster" bereit. Dieser Text wird sowohl mit CSS als auch mit Screenreadern ausgeblendet.
+
+Oft wird übersehen, dass die Eigenschaften "aria-describedby" und "aria-labelledby" auf Inhalte zugreifen, die sich in einem mit
+"aria-hidden=true" versteckten Container befinden. Das bedeutet, dass die Meldung "öffnet ein neues Fenster" von einem Bildschirmlesegerät
+angezeigt werden kann, wenn der Link angeklickt wird. Gleichzeitig wird verhindert, dass Benutzer von Bildschirmlesegeräten die Meldung
+sehen, wenn sie die Seite durchsuchen.
+
+Der Vorteil ist, dass dieser Ansatz effizienter ist als das Laden eines Bildes für jeden Link, der ein neues Fenster öffnet. Der Nachteil
+ist, dass der Text "öffnet ein neues Fenster" von Screenreadern nicht gelesen wird. Er wird nur gelesen, wenn man mit der Tabulatortaste
+auf den Link klickt.
+
+</Aside>
+
+## Wenn es sich um eine Datei oder ein Ziel in einem anderen Format handelt, sollte man angeben, um was es sich handelt.
+
+Manche Links öffnen eine Datei oder führen zu einem Ziel in einem anderen Format als dem Web-Standard. Beispiele sind Word-,
+PDF- oder Photoshop-Dokumente. Man kann zum Beispiel "PDF-Dokument" schreiben oder ein Symbol mit einer Erklärung dazu setzen.
+Achten Sie darauf, dass der Hinweis für alle Benutzer gut sichtbar ist.
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Der Dateityp des Linkziels wird im Linktext angegeben"
+>
+Ein Artikel mit mehreren Dateiversionen kann Links zu diesen anderen Versionen haben. Diese sind mit dem jeweiligen
+Dateityp gekennzeichnet.
+
+```html
+<ul>
+  <li>
+    <a href="https://dequeuniversity.com/screenreaders/survival-guide">
+      Screen Reader Survival Guide
+    </a>
+  </li>
+  <li>
+    <a
+      href="https://dequeuniversity.com/assets/pdf/screenreaders/survival-guide.pdf"
+    >
+      PDF version of the Screen Reader Survival Guide
+    </a>
+  </li>
+</ul>
+```
+
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Link-Zieldateityp im Alt-Text des Bildes angegeben"
+>
+Der Alt-Text des Bildes zeigt, dass das Linkziel eine PDF-Datei ist.
+
+```html
+<a
+  href="https://dequeuniversity.com/assets/pdf/screenreaders/survival-guide.pdf"
+>
+  View the Screen Reader Survival Guide
+  <img src="pdf.png" alt="PDF document" width="16" height="16" />
+</a>
+```
+
+</Aside>
+
+## Ein Link darf zeigen, dass er zu einer externen Seite führt.
+
+Manche Leute finden es hilfreich zu wissen, wenn ein Link sie von der aktuellen Website zu einer anderen Website führt. Man kann
+zum Beispiel "Link führt zu einer externen Website" schreiben oder ein Symbol mit einer Erklärung dazu setzen. Achten Sie darauf,
+dass der Hinweis für alle Benutzer gut sichtbar ist.
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Textangabe, dass der Link zu einer externen Website führt"
+>
+Der Link enthält am Ende eine Notiz, die sagt, dass er zu einer anderen Website führt.
+
+```html
+<p><a href="http://www.google.com/">Google (link leads to external site)</a></p>
+```
+
+</Aside>
+
+<Aside
+  type="danger"
+  title="Schlechtes Beispiel: Kein Hinweis, dass der Link zu einer externen Website führt"
+>
+Der Link führt zu einer anderen Website, aber man sieht es nicht.
+
+```html
+<p><a href="http://www.google.com/">Google</a></p>
+```
+
+</Aside>

@@ -1,0 +1,47 @@
+---
+title: Reihenfolge der Leserichtung und Fokusreihenfolge
+---
+
+## Die DOM-Reihenfolge bestimmt die Lesereihenfolge und die Tabulator-/Fokusreihenfolge.
+
+Wenn man mit einem Bildschirmleseprogramm durch einen Text geht, wird die Reihenfolge der Inhalte durch den Quelltext
+bestimmt. Das klingt logisch, aber es gibt ein paar Dinge, auf die Sie achten sollten:
+
+- Mit CSS-Positionierungstechniken wie "float:left", "float:right", "position:absolute", "position:relative", "position:fixed",
+  "margin", "padding" usw. kann man das Layout verändern, ohne sich an die Lesereihenfolge im DOM zu halten.
+
+- JavaScript oder AJAX können Inhalte an unerwarteten Stellen einfügen, z. B. über dem aktuellen Fokus des Benutzers. Eine blinde
+  Person bemerkt vielleicht nicht, dass es neue Inhalte gibt. Das ist besonders der Fall, wenn sie diesen Bereich der Seite bereits
+  besucht hat. Blinde Menschen können nicht sehen, was sich auf einer Webseite verändert hat. Deshalb können sie nicht herausfinden,
+  ob es neue Inhalte gibt.
+
+## Die Reihenfolge, in der die Texte gelesen werden, muss sinnvoll sein.
+
+Wenn die Reihenfolge, in der die Texte gelesen werden, nicht logisch ist, versteht man den Inhalt nicht.
+
+Screenreader beachten das CSS-Layout Ihres Webdesigns nicht. Man kann die Lesereihenfolge überprüfen, indem man die Stylesheets
+ausschaltet. Wenn man den Inhalt von der Gestaltung befreit, sieht das ein Screenreader genauso.
+
+## Die Reihenfolge der Elemente, die man fokussieren kann, muss sinnvoll sein.
+
+Wenn Tastaturbenutzer durch Elemente auf einer Webseite navigieren, muss die Reihenfolge sinnvoll sein, damit sie nicht verwirrt werden.
+
+Wenn ein Tastaturbenutzer die Tabulatortaste drückt, zeigt der Browser ihm alle fokussierbaren Elemente an. Dabei werden die Elemente
+von oben nach unten durchlaufen. Der Browser ignoriert alle Formatierungen, die man sehen kann.
+
+## Tabindex von positiven Werten sollte nicht verwendet werden.
+
+Man kann die Reihenfolge der Tabulatoren für fokussierbare Elemente anpassen, indem man sie auf Zahlen wie 1, 2, 3 usw. setzt.
+Das kann aber für Tastaturbenutzer Probleme verursachen.
+
+- Die Tabulatorreihenfolge stimmt nicht mit der Lesereihenfolge überein. Das führt zu Verwirrung, wenn man die Seite über die
+  Tastatur bedient.
+
+- Es entfernt die Elemente aus ihrer natürlichen Tabulatorreihenfolge und setzt sie an die erste Stelle. Alle Elemente mit einem
+  Tabindex-Wert von 1 oder höher werden zuerst angezeigt. Wenn nur ein Element auf einer Seite einen Tabindex hat und dieser groß ist,
+  wird dieses Element zuerst angeklickt, auch wenn es nicht das erste Element ist. Wenn Sie mit der Tabulatortaste von dem Element
+  mit "9000" weg navigieren, wird der Fokus auf das erste Element gesetzt. Wenn der Benutzer mit der Tabulatortaste weiter klickt,
+  kommt er zum Element mit dem Tabindex "9000". Er erwartet, dass er mit der Tabulatortaste dorthin navigieren kann. Das Element ist
+  aber nicht an der richtigen Stelle, weil es nicht so sortiert ist, wie es sein sollte. Der Benutzer hat schon vorher mit der
+  Tabulatortaste darauf geklickt. Deshalb zeigt der Browser dieses Element nicht mehr an. Das ist für sehende Tastaturbenutzer
+  verwirrend.

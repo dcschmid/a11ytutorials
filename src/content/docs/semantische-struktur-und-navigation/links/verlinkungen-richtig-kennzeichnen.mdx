@@ -1,0 +1,104 @@
+---
+title: Verlinkungen richtig kennzeichnen
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Links müssen als solche gekennzeichnet sein
+
+Links müssen als solche gekennzeichnet werden. Sie müssen sich also in einem a-Element befinden und einen gültigen Link enthalten.
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Ein mit <a> markierter Link mit einem gültigen href-Wert"
+>
+  ```html live
+  <a href="https://deque.com">Deque Systems</a>
+  ```
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Ein Link, der mit role=„link“ und tabindex=„0“ gekennzeichnet ist"
+>
+Wenn du Legacy-Markup nachrüstest, kannst du der Link-Semantik mit ARIA role="link" einen nützlichen Zusatz geben. So kannst du vermeiden,
+dass Stile beschädigt werden. Verwenden Sie lieber echte HTML-Links (`<a>`), wenn Sie neues Markup erstellen. Das Ergebnis ist für Benutzer
+von Bildschirmleseprogrammen in beiden Fällen gleich.
+
+- Der ARIA-Link wird in der natürlichen Tabulatorreihenfolge mit tabindex="0" platziert.
+
+- Der Benutzer kann den Link aktivieren, indem er klickt oder die Eingabetaste drückt.
+
+```html live
+<span role="link" tabindex="0" data-href="https://deque.com">
+  Deque Systems
+</span>
+```
+
+Das data-href-Attribut ist im obigen Beispiel nicht nötig. JavaScript kann auf verschiedene Arten genutzt werden, um ein Ziel für einen
+Link anzugeben.
+
+</Aside>
+
+<Aside
+  type="tip"
+  title="Schlechtes Beispiel: Ein gefälschter „Link“, der mit einem `<span>`-Element und JavaScript erstellt wurde"
+>
+  Der folgende Punkt sieht aus wie ein Link und funktioniert mit einem
+  Mausklick, aber nicht mit der Tastatur. Es ist auch wichtig, dass
+  Bildschirmleser ihn nicht als Link erkennen.
+
+```html live
+<script>
+  function openInNewTab(url) {
+    var win = window.open(url, "_blank");
+    win.focus();
+  }
+</script>
+
+<span class="fakeLink" onclick="openInNewTab('http://www.deque.com');">
+  Deque Systems
+</span>
+```
+
+Man kann ein Element nicht einfach mit JavaScript anklickbar machen. Bildschirmleser erkennen nämlich nicht, dass ein
+anklickbares Element ein Link ist. Wenn Nutzer von Bildschirmlesern von Link zu Link navigieren oder die Liste der Links
+im Bildschirmleser aufrufen, werden die gefälschten Links nicht angezeigt.
+
+</Aside>
+
+## Mit ARIA role="link" kann man Links eine Bedeutung zuweisen.
+
+Wenn es unbedingt notwendig ist, kann ein Element als Link dienen. Das gilt auch für Benutzer von Bildschirmleseprogrammen.
+Dafür muss Folgendes beachtet werden:
+
+- Fügen Sie "role=link" hinzu, damit es als Link erkannt wird.
+
+- Fügen Sie "tabindex=0" hinzu, damit man es mit der Tastatur ansteuern kann.
+
+- Achten Sie darauf, dass das JavaScript sowohl den Mausklick als auch die Eingabetaste zur Aktivierung des Links zulässt.
+
+<Aside title="Hinweis">
+  Es ist besser, native HTML-Elemente zu verwenden, statt Rollen, Attribute und
+  JavaScript hinzuzufügen. So wirkt eine Funktion wie eine native HTML-Funktion.
+</Aside>
+
+## Links und Schaltflächen sollten so gekennzeichnet werden, dass man weiß, was sie bedeuten.
+
+So unterscheiden sich Links und Schaltflächen:
+
+1. Links führen zu verschiedenen Orten, entweder auf einer anderen Seite oder auf der gleichen Seite.
+
+2. Schaltflächen starten Funktionen, zum Beispiel öffnen sie ein Dialogfeld, erweitern ein zusammengeklapptes Menü oder machen
+   den Text fett. Meistens sind sie auf derselben Seite, aber manchmal senden sie auch Formulardaten.
+
+Manchmal ist es nicht klar, ob ein Steuerelement ein Link oder eine Schaltfläche sein sollte. In den meisten Fällen ist der
+Unterschied aber klar.
+
+### Nutzer von Bildschirmleseprogrammen erfahren, ob es sich um eine Schaltfläche oder einen Link handelt.
+
+Screenreader sagen immer "Link" oder "Button" vor Links oder Buttons, damit Benutzer von Screenreadern immer wissen, was was ist. 
+Manchmal werden Links und Buttons verwechselt. Das passiert, wenn Links mit Funktionen versehen werden, die wie Buttons aussehen. 
+Oder wenn Buttons so gestaltet werden, dass sie Benutzer zu Zielen führen, wie es Links normalerweise tun. Das Problem ist, dass 
+ein Benutzer eines Screenreaders den Link nicht findet, weil er im Markup falsch gekennzeichnet wurde. Das verwirrt Benutzer von 
+Screenreadern.

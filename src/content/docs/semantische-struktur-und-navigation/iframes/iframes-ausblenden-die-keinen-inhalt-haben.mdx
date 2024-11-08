@@ -1,0 +1,45 @@
+---
+title: Iframes ausblenden, die keinen Inhalt haben
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Frames, die keinen Inhalt haben, sollten mit aria-hidden="true" versteckt werden.
+
+Manchmal ist der Inhalt eines IFrames nicht wichtig. Er kann nur JavaScript enthalten oder nur zur Deko da sein. In diesem Fall
+sollten Sie den Frame vor Screenreadern verbergen.
+
+<Aside type="tip" title="Gutes Beispiel: Leeres Iframe mit aria-hidden='true'">
+Ein leeres Iframe wird für blinde und sehbehinderte Menschen nicht angezeigt.
+
+```html
+<iframe
+  title="Intentionally blank"
+  aria-hidden="true"
+  src="http://bit.ly/2cfBoyE"
+  width="120"
+  height="50"
+>
+</iframe>
+```
+
+</Aside>
+
+<Aside
+  type="danger"
+  title="Schlechtes Beispiel: Leeres Iframe mit aria-hidden nicht festgelegt"
+>
+Der Iframe enthält eine Seite ohne Inhalt, der für Benutzer von Bildschirmleseprogrammen nicht erkennbar sein sollte. Das
+aria-hidden-Attribut wurde nicht festgelegt, deshalb können ihn Benutzer von Bildschirmleseprogrammen erkennen.
+
+```html
+<iframe
+  title="Intentionally blank"
+  src="http://bit.ly/2cfBoyE"
+  width="120"
+  height="50"
+>
+</iframe>
+```
+
+</Aside>

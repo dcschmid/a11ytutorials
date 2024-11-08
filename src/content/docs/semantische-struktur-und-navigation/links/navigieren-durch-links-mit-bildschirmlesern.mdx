@@ -1,0 +1,192 @@
+---
+title: Navigieren durch Links mit Bildschirmlesern
+---
+
+import { Aside } from "@astrojs/starlight/components";
+import { Picture } from "astro:assets";
+
+import JawsListOfLinks from "../../../../assets/semantic-structure/jaws-list-of-links.png";
+import JawsListOfLinksAlpha from "../../../../assets/semantic-structure/jaws-list-of-links-alpha.png";
+
+## Sie können alle Elemente auswählen, die Sie fokussieren möchten.
+
+Die Tab-Taste ist die einfachste Methode, um durch Links auf einer Seite zu navigieren. Dafür drückst du einfach die
+Tab-Taste (oder Shift + Tab, um rückwärts zu gehen). So kannst du schnell von einem Link zum nächsten springen. Wenn
+Sie nur an Links interessiert sind, ist das nicht die beste Methode. Aber sie funktioniert, wenn Sie ein paar zusätzliche
+Tastenanschläge verwenden möchten.
+
+## Zeige alle Links an.
+
+<table>
+  <thead>
+    <tr>
+      <th>Bildschirmlesegerät & Browser</th>
+      <th>Befehl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>JAWS mit Chrome, Firefox, IE</td>
+      <td>Insert + F7</td>
+    </tr>
+    <tr>
+      <td>NVDA mit Firefox, Chrome</td>
+      <td>
+        Einfügen + F7 (um die Elementliste anzuzeigen), und wählen Sie dann
+        Links aus
+      </td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (iOS)</td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>Talkback mit Firefox</td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (macOS)</td>
+      <td>
+        Strg + Alt + U (um den Rotor zu öffnen) und dann mit den Pfeilen nach
+        links oder rechts Verknüpfungen auswählen
+      </td>
+    </tr>
+    <tr>
+      <td>Narrator mit Edge </td>
+      <td>Nicht verfügbar</td>
+    </tr>
+  </tbody>
+</table>
+
+<Aside
+  type="tip"
+  title="Beispiel"
+>
+Mit der Taste "Einfügen + F7" in JAWS können Benutzer alle Links auf einer Seite öffnen.
+
+<Picture src={JawsListOfLinks} formats={["avif", "webp"]} alt="" />
+
+Benutzer können wählen, welche Links sie sehen möchten. Die Liste kann nach der Reihenfolge sortiert werden, in der die
+Links auf der Seite erscheinen. Man kann sie auch alphabetisch sortieren.
+
+<Picture src={JawsListOfLinksAlpha} formats={["avif", "webp"]} alt="" />
+
+</Aside>
+
+## Navigieren Sie von einem Link zum nächsten
+
+<table>
+  <thead>
+    <tr>
+      <th>Bildschirmlesegerät & Browser</th>
+      <th>Befehl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>JAWS mit Chrome, Firefox, IE</td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>NVDA mit Firefox, Chrome</td>
+      <td>K</td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (iOS)</td>
+      <td>
+        Verwenden Sie den Rotor, um Links auszuwählen (drehen Sie zwei Finger
+        auf dem Bildschirm nach links oder rechts) und wischen Sie dann mit
+        einem Finger nach unten
+      </td>
+    </tr>
+    <tr>
+      <td>Talkback mit Firefox</td>
+      <td>
+        Lokales Kontextmenü (wischen Sie nach oben, dann nach rechts) und wählen
+        Sie dann Links aus
+      </td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (macOS)</td>
+      <td>Strg + Option + Cmd + L</td>
+    </tr>
+    <tr>
+      <td>Narrator mit Edge </td>
+      <td>K</td>
+    </tr>
+  </tbody>
+</table>
+
+## Navigieren Sie nur durch unbesuchte Links
+
+<table>
+  <thead>
+    <tr>
+      <th>Bildschirmlesegerät & Browser</th>
+      <th>Befehl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>JAWS mit Chrome, Firefox, IE</td>
+      <td>U</td>
+    </tr>
+    <tr>
+      <td>NVDA mit Firefox, Chrome</td>
+      <td>U</td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (iOS)</td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>Talkback mit Firefox</td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (macOS)</td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>Narrator mit Edge </td>
+      <td>Nicht verfügbar</td>
+    </tr>
+  </tbody>
+</table>
+
+## Navigieren Sie nur durch besuchte Links
+
+<table>
+  <thead>
+    <tr>
+      <th>Bildschirmlesegerät & Browser</th>
+      <th>Befehl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>JAWS mit Chrome, Firefox, IE</td>
+      <td>V</td>
+    </tr>
+    <tr>
+      <td>NVDA mit Firefox, Chrome</td>
+      <td>V</td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (iOS)</td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>Talkback mit Firefox</td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (macOS)</td>
+      <td>Strg + Option + Cmd + V</td>
+    </tr>
+    <tr>
+      <td>Narrator mit Edge </td>
+      <td>Nicht verfügbar</td>
+    </tr>
+  </tbody>
+</table>

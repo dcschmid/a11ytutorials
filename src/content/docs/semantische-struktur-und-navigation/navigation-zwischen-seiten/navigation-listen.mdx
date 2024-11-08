@@ -1,0 +1,130 @@
+---
+title: Navigation Listen
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Eine Navigationsliste sollte als solche gekennzeichnet werden, zum Beispiel mit dem `<nav>`-Element oder der Rolle "navigation".
+
+Die Hauptnavigation sollte gekennzeichnet werden, damit sie von blinden oder sehbehinderten Menschen leicht gefunden werden kann.
+
+Man muss nicht jeden Satz als Link kennzeichnen. Man sollte für die wichtigsten Bereiche auf einer Seite einen Orientierungspunkt
+verwenden, damit die Liste nicht zu lang wird.
+
+<Aside type="tip" title="Gutes Beispiel: Mit einem `<nav>`-Element gekennzeichnete Navigationsliste">
+
+Die Navigationsliste wird von einem `<nav>`-Element umschlossen.
+
+```html
+<nav>
+  <ul>
+    <li>
+      <a href="home/">Home</a>
+    </li>
+    <li>
+      <a href="home/">Products</a>
+    </li>
+    <li>
+      <a href="home/">Services</a>
+    </li>
+  </ul>
+</nav>
+```
+
+</Aside>
+
+<Aside type="tip" title="Gutes Beispiel: Navigationsliste mit role='navigation'">
+
+Die Navigationsliste wird in einem Div mit der Rolle "Navigation" eingeschlossen.
+
+Die Rolle "Navigation" wird nicht dem "ul"-Element zugewiesen, da dies die Bedeutung verändern würde. Wenn man role="navigation"
+nicht dem `<ul>`-Element, sondern dem Container zuweist, können Screenreader die Rolle der Navigation und die Rolle der ungeordneten
+Liste erkennen. Sie sagen dann zum Beispiel: "Liste mit drei Elementen". Wenn wir die Liste ihrer Bedeutung berauben, haben die
+Listenelemente kein Elternelement.
+
+```html
+<div role="navigation">
+  <ul>
+    <li><a href="home/">Home</a></li>
+    <li><a href="home/">Products</a></li>
+    <li><a href="home/">Services</a></li>
+  </ul>
+</div>
+```
+
+</Aside>
+
+## In einer Navigationsliste sollte es eine Möglichkeit geben, zu sehen, welche Seite gerade angezeigt wird.
+
+<Aside type="tip" title="Gutes Beispiel: Aktuelle Seite hervorheben">
+
+Die aktuelle Seite wird im Inhaltsverzeichnis durch eine andere Schriftart hervorgehoben.
+
+```html
+<head>
+  <title>Groceries</title>
+  <style>
+    li.current-page {
+      outline: red solid 1px;
+    }
+  </style>
+</head>
+<ul>
+  <li><a href="#">Fruits</a></li>
+  <li><a href="#">Vegetables</a></li>
+  <li><a href="#">Meats</a></li>
+  <li class="current-page">Dairy</li>
+  <li><a href="#">Breads, Pasta, & Cereals</a></li>
+  <li><a href="#">Soups & Canned Goods</a></li>
+  <li><a href="#">Frozen Foods</a></li>
+  <li><a href="#">Desserts</a></li>
+  <li><a href="#">Snack Foods</a></li>
+</ul>
+```
+
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Aktuelle Seite nicht markiert">
+
+Die Navigationslinks zeigen nicht an, welche Seite gerade angezeigt wird. Alle Links sind gleich.
+
+```html
+<ul>
+  <li><a href="#">Fruits</a></li>
+  <li><a href="#">Vegetables</a></li>
+  <li><a href="#">Meats</a></li>
+  <li><a href="#">Dairy</a></li>
+  <li><a href="#">Breads, Pasta, & Cereals</a></li>
+  <li><a href="#">Soups & Canned Goods</a></li>
+  <li><a href="#">Frozen Foods</a></li>
+  <li><a href="#">Desserts</a></li>
+  <li><a href="#">Snack Foods</a></li>
+</ul>
+```
+
+</Aside>
+
+## Blinde Benutzer sollten wissen, welche Seite in einer Navigationsliste gerade aktiv ist.
+
+Das Attribut "Aria-Current" zeigt den Nutzern von Bildschirmleseprogrammen das aktuelle Element an, zum Beispiel eine Seite in
+einer Navigationsliste. Dieses Attribut wird von den meisten Browsern und Hilfsprogrammen unterstützt.
+
+<Aside type="tip" title="Gutes Beispiel: Aria-current">
+
+Die aktuelle Seite ist mit "page" gekennzeichnet.
+
+```html
+<ul>
+  <li><a href="#">Fruits</a></li>
+  <li><a href="#">Vegetables</a></li>
+  <li><a href="#">Meats</a></li>
+  <li><a href="#" aria-current="page">Dairy</a></li>
+  <li><a href="#">Breads, Pasta, & Cereals</a></li>
+  <li><a href="#">Soups & Canned Goods</a></li>
+  <li><a href="#">Frozen Foods</a></li>
+  <li><a href="#">Desserts</a></li>
+  <li><a href="#">Snack Foods</a></li>
+</ul>
+```
+
+</Aside>

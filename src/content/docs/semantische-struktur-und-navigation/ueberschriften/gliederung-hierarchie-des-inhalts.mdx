@@ -1,0 +1,117 @@
+---
+title: Gliederung/Hierarchie des Inhalts
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Überschriften sollten klar und genau sein.
+
+Erst die Struktur, dann die Überschriften. Denken Sie zuerst an die Struktur. Bildschirmleseprogramme und andere Technologien achten
+auf die Struktur, nicht auf das Aussehen. Wenn die Standardgröße der Überschriften zu groß ist, verwenden Sie Stile, um die Größe zu
+ändern, anstatt zu einer niedrigeren Überschriftenebene zu wechseln.
+
+<Aside type="tip" title="Gutes Beispiel: Überschriften schaffen eine logische Gliederung">
+Schauen Sie sich die Überschriften auf der Webseite an. Könnten Sie verstehen, worum es geht, wenn Sie nur die Überschriften lesen
+würden? Wenn Sie die Antwort "Nein" geben, sollten Sie die Überschriften und vielleicht auch den Text ändern. So können Sie besser
+zeigen, was Sie mit der Webseite sagen möchten.
+
+Wenn Sie eine Webseite über die manuelle Belichtungseinstellung einer Kamera erstellen möchten, könnten Sie die Schritte in einer
+einfachen Liste zusammenfassen.
+
+- Manuelle Belichtungseinstellung an einer Kamera
+
+  - Stellen Sie den ISO-Wert ein
+
+  - Wählen Sie eine Blende
+
+  - Stellen Sie eine Verschlusszeit ein
+
+Sie müssen die Details jedes Elements in dieser Liste ausfüllen. So haben wir einen guten Überblick über die wichtigsten Schritte. Wir
+können diese Listenelemente als Grundlage für unsere Überschriftenstruktur verwenden. In diesem Beispiel würden wir das erste Element
+als "H1" und die restlichen Elemente als "H2" markieren:
+
+```html live
+<h1>Setting the Exposure Manually on a Camera</h1>
+<p>Put text here...</p>
+<h2>Set the ISO</h2>
+<p>Put text here...</p>
+<h2>Choose an aperture</h2>
+<p>Put text here...</p>
+<h2>Choose a shutter speed</h2>
+<p>Put text here...</p>
+```
+
+</Aside>
+
+## Überschriften müssen hierarchisch aufgebaut sein
+
+<Aside type="tip" title="Gutes Beispiel: Überschriften in der richtigen hierarchischen Reihenfolge">
+Die Überschriften sagen uns, welche Teile des Inhalts miteinander verbunden sind. Der Inhalt unter einer Überschrift steht in
+Beziehung zu der darüber stehenden Überschrift. Auch der Inhalt eines `<h2>` Inhaltsblocks steht in Beziehung zu der `<h1>` darüber. So
+kann man die Überschriften in einem Dokument nutzen, um den Inhalt zu organisieren, wie bei einer Gliederung.
+
+```html live
+<div class="exampleHeadings">
+  <h1>Setting the Exposure Manually on a Camera</h1>
+  <h2>Setting the ISO</h2>
+  <h3>The effect of ISO on image quality</h3>
+  <p>
+    The higher the ISO, the greater your ability to take photos in low light
+    [...]
+  </p>
+  <h3>High ISO cameras</h3>
+  <p>Cameras with larger sensors are capable of higher ISO values [...]</p>
+  <h2>Choose an aperture</h2>
+  <h3>The effect of aperture on depth of focus</h3>
+  <p>The larger the aperture, the narrower the plane of focus [...]</p>
+  <h3>Vignetting</h3>
+  <p>
+    Vignetting occurs when a lens lets in less light around the edges than in
+    the center [...]
+  </p>
+  <h3>Diffraction</h3>
+  <p>
+    A small aperture can cause the light to diffract, which reduces the
+    sharpness of the image, even though more of the image is in focus [...]
+  </p>
+  <h2>Choose a shutter speed</h2>
+  <h3>Shutter speed limitations for hand-holding a camera</h3>
+  <p>
+    Hand-holding a camera at a slow shutter speed increases the chance of
+    vibration and blur in the final image [...]
+  </p>
+  <h3>Long exposures</h3>
+  <p>Use a tripod when taking long exposures [...]</p>
+</div>
+```
+
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Nicht in der richtigen Reihenfolge">
+
+In diesem Beispiel gibt es zwei Probleme.
+
+1. Der Entwurf hat zwei Überschriften, aber keine davon ist die Hauptüberschrift für die Webseite. Sie gehören zur Navigationsstruktur
+   und stehen über der Überschrift.
+
+2. Die Gliederung springt von Ebene 1 zu Ebene 3, ohne eine Zwischenüberschrift auf Ebene 2.
+
+Manchmal ist es okay, eine Überschriftenebene zu überspringen. Aber eigentlich ist es besser, wenn man das nicht macht.
+
+```html live
+<h3>Quick Links</h3>
+<h3>Photography Tutorials</h3>
+<h1>Setting the Exposure Manually on a Camera</h1>
+<h3>Set the ISO</h3>
+<h4>The effect of ISO on image quality</h4>
+<h4>High ISO cameras</h4>
+<h3>Choose an aperture</h3>
+<h4>The effect of aperture on depth of focus</h4>
+<h4>Vignetting</h4>
+<h4>Diffraction</h4>
+<h3>Choose a shutter speed</h3>
+<h4>Shutter speed limitations for hand-holding a camera</h4>
+<h4>Long exposures</h4>
+```
+
+</Aside>

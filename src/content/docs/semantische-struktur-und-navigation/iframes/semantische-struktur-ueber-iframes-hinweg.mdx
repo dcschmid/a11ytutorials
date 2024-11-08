@@ -1,0 +1,25 @@
+---
+title: Semantische Struktur über Iframes hinweg
+---
+
+## Screenreader helfen beim Navigieren zwischen Frames
+
+Ein `<iframe>` wird von Screenreadern so behandelt, als wäre er Teil des Dokuments, in dem er enthalten ist. Benutzer können
+auf den gesamten Inhalt innerhalb eines `<iframe>` mit den gleichen Tastenkombinationen zugreifen, die sie auch verwenden würden,
+um auf den Inhalt zuzugreifen, wenn er sich im selben Dokument befände. Wenn das übergeordnete Dokument fünf Überschriften und
+ein iframe drei Überschriften enthält, zeigt der Bildschirmleser alle acht Überschriften in der Reihenfolge an, in der sie auf
+den Seiten erscheinen. Benutzer können auch auf Listen, Links, Grafiken, Tabellen, Formulare und andere Elemente in einem iframe
+zugreifen.
+
+## Die Überschriften in einem IFrame sollten möglichst in die Überschriften des übergeordneten Dokuments passen
+
+Wenn Sie den Inhalt des eingebetteten Dokuments im iframe kontrollieren, setzen Sie die Überschriften des iframe am besten an 
+die richtige Stelle in der bestehenden Überschriftenhierarchie der übergeordneten Seite. Wenn das übergeordnete Dokument mit 
+einer einzigen Überschrift am Anfang des Inhalts strukturiert ist, sollte der iframe dies berücksichtigen und nicht mit einer 
+weiteren Überschrift beginnen. Das iframe-Dokument sollte mit einer h2 beginnen, wenn der Inhalt ein direktes Kind der ersten 
+Überschrift auf der Seite ist. Oder wenn er ein Kind einer Überschrift der Ebene 2 ist, dann sollte die erste Überschrift des 
+iframe eine h3 sein, und so weiter.
+
+Wenn iframes Inhalte von anderen Websites enthalten, kann man die Überschriften nicht immer kontrollieren. Wenn man die Überschriften 
+nicht selbst kontrollieren kann, müssen sie nicht unbedingt übereinstimmen. Aber es wäre trotzdem besser, wenn sie es täten.
+

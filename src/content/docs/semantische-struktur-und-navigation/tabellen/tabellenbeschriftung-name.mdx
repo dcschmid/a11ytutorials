@@ -1,0 +1,173 @@
+---
+title: Tabellenbeschriftung/-name
+---
+
+import { Aside } from "@astrojs/starlight/components";
+import { Picture } from "astro:assets";
+
+import TableCaptionsVoiceOver from "../../../../assets/semantic-structure/table-captions-voiceover.png";
+import TableCaptionsJaws from "../../../../assets/semantic-structure/table-captions-jaws.png";
+import TableCaptionsVoiceOverMissing from "../../../../assets/semantic-structure/table-captions-voiceover-missing.png";
+
+## Datentabellen sollten eine programmgesteuert verknüpfte Beschriftung oder einen Namen haben
+
+Ein Screenreader sagt dem Benutzer, was in einer Tabelle steht, wenn er zur Tabelle geht. Mit dem Element "caption" kann
+man einer Tabelle einen Namen geben. Man kann auch "aria-label" oder "aria-labelledby" verwenden.
+
+Auf einer Seite mit mehreren Tabellen können Benutzer von Bildschirmleseprogrammen eine Liste aller Tabellen auf der Webseite
+aufrufen. In dieser Liste werden die Beschriftungen und die Tabellengröße angezeigt. So sieht eine Tabellenliste mit VoiceOver aus:
+
+<Picture src={TableCaptionsVoiceOver} formats={["avif", "webp"]} alt="" />
+
+Hier ist die gleiche Liste mit dem JAWS-Bildschirmleser:
+
+<Picture src={TableCaptionsJaws} formats={["avif", "webp"]} alt="" />
+
+Wenn Sie die Beschriftungen weglassen, sind alle Tabellen im Beispiel gleich.
+
+<Picture
+  src={TableCaptionsVoiceOverMissing}
+  formats={["avif", "webp"]}
+  alt=""
+/>
+
+Auch wenn die Tabellen unterschiedlich groß wären, könnte man nicht wissen, worum es geht, wenn sie keine Beschriftung hätten.
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Tabelle mit `<caption>` Element"
+>
+Der Name „Ergebnisse des 1. Quartals“ ist mit der Tabelle verbunden und wird über das caption-Element bereitgestellt. Dadurch können
+Bildschirmleseprogramme den Namen erfassen und vorlesen.
+
+```html
+<table>
+  <caption>
+    1st Quarter Results
+  </caption>
+  <thead>
+    <tr>
+      <td>&nbsp;</td>
+      <th scope="col">Goal</th>
+      <th scope="col">Actual</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">January</th>
+      <td>$200,000</td>
+      <td>$150,000</td>
+    </tr>
+    <tr>
+      <th scope="row">February</th>
+      <td>$200,000</td>
+      <td>$240,000</td>
+    </tr>
+    <tr>
+      <th scope="row">March</th>
+      <td>$200,000</td>
+      <td>$370,000</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+Eine andere Methode ist, das aria-label-Attribut zu nutzen. Der Text darin ist für sehende Benutzer unsichtbar.
+
+```html
+<table aria-label="Second quarter Results"></table>
+```
+
+Diese Methode bietet auch eine unsichtbare Beschriftung, verwendet aber HTML und CSS statt ARIA.
+
+Hinweis: Wenn Sie die Klasse direkt auf dem Tag platzieren, liest der NVDA-Bildschirmleser die Tabelle mit einer
+falschen Anzahl von Zeilen.
+
+```html
+<table>
+  <caption>
+    <span class="visually-hidden">1st Quarter Results</span>
+  </caption>
+</table>
+```
+
+Eine andere Methode ist "aria-labelledby".
+
+```html
+<h3 id="tableCaption">Third Quarter Results</h3>
+<table aria-labelledby="tableCaption"></table>
+```
+
+Man kann den Namen auch in eine figcaption setzen und ihn mit der Tabelle verknüpfen. Dazu verwendet man aria-labelledby.
+
+```html
+<figure>
+  <table aria-labelledby="figCaption">
+    <!-- the rest of the table goes here -->
+  </table>
+  <figcaption id="figCaption">Fourth Quarter Results</figcaption>
+</figure>
+```
+
+</Aside>
+
+<Aside
+  type="danger"
+  title="Schlechtes Beispiel: Tabelle mit gefälschter Bildunterschrift"
+>
+  Die Tabelle hat keine Beschriftung, sondern eine Zeile, die sich über alle
+  Spalten erstreckt und den Namen der Tabelle enthält. Bildschirmleseprogramme
+  zeigen diese übergreifende Zelle nicht richtig an. Für Leute, die
+  Bildschirmleseprogramme nutzen, ist es am Anfang etwas schwierig, diese
+  Tabelle zu verstehen.
+
+```html
+<table>
+  <tr>
+    <th colspan="3">Revenue Goals</th>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <th scope="col">Goal</th>
+    <th scope="col">Actual</th>
+  </tr>
+  <tr>
+    <th scope="row">January</th>
+    <td>$200,000</td>
+    <td>$150,000</td>
+  </tr>
+  <tr>
+    <th scope="row">February</th>
+    <td>$200,000</td>
+    <td>$240,000</td>
+  </tr>
+  <tr>
+    <th scope="row">March</th>
+    <td>$200,000</td>
+    <td>$370,000</td>
+  </tr>
+</table>
+```
+
+Wenn der Name der Tabelle nicht automatisch mit der Tabelle verbunden ist, gibt es auch Probleme.
+
+```html
+<h3>Revenue Goals</h3>
+<table>
+  <!-- the rest of the table goes here -->
+</table>
+```
+
+Für sehende Menschen sieht der Text wie eine Überschrift aus, wird aber von Programmen zum Vorlesen nicht erkannt.
+
+</Aside>
+
+## Eine Überschrift für eine Datentabelle sollte genau, aussagekräftig und prägnant sein.
+
+Die Beschriftung hilft den Benutzern, die Tabelle zu verstehen. Die Beschriftung oder der Name sollte aussagekräftig sein. Zum 
+Beispiel wäre "Tabelle 1" nicht hilfreich. Eine Alternative wäre "Gewinn im ersten Quartal: Tabelle 1".
+
+## Jede Datentabelle braucht einen eindeutigen Namen.
+
+Wenn auf einer Seite zwei oder mehr Tabellen mit demselben Namen sind, können Bildschirmleseprogramme die Tabellen nicht unterscheiden.
+

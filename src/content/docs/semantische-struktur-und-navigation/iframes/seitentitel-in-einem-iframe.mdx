@@ -1,0 +1,56 @@
+---
+title: Seitentitel in einem Iframe
+---
+
+import { Aside } from "@astrojs/starlight/components";
+import { Picture } from "astro:assets";
+
+import FramesList from "../../../../assets/semantic-structure/frames_list.png";
+
+## Die Quellseite eines IFrames muss einen gültigen, aussagekräftigen `<title>` haben
+
+JAWS liest das Element mit dem Titel, wenn es vorhanden ist. Die WCAG-Richtlinien sagen, dass das title-Attribut erforderlich ist.
+JAWS liest das title-Attribut nur, wenn das eingebettete Dokument kein title-Element hat. Das ist nicht ganz richtig. Aber alle
+Webseiten sollten sowieso aussagekräftige Titel haben. Deshalb ist es nicht so schlimm, dass JAWS sich hier anders verhält als
+die anderen Bildschirmleseprogramme. Man kann dem eingebetteten Dokument auch einfach einen Titel geben, der mit dem Attribut
+des übergeordneten Frames übereinstimmt. Dann wird der Titel von verschiedenen Programmen gleich angezeigt.
+
+<Aside type="tip" title="Gutes Beispiel: Iframe mit Titel">
+Der Iframe hat einen Titel, den Bildschirmleseprogramme anzeigen.
+
+```html
+<iframe
+  title="Video: Specify the Language"
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/qyjDrUV_el8"
+  frameborder="0"
+  allowfullscreen
+>
+</iframe>
+```
+
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Iframe ohne Titel">
+Der Iframe hat keinen Titel.
+
+```html
+<iframe
+  width="150"
+  height="60"
+  src="https://dequeuniversity.com/assets/html/examples/iframe_with_no_title/iframe_page.html"
+>
+</iframe>
+```
+
+Ohne Titel sagen Bildschirmleser vielleicht nur "Rahmen" an oder sie geben den Namen oder Pfad des Rahmens oder des IFrames an.
+Der folgende Screenshot zeigt das JAWS-Dialogfeld (Einfügen + F9), in dem IFrames ohne Titel aufgelistet sind. JAWS gibt ihnen
+Namen wie "JavaScript" oder lange, zufällige URLs.
+
+<Picture
+  src={FramesList}
+  formats={["avif", "webp"]}
+  alt=""
+/>
+</Aside>

@@ -1,0 +1,78 @@
+---
+title: Geschachtelte oder geteilte Tabellen
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Die Überschriften von Datentabellen und Datenverknüpfungen dürfen nicht auf Tabellen verweisen, die aus mehreren Tabellen bestehen
+
+Verschachtelte Datentabellen sind Tabellen, die in anderen Tabellen enthalten sind. Verschachtelte Datentabellen machen es schwer,
+die Daten und Kopfzellen so zu verknüpfen, wie es bei den Standardmethoden möglich ist. Die Scope-Methode und die "id + headers"-Methode
+funktionieren nicht richtig. Wenn Sie die Regeln umgehen wollen, können Sie "aria-labelledby" verwenden. Das ist aber umständlich.
+
+<Aside type="tip" title="Beispiel: Verschachtelte Datentabellen">
+Dies ist keine einzelne Tabelle, sondern vier Tabellen, die zusammen eine einzige komplexe Datentabelle bilden.
+
+Screenreader können die Datenzellen nicht richtig mit den Überschriftenzellen in dieser Tabelle verknüpfen, weil Überschriften
+nicht mit Daten verknüpft werden können.
+
+```html live
+<table class="data">
+  <caption>
+    Greensprings Running Club Personal Bests
+  </caption>
+  <tr>
+    <td>&nbsp;</td>
+    <td style="padding:0">
+      <table style="margin:0;padding:0">
+        <tr>
+          <td style="width:60px;">&nbsp;</td>
+          <th style="width:60px">1 mile</th>
+          <th style="width:60px">5km</th>
+          <th style="width:60px">10km</th>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <th>Females</th>
+    <td style="padding:0">
+      <table style="margin:0;padding:0">
+        <tr>
+          <th style="width:60px;">Mary</th>
+          <td style="width:60px">8:32</td>
+          <td style="width:60px">28:04</td>
+          <td style="width:60px">1:01:16</td>
+        </tr>
+        <tr>
+          <th style="width:60px;">Betsy</th>
+          <td>7:43</td>
+          <td>26:47</td>
+          <td>55:38</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <th>Males</th>
+    <td style="padding:0">
+      <table style="margin:0;padding:0">
+        <tr>
+          <th style="width:60px;">Matt</th>
+          <td style="width:60px">7:55</td>
+          <td style="width:60px">27:29</td>
+          <td style="width:60px">57:04</td>
+        </tr>
+        <tr>
+          <th style="width:60px;">Todd</th>
+          <td>7:01</td>
+          <td>24:21</td>
+          <td>50:35</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+```
+
+</Aside>

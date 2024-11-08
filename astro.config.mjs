@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import starlightLinksValidator from "starlight-links-validator";
 import starlightImageZoom from "starlight-image-zoom";
+import liveCode from "astro-live-code";
 
 // https://astro.build/config
 export default defineConfig({
@@ -61,7 +62,8 @@ export default defineConfig({
           ],
         },
         {
-          label: "Grundlagen der Barrierefreiheit – Behinderungen und Richtlinien",
+          label:
+            "Grundlagen der Barrierefreiheit – Behinderungen und Richtlinien",
           collapsed: true,
           items: [
             "grundlagen-der-barrierefreiheit-behinderungen-und-richtlinien/einleitung",
@@ -218,7 +220,143 @@ export default defineConfig({
             "entwerfen-einer-barrierefreien-benutzererfahrung/zusammenfassung",
           ],
         },
+        {
+          label: "Semantische Struktur und Navigation",
+          collapsed: true,
+          items: [
+            "semantische-struktur-und-navigation/einleitung",
+            {
+              label: "Seitentitel",
+              collapsed: true,
+              items: [
+                "semantische-struktur-und-navigation/seitentitel/einleitung",
+                "semantische-struktur-und-navigation/seitentitel/jede-seite-hat-einen-title",
+                "semantische-struktur-und-navigation/seitentitel/aussagekraeftiger-seitentitel",
+              ],
+            },
+            {
+              label: "Sprache",
+              collapsed: true,
+              items: [
+                "semantische-struktur-und-navigation/sprache/einleitung",
+                "semantische-struktur-und-navigation/sprache/primaere-sprache-der-seite",
+                "semantische-struktur-und-navigation/sprache/sprache-einzelner-teile-innerhalb-der-seite",
+                "semantische-struktur-und-navigation/sprache/sprachcodes",
+              ],
+            },
+            {
+              label: "Landmarken",
+              collapsed: true,
+              items: [
+                "semantische-struktur-und-navigation/landmarken/einleitung",
+                "semantische-struktur-und-navigation/landmarken/erstellen-von-landmarken",
+                "semantische-struktur-und-navigation/landmarken/bewaehrte-praktiken-fuer-orientierungspunkte",
+                "semantische-struktur-und-navigation/landmarken/abwaertskompatibilitaet",
+                "semantische-struktur-und-navigation/landmarken/navigieren-zu-landmarken-mit-screenreadern",
+              ],
+            },
+            "semantische-struktur-und-navigation/allgemeine-ui-komponenten",
+            {
+              label: "Überschriften",
+              collapsed: true,
+              items: [
+                "semantische-struktur-und-navigation/ueberschriften/einleitung",
+                "semantische-struktur-und-navigation/ueberschriften/echte-ueberschriften",
+                "semantische-struktur-und-navigation/ueberschriften/aussagekraeftiger-text",
+                "semantische-struktur-und-navigation/ueberschriften/gliederung-hierarchie-des-inhalts",
+                "semantische-struktur-und-navigation/ueberschriften/best-practices-fuer-ueberschriftsebene-1",
+                "semantische-struktur-und-navigation/ueberschriften/mit-bildschirmleseprogrammen-durch-ueberschriften-navigieren",
+              ],
+            },
+            {
+              label: "Links",
+              collapsed: true,
+              items: [
+                "semantische-struktur-und-navigation/links/einleitung",
+                "semantische-struktur-und-navigation/links/verlinkungen-richtig-kennzeichnen",
+                "semantische-struktur-und-navigation/links/link-text",
+                "semantische-struktur-und-navigation/links/links-zu-externen-seiten-neue-fenster-dateien",
+                "semantische-struktur-und-navigation/links/optisch-vom-text-unterscheidbar",
+                "semantische-struktur-und-navigation/links/visuelle-fokusanzeige",
+                "semantische-struktur-und-navigation/links/navigieren-durch-links-mit-bildschirmlesern",
+              ],
+            },
+            {
+              label: "Navigation zwischen Seiten",
+              collapsed: true,
+              items: [
+                "semantische-struktur-und-navigation/navigation-zwischen-seiten/einleitung",
+                "semantische-struktur-und-navigation/navigation-zwischen-seiten/navigation-listen",
+                "semantische-struktur-und-navigation/navigation-zwischen-seiten/einheitlichkeit",
+              ],
+            },
+            {
+              label: "Navigation innerhalb von Seiten",
+              collapsed: true,
+              items: [
+                "semantische-struktur-und-navigation/navigation-innerhalb-von-seiten/einleitung",
+                "semantische-struktur-und-navigation/navigation-innerhalb-von-seiten/navigation-ueberspringen-links",
+                "semantische-struktur-und-navigation/navigation-innerhalb-von-seiten/inhaltsverzeichnis",
+                "semantische-struktur-und-navigation/navigation-innerhalb-von-seiten/reihenfolge-der-leserichtung-und-fokusreihenfolge",
+                "semantische-struktur-und-navigation/navigation-innerhalb-von-seiten/ein-tasten-tastaturbefehle",
+                "semantische-struktur-und-navigation/navigation-innerhalb-von-seiten/paginierte-ansichten",
+              ],
+            },
+            {
+              label: "Tabellen",
+              collapsed: true,
+              items: [
+                "semantische-struktur-und-navigation/tabellen/einleitung",
+                "semantische-struktur-und-navigation/tabellen/semantische-auszeichnung-fuer-tabellarische-daten",
+                "semantische-struktur-und-navigation/tabellen/tabellenbeschriftung-name",
+                "semantische-struktur-und-navigation/tabellen/tabellenueberschriften",
+                "semantische-struktur-und-navigation/tabellen/einfache-header-zuordnungen",
+                "semantische-struktur-und-navigation/tabellen/gruppierte-header-zuordnungen",
+                "semantische-struktur-und-navigation/tabellen/komplexe-header-zuordnungen",
+                "semantische-struktur-und-navigation/tabellen/geschachtelte-oder-geteilte-tabellen",
+                "semantische-struktur-und-navigation/tabellen/zusammenfassung-der-tabelle",
+                "semantische-struktur-und-navigation/tabellen/layout-tabellen",
+                "semantische-struktur-und-navigation/tabellen/mit-screenreadern-durch-tabellen-navigieren",
+              ],
+            },
+            {
+              label: "Listen",
+              collapsed: true,
+              items: [
+                "semantische-struktur-und-navigation/listen/einleitung",
+                "semantische-struktur-und-navigation/listen/semantischer-markup-fuer-listen",
+                "semantische-struktur-und-navigation/listen/mit-screenreadern-durch-listen-navigieren",
+              ],
+            },
+            {
+              label: "Iframes",
+              collapsed: true,
+              items: [
+                "semantische-struktur-und-navigation/iframes/einleitung",
+                "semantische-struktur-und-navigation/iframes/frame-titel",
+                "semantische-struktur-und-navigation/iframes/seitentitel-in-einem-iframe",
+                "semantische-struktur-und-navigation/iframes/semantische-struktur-ueber-iframes-hinweg",
+                "semantische-struktur-und-navigation/iframes/iframes-ausblenden-die-keinen-inhalt-haben",
+                "semantische-struktur-und-navigation/iframes/navigieren-in-iframes-mit-bildschirmleseprogrammen",
+              ],
+            },
+            {
+              label: "Weitere semantische Elemente",
+              collapsed: true,
+              items: [
+                "semantische-struktur-und-navigation/weitere-semantische-elemente/einleitung",
+                "semantische-struktur-und-navigation/weitere-semantische-elemente/strong-und-em",
+                "semantische-struktur-und-navigation/weitere-semantische-elemente/blockquote-und-q",
+                "semantische-struktur-und-navigation/weitere-semantische-elemente/code-und-pre",
+                "semantische-struktur-und-navigation/weitere-semantische-elemente/durchstrecihen-loeschen-und-einfuegen",
+                "semantische-struktur-und-navigation/weitere-semantische-elemente/hervorheben-mark",
+              ],
+            },
+            "semantische-struktur-und-navigation/zusammenfassung-und-checkliste",
+          ],
+        },
       ],
     }),
+    liveCode(),
   ],
 });

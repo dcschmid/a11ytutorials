@@ -1,0 +1,92 @@
+---
+title: Frame-Titel
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+Frames mit Inhalt müssen ein Titel-Attribut haben
+
+## Der Titel des IFrames muss korrekt und aussagekräftig sein.
+
+<Aside type="tip" title="Gutes Beispiel: Aussagekräftiger Iframe-Titel">
+Der Titel des IFrames ist der gleiche wie der Inhalt.
+
+```html
+<iframe
+  title="Video: Specify the Language"
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/qyjDrUV_el8"
+  frameborder="0"
+  allowfullscreen
+>
+</iframe>
+```
+
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Allgemeiner Iframe-Titel">
+Der Titel "Iframe" sagt nichts über den Inhalt.
+
+```html
+<iframe
+  title="Iframe"
+  src="/assets/html/examples/iframe_with_title/iframe_page.html"
+>
+</iframe>
+```
+
+</Aside>
+
+## Jeder Frame braucht einen eindeutigen Titel
+
+<Aside type="tip" title="Gutes Beispiel: Eindeutige Titel für IFrames">
+Die IFrames der beiden Videos haben eindeutige Titel, sodass sie von Screenreader-Benutzern unterschieden werden können.
+
+```html
+<iframe
+  title="Specify the Language"
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/qyjDrUV_el8"
+  frameborder="0"
+  allowfullscreen
+>
+</iframe>
+
+<iframe
+  title="Video of touch screen for the blind in New York City taxis"
+  style="width:640px;height:480px;margin:auto;text-align:center;"
+  src="//www.youtube.com/embed/hM0x0k2Bv3Y"
+  allowfullscreen
+>
+</iframe>
+```
+
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Doppelte Titel für IFrames">
+  Die IFrames für diese beiden Videos haben den gleichen Titel. Für Benutzer von
+  Bildschirmleseprogrammen ist es deshalb schwierig, sie zu unterscheiden.
+
+```html
+<iframe
+  title="YouTube video"
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/qyjDrUV_el8"
+  frameborder="0"
+  allowfullscreen
+>
+</iframe>
+
+<iframe
+  title="YouTube video"
+  style="width:640px;height:480px;margin:auto;text-align:center;"
+  src="//www.youtube.com/embed/hM0x0k2Bv3Y"
+  allowfullscreen
+>
+</iframe>
+```
+
+</Aside>

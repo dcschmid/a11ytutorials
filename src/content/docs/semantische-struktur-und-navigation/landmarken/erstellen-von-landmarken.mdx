@@ -1,0 +1,101 @@
+---
+title: Erstellen von Landmarken (HTML5, ARIA)
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Landmarken sind vordefinierte Teile des Layouts, zum Beispiel `<header>`, `<nav>` oder `<main>` und `<footer>` usw
+
+Verwenden Sie entweder HTML5-Landmarks oder deren ARIA-Entsprechungen.
+
+<Aside title="Anmerkung">
+  Mit Hilfe von Orientierungspunkten wird der Aufbau der Seite gekennzeichnet. Mit Überschriften werden Abschnitte im
+  Text gekennzeichnet.
+</Aside>
+
+## Hier findet ihr eine Liste mit HTML5-Punkten und ihren ARIA-Entsprechungen
+
+Die Zuordnung von ARIA-Rollen und HTML5-Elementen ist nicht genau. Die beiden Spezifikationen haben unterschiedliche Ziele. Die
+folgende Tabelle zeigt, wo es Gemeinsamkeiten gibt.
+
+<Aside title="Anmerkung">
+  Es ist besser, wenn möglich, HTML-Elemente statt ihrer ARIA-Entsprechungen zu verwenden. Für Benutzer von
+  Bildschirmleseprogrammen ist das Ergebnis dasselbe, egal ob man native HTML-Elemente oder ARIA-Rollen verwendet.
+  Manchmal ist es einfacher, ARIA-Rollen zu bereits vorhandenem Markup hinzuzufügen, weil neue HTML-Elemente das
+  Erscheinungsbild verändern können. Das ist bei ARIA-Rollen nicht der Fall.
+</Aside>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTML5</th>
+      <th>ARIA-Rolle</th>
+      <th>Von den meisten Screenreadern als Orientierungspunkt aufgeführt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`<header>`</td>
+      <td>role="banner"</td>
+      <td>Ja</td>
+    </tr>
+    <tr>
+      <td>`<nav>`</td>
+      <td>role="navigation"</td>
+      <td>Ja</td>
+    </tr>
+    <tr>
+      <td>n/a</td>
+      <td>role="search"</td>
+      <td>Ja</td>
+    </tr>
+    <tr>
+      <td>`<main>`</td>
+      <td>role="main"</td>
+      <td>Ja</td>
+    </tr>
+    <tr>
+      <td>`<footer>`</td>
+      <td>role="contentinfo"</td>
+      <td>Ja</td>
+    </tr>
+    <tr>
+      <td>`<aside>`</td>
+      <td>role="complementary"</td>
+      <td>Ja</td>
+    </tr>
+    <tr>
+      <td>`<section>`</td>
+      <td>role="region"</td>
+      <td>
+        Die meisten Bildschirmleseprogramme zeigen sie nur an, wenn ihnen ein Name gegeben wird.
+        Benutzer von Bildschirmleseprogrammen können sich anhand von Überschriften durch den Text bewegen.
+        Deshalb muss man nicht jedem Abschnitt oder jeder Region einen Namen geben. Es ist sogar schlecht,
+        zu viele Orientierungspunkte auf einer Seite anzugeben, weil das den Benutzer verwirrt.
+      </td>
+    </tr>
+    <tr>
+      <td>`<article>`</td>
+      <td>role="article"</td>
+      <td>
+        JAWS listet es auf, andere Programme aber nicht.
+      </td>
+    </tr>
+    <tr>
+      <td>`<form>`</td>
+      <td>role="form"</td>
+      <td>
+        Gemischte Unterstützung: Bildschirmleseprogramme listen Formulare nur auf, wenn sie als role=„form“ markiert sind
+        (das `<form>` Element wird in Landmark-Listen ignoriert).
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<Aside title="Anmerkung">
+  Die Region „ARIA“ und die Artikel- Rollen werden nicht als Orientierungspunkte betrachtet, obwohl ihre HTML5-Gegenstücke
+  dies sind.
+</Aside>
+
+Die nützlichsten Elemente sind Header/Banner, Nav/Navigation, Main und Footer/Contentinfo. Die anderen können ebenfalls
+verwendet werden, sind aber nicht so weit verbreitet.

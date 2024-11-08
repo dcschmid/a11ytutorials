@@ -1,0 +1,48 @@
+---
+title: Jede Seite hat einen Titel
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+## Der Seiten `<title>` muss vorhanden sein und Text enthalten
+
+Nutzer von Bildschirmleseprogrammen wollen schnell wissen, wer die Seite ist und was sie will. Ohne Titel müssen Nutzer von
+Bildschirmleseprogrammen die Seite durchsuchen, um die Identität und den Zweck zu erfahren. Das ist umständlich.
+
+<Aside type="tip" title="Ein guter Seitentitel ist zum Beispiel:">
+  Die Seite hat einen gültigen `<title>` im `<head>` des Dokuments.
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Products and Services</title>
+  </head>
+  ```
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Titel ohne Inhalt">
+  Dies ist ein Titel-Tag ohne Titel.
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title></title>
+  </head>
+  ```
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Fehlender Seitentitel">
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  </head>
+  ```
+</Aside>
+
+## Der Seitentitel muss aktualisiert werden, wenn sich die Adresse ändert
+
+Jedes Mal, wenn sich die Adresse einer Webseite ändert, muss sich auch der Titel der Seite ändern. Wenn sich der Titel nicht
+ändert, stimmt er nicht mehr mit dem Inhalt überein. Das kann verwirren, besonders wenn man über einen Link auf die Seite kommt.

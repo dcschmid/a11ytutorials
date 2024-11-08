@@ -1,0 +1,111 @@
+---
+title: Aussagekräftiger Seitentitel
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+## Der Seitentitel muss aussagekräftig sein.
+
+Der Seitentitel muss klar machen, worum es auf der Seite geht. Das ist wichtig für alle Nutzer, besonders aber für Nutzer von
+Bildschirmleseprogrammen. Die verlassen sich auf den Titel, um sich schnell einen Überblick zu verschaffen.
+
+<Aside type="tip" title="Schlechtes Beispiel: Standard-Platzhalter-Titel">
+  ```html
+  <title>Cleaning Products</title>
+  ```
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Standard-Platzhalter-Titel">
+  Es wird kein Titel angezeigt, sondern nur ein Text, der vom Autorentool eingefügt wurde.
+
+  ```html
+  <title>Untitled Document</title>
+  ```
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Uninformativer Seitentitel">
+  Der Titel sagt nichts über den Inhalt aus.
+
+  ```html
+  <title>Document Content</title>
+  ```
+</Aside>
+
+## Wenn eine Seite durch eine Aktion des Benutzers oder durch ein Skript geändert wird, sollte der Titel den Grund dafür erklären.
+
+<Aside type="tip" title="Gutes Beispiel: Titel mit Suchtext">
+  Der Titel zeigt den Suchtext.
+
+  ```html
+  <title>"Warranty" - Search Results</title>
+  ```
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Allgemeine Bezeichnung">
+  Der Titel enthält nicht den Text der Suche.
+
+  ```html
+  <title>Search Results</title>
+  ```
+</Aside>
+
+## Der Titel muss auffallen
+
+Es gibt keine technische Begrenzung für die Länge eines Seitentitels. Auch die Richtlinien für Barrierefreiheit schreiben keine
+bestimmte Länge vor. Es hat sich aber bewährt, den Titel so kurz wie möglich zu halten, ohne dabei an Genauigkeit oder
+Informationsgehalt einzubüßen.
+
+<Aside type="tip" title="Gutes Beispiel: Prägnanter Seitentitel">
+  ```html
+  <title>Accessibility Services</title>
+  ```
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Seitentitel wird als Schlüsselwort anstelle eines echten Titels verwendet">
+  Eine Liste mit Schlüsselwörtern im Seitentitel wird zu lang. Wenn jemand ein Bildschirmleseprogramm benutzt, ist er ungeduldig,
+  wenn er den langen Titel hört. Er will lieber gleich die wichtigen Infos zur Seite hören.
+
+  ```html
+  <title>Mortgages Inc. - Mortgage services,
+  best mortgages in New York,
+  low rates, low API, easy financing,
+  variable rates, fixed rate mortgages</title>
+  ```
+</Aside>
+
+## Die Titelseite sollte eindeutig sein
+
+Damit es nicht zu Verwirrung kommt, sollte der Titel einer Seite auf einer Website eindeutig sein. Manchmal kann man den
+Seitentitel nicht überprüfen. Aber man sollte immer eindeutige Seitentitel vergeben.
+
+## Der Titel sollte einzigartige Informationen enthalten
+
+<Aside type="tip" title="Gutes Beispiel: Einzigartige Informationen stehen an erster Stelle">
+  In diesem Beispiel wird zuerst gesagt, wofür die Seite da ist (Hypothekenrechner), dann wer dahinter steckt
+  (Smallville Credit Union).
+
+  ```html
+  <title>Mortgage Calculators - Smallville Credit Union</title>
+  ```
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Einzigartige Informationen stehen nicht an erster Stelle">
+  In diesem Beispiel steht der Zweck der Seite (Hypothekenrechner) am Ende. Das bedeutet, dass
+
+  ```html
+  <title>Smallville Credit Union - Mortgage Calculators</title>
+  ```
+
+  Wenn eine Marke auf jeder Seite ganz oben im Titel steht, ist es schwer zu unterscheiden, welche Seite es ist, wenn sie
+  in mehreren Registerkarten angezeigt wird. Auch für Menschen, die Bildschirmleseprogramme nutzen, ist das schwierig. Sie
+  müssen sich immer wieder die gleichen Informationen am Anfang jedes Seitentitels anhören. Das dauert länger, bis sie wissen,
+  auf welcher Seite sie sind. Jede Seite ist einzigartig. Aber die Titel sind alle gleich.
+</Aside>
+
+## Die Überschrift in der Titelleiste sollte der obersten Überschrift im Hauptinhalt entsprechen.
+
+Der Titel und die oberste Überschrift im Hauptinhalt dienen beide dazu, die Seite zu benennen. Deshalb ist es gut, wenn der
+Seitentitel und die oberste Überschrift fast gleich sind. Es gibt aber auch Platz für kleine Unterschiede. Sie können die
+Website-Marke am Ende des Seitentitels einfügen, aber nicht in der Hauptüberschrift für den Inhalt. Das ist gut, weil die
+Benutzer so den Seitentitel sehen können, egal ob sie die Registerkarten anzeigen, die Seite mit einem Bildschirmleser vorlesen
+oder den Hauptinhalt durchlesen.

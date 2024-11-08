@@ -1,0 +1,31 @@
+---
+title: Sprache einzelner Teile innerhalb der Seite
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+## Inline-Sprachänderungen müssen gekennzeichnet werden.
+
+Finden Sie alle Änderungen in der Sprache des Dokuments. Das lang-Attribut kann auf alle Elemente angewendet werden, die auf
+einer neuen Zeile stehen, also zum Beispiel auf Absätze, Überschriften, Absätze, Tabellen und so weiter.
+
+<Aside type="tip" title="Gutes Beispiel: Inline-Änderung in der Sprache ist korrekt markiert">
+  Im letzten Satz dieses Absatzes wird eine andere Sprache verwendet.
+
+  ```html live
+  <p>While in Spain, my friend tried to speak Spanish,
+  but she wasn't very good. Everyone kept saying
+  &quot;<span lang="es">No comprendo nada de lo que dices.</span>&quot;</p>
+  ```
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Inline-Änderung in der Sprache ist nicht korrekt markiert">
+  Im folgenden Absatz wurde die Sprache nicht geändert. Der Bildschirmleser liest die spanischen Wörter nach den englischen
+  Ausspracheregeln vor.
+
+  ```html live
+  <p>While in Spain, my friend tried to speak Spanish,
+  but she wasn't very good. Everyone kept saying
+  &quot;No comprendo nada de lo que dices.&quot;</p>
+  ```
+</Aside>

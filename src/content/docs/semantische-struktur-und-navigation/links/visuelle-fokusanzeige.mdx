@@ -1,0 +1,94 @@
+---
+title: Visuelle Fokusanzeige
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Alle fokussierbaren Elemente müssen einen visuellen Fokusindikator haben, wenn sie fokussiert sind
+
+Die meisten Browser zeigen an, welches Element im Fokus ist. Sie umrahmen es dazu mit einer gepunkteten Linie (Edge,
+Internet Explorer, Firefox) oder einer durchgehenden farbigen Linie (Chrome, Safari). Die gepunktete Linie ist für
+manche Leute schwer zu erkennen, auch für Leute mit Sehschwäche. Solange der Standard-Fokusindikator des Browsers
+funktioniert, ist die Gestaltung ausreichend, um die Richtlinien zu erfüllen.
+
+<Aside
+  type="danger"
+  title="Schlechtes Beispiel: Der visuelle Fokusindikator wurde entfernt"
+>
+Sehende Tastaturbenutzer müssen sehen, wo der Fokus liegt. Wenn Sie den Fokusindikator entfernen, wissen sie nicht,
+welcher Link den Fokus hat.
+
+```html
+<style>
+  a:focus {
+    outline: none;
+  }
+</style>
+```
+
+</Aside>
+
+## Fokussierbare Elemente sollten einen Hinweis haben, worauf sie fokussieren
+
+Auch wenn das nicht nötig ist, um die Richtlinien zu erfüllen, hilft es Menschen mit Sehbeeinträchtigung, wenn es bei Links,
+Schaltflächen, Formularfeldern und anderen Elementen, auf die man schauen muss, einen besseren Hinweis gibt. Verbesserte visuelle
+Fokusindikatoren können eine andere Hintergrundfarbe, Schriftfarbe, Umrandung oder einen Rahmen enthalten.
+
+Wenn Sie visuelle Fokusindikatoren erstellen, sollten Sie Folgendes beachten:
+
+- links: `a:focus {...}`
+
+- Schaltflächen: `button:focus {...}`
+
+- Eingaben: beachten Sie, dass je nach Design ein einziger Stil für alle Eingaben ausreichen kann (z.B. `input:focus {...}`,
+  aber die Stile können auch für einzelne Eingaben angegeben werden:
+
+  - Texteingaben: `input[type=text]:focus {...}`
+
+  - Bildeingaben: `input[type=image]:focus {...}`
+
+  - Schaltflächen zum Absenden: `input[type=submit]:focus {...}`
+
+  - Radiobuttons: `input[type=radio]:focus {...}`
+
+  - Alle anderen Eingabearten
+
+- Checkboxen: `input[type=checkbox]:focus {...}`
+
+- Dropdown-Auswahl-Eingaben: `select:focus {...}`
+
+- textarea-Felder: `textarea:focus {...}`
+
+- ARIA-Steuerungen:
+
+  - ARIA-Links: `[role=link]:focus {...}`
+
+  - ARIA-Schaltflächen: `[role=button]:focus {...}`
+
+  - ARIA-Eingaben - `[role=radio]`, `[role=checkbox], usw.
+
+  - ARIA Registerkarten - `[role=tab]:focus {...}`
+
+  - Alle anderen fokussierbaren benutzerdefinierten ARIA-Steuerelemente
+
+- Alle anderen fokussierbaren Objekte
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Der visuelle Fokusindikator wurde verbessert"
+>
+Man kann den Fokusindikator verbessern, indem man eine andere Farbe und eine dickere Linie einfügt.
+
+```html
+<style>
+  a:focus {
+    outline: 2px solid #8cc63f;
+    background-color: #fdf6e7;
+  }
+</style>
+```
+
+Jede Website hat ihre eigene Art und ihr eigenes Aussehen. Deshalb müssen die Farben und das Aussehen des obigen
+Beispiels eventuell geändert werden.
+
+</Aside>

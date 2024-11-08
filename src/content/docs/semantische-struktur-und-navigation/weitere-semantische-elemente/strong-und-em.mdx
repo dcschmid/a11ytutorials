@@ -1,0 +1,81 @@
+---
+title: <strong> und <em>
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Kritische Betonungen im Text sollten durch visuelle Gestaltung vermittelt werden
+
+Manchmal wollen Sie Text hervorheben. Sie können Text hervorheben, indem Sie ihn fett oder kursiv schreiben. In HTML gibt es sogar
+Elemente, die dafür gemacht wurden. `<em>` für Hervorhebungen (kursiv) und `<strong>` für starke Hervorhebungen (fett).
+
+## Kritische Betonungen im Text sollten in einem textbasierten Format übermittelt werden
+
+Alle gängigen Bildschirmleseprogramme ignorieren die Elemente. Zumindest in der Standardkonfiguration. Einige Bildschirmleseprogramme
+lassen sich so einstellen, dass sie die Elemente erkennen. Wenn Sie das richtige Bildschirmleseprogramm haben und wissen, wie Sie die
+Einstellung ändern können, profitieren Sie von `<em>` und `<strong>`. Aber das können Sie nicht von allen Benutzern erwarten.
+
+Wenn Sie Text hervorheben müssen, um ihn besser zu verstehen, müssen Sie eine andere Möglichkeit finden.
+
+<Aside title="Hinweis">
+  Wenn die Betonung nicht wichtig ist, muss sie nicht für
+  Bildschirmleseprogramme zugänglich gemacht werden. Wenn der Inhalt auch ohne
+  Betonung verständlich ist, können Sie es optional machen, die Betonung
+  zugänglich zu machen. Benutzer von Bildschirmleseprogrammen sind es gewohnt,
+  keine Betonung zu hören. Manchmal entgehen ihnen dadurch Nuancen. Aber wenn
+  die Hauptbotschaft weiterhin verständlich ist, ist das okay.
+</Aside>
+
+Man kann den Schwerpunkt auf verschiedene Arten zugänglich machen.
+
+<Aside type="tip" title="Gutes Beispiel: Option 1: Sichtbaren Text hinzufügen">
+  So geht's am einfachsten. Sie können Wörter wie "Wichtig" oder "Warnung" in
+  Ihren Text einfügen, damit der Inhalt hervorgehoben wird.
+
+```html
+<p>Important: You cannot undo. Your file will be permanently deleted.</p>
+```
+
+</Aside>
+
+<Aside type="tip" title="Gutes Beispiel: Option 2: Unsichtbaren Text hinzufügen">
+Wenn der Text schon fett oder kursiv formatiert ist, muss man keine zusätzlichen Wörter zur Betonung schreiben. Die meisten
+Benutzer von Bildschirmleseprogrammen profitieren nicht von der Gestaltung. Sie müssen deshalb einen Text zur Betonung schreiben,
+den Sie vor sehenden Benutzern verbergen können. Sie können den Text mit der CSS-Clip-Methode ausblenden.
+
+```html
+<!doctype html>
+<head>
+<title>Hidden text emphasis</title>
+<style>
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
+  white-space: nowrap;
+}
+</style>
+</head>
+<body>
+<p><span class="visually-hidden">Important:</span>
+You cannot undo. Your file will be permanently deleted.</p>
+</body>
+</html>
+```
+
+</Aside>
+
+<Aside type="tip" title="Gutes Beispiel: Option 3: Fügen Sie ein Bild mit geeignetem Alternativtext hinzu">
+Man kann auch ein Bild hinzufügen, zum Beispiel ein Symbol.
+
+```html
+<img src="warning.png" alt="Warning">
+    You cannot undo. Your file will be permanently deleted.</p>
+```
+
+</Aside>

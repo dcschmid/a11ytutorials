@@ -1,0 +1,44 @@
+---
+title: Ein-Tasten-Tastaturbefehl
+---
+
+import { Aside } from "@astrojs/starlight/components";
+import { Picture } from "astro:assets";
+
+import BadExampleSingleKeyShortcut from "../../../../assets/semantic-structure/bad-example-single-key-shortcut.png";
+import GoodExampleShortcut from "../../../../assets/semantic-structure/good-example-shortcuts.png";
+
+## Wenn es eine einstellige Tastenkombination gibt, muss mindestens eine der folgenden Bedingungen erfüllt sein: Man kann die Tastenkombination deaktivieren oder neu zuweisen. Oder sie ist nur aktiv, wenn die entsprechende Komponente der Benutzeroberfläche im Fokus ist.
+
+Diese Regel gilt für alle Buchstaben, Zeichen und Sonderzeichen.
+
+Viele Leute, die mit ihren Geräten über Spracheingabe interagieren, sagen bestimmte Wörter oder Folgen von Wörtern. Manche Anwendungen
+und Websites sind für diese Benutzer nicht gut geeignet, weil sie Tastaturbefehle mit einzelnen Buchstaben verwenden. Wenn man ein
+Wort diktiert, kann das zu Problemen führen. Wenn man diese Tastenkombinationen ausschalten, neu belegen oder einschränken kann, können
+die Benutzer sie selbst steuern. Gmail ist ein Beispiel für eine Webanwendung mit Tastenkombinationen: "E" archiviert eine Konversation,
+"A" antwortet allen und "F" leitet sie weiter.
+
+Außerdem können Benutzer, die nicht gut mit den Händen zurechtkommen, oft aus Versehen Tasten auf ihrer Tastatur drücken. Man kann
+eine zweite Taste einbauen, damit diese Benutzer keine falschen Tasten drücken.
+
+<Aside
+  type="danger"
+  title="Schlechtes Beispiel: Website mit nur einer Tastenkombination"
+>
+Das folgende Beispiel zeigt eine Webseite mit einer Taste zum Verknüpfen. Wenn man die Taste "S" drückt, wird die Suchleiste
+aktiviert. Das sieht harmlos aus. Aber stellen Sie sich vor, Sie sind ein Benutzer eines Bildschirmleseprogramms, der Muskelkrämpfe
+hat und gerade liest. Sie drücken versehentlich die Taste "S" und gelangen zurück zum Anfang der Seite zur Suchleiste. Das kann
+verwirrend sein.
+
+<Picture src={BadExampleSingleKeyShortcut} formats={["avif", "webp"]} alt="" />
+</Aside>
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Website mit deaktivierbaren Verknüpfungen"
+>
+Google Mail verfügt über viele Ein-Tasten-Shortcuts, aber im Einstellungsbereich kann ein Benutzer die Auswahl für:
+Tastaturkürzel deaktivieren.
+
+<Picture src={GoodExampleShortcut} formats={["avif", "webp"]} alt="" />
+</Aside>

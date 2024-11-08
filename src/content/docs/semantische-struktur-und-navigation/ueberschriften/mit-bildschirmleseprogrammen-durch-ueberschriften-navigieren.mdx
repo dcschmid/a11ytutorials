@@ -1,0 +1,187 @@
+---
+title: Mit Bildschirmleseprogrammen durch Überschriften navigieren
+---
+
+import { Aside } from "@astrojs/starlight/components";
+import { Picture } from "astro:assets";
+
+import HeadingsJaws from "../../../../assets/semantic-structure/headings-jaws.png";
+import NvdaHeadingsList from "../../../../assets/semantic-structure/nvda-headings-list.png";
+import NvdaHeadingsListFiltered from "../../../../assets/semantic-structure/nvda-headings-list-filtered.png";
+
+Blinde Menschen können Webseiten nicht so gut verstehen wie Menschen, die sehen können. Visuelle Benutzer können das Seitenlayout sehen
+und verstehen, ohne den Text lesen zu müssen. Blinde Nutzer haben diesen Vorteil nicht. Screenreader lesen die Webseite Zeile für Zeile.
+Sie hören sich die gesamte Webseite an, es sei denn, es gibt eine andere Möglichkeit, um zu verstehen, wie die Seite aufgebaut ist.
+Überschriften sind eine Möglichkeit, das Layout einer Webseite zu verstehen.
+
+Benutzer von Screenreadern können mit Tastenkombinationen durch die Überschriften eines Dokuments navigieren. Die meisten Screenreader
+können folgende Aufgaben ausführen:
+
+## Methode 1: Liste alle Überschriften auf
+
+Einige Screenreader zeigen dies in einer Baumansicht an. Andere, wie zum Beispiel VoiceOver, zeigen alle Überschriften in einer Liste
+mit der Nummer der Überschriftenebene an.
+
+<table>
+  <thead>
+    <tr>
+      <th>Bildschirmlesegerät & Browser</th>
+      <th>Befehl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>JAWS mit Chrome, Firefox, IE</td>
+      <td>Insert + F6</td>
+    </tr>
+    <tr>
+      <td>NVDA mit Firefox, Chrome</td>
+      <td>
+        Einfg + F7 (um die Elementliste zu öffnen), und wählen Sie dann
+        Überschriften aus
+      </td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (iOS)</td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>Talkback mit Firefox</td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (macOS)</td>
+      <td>
+        Strg + Alt + U (zum Öffnen des Rotors), dann mit den Pfeiltasten nach
+        links/rechts Überschriften auswählen
+      </td>
+    </tr>
+    <tr>
+      <td>Narrator mit Edge </td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>Window-Eyes mit IE</td>
+      <td>
+        Einfg + Tabulator (um die Elementliste zu öffnen), dann Alt + H, um
+        Überschriften auszuwählen
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<Aside type="tip" title="Beispiel: Überschriftenliste in NVDA">
+<Picture src={HeadingsJaws} formats={["avif", "webp"]} alt="" />
+
+Die Überschriften können nach einer bestimmten Reihenfolge sortiert werden. Benutzer können auch auswählen, welche Überschriften
+angezeigt werden sollen. Benutzer von Screenreadern können schnell die Überschriften durchgehen und verstehen dann, wo sie sich
+befinden. Aber nur, wenn eine Webseite echte Überschriften hat und diese einen guten Überblick über den Inhalt geben, kann man
+sie schnell verstehen.
+
+</Aside>
+
+<Aside type="tip" title="Beispiel: Überschriftenliste in JAWS">
+<Picture src={NvdaHeadingsList} formats={["avif", "webp"]} alt="" />
+
+NVDA zeigt die Überschriften in einer Baumansicht an. Die Zwischenüberschriften werden in einer Liste unter der jeweiligen
+Überschrift angezeigt. Sie können die Listen verkleinern oder erweitern, indem Sie die Pfeiltaste nach links oder rechts
+drücken, wenn eine Überschrift markiert ist, oder auf das Minus- oder Pluszeichen neben einer Überschrift klicken.
+
+<Picture src={NvdaHeadingsListFiltered} formats={["avif", "webp"]} alt="" />
+
+Man kann die Liste so filtern, dass nur die Überschriften angezeigt werden, die die
+Textzeichenfolge enthalten, die man in das Textfeld "Filtern nach:" eingibt.
+
+</Aside>
+
+## Methode 2: Navigieren Sie von einer Überschrift zur nächsten.
+
+<table>
+  <thead>
+    <tr>
+      <th>Bildschirmlesegerät & Browser</th>
+      <th>Befehl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>JAWS mit Chrome, Firefox, IE</td>
+      <td>H</td>
+    </tr>
+    <tr>
+      <td>NVDA mit Firefox, Chrome</td>
+      <td>H</td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (iOS)</td>
+      <td>
+        Verwenden Sie den Rotor, um Überschriften auszuwählen (drehen Sie zwei
+        Finger auf dem Bildschirm nach links oder rechts) und wischen Sie dann
+        mit einem Finger nach unten
+      </td>
+    </tr>
+    <tr>
+      <td>Talkback mit Firefox</td>
+      <td>
+        Lokales Kontextmenü (wischen Sie nach oben, dann nach rechts), dann
+        wählen Sie Überschriften aus
+      </td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (macOS)</td>
+      <td>Ctrl + Option + Cmd + H</td>
+    </tr>
+    <tr>
+      <td>Narrator mit Edge </td>
+      <td>H</td>
+    </tr>
+    <tr>
+      <td>Window-Eyes mit IE</td>
+      <td>H</td>
+    </tr>
+  </tbody>
+</table>
+
+## Methode 3: Navigieren Sie zu Überschriften einer bestimmten Ebene (z. B. zu allen `<h2>` Überschriften)
+
+Diese Methode ist nicht so bekannt, aber wenn Nutzer Überschriften nach Ebene untersuchen möchten, können sie das in einigen
+Screenreadern tun.
+
+<table>
+  <thead>
+    <tr>
+      <th>Bildschirmlesegerät & Browser</th>
+      <th>Befehl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>JAWS mit Chrome, Firefox, IE</td>
+      <td>1 bis 6</td>
+    </tr>
+    <tr>
+      <td>NVDA mit Firefox, Chrome</td>
+      <td>1 bis 6</td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (iOS)</td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>Talkback mit Firefox</td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>VoiceOver mit Safari (macOS)</td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>Narrator mit Edge </td>
+      <td>Nicht verfügbar</td>
+    </tr>
+    <tr>
+      <td>Window-Eyes mit IE</td>
+      <td>1 bis 6 dann H</td>
+    </tr>
+  </tbody>
+</table>

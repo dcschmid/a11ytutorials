@@ -1,0 +1,54 @@
+---
+title: <code> und <pre>
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Code sollte mit dem `<code>` Element markiert und so gestaltet werden, dass er sich von Text ohne Code unterscheidet
+
+Nutzer mit Sehvermögen erkennen, wann Code verwendet wird. Sie können auch unterscheiden, ob es sich um Fachbegriffe oder normale
+Sätze handelt. Für das Element wird meist eine nichtproportionale Schriftart verwendet, zum Beispiel Courier oder Courier New.
+
+<Aside type="tip" title="Gutes Beispiel: Das `<code>` Element wird verwendet, um Code zu markieren">
+
+```html
+<code>
+  <img
+    src="vegan-desserts.jpg"
+    alt="A delicious array of vegan desserts"
+    width="500"
+    height="100"
+  />
+</code>
+```
+
+</Aside>
+
+## Screenreader und das `<code>` Element
+
+Screenreader können das Element nicht lesen. Auch blinde Benutzer könnten davon profitieren, wenn sie wüssten, was Code und
+was Prosa ist. Aber Screenreader ignorieren das Element vollständig. Auch wenn das Element semantisch korrekt ist, können
+Benutzer von Screenreadern damit nichts anfangen.
+
+## Codeblöcke sollten mit dem `<pre>`-Element formatiert werden
+
+Das `<pre>`-Element hilft, Code und Text zu unterscheiden. Der Text wird genauso formatiert, wie er im Quellcode erscheint,
+auch mit Leerzeichen. HTML erlaubt nur ein Leerzeichen. Das `<pre>`-Element ist nur für die Formatierung da und sagt nichts über
+den Inhalt aus. Wenn der vorformatierte Text Code enthält, sollte man den inneren Text in ein `<code>`-Element einschließen.
+
+<Aside type="tip" title="Gutes Beispiel: Vorformatierter Text, der als Code markiert ist">
+```html
+<pre><code>
+<style>
+h1 {
+  font-size: 130%;
+  font-weight: bold;
+  padding: 2px;
+  margin: 10px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  }
+</style>
+</code></pre>
+```
+
+</Aside>

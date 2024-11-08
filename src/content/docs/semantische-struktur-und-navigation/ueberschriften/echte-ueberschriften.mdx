@@ -1,0 +1,80 @@
+---
+title: Echte Überschriften
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Eine Überschrift muss als solche im Markup gekennzeichnet werden
+
+Bei Überschriften geht es um die Struktur, nicht um die Optik. Fetter Text sieht für blinde Benutzer wie eine Überschrift aus, aber
+Bildschirmleseprogramme erkennen die Größe und Schriftstärke des Textes nicht. Deshalb müssen blinde Benutzer wissen, dass es sich
+um eine Überschrift handelt. Das geht am besten, wenn man im HTML-Code die entsprechenden Markierungen verwendet. Das schlechte
+Beispiel unten enthält den gleichen Text und sieht im Browser genauso aus wie die guten Beispiele unten. Aber nur die guten
+Beispiele erstellen echte Überschriften, die von Bildschirmleseprogrammen verwendet werden können.
+
+<Aside type="tip" title="Gutes Beispiel: Echte Überschriften">
+  Die Überschriften in diesem Beispiel sind mit echten Überschriftenelementen (`<h1>` und `<h2>`)
+
+  ```html live
+  <h1>Types of Web Accessibility Laws</h1>
+  <h2>Civil Rights Laws</h2>
+  <h2>Procurement Laws</h2>
+  <h2>Industry-Specific Laws</h2>
+  ```
+</Aside>
+
+<Aside type="tip" title="Gutes Beispiel: Echte Überschriften mit ARIA">
+  role="heading" in Kombination mit aria-level ist eine gute Methode, um Überschriften-Semantik hinzuzufügen. So werden Stile
+  nicht beschädigt. Verwenden Sie lieber echte HTML-Überschriften, wenn Sie neue Markups erstellen. Für Benutzer von
+  Bildschirmleseprogrammen ist das Ergebnis in beiden Fällen gleich.
+
+  ```html live
+  <div role="heading" aria-level="1">
+      Screen readers will recognize this as a heading level 1
+  </div>
+  ```
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Falsche Überschriften mit Stilen">
+  Verwenden Sie keine Stile, um falsche Überschriften zu erstellen. Alle folgenden Sätze sehen aus wie Überschriften, sind aber normale
+  Absätze. Deshalb werden sie von Bildschirmleseprogrammen nicht als Überschriften erkannt.
+
+  ```html live
+  <div id="noHeadingExample">
+    <p style="font-weight: bold; font-size: 200%;">
+      Setting the Exposure Manually on a Camera
+    </p>
+    <p>Put text here...</p>
+    <p style="font-weight: bold; font-size: 150%;">
+      Set the ISO
+    </p>
+      <p>Put text here...</p>
+    <p style="font-weight: bold; font-size: 150%;">
+       Choose an aperture
+    </p>
+      <p>Put text here...</p>
+    <p style="font-weight: bold; font-size: 150%;">
+      Choose a shutter speed
+    </p>
+    <p>Put text here...</p>
+  </div>
+  ```
+</Aside>
+
+## Ein Text, der keine Überschrift ist, darf nicht als solche gekennzeichnet werden
+
+Wenn Sie großen, fettgedruckten Text für Text ohne Überschriften erstellen möchten, verwenden Sie Stile, um diesen Effekt zu erzielen.
+Wenn Sie Überschriften-Markierungen (`<h1>`, `<h2>` usw.) für Text ohne Überschriften verwenden, verwirren Sie Benutzer von
+Bildschirmleseprogrammen, indem Sie eine ungenaue strukturelle Gliederung des Seiteninhalts erstellen.
+
+<Aside type="danger" title="Schlechtes Beispiel: Nicht als Überschrift gekennzeichneter Inhalt">
+  Im folgenden Beispiel wurde eine Überschrift markiert, obwohl der Text kein Titel ist. Diese Überschrift ist die höchste auf der Seite.
+  Darunter gibt es keine weiteren Elemente. So wird die Struktur der Seite zerstört. Menschen, die Bildschirmleseprogramme nutzen, denken
+  dann, dass es mehr Inhalte unter der Überschrift gibt, als es tatsächlich der Fall ist.
+
+  ```html live
+   <h1 style="border:2px solid #990000 !important;padding:10px;background-color:#fff7c0;color:#990000;font-weight:bold;font-size:130%;width:400px;margin:auto;text-align:center;">
+    Special rates good until July 31!
+   </h1>
+  ```
+</Aside>

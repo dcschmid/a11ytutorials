@@ -1,0 +1,88 @@
+---
+title: Komplexe Header-Zuordnungen
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Header/Datenverknüpfungen, die nicht mit "th" und "scope" bezeichnet werden können, müssen mit Headern und "id" gekennzeichnet werden.
+
+Tabellen mit vielen Datenzellen und mehreren Überschriftenebenen brauchen eine andere Technik als Tabellen mit nur einer Überschrift.
+
+Jede Datenzelle muss mit jeder entsprechenden Überschriftenzelle verbunden werden.
+
+<Aside title="Warnung">
+  Tabellen mit unregelmäßigen Bezeichnungen sind für Nutzer von
+  Bildschirmleseprogrammen schwer zu verstehen und zu navigieren. Auch wenn das
+  Markup den Barrierefreiheitsrichtlinien entspricht, ist das Problem damit
+  nicht gelöst. Es ist besser, eine einfache Tabelle ohne übergreifende Zellen
+  zu erstellen, als eine komplexe Tabelle, die die Barrierefreiheitsrichtlinien
+  technisch gesehen erfüllt. Manche Bildschirmleseprogramme können keine
+  komplexen Tabellen auf Mobilgeräten anzeigen. Auch ältere Versionen von
+  VoiceOver für OS X bis Mac OS X 10.10.2 konnten keine barrierefreien komplexen
+  Tabellen anzeigen.
+</Aside>
+
+<Aside type="tip" title="Gutes Beispiel: Tabelle: Komplexe Überschriften und IDs">
+Die unten gezeigte Tabellenstruktur ist komplizierter als empfohlen, kann aber mit dem richtigen Markup technisch gesehen
+die Richtlinien für Barrierefreiheit erfüllen.
+
+```html live
+<table class="complexexample">
+  <caption>
+    New Employee Orientation Schedule
+  </caption>
+  <tbody>
+    <tr>
+      <th rowspan="2" id="date">Date</th>
+      <th colspan="2" id="schedule">Schedule</th>
+      <th rowspan="2" id="location">Location</th>
+      <th colspan="2" rowspan="2" id="topics1">Topics</th>
+    </tr>
+    <tr>
+      <th id="start">Start</th>
+      <th id="end">End</th>
+    </tr>
+    <tr>
+      <th id="monday" rowspan="5">Monday, June 1</th>
+      <td headers="schedule start monday">9:00 a.m.</td>
+      <td headers="schedule end monday">10:30 a.m.</td>
+      <td headers="location monday">RH 001</td>
+      <td headers="topics1 monday">
+        Introduction to Company: Vision and Mission
+      </td>
+    </tr>
+    <tr>
+      <td headers="schedule start monday">10:30 a.m.</td>
+      <td headers="schedule end monday">12:00 p.m.</td>
+      <td headers="location monday">RH 001</td>
+      <td headers="topics1 monday">HR Policies Review</td>
+    </tr>
+    <tr>
+      <td headers="schedule monday" colspan="5">
+        <strong><em> Lunch from 12:00 p.m. to 1:00 p.m. </em></strong>
+      </td>
+    </tr>
+    <tr>
+      <td headers="schedule start monday">1:00 p.m.</td>
+      <td headers="schedule end monday">2:30 p.m.</td>
+      <td headers="location monday">RH 001</td>
+      <td headers="topics1 monday">Overview of Benefits</td>
+    </tr>
+    <tr>
+      <td headers="schedule start monday">3:00 p.m.</td>
+      <td headers="schedule end monday">4:30 p.m.</td>
+      <td headers="location monday">RH 005</td>
+      <td headers="topics1 monday">Health and Safety Procedures</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+Die Markierungen lassen sich mit einer serverseitigen Skriptsprache wie PHP, .net, JSP oder Python programmieren.
+
+<Aside  title="Hinweis: Alte Versionen von VoiceOver unterstützten die id + headers-Methode nicht">
+Bis zur Version 10.10.2 konnte VoiceOver Tabellenüberschriften mit der Methode "id + headers" nicht lesen. Manchmal wurden
+auch falsche Überschriften mit den Datenzellen gelesen. Die aktuelle Version von VoiceOver liest Daten- und
+Überschriftenzuordnungen richtig.
+</Aside>
+</Aside>

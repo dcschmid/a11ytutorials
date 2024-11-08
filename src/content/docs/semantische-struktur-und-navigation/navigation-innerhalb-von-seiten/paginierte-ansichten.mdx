@@ -1,0 +1,97 @@
+---
+title: Paginierte Ansichten
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Eine paginierte Ansicht sollte eine Methode enthalten, um zu zeigen, welche Ansicht gerade aktiv ist.
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Aktuelle Seitenzahl hervorheben"
+>
+Die Seitenzahl der aktuellen Seite kann in der Liste der Seitenzahlen optisch hervorgehoben werden, indem die Zahl
+fett gedruckt, die Hintergrundfarbe geändert, die Zahl umrandet und/oder der Link entfernt wird.
+
+```html
+<head>
+  <title>Search Results for &quot;screen readers&quot;</title>
+  <style>
+    .visually-hidden {
+      position: absolute;
+      clip: rect(0 0 0 0);
+      border: 0;
+      height: 1px; margin: -1px;
+      overflow: hidden;
+      padding: 0
+      width: 1px;
+      white-space: nowrap;
+    }
+    li.current-page {
+      outline: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-navigation">
+    Page
+    <ul>
+      <li><a href="#1">1</a></li>
+      <li><a href="#2">2</a></li>
+      <li class="current-page">
+        <span class="visually-hidden">Current page: </span>
+        3
+      </li>
+      <li><a href="#4">4</a></li>
+    </ul>
+  </div>
+</body>
+```
+
+</Aside>
+
+## Blinde Benutzer sollten wissen, welche Ansicht gerade aktiv ist.
+
+Eine paginierte Ansicht kann mehrere Seiten mit Suchergebnissen oder eine lange Tabelle enthalten. Diese sind dann in mehrere
+Ansichten aufgeteilt, um sie übersichtlicher zu gestalten. Eine paginierte Ansicht kann ein JavaScript-Widget oder ein Skript
+auf dem Server sein. Um blinde Benutzer über die aktuelle Ansicht zu informieren, können Sie das Attribut "aria-current" verwenden.
+
+<Aside
+  type="tip"
+  title="Gutes Beispiel: Aria-current"
+>
+Die aktive Ansicht heißt "aria-current".
+
+```html
+<div>
+  Page
+  <ul>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#" aria-current="page">3</a></li>
+    <li><a href="#">4</a></li>
+  </ul>
+</div>
+```
+
+</Aside>
+
+<Aside
+  type="tip"
+  title="Schlechtes Beispiel: Seitennummer nicht programmatisch bestimmbar"
+>
+Man kann nicht sehen, welche Seite man gerade hat.
+
+```html
+<div>
+  Page
+  <ul>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+  </ul>
+</div>
+```
+
+</Aside>

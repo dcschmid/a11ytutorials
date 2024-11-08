@@ -1,0 +1,90 @@
+---
+title: Primäre Sprache der Seite
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+## Die Hauptsprache muss im `<html>`-Element stehen
+
+Wenn die Sprache nicht angegeben ist oder falsch übersetzt wurde, liest ein Bildschirmleseprogramm das Dokument in der Standardsprache
+des Benutzers vor. Das kann zu einem schlechten Akzent führen, wenn die Sprache der Seite nicht der Standardsprache des Benutzers
+entspricht. Es ist schwer, etwas zu verstehen, wenn Bildschirmleseprogramme die falsche Sprachbibliothek verwenden.
+
+<Aside type="tip" title="Gutes Beispiel: Korrekte Sprachidentifizierung">
+  In der zweiten Zeile steht, welche Sprache verwendet wird.
+
+  ```html
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>I Have a Dream, Excerpt</title>
+    </head>
+    <body>
+      <p>&quot;I say to you today, my friends, so even though we face the difficulties
+      of today and tomorrow, I still have a dream. It is a dream deeply rooted
+      in the American dream.</p>
+      <p>&quot;I have a dream that one day this nation will rise up and live out the
+      true meaning of its creed: 'We hold these truths to be self-evident:
+      that all men are created equal.'&quot;</p>
+    </body>
+  </html>
+  ```
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Ungenaue Spracherkennung">
+  Wenn Sie nicht wissen, welche Sprache ein Dokument hat und die Sprachausgabe auf eine andere Sprache eingestellt ist
+  oder die Bezeichnung falsch ist, klingt das, was die Sprachausgabe vorliest, falsch. Man versteht es dann fast nicht.
+
+  ```html
+  <!doctype html>
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <title>I Have a Dream, Excerpt</title>
+    </head>
+    <body>
+      <p>&quot;I say to you today, my friends, so even though we face the difficulties
+      of today and tomorrow, I still have a dream. It is a dream deeply rooted
+      in the American dream.</p>
+      <p>&quot;I have a dream that one day this nation will rise up and live out the
+      true meaning of its creed: 'We hold these truths to be self-evident:
+      that all men are created equal.'&quot;</p>
+    </body>
+  </html>
+  ```
+</Aside>
+
+## Die Hauptsprache muss im HTML-Element eingetragen sein.
+
+Die Bezeichnung der Sprache muss aus einer Liste von Codes stammen, die je nach Spezifikation en (Englisch) , fr (Französisch), es
+(Spanisch) und andere enthält. Alles andere geht nicht.
+
+Einige Bildschirmleseprogramme unterstützen nur Codes mit zwei Buchstaben. Andere Bildschirmleseprogramme unterstützen Codes für
+regionale Sprachen.
+
+<Aside type="tip" title="Gutes Beispiel: Seitensprache mit gültigem Wert">
+  Die Hauptsprache der Seite ist im HTML-Tag angegeben und ist in diesem Fall Englisch.
+
+  ```html
+  <html lang="en">
+  ```
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Fehlender Wert">
+  In diesem Beispiel fehlt das Attribut "lang" im HTML-Element.
+
+  ```html
+  <!doctype html>
+  <html>
+  ```
+</Aside>
+
+<Aside type="danger" title="Schlechtes Beispiel: Ungültiger Wert">
+  Der Wert "anglais" für Englisch ist falsch. Der richtige Wert ist "en".
+
+  ```html
+  <!doctype html>
+  <html lang="anglais">
+  ```
+</Aside>
